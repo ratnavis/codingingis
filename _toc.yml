@@ -2,6 +2,6 @@
 
 - part: Coding in GIS I
   chapters:
-  - file: 01_01_Einleitung
   - file: 01_02_Python_Basics
-  - file: 01_03_Module
+  - file: 01_03_Python_Module
+  - file: 01_04_Tabellarische_Daten
