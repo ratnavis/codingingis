@@ -17,20 +17,19 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply['content'])
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-## Übungsziele
-
-Ziele der heutigen Übung sind:
+```{admonition} Übungsziele
+:class: attention
 - Functions kennenlernen und beherrschen
 - Einfache Geometrien manipulieren lernen
 - Eigene Python-Scripts importieren können
 - Function auf eine ganze Spalte einer (Geo-) DataFrame anwenden können.
-
+```
 ------------------
 
-[0;36m  File [0;32m"<ipython-input-1-9eca75a5aea7>"[0;36m, line [0;32m3[0m
-[0;31m    Ziele der heutigen Übung sind:[0m
-[0m            ^[0m
+[0;36m  File [0;32m"<ipython-input-1-66c3cfd1de5e>"[0;36m, line [0;32m1[0m
+[0;31m    ```{admonition} Übungsziele[0m
+[0m    ^[0m
 [0;31mSyntaxError[0m[0;31m:[0m invalid syntax
 
-SyntaxError: invalid syntax (<ipython-input-1-9eca75a5aea7>, line 3)
+SyntaxError: invalid syntax (<ipython-input-1-66c3cfd1de5e>, line 1)
 
