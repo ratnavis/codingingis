@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Einleitung &#8212; Coding in GIS</title>
+    <title>Tabellarische Daten &#8212; Coding in GIS</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -38,8 +38,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Python Basics" href="01_02_Python_Basics.html" />
-    <link rel="prev" title="Einführung" href="intro.html" />
+    <link rel="prev" title="Python Modules" href="01_03_Python_Module.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -83,19 +82,19 @@
  </span>
 </p>
 <ul class="current nav sidenav_l1">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Einleitung
-  </a>
- </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_02_Python_Basics.html">
    Python Basics
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="01_03_Module.html">
+  <a class="reference internal" href="01_03_Python_Module.html">
    Python Modules
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Tabellarische Daten
   </a>
  </li>
 </ul>
@@ -140,7 +139,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/01_01_Einleitung.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/01_04_Tabellarische_Daten.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -167,7 +166,30 @@
             <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
-            
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ubung-von-einer-dictionary-zu-einer-dataframe">
+   Übung: von einer
+   <em>
+    Dictionary
+   </em>
+   zu einer
+   <em>
+    DataFrame
+   </em>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ubung-dataframe-in-csv-umwandeln">
+   Übung:
+   <em>
+    DataFrame
+   </em>
+   in csv umwandeln
+  </a>
+ </li>
+</ul>
+
         </nav>
     </div>
 </div>
@@ -176,15 +198,18 @@
         
               <div>
                 
-  <div class="section" id="einleitung">
-<h1>Einleitung<a class="headerlink" href="#einleitung" title="Permalink to this headline">¶</a></h1>
-<p>Noch ein kurzer Hinweis zur Typografie dieses Dokumentes:</p>
-<ul class="simple">
-<li><p>Wenn sich im Fliesstext (Python oder ) Code befindet, wird <code class="docutils literal notranslate"><span class="pre">dieser</span> <span class="pre">Festschriftart</span></code> mit grauem Hintergrund dargestellt</p></li>
-<li><p>Alleinstehende Codezeilen werden  !! HIER NOCH BESCHREIBEN!!!</p></li>
-<li><p>Englische Fachbegriffe, deren Übersetzung eher verwirrend als nützlich sein würde, werden <em>kursiv</em> hervorgehoben</p></li>
-<li><p>Für R-Nutzer stelle ich den Vergleich zur R-Programmiersprache her. Wer wenig Erfahrung in R hat kann diese Teile ignorieren</p></li>
-</ul>
+  <div class="section" id="tabellarische-daten">
+<h1>Tabellarische Daten<a class="headerlink" href="#tabellarische-daten" title="Permalink to this headline">¶</a></h1>
+<p>Schauen wir uns nochmals die <em>Dictionary</em> <code class="docutils literal notranslate"><span class="pre">people</span></code> an. Diese ist ein Spezialfall einer Dictionary: Jeder Eintrag besteht aus einer Liste von gleich vielen Werten. Diese Dictionary schreit förmlich danach, tabellarisch dargestellt zu werden. Dies wollen wir gewähren und brauchen dafür das Modul <code class="docutils literal notranslate"><span class="pre">pandas</span></code>. Importiere das Modul mit dem Alias <code class="docutils literal notranslate"><span class="pre">pd</span></code>.</p>
+<p>!! ACHTUNG: HIER FEHLT NOCH DIE EINFÜHRUNG INSTALLATION VON MODULEN !!</p>
+<div class="section" id="ubung-von-einer-dictionary-zu-einer-dataframe">
+<h2>Übung: von einer <em>Dictionary</em> zu einer <em>DataFrame</em><a class="headerlink" href="#ubung-von-einer-dictionary-zu-einer-dataframe" title="Permalink to this headline">¶</a></h2>
+<p>Wandle die Dictionary <code class="docutils literal notranslate"><span class="pre">people</span></code> in eine DataFrame um: Dazu musst du <code class="docutils literal notranslate"><span class="pre">people</span></code> als Argument der Funktion <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> übergeben: <code class="docutils literal notranslate"><span class="pre">pd.DataFrame(people)</span></code>. Weise den Output der Variable <code class="docutils literal notranslate"><span class="pre">people_df</span></code> zu.</p>
+<p><strong>Für R Nutzer</strong>: Auch in R gibt es <em>Dataframes</em>, diese sind aber in Base R integriert (brauchen deswegen keine Erweiterung wie <code class="docutils literal notranslate"><span class="pre">pandas</span></code>)</p>
+</div>
+<div class="section" id="ubung-dataframe-in-csv-umwandeln">
+<h2>Übung: <em>DataFrame</em> in csv umwandeln<a class="headerlink" href="#ubung-dataframe-in-csv-umwandeln" title="Permalink to this headline">¶</a></h2>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -215,8 +240,7 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">Einführung</a>
-    <a class='right-next' id="next-link" href="01_02_Python_Basics.html" title="next page">Python Basics</a>
+    <a class='left-prev' id="prev-link" href="01_03_Python_Module.html" title="previous page">Python Modules</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
