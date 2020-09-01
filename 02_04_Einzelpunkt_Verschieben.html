@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Input zu Functions &#8212; Coding in GIS</title>
+    <title>Einen Einzelpunkt zufällig verschieben &#8212; Coding in GIS</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -36,8 +36,6 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Übungen zu Functions" href="02_03_Functions.html" />
-    <link rel="prev" title="Einleitung zur Übung Coding in GIS II" href="02_01_Einleitung.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -107,14 +105,14 @@
   Coding in GIS II
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="02_01_Einleitung.html">
    Einleitung zur Übung Coding in GIS II
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="02_02_Input_Functions.html">
    Input zu
    <em>
     Functions
@@ -171,7 +169,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/02_02_Input_Functions.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/02_04_Einzelpunkt_Verschieben.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -195,7 +193,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/02_02_Input_Functions.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/02_04_Einzelpunkt_Verschieben.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -203,7 +201,7 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/02_02_Input_Functions.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/02_04_Einzelpunkt_Verschieben.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -229,71 +227,46 @@
         
               <div>
                 
-  <div class="section" id="input-zu-functions">
-<h1>Input zu <em>Functions</em><a class="headerlink" href="#input-zu-functions" title="Permalink to this headline">¶</a></h1>
-<p>Bevor wir uns in die Simulation stürzen müssen wir noch lernen eigene <em>Functions</em> zu schreiben: Dies ist auch nicht weiter schwierig: Eine <em>Function</em> wird mit <code class="docutils literal notranslate"><span class="pre">def</span></code> eingeleitet, braucht einen Namen, einen Input und einen Output.</p>
-<p>Wenn wir zum Beispiel eine Function erstellen wollen die uns grüsst, so geht dies folgendermassen:</p>
+  <div class="section" id="einen-einzelpunkt-zufallig-verschieben">
+<h1>Einen Einzelpunkt zufällig verschieben<a class="headerlink" href="#einen-einzelpunkt-zufallig-verschieben" title="Permalink to this headline">¶</a></h1>
+<p>Um die Monte Carlo Simulation in Angriff zu nehmen, müssen wir als erstes einen Weg finden, wie wir Punkte zufällig verschieben können, zum Beispiel um 100m. Bei <em>GeoDataFrames</em> handelt es sich bei den Punkten um <code class="docutils literal notranslate"><span class="pre">Point()</span></code>-Objekte des Modules <code class="docutils literal notranslate"><span class="pre">shapely.geometry</span></code>. Wir importieren also genau diese <em>Function</em> und bei der Gelegenheit auch <code class="docutils literal notranslate"><span class="pre">geopandas</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sag_hallo</span><span class="p">():</span>
-    <span class="k">return</span><span class="p">(</span><span class="s2">&quot;Hallo!&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+<span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">Point</span>
 </pre></div>
 </div>
 </div>
 </div>
-<ul class="simple">
-<li><p>Mit <code class="docutils literal notranslate"><span class="pre">def</span></code> sagen wir: “Jetzt definiere ich eine Function”.</p></li>
-<li><p>Danach kommt der Name der <em>Function</em>, in unserem Fall <code class="docutils literal notranslate"><span class="pre">sag_hallo</span></code> (mit diesem Namen können wir die <em>Function</em> später wieder abrufen).</p></li>
-<li><p>Als drittes kommen die runden Klammern, wo wir bei Bedarf Inputvariablen (sogenannte Parameter) festlegen können. In diesem ersten Beispiel habe ich keine Parameter festgelegt</p></li>
-<li><p>Nach der Klammer kommt ein Doppelpunkt was bedeutet: “jetzt wird gleich definiert, was die Funktion tun soll”</p></li>
-<li><p>Auf einer neuen Zeile wird eingerückt festgelegt, was die Function eben tun soll. Meist sind hier ein paar Zeilen Code vorhanden</p></li>
-<li><p>Die letzte eingerückte Zeile (in unserem Fall ist das die einzige Zeile) gibt mit return an, was die <em>Function</em> zurück geben soll (der Output). In unserem Fall soll sie “Hallo!”  zurück geben.</p></li>
-<li><p>Voila, das war’s schon! Jetzt können wir diese Function schon nutzen:</p></li>
-</ul>
+<p>Als erster Schritt kreieren wir einen “Testpunkt” und entwickeln eine Methode, diesen zufällig zu verschieben (was wir mit einem Punkt schaffen, schaffen wir es auch mit Tausend Punkten). Beispielsweise können wir den Testpunkt mit den Koordinaten der alten Sternwarte Bern (bzw. deren Gedenktafel, s.u.) erstellen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sag_hallo</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sternwarte</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">2600000</span><span class="p">,</span><span class="mi">1200000</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sternwarte</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Hallo!&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>POINT (2600000 1200000)
 </pre></div>
 </div>
 </div>
 </div>
-<p>Diese <em>Function</em> ohne Input ist wenig nützlich. Meist wollen wir der <em>Function</em> etwas - einen Input - übergeben können. Um eine <em>Function</em> zu erstellen die ein Argument annimmt geht man folgendermassen vor:</p>
+<p>Dieser konstruierte Punkt liegt im neuen Schweizer Koordinatensystem (CH1903+ LV95) auf der alten Sternwarte in Bern, bzw. auf deren Gedenktafel.</p>
+<p><img alt="" src="sterwarte.jpg" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sag_hallo</span><span class="p">(</span><span class="n">vorname</span><span class="p">):</span>
-    <span class="k">return</span><span class="p">(</span><span class="s2">&quot;Hallo &quot;</span><span class="o">+</span><span class="n">vorname</span><span class="o">+</span><span class="s2">&quot;!&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Nun können wir der Function einen Paramter übergeben, damit wir persönlich gegrüsst werden. In folgendem Beispiel ist <code class="docutils literal notranslate"><span class="pre">vorname</span></code> ein Parameter, “Guido” ist sein Argument.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sag_hallo</span><span class="p">(</span><span class="s2">&quot;Guido&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>```{note}
+Here is a note!
+```
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Hallo Guido!&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<p>Den Output können wir wie gewohnt einer neuen Variabel zuweisen:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">persoenlicher_gruss</span> <span class="o">=</span> <span class="n">sag_hallo</span><span class="p">(</span><span class="s2">&quot;Guido&quot;</span><span class="p">)</span>
-<span class="n">persoenlicher_gruss</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Hallo Guido!&#39;
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  File &quot;&lt;ipython-input-3-348b5066096e&gt;&quot;, line 1
+    ```{note}
+    ^
+SyntaxError: invalid syntax
 </pre></div>
 </div>
 </div>
@@ -328,8 +301,6 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="02_01_Einleitung.html" title="previous page">Einleitung zur Übung Coding in GIS II</a>
-    <a class='right-next' id="next-link" href="02_03_Functions.html" title="next page">Übungen zu <em>Functions</em></a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
