@@ -1,3 +1,5 @@
-file: 01_CodinginGIS1_uebung
-sections:
-- file: Untitled
+- file: intro
+
+- part: Coding in GIS I
+  chapters:
+  - file: 01_CodinginGIS1_uebung
