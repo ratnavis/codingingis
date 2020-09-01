@@ -2,9 +2,10 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Übung 1: Erste Function erstellen &#8212; Coding in GIS</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
@@ -14,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-dropdown.css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/sphinx-book-theme.js"></script>
     <script src="_static/jquery.js"></script>
@@ -24,11 +25,8 @@
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/mystnb.js"></script>
     <script src="_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -38,6 +36,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Functions" href="02_02_Input_Functions.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -102,7 +101,7 @@
   Coding in GIS II
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="02_01_Einleitung.html">
    Einleitung zur Übung Coding in GIS II
@@ -111,6 +110,39 @@
  <li class="toctree-l1">
   <a class="reference internal" href="02_02_Input_Functions.html">
    Functions
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Übung 1: Erste
+   <em>
+    Function
+   </em>
+   erstellen
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#ubung-2-function-erweitern">
+   Übung 2:
+   <em>
+    Function
+   </em>
+   erweitern
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#ubung-3-default-werte-festlegen">
+   Übung 3: Default-Werte festlegen
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#ubung-4-python-file-in-module-konvertieren">
+   Übung 4: Python-File in Module konvertieren
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#weitere-hinweise-zu-functions">
+   Weitere Hinweise zu Functions
   </a>
  </li>
 </ul>
@@ -174,6 +206,28 @@
 
         <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/02_03_Functions.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/02_03_Functions.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
     </div>
 
     <!-- Table of contents -->
@@ -196,7 +250,7 @@
 <p>Erstelle eine Function, die <code class="docutils literal notranslate"><span class="pre">gruezi</span></code> heisst, einen Nachnamen als Input annimmt und per Sie grüsst. Das Resultat soll in etwa folgendermassen aussehen:</p>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gruezi</span><span class="p">(</span><span class="n">nachname</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gruezi</span><span class="p">(</span><span class="n">nachname</span><span class="p">):</span>
     <span class="k">return</span><span class="p">(</span><span class="s2">&quot;Guten Tag, &quot;</span><span class="o">+</span><span class="n">nachname</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -204,12 +258,12 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gruezi</span><span class="p">(</span><span class="s2">&quot;Guido&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gruezi</span><span class="p">(</span><span class="s2">&quot;Guido&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;Guten Tag, Guido&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Guten Tag, Guido&#39;
 </pre></div>
 </div>
 </div>
@@ -220,7 +274,7 @@
 <p>Erweitere die <em>Function</em> <code class="docutils literal notranslate"><span class="pre">gruezi</span></code> indem eine du einen weiteren Parameter namens <code class="docutils literal notranslate"><span class="pre">anrede</span></code> implementierst. Das Resultat soll in etwa folgendermassen aussehen:</p>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gruezi</span><span class="p">(</span><span class="n">nachname</span><span class="p">,</span> <span class="n">anrede</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gruezi</span><span class="p">(</span><span class="n">nachname</span><span class="p">,</span> <span class="n">anrede</span><span class="p">):</span>
     <span class="k">return</span><span class="p">(</span><span class="s2">&quot;Guten Tag, &quot;</span><span class="o">+</span><span class="n">anrede</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="o">+</span><span class="n">nachname</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -228,12 +282,12 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gruezi</span><span class="p">(</span><span class="s2">&quot;van Rossum&quot;</span><span class="p">,</span><span class="s2">&quot;Herr&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gruezi</span><span class="p">(</span><span class="s2">&quot;van Rossum&quot;</span><span class="p">,</span><span class="s2">&quot;Herr&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;Guten Tag, Herr van Rossum&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Guten Tag, Herr van Rossum&#39;
 </pre></div>
 </div>
 </div>
@@ -244,7 +298,7 @@
 <p>Man kann für die Parameter folgendermassen einen Standardwert festlegen: Beim Definieren der Function wird dem Parameter schon innerhalb der Klammer ein Argument zugewiesen (z.B. <code class="docutils literal notranslate"><span class="pre">anrede</span> <span class="pre">=</span> <span class="pre">&quot;Herr</span> <span class="pre">oder</span> <span class="pre">Frau&quot;</span></code>). Wenn anrede bei der Verwendung von <code class="docutils literal notranslate"><span class="pre">gruezi</span></code> nicht definiert wird, entspricht die Anrede nun «Herr oder Frau». Setzte einen Standardwert in der Anrede und teste die <em>Function</em>. Das Resultat soll in etwa folgendermassen aussehen:</p>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gruezi</span><span class="p">(</span><span class="n">nachname</span><span class="p">,</span> <span class="n">anrede</span> <span class="o">=</span> <span class="s2">&quot;Herr oder Frau&quot;</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gruezi</span><span class="p">(</span><span class="n">nachname</span><span class="p">,</span> <span class="n">anrede</span> <span class="o">=</span> <span class="s2">&quot;Herr oder Frau&quot;</span><span class="p">):</span>
     <span class="k">return</span><span class="p">(</span><span class="s2">&quot;Guten Tag, &quot;</span><span class="o">+</span><span class="n">anrede</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="o">+</span><span class="n">nachname</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -252,12 +306,12 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gruezi</span><span class="p">(</span><span class="s2">&quot;van Rossum&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gruezi</span><span class="p">(</span><span class="s2">&quot;van Rossum&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;Guten Tag, Herr oder Frau van Rossum&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Guten Tag, Herr oder Frau van Rossum&#39;
 </pre></div>
 </div>
 </div>
@@ -268,14 +322,14 @@
 <p>In der Vorlesung habt ihr gesehen, dass Modules nichts weiter sind als Python-Skripte in einem bestimmten Verzeichnis. Um das zu verdeutlichen kreieren wir nun unser eignes Module. Speichert dazu eure <em>Function</em> <code class="docutils literal notranslate"><span class="pre">gruezi</span></code> in einem neuen Skript mit dem Namen “myownmodule.py” in eurer Working Directory ab. Nun könnt ihr <code class="docutils literal notranslate"><span class="pre">myownmodule</span></code> wie jedes andere Module in euer Skript importieren.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">myownmodule</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">myownmodule</span>
 
 <span class="n">myownmodule</span><span class="o">.</span><span class="n">gruezi</span><span class="p">(</span><span class="s2">&quot;van Rossum&quot;</span><span class="p">,</span><span class="s2">&quot;Herr&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;Guten Tag, Herr van Rossum&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Guten Tag, Herr van Rossum&#39;
 </pre></div>
 </div>
 </div>
@@ -294,12 +348,12 @@
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gruezi</span><span class="p">(</span><span class="s2">&quot;van Rossum&quot;</span><span class="p">,</span> <span class="s2">&quot;Herr&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gruezi</span><span class="p">(</span><span class="s2">&quot;van Rossum&quot;</span><span class="p">,</span> <span class="s2">&quot;Herr&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;Guten Tag, Herr van Rossum&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Guten Tag, Herr van Rossum&#39;
 </pre></div>
 </div>
 </div>
@@ -309,12 +363,12 @@
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gruezi</span><span class="p">(</span><span class="n">anrede</span> <span class="o">=</span> <span class="s2">&quot;Herr&quot;</span><span class="p">,</span> <span class="n">nachname</span> <span class="o">=</span> <span class="s2">&quot;Ratnaweera&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gruezi</span><span class="p">(</span><span class="n">anrede</span> <span class="o">=</span> <span class="s2">&quot;Herr&quot;</span><span class="p">,</span> <span class="n">nachname</span> <span class="o">=</span> <span class="s2">&quot;Ratnaweera&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;Guten Tag, Herr Ratnaweera&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Guten Tag, Herr Ratnaweera&#39;
 </pre></div>
 </div>
 </div>
@@ -349,6 +403,7 @@
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="02_02_Input_Functions.html" title="previous page">Functions</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
