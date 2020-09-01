@@ -168,13 +168,3 @@ Was man auch noch machen kann, ist eine explizite *Function* aus einem Modul zu 
 from malerinMina import wand_bemalen()
 wand_bemalen()
 ```
-
-
-
-```{toctree}
-:hidden:
-:titlesonly:
-
-
-Untitled
-```
