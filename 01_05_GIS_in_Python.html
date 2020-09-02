@@ -27,6 +27,8 @@
     <script src="_static/copybutton.js"></script>
     <script src="_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -240,6 +242,16 @@
    </code>
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ubung-2-koordinatensystem-festlegen">
+   Übung 2: Koordinatensystem festlegen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ubung-3-zeckenstiche-als-shapefile-exportieren">
+   Übung 3: Zeckenstiche als Shapefile exportieren
+  </a>
+ </li>
 </ul>
 
         </nav>
@@ -406,6 +418,54 @@
 </pre></div>
 </div>
 <img alt="_images/01_05_GIS_in_Python_8_1.png" src="_images/01_05_GIS_in_Python_8_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="ubung-2-koordinatensystem-festlegen">
+<h2>Übung 2: Koordinatensystem festlegen<a class="headerlink" href="#ubung-2-koordinatensystem-festlegen" title="Permalink to this headline">¶</a></h2>
+<p>Wir wissen zwar, das unsere <em>GeoDataFrame</em> in Schweizer Landeskoordinaten (CH1903 LV95) zu verstehen ist, aber dies haben wir noch nirgends festgehalten. Das Koordinatensystem (Coordinate Reference System, CRS) können wir über das Attribut <code class="docutils literal notranslate"><span class="pre">crs</span></code> der <em>GeoDataFrame</em> festhalten. Das Koordinatensystem CH1903 LV95 hat den EPSG Code 2056, demnach muss das CRS folgendermassen festgelegt werden:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeckenstiche</span> <span class="o">=</span> <span class="n">zeckenstiche</span><span class="o">.</span><span class="n">set_crs</span><span class="p">(</span><span class="n">epsg</span> <span class="o">=</span> <span class="mi">2056</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nun ist das Koordinatensystem (<em>CRS</em>) als Attribut der <em>GeoDataFrame</em> gespeichert:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeckenstiche</span><span class="o">.</span><span class="n">crs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Projected CRS: EPSG:2056&gt;
+Name: CH1903+ / LV95
+Axis Info [cartesian]:
+- E[east]: Easting (metre)
+- N[north]: Northing (metre)
+Area of Use:
+- name: Europe - Liechtenstein and Switzerland
+- bounds: (5.96, 45.82, 10.49, 47.81)
+Coordinate Operation:
+- name: Swiss Oblique Mercator 1995
+- method: Hotine Oblique Mercator (variant B)
+Datum: CH1903+
+- Ellipsoid: Bessel 1841
+- Prime Meridian: Greenwich
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ubung-3-zeckenstiche-als-shapefile-exportieren">
+<h2>Übung 3: Zeckenstiche als Shapefile exportieren<a class="headerlink" href="#ubung-3-zeckenstiche-als-shapefile-exportieren" title="Permalink to this headline">¶</a></h2>
+<p>Zum Schluss exportieren wir unser Datensatz in ein Shapefile, damit wir das nächste Mal direkt mit einer <em>GeoDataFrame</em> arbeiten können. Genau wie wir in einer vorherigen Übung eine pandas DataFrame mit <code class="docutils literal notranslate"><span class="pre">.to_csv</span></code> in eine csv exportiert haben, gibt es für GeoDataFrames die Methode <code class="docutils literal notranslate"><span class="pre">.to_file</span></code>. Exportiere zeckenstiche mit dieser Methode in eine Shapefile.</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeckenstiche</span><span class="o">.</span><span class="n">to_file</span><span class="p">(</span><span class="s2">&quot;zeckenstiche.shp&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>

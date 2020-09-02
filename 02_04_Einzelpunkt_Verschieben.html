@@ -27,6 +27,8 @@
     <script src="_static/copybutton.js"></script>
     <script src="_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -230,6 +232,34 @@
    Übung 1
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ubung-2-zufallswert-addieren">
+   Übung 2: Zufallswert addieren
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ubung-3-arbeitsschritte-in-eine-function-verwandeln">
+   Übung 3: Arbeitsschritte in eine
+   <em>
+    Function
+   </em>
+   verwandeln
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#output-visualisieren">
+   Output visualisieren
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#optionale-ubung-fur-hochmotivierte-sehr-anspruchsvoll">
+   Optionale Übung für
+   <em>
+    Hoch
+   </em>
+   motivierte (sehr anspruchsvoll)
+  </a>
+ </li>
 </ul>
 
         </nav>
@@ -277,11 +307,174 @@ rechts: Gedenktafel an die Alte Sternwarte Bern. Quelle: aiub.unibe.ch</span><a 
 <ol class="simple">
 <li><p>Finde heraus, um was für einen Datentyp es sich beim Punkt handelt, nutze dafür <code class="docutils literal notranslate"><span class="pre">type()</span></code></p></li>
 <li><p>Recherchier diesen Datentyp im Internet</p></li>
-<li><p>Finde heraus, was für Methods mit dem Datentyp assoziiert sind</p></li>
-<li><p>Suche nach: “Extract Coordinates from [Datentyp aus Schritt 1]” mit deiner Lieblingssuchmaschine</p></li>
+<li><p>Finde heraus, was für <em>Attributes</em> und <em>Methods</em> mit dem Datentyp assoziiert sind</p></li>
 </ol>
 <p>Wenn du die <code class="docutils literal notranslate"><span class="pre">x</span></code> und <code class="docutils literal notranslate"><span class="pre">y</span></code> Koordinaten hast, weise sie den Variabeln <code class="docutils literal notranslate"><span class="pre">x_alt</span></code>, resp. <code class="docutils literal notranslate"><span class="pre">y_alt</span></code> zu.
 Hinweis: Die Antwort ist verblüffend einfach. Verbringe nicht allzu viel Zeit mit dieser Übung. Frage mich oder deine Nachbarn, wenn du hier nicht weiterkommst.</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Schritt 1</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">sternwarte</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>shapely.geometry.point.Point
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Schritt 2</span>
+<span class="c1"># Es handelt sich offenbar um ein &quot;Shapely&quot; objekt https://shapely.readthedocs.io/en/latest/manual.html</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Schritt 3</span>
+<span class="c1"># Es sind diverse Methods mit diesem Datentyp assoziiert: https://shapely.readthedocs.io/en/latest/manual.html#general-attributes-and-methods</span>
+<span class="n">sternwarte</span><span class="o">.</span><span class="n">geom_type</span>
+
+<span class="c1"># Punkt objekte haben x, y und evt. z Koordinaten: https://shapely.readthedocs.io/en/latest/manual.html#points</span>
+<span class="n">sternwarte</span><span class="o">.</span><span class="n">x</span>
+<span class="n">sternwarte</span><span class="o">.</span><span class="n">y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1200000.0
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ubung-2-zufallswert-addieren">
+<h2>Übung 2: Zufallswert addieren<a class="headerlink" href="#ubung-2-zufallswert-addieren" title="Permalink to this headline">¶</a></h2>
+<p>Jetzt, wo wir die Koordinaten aus extrahieren können weisen wir sie zwei neuen Variabeln zu: <code class="docutils literal notranslate"><span class="pre">x_alt</span></code>, <code class="docutils literal notranslate"><span class="pre">y_alt</span></code>. Danach müssen wir eine Zufallswert zwischen -100 und 100 generieren, den wir zu <code class="docutils literal notranslate"><span class="pre">x_alt</span></code> resp. <code class="docutils literal notranslate"><span class="pre">y_alt</span></code> addieren können (das Koordinatensystem ist ja in Metern).  Wenn ich nach «Python random number» im Internet suche dann ist mein erstes Resultat bereits die Funktion <code class="docutils literal notranslate"><span class="pre">randrange</span></code> aus dem Modul <code class="docutils literal notranslate"><span class="pre">random</span></code>.</p>
+<p>Importiere dieses Modul und nutze die genannte Funktion um einen Versatz je für <code class="docutils literal notranslate"><span class="pre">x</span></code> und <code class="docutils literal notranslate"><span class="pre">y</span></code> zu generieren. Addiere diese beiden Zahlen zu <code class="docutils literal notranslate"><span class="pre">x_alt</span></code> resp. <code class="docutils literal notranslate"><span class="pre">y_alt</span></code> und speichere die Outputs als <code class="docutils literal notranslate"><span class="pre">x_neu</span></code> und <code class="docutils literal notranslate"><span class="pre">y_neu</span></code>.
+Nun können wir wieder <code class="docutils literal notranslate"><span class="pre">Point()</span></code> verwenden um aus <code class="docutils literal notranslate"><span class="pre">x_neu</span></code>, <code class="docutils literal notranslate"><span class="pre">y_neu</span></code> eine neue Punkt-Geometrie zu erstellen. Speichere diese neue Geometrie unter der Variabel <code class="docutils literal notranslate"><span class="pre">sternwarte_neu</span></code>.</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_alt</span> <span class="o">=</span> <span class="n">sternwarte</span><span class="o">.</span><span class="n">x</span>
+<span class="n">y_alt</span> <span class="o">=</span> <span class="n">sternwarte</span><span class="o">.</span><span class="n">y</span>
+
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">x_neu</span> <span class="o">=</span> <span class="n">x_alt</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">y_neu</span> <span class="o">=</span> <span class="n">y_alt</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="n">sternwarte_neu</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="n">x_neu</span><span class="p">,</span> <span class="n">y_neu</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sternwarte_neu</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>POINT (2600073 1200016)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ubung-3-arbeitsschritte-in-eine-function-verwandeln">
+<h2>Übung 3: Arbeitsschritte in eine <em>Function</em> verwandeln<a class="headerlink" href="#ubung-3-arbeitsschritte-in-eine-function-verwandeln" title="Permalink to this headline">¶</a></h2>
+<p>Jetzt sind die Einzelschritte zur Verschiebung eines Punktes klar. Da wir dies für viele Punkte machen müssen, ist es sinnvoll, aus den Arbeitsschritten eine <em>Function</em> zu erstellen. Erstelle eine Function <code class="docutils literal notranslate"><span class="pre">point_offset</span></code> welche als Input ein <code class="docutils literal notranslate"><span class="pre">Point()</span></code>-Objekt nimmt und ein leicht verschobenes <code class="docutils literal notranslate"><span class="pre">Point()</span></code>-Objekt zurück gibt. Wenn du möchtest kannst du die Distanz der Verschiebung als optionalen Parameter (wichtig!) definieren.</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">point_offset</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="n">distance</span> <span class="o">=</span> <span class="mi">100</span><span class="p">):</span>
+    <span class="n">x_alt</span> <span class="o">=</span> <span class="n">point</span><span class="o">.</span><span class="n">x</span>
+    <span class="n">y_alt</span> <span class="o">=</span> <span class="n">point</span><span class="o">.</span><span class="n">y</span>
+
+    <span class="n">distance</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">distance</span><span class="p">)</span>
+
+    <span class="n">x_neu</span> <span class="o">=</span> <span class="n">x_alt</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="o">-</span><span class="n">distance</span><span class="p">,</span><span class="n">distance</span><span class="p">)</span>
+    <span class="n">y_neu</span> <span class="o">=</span> <span class="n">y_alt</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="o">-</span><span class="n">distance</span><span class="p">,</span><span class="n">distance</span><span class="p">)</span>
+
+    <span class="n">point_off</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="n">x_neu</span><span class="p">,</span> <span class="n">y_neu</span><span class="p">)</span>
+
+    <span class="k">return</span><span class="p">(</span><span class="n">point_off</span><span class="p">)</span>
+
+<span class="n">point_offset</span><span class="p">(</span><span class="n">sternwarte</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/02_04_Einzelpunkt_Verschieben_15_0.svg" src="_images/02_04_Einzelpunkt_Verschieben_15_0.svg" /></div>
+</div>
+</div>
+<div class="section" id="output-visualisieren">
+<h2>Output visualisieren<a class="headerlink" href="#output-visualisieren" title="Permalink to this headline">¶</a></h2>
+<p>Nun ist es wichtig, dass wir unsere Function visuell überprüfen. Wir wenden die Function 1’000 mal auf den Punkt <code class="docutils literal notranslate"><span class="pre">sternwarte</span></code> an und schauen mal wie die Punkte verteilt werden. Für diesen Schritt gebe ich euch den fertigen Code, da ihr die dafür benötigten Techniken noch nicht gelernt habt. Füge diesen Code in dein Script ein und führe ihn aus. Allenfalls musst du den Code leicht an deine Situation anpassen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoSeries</span><span class="p">([</span><span class="n">point_offset</span><span class="p">(</span><span class="n">sternwarte</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1000</span><span class="p">)])</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">gpd</span><span class="o">.</span><span class="n">GeoSeries</span><span class="p">(</span><span class="n">sternwarte</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span> <span class="o">=</span> <span class="n">ax</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="_images/02_04_Einzelpunkt_Verschieben_17_1.png" src="_images/02_04_Einzelpunkt_Verschieben_17_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="optionale-ubung-fur-hochmotivierte-sehr-anspruchsvoll">
+<h2>Optionale Übung für <em>Hoch</em>motivierte (sehr anspruchsvoll)<a class="headerlink" href="#optionale-ubung-fur-hochmotivierte-sehr-anspruchsvoll" title="Permalink to this headline">¶</a></h2>
+<p>Wie in der obigen Grafik ersichtlich ist die Verteilung der Punkte bei unserer Herangehensweise Quadratisch. Im Extremfall liegt ein Punkt 100m östlich und 100m nördlich vom Ursprungspunkt entfernt, die euklidische Distanz zum Ursprungspunkt beträgt dann 141 Meter (<span class="math notranslate nohighlight">\(\sqrt{100^2+100^2}\)</span>). Wen das auch stört, der kann eine alternative Methode entwickeln den Punkt um maximal 100m zu verschieben. Tipps dazu könnt ihr gerne bei uns abholen.</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">point_offset2</span><span class="p">(</span><span class="n">point</span><span class="p">,</span><span class="n">distance</span><span class="p">,</span> <span class="n">distribution</span> <span class="o">=</span> <span class="s2">&quot;uniform&quot;</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">random</span>
+    <span class="kn">import</span> <span class="nn">math</span>
+    <span class="kn">import</span> <span class="nn">shapely</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">point</span><span class="o">.</span><span class="n">x</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">point</span><span class="o">.</span><span class="n">y</span>
+    <span class="c1"># Ein Winkel von 360 wird in Radians konvertiert</span>
+    <span class="n">rad</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">360</span><span class="p">))</span>
+    <span class="c1"># zwei Varianten: &quot;uniforme Verteilung oder Normalverteilung&quot;</span>
+    <span class="k">if</span> <span class="n">distribution</span> <span class="o">==</span> <span class="s2">&quot;uniform&quot;</span><span class="p">:</span>
+        <span class="n">offdist</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="o">-</span><span class="n">distance</span><span class="p">,</span><span class="n">distance</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">distribution</span> <span class="o">==</span> <span class="s2">&quot;normal&quot;</span><span class="p">:</span>
+        <span class="n">offdist</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">normalvariate</span><span class="p">(</span><span class="n">mu</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">sigma</span> <span class="o">=</span> <span class="n">distance</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+    <span class="c1"># Mit der Cosinusfunktion, dem Winkel (in Radians) und der Distanz wird der y_offset bestimmt</span>
+    <span class="n">y_offset</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">rad</span><span class="p">)</span><span class="o">*</span><span class="n">offdist</span>
+    <span class="c1"># Mit der Sinusfunktion wird der x_offset bestimmt</span>
+    <span class="n">x_offset</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">rad</span><span class="p">)</span><span class="o">*</span><span class="n">offdist</span>
+    <span class="n">x_neu</span> <span class="o">=</span> <span class="n">x</span><span class="o">+</span><span class="n">x_offset</span>
+    <span class="n">y_neu</span> <span class="o">=</span> <span class="n">y</span><span class="o">+</span><span class="n">y_offset</span>
+    <span class="n">point_off</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="n">x_neu</span><span class="p">,</span> <span class="n">y_neu</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">point_off</span><span class="p">)</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoSeries</span><span class="p">([</span><span class="n">point_offset2</span><span class="p">(</span><span class="n">sternwarte</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span> <span class="s2">&quot;uniform&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">)])</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">gpd</span><span class="o">.</span><span class="n">GeoSeries</span><span class="p">(</span><span class="n">sternwarte</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span> <span class="o">=</span> <span class="n">ax</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="_images/02_04_Einzelpunkt_Verschieben_19_1.png" src="_images/02_04_Einzelpunkt_Verschieben_19_1.png" />
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoSeries</span><span class="p">([</span><span class="n">point_offset2</span><span class="p">(</span><span class="n">sternwarte</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span> <span class="s2">&quot;normal&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">)])</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">gpd</span><span class="o">.</span><span class="n">GeoSeries</span><span class="p">(</span><span class="n">sternwarte</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span> <span class="o">=</span> <span class="n">ax</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="_images/02_04_Einzelpunkt_Verschieben_20_1.png" src="_images/02_04_Einzelpunkt_Verschieben_20_1.png" />
+</div>
+</div>
 </div>
 </div>
 
