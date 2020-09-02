@@ -13,10 +13,11 @@ Wir beginnen damit, einfache Datentypen wie Zahlen, Text, boolsche Variabeln (si
 7. Erstelle eine boolsche Variable blond und setzte sie auf True wenn diese Eigenschaft auf dich zutrifft und False falls nicht. 
 
 
-**Für R Nutzer**:
+```{admonition} Für R Nutzer
+:class: tip
 - In R gibt es die gleichen Primitiven Datentypen wie in Python: Boolean, String, Integer, Float. Die Bezeichnung ist jedoch leicht anders (Logical, Character, Integer, Numeric, Double)
 - In R können Variablen genau gleich zugewiesen werden wie in Python (mit dem `=` Symbol). In R gibt es zudem noch die Möglichkeit, Variablen mit `<-` zu zuweisen, in Python jedoch nicht 
-
+```
 
 ## Übung 2: Lists
 
@@ -24,7 +25,10 @@ Wir beginnen damit, einfache Datentypen wie Zahlen, Text, boolsche Variabeln (si
 2. Erstelle eine zweite Variable `nachnamen` bestehend aus einer *List* mit 3 Nachnamen
 3. Erstelle eine Variable `groessen` bestehend aus einer *List* mit 3 Grössenangaben in Zentimeter.
 
-**Für R Nutzer**: Eine Python List entspricht eines R Vectors 
+```{admonition} Für R Nutzer
+:class: tip
+Eine Python List entspricht eines R Vectors 
+```
 
 vornamen = ["Christopher", "Henning", "Severin"]
 nachnamen = ["Annen","May", "Kantereit"]
@@ -35,7 +39,10 @@ groessen = [174, 182, 162]
 
 Wie erhältst du den ersten Eintrag in der Variable `vornamen`? Wie erhältst du den letzten Eintrag? Tipp: nutze dazu `[` und `]` sowie eine Zahl.
 
-**Für R Nutzer**: In R werden Elemente aus Vectors auf die gleiche Weise extrahiert. Nur ist in R das erste Element die Nummer 1, Python beginnt bei 0 
+```{admonition} Für R Nutzer
+:class: tip
+In R werden Elemente aus Vectors auf die gleiche Weise extrahiert. Nur ist in R das erste Element die Nummer 1, Python beginnt bei 0
+```
 
 ## Übung 4: Liste ergänzen
 
@@ -71,13 +78,16 @@ Der Clou der *Dictionary* ist, dass man nun einen Eintrag mittels dem *Key* aufr
 
 langenscheidt["trump"]
 
-**Für R Nutzer**: Eine Python *Dictionary* entspricht einer R *List*. Diese werden in R nicht gleich erstellt, dafür aber auf die gleiche weise abgefragt wie *Dictionaries* in Python
+```{admonition} Für R Nutzer
+:class: tip
+Eine Python *Dictionary* entspricht einer R *List*. Diese werden in R nicht gleich erstellt, dafür aber auf die gleiche weise abgefragt wie *Dictionaries* in Python
+```
 
 ## Übung 5: Dictionary
 
 Erstelle eine *Dictionary* mit folgenden Einträgen: Vorname und Nachname von (d)einer Person. Weise diese Dictionary der Variable `me` zu.
 
-me = {"vorname": "Charles", "nachname": "Darwin"}
+me = {"vorname": "Guido", "nachname": "van Rossum"}
 
 ## Übung 6: Elemente aus Dictionary ansprechen
 
@@ -95,7 +105,10 @@ langenscheidt["trumpet"] = "trompete"
 
 Ergänze gemäss nachstehendem Beispiel die Variable `me` durch den Eintrag `groesse`. 
 
-**Für R Nutzer**: Python *Dictionaries* werden nicht nur gleich abgerufen wie R *Lists*, sonder auch gleich ergänzt.
+```{admonition} Für R Nutzer
+:class: tip
+Python *Dictionaries* werden nicht nur gleich abgerufen wie R *Lists*, sonder auch gleich ergänzt.
+```
 
 me["groesse"] = 181
 

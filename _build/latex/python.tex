@@ -65,6 +65,7 @@
 \usepackage{hypcap}% it must be loaded after hyperref.
 % Set up styles of URL: it should be placed after hyperref.
 \urlstyle{same}
+
 \addto\captionsenglish{\renewcommand{\contentsname}{Coding in GIS I}}
 
 \usepackage{sphinxmessages}
@@ -73,7 +74,7 @@
 
 
 \title{Coding in GIS}
-\date{Sep 01, 2020}
+\date{Sep 02, 2020}
 \release{}
 \author{Nils Ratnaweera}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -89,12 +90,12 @@
 \phantomsection\label{\detokenize{intro::doc}}
 
 
-Dieses Dokument ist Teil des ZHAW AGI Modul und ist inhalt der drei Blöcke “Coding in GIS”.
+Dieses Dokument ist Teil des ZHAW AGI Modul und ist Inhalt der drei Blöcke “Coding in GIS”.
 
 Noch ein kurzer Hinweis zur Typografie dieses Dokumentes:
 \begin{itemize}
 \item {} 
-Wenn sich im Fliesstext (Python oder ) Code befindet, wird \sphinxcode{\sphinxupquote{dieser Festschriftart}} dargestellt
+Wenn sich im Fliesstext (Python\sphinxhyphen{} oder R\sphinxhyphen{}) Code befindet, wird er in \sphinxcode{\sphinxupquote{dieser Festschriftart}} dargestellt
 
 \item {} 
 Alleinstehende Codezeilen werden  !! HIER NOCH BESCHREIBEN!!!
@@ -102,10 +103,35 @@ Alleinstehende Codezeilen werden  !! HIER NOCH BESCHREIBEN!!!
 \item {} 
 Englische Fachbegriffe, deren Übersetzung eher verwirrend als nützlich sein würde, werden \sphinxstyleemphasis{kursiv} hervorgehoben
 
+\end{itemize}
+
+
+\chapter{Einleitung zu diesem Block}
+\label{\detokenize{01_01_Einleitung:einleitung-zu-diesem-block}}\label{\detokenize{01_01_Einleitung::doc}}
+!EIN PAAR WORTE ZUR HEUTIGEN ÜBUNG!
+
+\begin{sphinxadmonition}{note}{Übungsziele}
+\begin{itemize}
 \item {} 
-Für R\sphinxhyphen{}Nutzer stelle ich den Vergleich zur R\sphinxhyphen{}Programmiersprache her. Wer wenig Erfahrung in R hat kann diese Teile ignorieren
+JupyterLabs aufstarten, kennenlernen und bei Bedarf personalisieren
+
+\item {} 
+Python kennen lernen, erste Interaktionen
+
+\item {} 
+Die wichtigsten Datentypen in Python kennen lernen (bool, text, integer, float, list, dictionary, dataframe)
+
+\item {} 
+Pandas DataFrames kennen lernen und einfache Manipulationen durchführen
+
+\item {} 
+Geodaten (Vektor) in Python kennenlernen
+
+\item {} 
+Geodaten in Python einfach visualisieren können
 
 \end{itemize}
+\end{sphinxadmonition}
 
 
 \chapter{Python Basics}
@@ -139,7 +165,7 @@ Erstelle eine boolsche Variable blond und setzte sie auf True wenn diese Eigensc
 
 \end{enumerate}
 
-\sphinxstylestrong{Für R Nutzer}:
+\begin{sphinxadmonition}{note}{Für R Nutzer}
 \begin{itemize}
 \item {} 
 In R gibt es die gleichen Primitiven Datentypen wie in Python: Boolean, String, Integer, Float. Die Bezeichnung ist jedoch leicht anders (Logical, Character, Integer, Numeric, Double)
@@ -148,6 +174,7 @@ In R gibt es die gleichen Primitiven Datentypen wie in Python: Boolean, String, 
 In R können Variablen genau gleich zugewiesen werden wie in Python (mit dem \sphinxcode{\sphinxupquote{=}} Symbol). In R gibt es zudem noch die Möglichkeit, Variablen mit \sphinxcode{\sphinxupquote{\textless{}\sphinxhyphen{}}} zu zuweisen, in Python jedoch nicht
 
 \end{itemize}
+\end{sphinxadmonition}
 
 
 \section{Übung 2: Lists}
@@ -164,7 +191,10 @@ Erstelle eine Variable \sphinxcode{\sphinxupquote{groessen}} bestehend aus einer
 
 \end{enumerate}
 
-\sphinxstylestrong{Für R Nutzer}: Eine Python List entspricht eines R Vectors
+\begin{sphinxadmonition}{note}{Für R Nutzer}
+
+Eine Python List entspricht eines R Vectors
+\end{sphinxadmonition}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{n}{vornamen} \PYG{o}{=} \PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Christopher}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Henning}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Severin}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}
@@ -178,7 +208,10 @@ Erstelle eine Variable \sphinxcode{\sphinxupquote{groessen}} bestehend aus einer
 \label{\detokenize{01_02_Python_Basics:ubung-3-elemente-aus-liste-ansprechen}}
 Wie erhältst du den ersten Eintrag in der Variable \sphinxcode{\sphinxupquote{vornamen}}? Wie erhältst du den letzten Eintrag? Tipp: nutze dazu \sphinxcode{\sphinxupquote{{[}}} und \sphinxcode{\sphinxupquote{{]}}} sowie eine Zahl.
 
-\sphinxstylestrong{Für R Nutzer}: In R werden Elemente aus Vectors auf die gleiche Weise extrahiert. Nur ist in R das erste Element die Nummer 1, Python beginnt bei 0
+\begin{sphinxadmonition}{note}{Für R Nutzer}
+
+In R werden Elemente aus Vectors auf die gleiche Weise extrahiert. Nur ist in R das erste Element die Nummer 1, Python beginnt bei 0
+\end{sphinxadmonition}
 
 
 \section{Übung 4: Liste ergänzen}
@@ -229,7 +262,10 @@ Der Clou der \sphinxstyleemphasis{Dictionary} ist, dass man nun einen Eintrag mi
 \PYGZsq{}erdichten\PYGZhy{} schwindeln\PYGZhy{} sich aus den Fingern saugen\PYGZsq{}
 \end{sphinxVerbatim}
 
-\sphinxstylestrong{Für R Nutzer}: Eine Python \sphinxstyleemphasis{Dictionary} entspricht einer R \sphinxstyleemphasis{List}. Diese werden in R nicht gleich erstellt, dafür aber auf die gleiche weise abgefragt wie \sphinxstyleemphasis{Dictionaries} in Python
+\begin{sphinxadmonition}{note}{Für R Nutzer}
+
+Eine Python \sphinxstyleemphasis{Dictionary} entspricht einer R \sphinxstyleemphasis{List}. Diese werden in R nicht gleich erstellt, dafür aber auf die gleiche weise abgefragt wie \sphinxstyleemphasis{Dictionaries} in Python
+\end{sphinxadmonition}
 
 
 \section{Übung 5: Dictionary}
@@ -237,7 +273,7 @@ Der Clou der \sphinxstyleemphasis{Dictionary} ist, dass man nun einen Eintrag mi
 Erstelle eine \sphinxstyleemphasis{Dictionary} mit folgenden Einträgen: Vorname und Nachname von (d)einer Person. Weise diese Dictionary der Variable \sphinxcode{\sphinxupquote{me}} zu.
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n}{me} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{vorname}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Charles}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{nachname}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Darwin}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{\PYGZcb{}}
+\PYG{n}{me} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{vorname}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Guido}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{nachname}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{van Rossum}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{\PYGZcb{}}
 \end{sphinxVerbatim}
 
 
@@ -252,7 +288,7 @@ Rufe verschiedene Elemente aus der Dictionary via dem \sphinxstyleemphasis{Key} 
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYGZsq{}Darwin\PYGZsq{}
+\PYGZsq{}van Rossum\PYGZsq{}
 \end{sphinxVerbatim}
 
 
@@ -266,7 +302,10 @@ Um einer \sphinxstyleemphasis{Dictionary} mit einem weiteren Eintrag zu ergänze
 
 Ergänze gemäss nachstehendem Beispiel die Variable \sphinxcode{\sphinxupquote{me}} durch den Eintrag \sphinxcode{\sphinxupquote{groesse}}.
 
-\sphinxstylestrong{Für R Nutzer}: Python \sphinxstyleemphasis{Dictionaries} werden nicht nur gleich abgerufen wie R \sphinxstyleemphasis{Lists}, sonder auch gleich ergänzt.
+\begin{sphinxadmonition}{note}{Für R Nutzer}
+
+Python \sphinxstyleemphasis{Dictionaries} werden nicht nur gleich abgerufen wie R \sphinxstyleemphasis{Lists}, sonder auch gleich ergänzt.
+\end{sphinxadmonition}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{n}{me}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{groesse}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{181}
@@ -466,8 +505,6 @@ Die \sphinxstyleemphasis{DataFrame} \sphinxcode{\sphinxupquote{zeckenstiche}} be
 \PYGZlt{}AxesSubplot:xlabel=\PYGZsq{}x\PYGZsq{}, ylabel=\PYGZsq{}y\PYGZsq{}\PYGZgt{}
 \end{sphinxVerbatim}
 
-\noindent\sphinxincludegraphics{{01_04_Tabellarische_Daten_14_1}.png}
-
 
 \section{Übung 5: Einzelne Spalte selektieren}
 \label{\detokenize{01_04_Tabellarische_Daten:ubung-5-einzelne-spalte-selektieren}}
@@ -521,8 +558,102 @@ Auch das Erstellen einer neuen Spalte ist identisch mit der Erstellung eines neu
 \end{sphinxVerbatim}
 
 
-\chapter{Einleitung zur Übung Coding in GIS II}
-\label{\detokenize{02_01_Einleitung:einleitung-zur-ubung-coding-in-gis-ii}}\label{\detokenize{02_01_Einleitung::doc}}
+\chapter{GIS in Python}
+\label{\detokenize{01_05_GIS_in_Python:gis-in-python}}\label{\detokenize{01_05_GIS_in_Python::doc}}
+Die bisherigen Aufgaben hatten noch nicht viel mit GIS zu tun. Die Koordinaten der Zeckenstiche sind uns zwar bekannt, es handelt es dabei aber lediglich um Numerische xy\sphinxhyphen{}Werte, nicht um Geometrische Punkte mit einem Raumbezug. So bleiben uns bis jetzt alle räumlichen Operationen vorenthalten (zum Beispiel ob sich ein Stich im Wald befindet oder nicht), und wir können auch keine schönen Karten generieren.
+
+Um mit Geodaten in Python arbeiten zu können, müssen wir ein neues Modul importieren. Im Grunde genommen sind Vektordaten nicht mehr als Tabellen mit einer zusätzlichen “Geometrie”\sphinxhyphen{}Spalte, dementsprechend baut die “Geo”\sphinxhyphen{}Erweiterung auf \sphinxcode{\sphinxupquote{pandas}} auf und heisst: \sphinxcode{\sphinxupquote{geopandas}}.
+
+Du solltest \sphinxcode{\sphinxupquote{geopandas}} bereits installiert haben und das Modul in dein Script importieren. Importiere \sphinxcode{\sphinxupquote{geopandas}} mit dem Alias \sphinxcode{\sphinxupquote{gpd}}.
+
+
+\section{Übung 1: \sphinxstyleemphasis{DataFrame} zu \sphinxstyleemphasis{GeoDataFrame}}
+\label{\detokenize{01_05_GIS_in_Python:ubung-1-dataframe-zu-geodataframe}}
+Wie erwähnt sind die Zeckenstichdaten bisher lediglich als tabellarische Daten vorhanden. In ArcGIS Terminologie müssen wir die Operation “\sphinxhref{https://pro.arcgis.com/de/pro-app/tool-reference/data-management/xy-table-to-point.htm}{XY Table to Point}” durchführen. In Python heisst das: Wir wandeln eine \sphinxstyleemphasis{DataFrame} in eine \sphinxstyleemphasis{GeoDataFrame} um. Zuerst erstellen wir eine Geometrie\sphinxhyphen{}Spalte aus den xy\sphinxhyphen{}Koordinaten mit der Funktion \sphinxcode{\sphinxupquote{points\_from\_xy}} aus dem Modul \sphinxcode{\sphinxupquote{geopandas}}.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{zeckenstiche}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{geometry}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{gpd}\PYG{o}{.}\PYG{n}{points\PYGZus{}from\PYGZus{}xy}\PYG{p}{(}\PYG{n}{zeckenstiche}\PYG{o}{.}\PYG{n}{x}\PYG{p}{,} \PYG{n}{zeckenstiche}\PYG{o}{.}\PYG{n}{y}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+Der Datensatz \sphinxcode{\sphinxupquote{zeckenstiche}} hat jetzt aber noch nicht begriffen, dass es jetzt eine \sphinxcode{\sphinxupquote{GeoDataFrame}} ist. Dies müssen wir dem Objekt erst noch mitteilen:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{zeckenstiche} \PYG{o}{=} \PYG{n}{gpd}\PYG{o}{.}\PYG{n}{GeoDataFrame}\PYG{p}{(}\PYG{n}{zeckenstiche}\PYG{p}{)}
+
+\PYG{n}{zeckenstiche}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+        ID    accuracy          x          y                         geometry
+0        0   65.617154  2678971.0  1240824.0  POINT (2678971.000 1240824.000)
+1        1  257.492052  2679837.0  1240858.0  POINT (2679837.000 1240858.000)
+2        2  163.533834  2687539.0  1240881.0  POINT (2687539.000 1240881.000)
+3        3  185.000000  2674848.0  1240913.0  POINT (2674848.000 1240913.000)
+4        4  228.215231  2681771.0  1240922.0  POINT (2681771.000 1240922.000)
+...    ...         ...        ...        ...                              ...
+1071  1071  109.531946  2678005.0  1257344.0  POINT (2678005.000 1257344.000)
+1072  1072  100.489274  2678005.0  1257347.0  POINT (2678005.000 1257347.000)
+1073  1073  301.748529  2689893.0  1257351.0  POINT (2689893.000 1257351.000)
+1074  1074  301.748542  2690668.0  1257369.0  POINT (2690668.000 1257369.000)
+1075  1075  226.000000  2682852.0  1257531.0  POINT (2682852.000 1257531.000)
+
+[1076 rows x 5 columns]
+\end{sphinxVerbatim}
+
+Jetzt, wo zeckenstiche eine GeoDataFrame ist, gibt es einen einfachen weg die Punkte räumlich zu visualisieren:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{zeckenstiche}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYGZlt{}AxesSubplot:\PYGZgt{}
+\end{sphinxVerbatim}
+
+
+\section{Übung 2: Koordinatensystem festlegen}
+\label{\detokenize{01_05_GIS_in_Python:ubung-2-koordinatensystem-festlegen}}
+Wir wissen zwar, das unsere \sphinxstyleemphasis{GeoDataFrame} in Schweizer Landeskoordinaten (CH1903 LV95) zu verstehen ist, aber dies haben wir noch nirgends festgehalten. Das Koordinatensystem (Coordinate Reference System, CRS) können wir über das Attribut \sphinxcode{\sphinxupquote{crs}} der \sphinxstyleemphasis{GeoDataFrame} festhalten. Das Koordinatensystem CH1903 LV95 hat den EPSG Code 2056, demnach muss das CRS folgendermassen festgelegt werden:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{zeckenstiche} \PYG{o}{=} \PYG{n}{zeckenstiche}\PYG{o}{.}\PYG{n}{set\PYGZus{}crs}\PYG{p}{(}\PYG{n}{epsg} \PYG{o}{=} \PYG{l+m+mi}{2056}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+Nun ist das Koordinatensystem (\sphinxstyleemphasis{CRS}) als Attribut der \sphinxstyleemphasis{GeoDataFrame} gespeichert:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{zeckenstiche}\PYG{o}{.}\PYG{n}{crs}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYGZlt{}Projected CRS: EPSG:2056\PYGZgt{}
+Name: CH1903+ / LV95
+Axis Info [cartesian]:
+\PYGZhy{} E[east]: Easting (metre)
+\PYGZhy{} N[north]: Northing (metre)
+Area of Use:
+\PYGZhy{} name: Europe \PYGZhy{} Liechtenstein and Switzerland
+\PYGZhy{} bounds: (5.96, 45.82, 10.49, 47.81)
+Coordinate Operation:
+\PYGZhy{} name: Swiss Oblique Mercator 1995
+\PYGZhy{} method: Hotine Oblique Mercator (variant B)
+Datum: CH1903+
+\PYGZhy{} Ellipsoid: Bessel 1841
+\PYGZhy{} Prime Meridian: Greenwich
+\end{sphinxVerbatim}
+
+
+\section{Übung 3: Zeckenstiche als Shapefile exportieren}
+\label{\detokenize{01_05_GIS_in_Python:ubung-3-zeckenstiche-als-shapefile-exportieren}}
+Zum Schluss exportieren wir unser Datensatz in ein Shapefile, damit wir das nächste Mal direkt mit einer \sphinxstyleemphasis{GeoDataFrame} arbeiten können. Genau wie wir in einer vorherigen Übung eine pandas DataFrame mit \sphinxcode{\sphinxupquote{.to\_csv}} in eine csv exportiert haben, gibt es für GeoDataFrames die Methode \sphinxcode{\sphinxupquote{.to\_file}}. Exportiere zeckenstiche mit dieser Methode in eine Shapefile.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{zeckenstiche}\PYG{o}{.}\PYG{n}{to\PYGZus{}file}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{zeckenstiche.shp}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+
+\chapter{Einleitung zu diesem Block}
+\label{\detokenize{02_01_Einleitung:einleitung-zu-diesem-block}}\label{\detokenize{02_01_Einleitung::doc}}
 Letzte Woche habt ihr einen weiten Bogen gespannt: Von einfachen (primitiven) Datentypen bis hin zu Geodaten und deren Visualisierung. In dieser und der nächsten Übung (Coding in GIS II und III) wollen wir uns weiter mit den Zeckenstichdaten befassen. Wir werden im Wesentlichen ein Teil der Übung aus «Datenqualität und Unsicherheit» in Python rekonstruieren.
 In der Übung geht es um folgendes: Wir wissen das die Lagegenauigkeit der Zeckenstichmeldungen mit einer gewissen Unsicherheit behaftet sind. Um die Frage “Welcher Anteil der der Zeckenstiche befinden sich im Wald?” unter Berücksichtigung dieser Unsicherheit beantworten zu können, führen wir eine (Monte Carlo) Simulation durch.
 In dieser Simulation verändern wir die Position der Zeckenstichmeldungen zufällig und berechnen den Anteil der Zeckenstiche im Wald. Das zufällige Verschieben und berechnen wiederholen wir beliebig lange und bekommen für jede Wiederholung einen leicht unterschiedlichen Prozentwert. Die Verteilung dieser Prozentwerte ist die Antwort auf die ursprüngliche Frage (“Welcher Anteil…”) unter Berücksichtigung der Unsicherheit.
@@ -546,9 +677,26 @@ Schritt 5: Verteilung dieser Mittelwerte visualisieren
 
 \end{itemize}
 
+\begin{sphinxadmonition}{note}{Übungsziele}
+\begin{itemize}
+\item {} 
+Functions kennenlernen und beherrschen
 
-\chapter{Functions}
-\label{\detokenize{02_02_Functions:functions}}\label{\detokenize{02_02_Functions::doc}}
+\item {} 
+Einfache Geometrien manipulieren lernen
+
+\item {} 
+Eigene Python\sphinxhyphen{}Scripts importieren können
+
+\item {} 
+Function auf eine ganze Spalte einer (Geo\sphinxhyphen{}) DataFrame anwenden können.
+
+\end{itemize}
+\end{sphinxadmonition}
+
+
+\chapter{Input zu \sphinxstyleemphasis{Functions}}
+\label{\detokenize{02_02_Input_Functions:input-zu-functions}}\label{\detokenize{02_02_Input_Functions::doc}}
 Bevor wir uns in die Simulation stürzen müssen wir noch lernen eigene \sphinxstyleemphasis{Functions} zu schreiben: Dies ist auch nicht weiter schwierig: Eine \sphinxstyleemphasis{Function} wird mit \sphinxcode{\sphinxupquote{def}} eingeleitet, braucht einen Namen, einen Input und einen Output.
 
 Wenn wir zum Beispiel eine Function erstellen wollen die uns grüsst, so geht dies folgendermassen:
@@ -596,26 +744,901 @@ Diese \sphinxstyleemphasis{Function} ohne Input ist wenig nützlich. Meist wolle
     \PYG{k}{return}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Hallo }\PYG{l+s+s2}{\PYGZdq{}}\PYG{o}{+}\PYG{n}{vorname}\PYG{o}{+}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{!}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
 \end{sphinxVerbatim}
 
-Nun können wir der Function einen Paramter übergeben, damit wir persönlich gegrüsst werden. In folgendem Beispiel ist \sphinxcode{\sphinxupquote{vorname}} ein Parameter, “Charles” ist sein Argument.
+Nun können wir der Function einen Paramter übergeben, damit wir persönlich gegrüsst werden. In folgendem Beispiel ist \sphinxcode{\sphinxupquote{vorname}} ein Parameter, “Guido” ist sein Argument.
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n}{sag\PYGZus{}hallo}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Charles}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{n}{sag\PYGZus{}hallo}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Guido}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYGZsq{}Hallo Charles!\PYGZsq{}
+\PYGZsq{}Hallo Guido!\PYGZsq{}
 \end{sphinxVerbatim}
 
 Den Output können wir wie gewohnt einer neuen Variabel zuweisen:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n}{persoenlicher\PYGZus{}gruss} \PYG{o}{=} \PYG{n}{sag\PYGZus{}hallo}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Charles}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{n}{persoenlicher\PYGZus{}gruss} \PYG{o}{=} \PYG{n}{sag\PYGZus{}hallo}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Guido}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
 \PYG{n}{persoenlicher\PYGZus{}gruss}
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYGZsq{}Hallo Charles!\PYGZsq{}
+\PYGZsq{}Hallo Guido!\PYGZsq{}
 \end{sphinxVerbatim}
+
+
+\chapter{Übungen zu \sphinxstyleemphasis{Functions}}
+\label{\detokenize{02_03_Functions:ubungen-zu-functions}}\label{\detokenize{02_03_Functions::doc}}
+
+\section{Übung 1: Erste \sphinxstyleemphasis{Function} erstellen}
+\label{\detokenize{02_03_Functions:ubung-1-erste-function-erstellen}}
+Erstelle eine Function, die \sphinxcode{\sphinxupquote{gruezi}} heisst, einen Nachnamen als Input annimmt und per Sie grüsst. Das Resultat soll in etwa folgendermassen aussehen:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{gruezi}\PYG{p}{(}\PYG{n}{nachname}\PYG{p}{)}\PYG{p}{:}
+    \PYG{k}{return}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Guten Tag, }\PYG{l+s+s2}{\PYGZdq{}}\PYG{o}{+}\PYG{n}{nachname}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{gruezi}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Guido}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYGZsq{}Guten Tag, Guido\PYGZsq{}
+\end{sphinxVerbatim}
+
+
+\section{Übung 2: \sphinxstyleemphasis{Function} erweitern}
+\label{\detokenize{02_03_Functions:ubung-2-function-erweitern}}
+Erweitere die \sphinxstyleemphasis{Function} \sphinxcode{\sphinxupquote{gruezi}} indem eine du einen weiteren Parameter namens \sphinxcode{\sphinxupquote{anrede}} implementierst. Das Resultat soll in etwa folgendermassen aussehen:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{gruezi}\PYG{p}{(}\PYG{n}{nachname}\PYG{p}{,} \PYG{n}{anrede}\PYG{p}{)}\PYG{p}{:}
+    \PYG{k}{return}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Guten Tag, }\PYG{l+s+s2}{\PYGZdq{}}\PYG{o}{+}\PYG{n}{anrede}\PYG{o}{+}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{o}{+}\PYG{n}{nachname}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{gruezi}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{van Rossum}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Herr}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYGZsq{}Guten Tag, Herr van Rossum\PYGZsq{}
+\end{sphinxVerbatim}
+
+
+\section{Übung 3: Default\sphinxhyphen{}Werte festlegen}
+\label{\detokenize{02_03_Functions:ubung-3-default-werte-festlegen}}
+Man kann für die Parameter folgendermassen einen Standardwert festlegen: Beim Definieren der Function wird dem Parameter schon innerhalb der Klammer ein Argument zugewiesen (z.B. \sphinxcode{\sphinxupquote{anrede = "Herr oder Frau"}}). Wenn anrede bei der Verwendung von \sphinxcode{\sphinxupquote{gruezi}} nicht definiert wird, entspricht die Anrede nun «Herr oder Frau». Setzte einen Standardwert in der Anrede und teste die \sphinxstyleemphasis{Function}. Das Resultat soll in etwa folgendermassen aussehen:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{gruezi}\PYG{p}{(}\PYG{n}{nachname}\PYG{p}{,} \PYG{n}{anrede} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Herr oder Frau}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}\PYG{p}{:}
+    \PYG{k}{return}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Guten Tag, }\PYG{l+s+s2}{\PYGZdq{}}\PYG{o}{+}\PYG{n}{anrede}\PYG{o}{+}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{o}{+}\PYG{n}{nachname}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{gruezi}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{van Rossum}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYGZsq{}Guten Tag, Herr oder Frau van Rossum\PYGZsq{}
+\end{sphinxVerbatim}
+
+
+\section{Übung 4: Python\sphinxhyphen{}File in Module konvertieren}
+\label{\detokenize{02_03_Functions:ubung-4-python-file-in-module-konvertieren}}
+In der Vorlesung habt ihr gesehen, dass Modules nichts weiter sind als Python\sphinxhyphen{}Skripte in einem bestimmten Verzeichnis. Um das zu verdeutlichen kreieren wir nun unser eignes Module. Speichert dazu eure \sphinxstyleemphasis{Function} \sphinxcode{\sphinxupquote{gruezi}} in einem neuen Skript mit dem Namen “myownmodule.py” in eurer Working Directory ab. Nun könnt ihr \sphinxcode{\sphinxupquote{myownmodule}} wie jedes andere Module in euer Skript importieren.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{myownmodule}
+
+\PYG{n}{myownmodule}\PYG{o}{.}\PYG{n}{gruezi}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{van Rossum}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Herr}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYGZsq{}Guten Tag, Herr van Rossum\PYGZsq{}
+\end{sphinxVerbatim}
+
+
+\section{Weitere Hinweise zu Functions}
+\label{\detokenize{02_03_Functions:weitere-hinweise-zu-functions}}
+Hier noch zwei Hinweise zum Definieren von Functions:
+\begin{itemize}
+\item {} 
+Wenn Parameter Default\sphinxhyphen{}Argumente zugewiesen werden, dann werden sie für den Nutzer automatisch zu optionalen Parametern.
+
+\item {} 
+In der Definition einer Function werden optionale Parameter immer nach erforderlichen Parameter definiert.
+
+\end{itemize}
+
+Jetzt noch zwei Hinweise zum Abrufen von Functions:
+\begin{itemize}
+\item {} 
+Wenn die richtige Reihenfolge eingehalten wird, müssen die Parameter (z.B: \sphinxcode{\sphinxupquote{anrede =}}, \sphinxcode{\sphinxupquote{nachname =}}) nicht spezifiziert werden. Zum Beispiel:
+
+\end{itemize}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{gruezi}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{van Rossum}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Herr}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYGZsq{}Guten Tag, Herr van Rossum\PYGZsq{}
+\end{sphinxVerbatim}
+\begin{itemize}
+\item {} 
+Wenn die Parameter der Argumente spezifiziert werden, ist die Reihenfolge wiederum egal:
+
+\end{itemize}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{gruezi}\PYG{p}{(}\PYG{n}{anrede} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Herr}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{nachname} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{von Rossum}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYGZsq{}Guten Tag, Herr von Rossum\PYGZsq{}
+\end{sphinxVerbatim}
+
+
+\chapter{Einen Einzelpunkt zufällig verschieben}
+\label{\detokenize{02_04_Einzelpunkt_Verschieben:einen-einzelpunkt-zufallig-verschieben}}\label{\detokenize{02_04_Einzelpunkt_Verschieben::doc}}
+Um die Monte Carlo Simulation in Angriff zu nehmen, müssen wir als erstes einen Weg finden, wie wir Punkte zufällig verschieben können, zum Beispiel um 100m. Bei \sphinxstyleemphasis{GeoDataFrames} handelt es sich bei den Punkten um \sphinxcode{\sphinxupquote{Point()}}\sphinxhyphen{}Objekte des Modules \sphinxcode{\sphinxupquote{shapely.geometry}}. Wir importieren also genau diese \sphinxstyleemphasis{Function} und bei der Gelegenheit auch \sphinxcode{\sphinxupquote{geopandas}}:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{geopandas} \PYG{k}{as} \PYG{n+nn}{gpd}
+\PYG{k+kn}{from} \PYG{n+nn}{shapely}\PYG{n+nn}{.}\PYG{n+nn}{geometry} \PYG{k+kn}{import} \PYG{n}{Point}
+\end{sphinxVerbatim}
+
+Als erster Schritt kreieren wir einen “Testpunkt” und entwickeln eine Methode, diesen zufällig zu verschieben (was wir mit einem Punkt schaffen, schaffen wir es auch mit Tausend Punkten). Beispielsweise können wir den Testpunkt mit den Koordinaten der alten Sternwarte Bern (bzw. deren Gedenktafel, s.u.) erstellen.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{sternwarte} \PYG{o}{=} \PYG{n}{Point}\PYG{p}{(}\PYG{l+m+mi}{2600000}\PYG{p}{,}\PYG{l+m+mi}{1200000}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{sternwarte}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+POINT (2600000 1200000)
+\end{sphinxVerbatim}
+
+Dieser konstruierte Punkt liegt im neuen Schweizer Koordinatensystem (CH1903+ LV95) auf der alten Sternwarte in Bern, bzw. auf deren Gedenktafel.
+
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\noindent\sphinxincludegraphics{{sternwarte}.jpg}
+\caption{Links: Koordinatensystem der Schweiz, mit dem (alten) Referenzwert Sternwarte Bern. Quelle: lv95.bve.be.ch
+rechts: Gedenktafel an die Alte Sternwarte Bern. Quelle: aiub.unibe.ch}\label{\detokenize{02_04_Einzelpunkt_Verschieben:id1}}\end{figure}
+
+
+\section{Übung 1}
+\label{\detokenize{02_04_Einzelpunkt_Verschieben:ubung-1}}
+Wenn wir die Position eines Punktes verschieben wollen, dann müssen wir die Koordinaten wissen. Wir suchen also nach einem Weg, wie wir die x,y\sphinxhyphen{}Werte unseres Punktes \sphinxcode{\sphinxupquote{sternwarte}} zurückerhalten. Erstelle den Punkt \sphinxcode{\sphinxupquote{sternwarte}}. Versuche herauszufinden, wie das geht. Ich empfehle dazu folgende Schritte:
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+Finde heraus, um was für einen Datentyp es sich beim Punkt handelt, nutze dafür \sphinxcode{\sphinxupquote{type()}}
+
+\item {} 
+Recherchier diesen Datentyp im Internet
+
+\item {} 
+Finde heraus, was für \sphinxstyleemphasis{Attributes} und \sphinxstyleemphasis{Methods} mit dem Datentyp assoziiert sind
+
+\end{enumerate}
+
+Wenn du die \sphinxcode{\sphinxupquote{x}} und \sphinxcode{\sphinxupquote{y}} Koordinaten hast, weise sie den Variabeln \sphinxcode{\sphinxupquote{x\_alt}}, resp. \sphinxcode{\sphinxupquote{y\_alt}} zu.
+Hinweis: Die Antwort ist verblüffend einfach. Verbringe nicht allzu viel Zeit mit dieser Übung. Frage mich oder deine Nachbarn, wenn du hier nicht weiterkommst.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} Schritt 1}
+\PYG{n+nb}{type}\PYG{p}{(}\PYG{n}{sternwarte}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+shapely.geometry.point.Point
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} Schritt 2}
+\PYG{c+c1}{\PYGZsh{} Es handelt sich offenbar um ein \PYGZdq{}Shapely\PYGZdq{} objekt https://shapely.readthedocs.io/en/latest/manual.html}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} Schritt 3}
+\PYG{c+c1}{\PYGZsh{} Es sind diverse Methods mit diesem Datentyp assoziiert: https://shapely.readthedocs.io/en/latest/manual.html\PYGZsh{}general\PYGZhy{}attributes\PYGZhy{}and\PYGZhy{}methods}
+\PYG{n}{sternwarte}\PYG{o}{.}\PYG{n}{geom\PYGZus{}type}
+
+\PYG{c+c1}{\PYGZsh{} Punkt objekte haben x, y und evt. z Koordinaten: https://shapely.readthedocs.io/en/latest/manual.html\PYGZsh{}points}
+\PYG{n}{sternwarte}\PYG{o}{.}\PYG{n}{x}
+\PYG{n}{sternwarte}\PYG{o}{.}\PYG{n}{y}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+1200000.0
+\end{sphinxVerbatim}
+
+
+\section{Übung 2: Zufallswert addieren}
+\label{\detokenize{02_04_Einzelpunkt_Verschieben:ubung-2-zufallswert-addieren}}
+Jetzt, wo wir die Koordinaten aus extrahieren können weisen wir sie zwei neuen Variabeln zu: \sphinxcode{\sphinxupquote{x\_alt}}, \sphinxcode{\sphinxupquote{y\_alt}}. Danach müssen wir eine Zufallswert zwischen \sphinxhyphen{}100 und 100 generieren, den wir zu \sphinxcode{\sphinxupquote{x\_alt}} resp. \sphinxcode{\sphinxupquote{y\_alt}} addieren können (das Koordinatensystem ist ja in Metern).  Wenn ich nach «Python random number» im Internet suche dann ist mein erstes Resultat bereits die Funktion \sphinxcode{\sphinxupquote{randrange}} aus dem Modul \sphinxcode{\sphinxupquote{random}}.
+
+Importiere dieses Modul und nutze die genannte Funktion um einen Versatz je für \sphinxcode{\sphinxupquote{x}} und \sphinxcode{\sphinxupquote{y}} zu generieren. Addiere diese beiden Zahlen zu \sphinxcode{\sphinxupquote{x\_alt}} resp. \sphinxcode{\sphinxupquote{y\_alt}} und speichere die Outputs als \sphinxcode{\sphinxupquote{x\_neu}} und \sphinxcode{\sphinxupquote{y\_neu}}.
+Nun können wir wieder \sphinxcode{\sphinxupquote{Point()}} verwenden um aus \sphinxcode{\sphinxupquote{x\_neu}}, \sphinxcode{\sphinxupquote{y\_neu}} eine neue Punkt\sphinxhyphen{}Geometrie zu erstellen. Speichere diese neue Geometrie unter der Variabel \sphinxcode{\sphinxupquote{sternwarte\_neu}}.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{x\PYGZus{}alt} \PYG{o}{=} \PYG{n}{sternwarte}\PYG{o}{.}\PYG{n}{x}
+\PYG{n}{y\PYGZus{}alt} \PYG{o}{=} \PYG{n}{sternwarte}\PYG{o}{.}\PYG{n}{y}
+
+\PYG{k+kn}{import} \PYG{n+nn}{random}
+
+\PYG{n}{x\PYGZus{}neu} \PYG{o}{=} \PYG{n}{x\PYGZus{}alt} \PYG{o}{+} \PYG{n}{random}\PYG{o}{.}\PYG{n}{randrange}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{100}\PYG{p}{,}\PYG{l+m+mi}{100}\PYG{p}{)}
+\PYG{n}{y\PYGZus{}neu} \PYG{o}{=} \PYG{n}{y\PYGZus{}alt} \PYG{o}{+} \PYG{n}{random}\PYG{o}{.}\PYG{n}{randrange}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{100}\PYG{p}{,}\PYG{l+m+mi}{100}\PYG{p}{)}
+
+\PYG{n}{sternwarte\PYGZus{}neu} \PYG{o}{=} \PYG{n}{Point}\PYG{p}{(}\PYG{n}{x\PYGZus{}neu}\PYG{p}{,} \PYG{n}{y\PYGZus{}neu}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{sternwarte\PYGZus{}neu}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+POINT (2599999 1200052)
+\end{sphinxVerbatim}
+
+
+\section{Übung 3: Arbeitsschritte in eine \sphinxstyleemphasis{Function} verwandeln}
+\label{\detokenize{02_04_Einzelpunkt_Verschieben:ubung-3-arbeitsschritte-in-eine-function-verwandeln}}
+Jetzt sind die Einzelschritte zur Verschiebung eines Punktes klar. Da wir dies für viele Punkte machen müssen, ist es sinnvoll, aus den Arbeitsschritten eine \sphinxstyleemphasis{Function} zu erstellen. Erstelle eine Function \sphinxcode{\sphinxupquote{point\_offset}} welche als Input ein \sphinxcode{\sphinxupquote{Point()}}\sphinxhyphen{}Objekt nimmt und ein leicht verschobenes \sphinxcode{\sphinxupquote{Point()}}\sphinxhyphen{}Objekt zurück gibt. Wenn du möchtest kannst du die Distanz der Verschiebung als optionalen Parameter (wichtig!) definieren.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{point\PYGZus{}offset}\PYG{p}{(}\PYG{n}{point}\PYG{p}{,} \PYG{n}{distance} \PYG{o}{=} \PYG{l+m+mi}{100}\PYG{p}{)}\PYG{p}{:}
+    \PYG{n}{x\PYGZus{}alt} \PYG{o}{=} \PYG{n}{point}\PYG{o}{.}\PYG{n}{x}
+    \PYG{n}{y\PYGZus{}alt} \PYG{o}{=} \PYG{n}{point}\PYG{o}{.}\PYG{n}{y}
+
+    \PYG{n}{distance} \PYG{o}{=} \PYG{n+nb}{int}\PYG{p}{(}\PYG{n}{distance}\PYG{p}{)}
+
+    \PYG{n}{x\PYGZus{}neu} \PYG{o}{=} \PYG{n}{x\PYGZus{}alt} \PYG{o}{+} \PYG{n}{random}\PYG{o}{.}\PYG{n}{randrange}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{n}{distance}\PYG{p}{,}\PYG{n}{distance}\PYG{p}{)}
+    \PYG{n}{y\PYGZus{}neu} \PYG{o}{=} \PYG{n}{y\PYGZus{}alt} \PYG{o}{+} \PYG{n}{random}\PYG{o}{.}\PYG{n}{randrange}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{n}{distance}\PYG{p}{,}\PYG{n}{distance}\PYG{p}{)}
+
+    \PYG{n}{point\PYGZus{}off} \PYG{o}{=} \PYG{n}{Point}\PYG{p}{(}\PYG{n}{x\PYGZus{}neu}\PYG{p}{,} \PYG{n}{y\PYGZus{}neu}\PYG{p}{)}
+
+    \PYG{k}{return}\PYG{p}{(}\PYG{n}{point\PYGZus{}off}\PYG{p}{)}
+
+\PYG{n}{point\PYGZus{}offset}\PYG{p}{(}\PYG{n}{sternwarte}\PYG{p}{,} \PYG{l+m+mi}{100}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYGZlt{}shapely.geometry.point.Point at 0x7f68d941e110\PYGZgt{}
+\end{sphinxVerbatim}
+
+
+\section{Output visualisieren}
+\label{\detokenize{02_04_Einzelpunkt_Verschieben:output-visualisieren}}
+Nun ist es wichtig, dass wir unsere Function visuell überprüfen. Wir wenden die Function 1’000 mal auf den Punkt \sphinxcode{\sphinxupquote{sternwarte}} an und schauen mal wie die Punkte verteilt werden. Für diesen Schritt gebe ich euch den fertigen Code, da ihr die dafür benötigten Techniken noch nicht gelernt habt. Füge diesen Code in dein Script ein und führe ihn aus. Allenfalls musst du den Code leicht an deine Situation anpassen.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{ax} \PYG{o}{=} \PYG{n}{gpd}\PYG{o}{.}\PYG{n}{GeoSeries}\PYG{p}{(}\PYG{p}{[}\PYG{n}{point\PYGZus{}offset}\PYG{p}{(}\PYG{n}{sternwarte}\PYG{p}{)} \PYG{k}{for} \PYG{n}{x} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{l+m+mi}{1000}\PYG{p}{)}\PYG{p}{]}\PYG{p}{)}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{p}{)}
+\PYG{n}{gpd}\PYG{o}{.}\PYG{n}{GeoSeries}\PYG{p}{(}\PYG{n}{sternwarte}\PYG{p}{)}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{ax} \PYG{o}{=} \PYG{n}{ax}\PYG{p}{,} \PYG{n}{color} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{red}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYGZlt{}AxesSubplot:\PYGZgt{}
+\end{sphinxVerbatim}
+
+
+\section{Optionale Übung für \sphinxstyleemphasis{Hoch}motivierte (sehr anspruchsvoll)}
+\label{\detokenize{02_04_Einzelpunkt_Verschieben:optionale-ubung-fur-hochmotivierte-sehr-anspruchsvoll}}
+Wie in der obigen Grafik ersichtlich ist die Verteilung der Punkte bei unserer Herangehensweise Quadratisch. Im Extremfall liegt ein Punkt 100m östlich und 100m nördlich vom Ursprungspunkt entfernt, die euklidische Distanz zum Ursprungspunkt beträgt dann 141 Meter (\(\sqrt{100^2+100^2}\)). Wen das auch stört, der kann eine alternative Methode entwickeln den Punkt um maximal 100m zu verschieben. Tipps dazu könnt ihr gerne bei uns abholen.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{point\PYGZus{}offset2}\PYG{p}{(}\PYG{n}{point}\PYG{p}{,}\PYG{n}{distance}\PYG{p}{,} \PYG{n}{distribution} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{uniform}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}\PYG{p}{:}
+    \PYG{k+kn}{import} \PYG{n+nn}{random}
+    \PYG{k+kn}{import} \PYG{n+nn}{math}
+    \PYG{k+kn}{import} \PYG{n+nn}{shapely}
+    \PYG{n}{x} \PYG{o}{=} \PYG{n}{point}\PYG{o}{.}\PYG{n}{x}
+    \PYG{n}{y} \PYG{o}{=} \PYG{n}{point}\PYG{o}{.}\PYG{n}{y}
+    \PYG{c+c1}{\PYGZsh{} Ein Winkel von 360 wird in Radians konvertiert}
+    \PYG{n}{rad} \PYG{o}{=} \PYG{n}{math}\PYG{o}{.}\PYG{n}{radians}\PYG{p}{(}\PYG{n}{random}\PYG{o}{.}\PYG{n}{uniform}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{360}\PYG{p}{)}\PYG{p}{)}
+    \PYG{c+c1}{\PYGZsh{} zwei Varianten: \PYGZdq{}uniforme Verteilung oder Normalverteilung\PYGZdq{}}
+    \PYG{k}{if} \PYG{n}{distribution} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{uniform}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:}
+        \PYG{n}{offdist} \PYG{o}{=} \PYG{n}{random}\PYG{o}{.}\PYG{n}{randrange}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{n}{distance}\PYG{p}{,}\PYG{n}{distance}\PYG{p}{)}
+    \PYG{k}{if} \PYG{n}{distribution} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{normal}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:}
+        \PYG{n}{offdist} \PYG{o}{=} \PYG{n}{random}\PYG{o}{.}\PYG{n}{normalvariate}\PYG{p}{(}\PYG{n}{mu} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{sigma} \PYG{o}{=} \PYG{n}{distance}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{)}
+    \PYG{c+c1}{\PYGZsh{} Mit der Cosinusfunktion, dem Winkel (in Radians) und der Distanz wird der y\PYGZus{}offset bestimmt}
+    \PYG{n}{y\PYGZus{}offset} \PYG{o}{=} \PYG{n}{math}\PYG{o}{.}\PYG{n}{cos}\PYG{p}{(}\PYG{n}{rad}\PYG{p}{)}\PYG{o}{*}\PYG{n}{offdist}
+    \PYG{c+c1}{\PYGZsh{} Mit der Sinusfunktion wird der x\PYGZus{}offset bestimmt}
+    \PYG{n}{x\PYGZus{}offset} \PYG{o}{=} \PYG{n}{math}\PYG{o}{.}\PYG{n}{sin}\PYG{p}{(}\PYG{n}{rad}\PYG{p}{)}\PYG{o}{*}\PYG{n}{offdist}
+    \PYG{n}{x\PYGZus{}neu} \PYG{o}{=} \PYG{n}{x}\PYG{o}{+}\PYG{n}{x\PYGZus{}offset}
+    \PYG{n}{y\PYGZus{}neu} \PYG{o}{=} \PYG{n}{y}\PYG{o}{+}\PYG{n}{y\PYGZus{}offset}
+    \PYG{n}{point\PYGZus{}off} \PYG{o}{=} \PYG{n}{Point}\PYG{p}{(}\PYG{n}{x\PYGZus{}neu}\PYG{p}{,} \PYG{n}{y\PYGZus{}neu}\PYG{p}{)}
+    \PYG{k}{return}\PYG{p}{(}\PYG{n}{point\PYGZus{}off}\PYG{p}{)}
+
+\PYG{n}{ax} \PYG{o}{=} \PYG{n}{gpd}\PYG{o}{.}\PYG{n}{GeoSeries}\PYG{p}{(}\PYG{p}{[}\PYG{n}{point\PYGZus{}offset2}\PYG{p}{(}\PYG{n}{sternwarte}\PYG{p}{,}\PYG{l+m+mi}{100}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{uniform}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)} \PYG{k}{for} \PYG{n}{x} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{1000}\PYG{p}{)}\PYG{p}{]}\PYG{p}{)}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{p}{)}
+\PYG{n}{gpd}\PYG{o}{.}\PYG{n}{GeoSeries}\PYG{p}{(}\PYG{n}{sternwarte}\PYG{p}{)}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{ax} \PYG{o}{=} \PYG{n}{ax}\PYG{p}{,} \PYG{n}{color} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{red}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYGZlt{}AxesSubplot:\PYGZgt{}
+\end{sphinxVerbatim}
+
+\noindent\sphinxincludegraphics{{02_04_Einzelpunkt_Verschieben_19_1}.png}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{ax} \PYG{o}{=} \PYG{n}{gpd}\PYG{o}{.}\PYG{n}{GeoSeries}\PYG{p}{(}\PYG{p}{[}\PYG{n}{point\PYGZus{}offset2}\PYG{p}{(}\PYG{n}{sternwarte}\PYG{p}{,}\PYG{l+m+mi}{100}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{normal}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)} \PYG{k}{for} \PYG{n}{x} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{1000}\PYG{p}{)}\PYG{p}{]}\PYG{p}{)}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{p}{)}
+\PYG{n}{gpd}\PYG{o}{.}\PYG{n}{GeoSeries}\PYG{p}{(}\PYG{n}{sternwarte}\PYG{p}{)}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{ax} \PYG{o}{=} \PYG{n}{ax}\PYG{p}{,} \PYG{n}{color} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{red}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYGZlt{}AxesSubplot:\PYGZgt{}
+\end{sphinxVerbatim}
+
+\noindent\sphinxincludegraphics{{02_04_Einzelpunkt_Verschieben_20_1}.png}
+
+
+\chapter{Punkte einer GeoDataFrame zufällig verschieben}
+\label{\detokenize{02_05_Punkte_einer_GeoDataFrame_verschieben:punkte-einer-geodataframe-zufallig-verschieben}}\label{\detokenize{02_05_Punkte_einer_GeoDataFrame_verschieben::doc}}
+Nun wollen wir den ganzen Zauber auf unsere richtigen Daten, die Zeckenstiche, anwenden. Dazu müssen wir zuerst den Zeckenstichdatensatz einlesen. Nutzt dazu die Function \sphinxcode{\sphinxupquote{gpd.read\_file()}} um das Shapefile, welches wir letzte Woche abgespeichert hatten, zu importieren. Wer dieses Shapefile nicht hat, findet eine Version auf Moodle. Speichere die Daten in als Variabel \sphinxcode{\sphinxupquote{zeckenstiche}}.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{pandas} \PYG{k}{as} \PYG{n+nn}{pd}
+\PYG{k+kn}{import} \PYG{n+nn}{geopandas} \PYG{k}{as} \PYG{n+nn}{gpd}
+\PYG{k+kn}{import} \PYG{n+nn}{random}
+\PYG{k+kn}{from} \PYG{n+nn}{shapely}\PYG{n+nn}{.}\PYG{n+nn}{geometry} \PYG{k+kn}{import} \PYG{n}{Point}
+
+\PYG{n}{zeckenstiche} \PYG{o}{=} \PYG{n}{gpd}\PYG{o}{.}\PYG{n}{read\PYGZus{}file}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{zeckenstiche.shp}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+
+
+\PYG{k}{def} \PYG{n+nf}{point\PYGZus{}offset}\PYG{p}{(}\PYG{n}{point}\PYG{p}{,} \PYG{n}{distance} \PYG{o}{=} \PYG{l+m+mi}{100}\PYG{p}{)}\PYG{p}{:}
+    \PYG{n}{x\PYGZus{}alt} \PYG{o}{=} \PYG{n}{point}\PYG{o}{.}\PYG{n}{x}
+    \PYG{n}{y\PYGZus{}alt} \PYG{o}{=} \PYG{n}{point}\PYG{o}{.}\PYG{n}{y}
+
+    \PYG{n}{distance} \PYG{o}{=} \PYG{n+nb}{int}\PYG{p}{(}\PYG{n}{distance}\PYG{p}{)}
+
+    \PYG{n}{x\PYGZus{}neu} \PYG{o}{=} \PYG{n}{x\PYGZus{}alt} \PYG{o}{+} \PYG{n}{random}\PYG{o}{.}\PYG{n}{randrange}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{n}{distance}\PYG{p}{,}\PYG{n}{distance}\PYG{p}{)}
+    \PYG{n}{y\PYGZus{}neu} \PYG{o}{=} \PYG{n}{y\PYGZus{}alt} \PYG{o}{+} \PYG{n}{random}\PYG{o}{.}\PYG{n}{randrange}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{n}{distance}\PYG{p}{,}\PYG{n}{distance}\PYG{p}{)}
+
+    \PYG{n}{point\PYGZus{}off} \PYG{o}{=} \PYG{n}{Point}\PYG{p}{(}\PYG{n}{x\PYGZus{}neu}\PYG{p}{,} \PYG{n}{y\PYGZus{}neu}\PYG{p}{)}
+
+    \PYG{k}{return}\PYG{p}{(}\PYG{n}{point\PYGZus{}off}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+
+\section{Übung 1: Alle Zeckenstiche zufällig verschieben}
+\label{\detokenize{02_05_Punkte_einer_GeoDataFrame_verschieben:ubung-1-alle-zeckenstiche-zufallig-verschieben}}
+Um in \sphinxstyleemphasis{DataFrames} / \sphinxstyleemphasis{GeoDataFrames} ganze Spalten oder Zeilen zu verändern, stehen einem die \sphinxstyleemphasis{Methods} \sphinxcode{\sphinxupquote{ma}}p, \sphinxcode{\sphinxupquote{apply}} und \sphinxcode{\sphinxupquote{applymap}} zur Verfügung. Es lohnt sich sehr, die verschiedenen Anwendungsbereiche dieser \sphinxstyleemphasis{Methods} kennen zu lernen, doch das würde den Umfang dieses Kurses überschreiten. Heute brauchen wir lediglich \sphinxcode{\sphinxupquote{apply}}, welches wir auf die \sphinxcode{\sphinxupquote{geometry}}\sphinxhyphen{}Spalte unserer \sphinxstyleemphasis{GeoDataFrame} anwenden.
+Um unsere eigene Function point\_offset auf die Spalte geometry anzuwenden gehst du wie folgt vor: Selektiere die entsprechende Spalte (mit \sphinxcode{\sphinxupquote{{[}"spaltenname"{]}}}) und verwende die Method apply mit der selbst erstellt Function point\_offset als einziges Argument, und zwar ohne Klammer.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{zeckenstiche}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{geometry}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{apply}\PYG{p}{(}\PYG{n}{point\PYGZus{}offset}\PYG{p}{)}\PYG{o}{.}\PYG{n}{head}\PYG{p}{(}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} .head kann man weglassen}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+0    POINT (2679058.000 1240873.000)
+1    POINT (2679849.000 1240867.000)
+2    POINT (2687632.000 1240840.000)
+3    POINT (2674751.000 1240826.000)
+4    POINT (2681812.000 1240976.000)
+Name: geometry, dtype: geometry
+\end{sphinxVerbatim}
+
+
+\section{Übung 2: Neue GeoDataFrame mit simulierten Punkten erstellen}
+\label{\detokenize{02_05_Punkte_einer_GeoDataFrame_verschieben:ubung-2-neue-geodataframe-mit-simulierten-punkten-erstellen}}
+Was bei \sphinxcode{\sphinxupquote{apply()}} rauskommt, sind nur die neuen, verschobenen Punkte. Um diese abzuspeichern erstellen wir eine leere GeoDataFrame und weisen den Output aus \sphinxcode{\sphinxupquote{apply()}} einer neuen Spalte namens \sphinxcode{\sphinxupquote{geometry}} zu.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{zeckenstiche\PYGZus{}sim} \PYG{o}{=} \PYG{n}{gpd}\PYG{o}{.}\PYG{n}{GeoDataFrame}\PYG{p}{(}\PYG{p}{)}
+\PYG{n}{zeckenstiche\PYGZus{}sim}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{geometry}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{zeckenstiche}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{geometry}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{apply}\PYG{p}{(}\PYG{n}{point\PYGZus{}offset}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+
+\section{Übung 3: ID übernehmen}
+\label{\detokenize{02_05_Punkte_einer_GeoDataFrame_verschieben:ubung-3-id-ubernehmen}}
+Der generierte Datensatz \sphinxcode{\sphinxupquote{zeckenstiche\_sim}} verfügt nun nur über eine Geometriespalte, die anderen Spalten von \sphinxcode{\sphinxupquote{zeckenstiche}} haben wir nicht übernommen. Bei den meisten Spalten ist uns das auch egal, aber die Zeckenstich ID wäre praktisch, um den simulierten Punkt zum Original Zeckenstich zurück führen zu können.
+
+Übertrage die ID von \sphinxcode{\sphinxupquote{zeckenstiche}} auf \sphinxcode{\sphinxupquote{zeckenstiche\_sim}}. Verwende dazu die Selektion mit eckigen Klammern.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{zeckenstiche\PYGZus{}sim}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{ID}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{zeckenstiche}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{ID}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}
+\PYG{n}{zeckenstiche\PYGZus{}sim}\PYG{o}{.}\PYG{n}{head}\PYG{p}{(}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+                          geometry  ID
+0  POINT (2679045.000 1240867.000)   0
+1  POINT (2679876.000 1240954.000)   1
+2  POINT (2687529.000 1240814.000)   2
+3  POINT (2674791.000 1240958.000)   3
+4  POINT (2681774.000 1240839.000)   4
+\end{sphinxVerbatim}
+
+
+\section{Übung 4: Mehrere \sphinxstyleemphasis{GeoDataFrames} visualisieren}
+\label{\detokenize{02_05_Punkte_einer_GeoDataFrame_verschieben:ubung-4-mehrere-geodataframes-visualisieren}}
+Um zwei \sphinxstyleemphasis{GeoDataFrames} im gleichen Plot darzustellen, wird folgendermassen vorgegangen. Der erste Datensatz wird mit \sphinxcode{\sphinxupquote{.plot()}} visualisiert, wobei der Output einer Variabel  (z.B. \sphinxcode{\sphinxupquote{basemap}})  zugewiesen wird. Danach wird der zweite Datensatz ebenfalls mit \sphinxcode{\sphinxupquote{.plot()}} visualisiert, wobei auf den ersten Plot via dem Argument \sphinxcode{\sphinxupquote{ax}} verwiesen wird.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{basemap} \PYG{o}{=} \PYG{n}{zeckenstiche}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{color} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{red}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{n}{zeckenstiche\PYGZus{}sim}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{ax} \PYG{o}{=} \PYG{n}{basemap}\PYG{p}{,} \PYG{n}{color} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{blue}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYGZlt{}AxesSubplot:\PYGZgt{}
+\end{sphinxVerbatim}
+
+
+\chapter{Einleitung zu diesem Block}
+\label{\detokenize{03_01_Einleitung:einleitung-zu-diesem-block}}\label{\detokenize{03_01_Einleitung::doc}}
+!! HIER NOCH EINE EINLEITUNG SCHREIBEN !!
+
+\begin{sphinxadmonition}{note}{Übungsziele}
+\begin{itemize}
+\item {} 
+Functions kennenlernen und beherrschen
+
+\item {} 
+Einfache Geometrien manipulieren lernen
+
+\item {} 
+Eigene Python\sphinxhyphen{}Scripts importieren können
+
+\item {} 
+Function auf eine ganze Spalte einer (Geo\sphinxhyphen{}) DataFrame anwenden können.
+
+\end{itemize}
+\end{sphinxadmonition}
+
+
+\chapter{For Loops}
+\label{\detokenize{03_02_For_Loops:for-loops}}\label{\detokenize{03_02_For_Loops::doc}}
+Nirgends ist der Aspekt der Automatisierung so sichtbar wie in For Loops. Loops sind «Schleifen» wo eine Aufgabe so lange wiederholt wird, bis ein Ende erreicht worden ist. Auch For\sphinxhyphen{}Loops sind im Grunde genommen sehr einfach:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{for} \PYG{n}{platzhalter} \PYG{o+ow}{in} \PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{p}{:}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Iteration}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}\PYG{n}{platzhalter}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+Iteration 0
+Iteration 1
+Iteration 2
+\end{sphinxVerbatim}
+\begin{itemize}
+\item {} 
+for legt fest, dass eine For\sphinxhyphen{}Loop beginnt
+
+\item {} 
+Nach «for» kommt eine Platzhalter\sphinxhyphen{}Variabel, die beliebig heissen kann. Diese Variabel verändert sich innerhalb des\sphinxhyphen{}Loops
+
+\item {} 
+Nach dem Platzhalter kommt der Begriff «in»
+
+\item {} 
+Nach in wird der «Iterator» festgelegt, also worüber der For\sphinxhyphen{}Loop iterieren soll (hier: über eine Liste mit den Zahlen 0,1,2).
+
+\item {} 
+Danach kommt, wie schon bei der Funktion ein Doppelpunkt «:» der Zeigt: «Nun legen wir gleich fest was im For\sphinxhyphen{}Loop passieren soll»
+
+\item {} 
+Auf einer neuen Zeile wird eingerückt festgelegt, was in der For\sphinxhyphen{}Loop passieren soll. In unserem Fall wird wieder etwas Nonsens in die Konsole ausgespukt. Achtung: return() gibt’s in For\sphinxhyphen{}Loops nicht.
+
+\item {} 
+Der Output des obigen For\sphinxhyphen{}Loops sieht folgendermassen aus:
+
+\end{itemize}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{Iteration} \PYG{l+m+mi}{0}
+\PYG{n}{Iteration} \PYG{l+m+mi}{1}
+\PYG{n}{Iteration} \PYG{l+m+mi}{2}
+\end{sphinxVerbatim}
+\begin{itemize}
+\item {} 
+Die Variabel «platzhalter» hat nach Beendigung des\sphinxhyphen{}Loops den gespeichert, der als letztes verwendet wurde:
+
+\end{itemize}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{platzhalter}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+2
+\end{sphinxVerbatim}
+
+
+\section{Übung 1: Erste For\sphinxhyphen{}Loop erstellen}
+\label{\detokenize{03_02_For_Loops:ubung-1-erste-for-loop-erstellen}}
+Erstelle eine For\sphinxhyphen{}Loop, die über eine Liste von 3 Namen iteriert, und jede Person in der Liste grüsst (Output in die Konsole mittels \sphinxcode{\sphinxupquote{print}}).
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{for} \PYG{n}{name} \PYG{o+ow}{in} \PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Il Buono}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Il Brutto}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Il Cattivo}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{:}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Ciao }\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}\PYG{n}{name}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+Ciao  Il Buono
+Ciao  Il Brutto
+Ciao  Il Cattivo
+\end{sphinxVerbatim}
+
+
+\section{Übung 2: For\sphinxhyphen{}Loop mit \sphinxstyleliteralintitle{\sphinxupquote{range()}}}
+\label{\detokenize{03_02_For_Loops:ubung-2-for-loop-mit-range}}
+Im Dummy\sphinxhyphen{}Beispiel der Einführung iterieren wir über eine Liste mit den Werten \sphinxcode{\sphinxupquote{0}}, \sphinxcode{\sphinxupquote{1}} und \sphinxcode{\sphinxupquote{2}}. Wenn wir aber über viele Werte iterieren wollen, ist es zu mühsam händisch eine Liste mit allen Werten zu erstellen. Mit range(n) erstellt Python ein Iterator mit den Zahlen \sphinxcode{\sphinxupquote{0}} bis \sphinxcode{\sphinxupquote{n}}. Repliziere den For\sphinxhyphen{}Loop aus der Einführung und ersetzte \sphinxcode{\sphinxupquote{{[}0,1,2{]}}} mit \sphinxcode{\sphinxupquote{range(3)}}.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{for} \PYG{n}{platzhalter} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{)}\PYG{p}{:}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Iteration}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}\PYG{n}{platzhalter}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+Iteration 0
+Iteration 1
+Iteration 2
+\end{sphinxVerbatim}
+
+
+\section{Input: Output aus For\sphinxhyphen{}Loop}
+\label{\detokenize{03_02_For_Loops:input-output-aus-for-loop}}
+Bis jetzt haben wir lediglich Sachen in die Konsole herausgeben lassen, doch wie schon bei Functions ist der Zweck einer For\sphinxhyphen{}Loop meist, dass nach Durchführung etwas davon zurückbleibt. return() gibt es aber bei For\sphinxhyphen{}Loops nicht. Nehmen wir folgendes Beispiel (Brooks, M., 1997):
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{for} \PYG{n}{schlagwort} \PYG{o+ow}{in} \PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{bitch}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{lover}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{child}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{mother}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{sinner}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{saint}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{:}
+    \PYG{n}{liedzeile} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{I}\PYG{l+s+s2}{\PYGZsq{}}\PYG{l+s+s2}{m a }\PYG{l+s+s2}{\PYGZdq{}}\PYG{o}{+} \PYG{n}{schlagwort} 
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{liedzeile}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+I\PYGZsq{}m a bitch
+I\PYGZsq{}m a lover
+I\PYGZsq{}m a child
+I\PYGZsq{}m a mother
+I\PYGZsq{}m a sinner
+I\PYGZsq{}m a saint
+\end{sphinxVerbatim}
+
+Der Output von dieser For\sphinxhyphen{}Loop sind zwar sechs Liederzeilen, wenn wir die Variabel \sphinxcode{\sphinxupquote{liedzeile}} anschauen ist dort nur das Resultat aus der letzten Durchführung gespeichert. Das gleiche gilt auch für die variabel \sphinxcode{\sphinxupquote{schlagwort}}.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{liedzeile}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYGZdq{}I\PYGZsq{}m a saint\PYGZdq{}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{schlagwort}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYGZsq{}saint\PYGZsq{}
+\end{sphinxVerbatim}
+
+Das verrät uns etwas über die Funktionsweise des \sphinxstyleemphasis{For\sphinxhyphen{}Loops}: Bei jedem Durchgang werden die Variablen immer wieder überschrieben. Wenn wir also den Output des ganzen For\sphinxhyphen{}Loops abspeichern wollen, müssen wir dies etwas vorbereiten.
+Dafür erstellen wir unmittelbar for dem For\sphinxhyphen{}Loop einen leeren Behälter, zum Beispiel eine leere Liste (\sphinxcode{\sphinxupquote{strophe = {[}{]}}}). Nun können wir innerhalb des \sphinxstyleemphasis{Loops} \sphinxcode{\sphinxupquote{append()}} nutzen, um den Output von einem Durchgang dieser Liste hinzu zu fügen.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{strophe} \PYG{o}{=} \PYG{p}{[}\PYG{p}{]}
+
+\PYG{k}{for} \PYG{n}{schlagwort} \PYG{o+ow}{in} \PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{bitch}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{lover}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{child}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{mother}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{sinner}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{saint}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{:}
+    \PYG{n}{liedzeile} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{I}\PYG{l+s+s2}{\PYGZsq{}}\PYG{l+s+s2}{m a }\PYG{l+s+s2}{\PYGZdq{}}\PYG{o}{+} \PYG{n}{schlagwort} 
+    \PYG{n}{strophe}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{liedzeile}\PYG{p}{)}
+    
+\PYG{n}{strophe}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+[\PYGZdq{}I\PYGZsq{}m a bitch\PYGZdq{},
+ \PYGZdq{}I\PYGZsq{}m a lover\PYGZdq{},
+ \PYGZdq{}I\PYGZsq{}m a child\PYGZdq{},
+ \PYGZdq{}I\PYGZsq{}m a mother\PYGZdq{},
+ \PYGZdq{}I\PYGZsq{}m a sinner\PYGZdq{},
+ \PYGZdq{}I\PYGZsq{}m a saint\PYGZdq{}]
+\end{sphinxVerbatim}
+
+
+\section{Übung 3: Output aus For\sphinxhyphen{}Loop speichern}
+\label{\detokenize{03_02_For_Loops:ubung-3-output-aus-for-loop-speichern}}
+Erweitere deinen \sphinxstyleemphasis{For\sphinxhyphen{}Loop} aus Übung 1 so, dass der Output aller Durchgänge in einer Liste gespeichert werden.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{mylist} \PYG{o}{=} \PYG{p}{[}\PYG{p}{]}
+
+\PYG{k}{for} \PYG{n}{name} \PYG{o+ow}{in} \PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Il Buono}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Il Brutto}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Il Cattivo}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{:}
+    \PYG{n}{mylist}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Ciao }\PYG{l+s+s2}{\PYGZdq{}}\PYG{o}{+}\PYG{n}{name}\PYG{p}{)}
+
+\PYG{n}{mylist}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+[\PYGZsq{}Ciao Il Buono\PYGZsq{}, \PYGZsq{}Ciao Il Brutto\PYGZsq{}, \PYGZsq{}Ciao Il Cattivo\PYGZsq{}]
+\end{sphinxVerbatim}
+
+
+\chapter{Zeckenstich Simulation mit Loop}
+\label{\detokenize{03_03_Zeckenstich_Simulation:zeckenstich-simulation-mit-loop}}\label{\detokenize{03_03_Zeckenstich_Simulation::doc}}
+Letzte Woche hattet ihr alle Punkte Zeckenstich\sphinxhyphen{}GeoDataFrame einmal zufällig verschoben. Nun wo ihr die Funktionsweise von Loops kennt, könnt ihr diesen Schritt eine beliebige Anzahl mal wiederholen. Um auf den Stand der letzten Woche zu kommen müsst ihr folgende Schritte ausführen:
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+Importiert die notwenigen Module (pandas, geopandas, random)
+
+\item {} 
+Importiert die notwendigen Functions (Point aus shapely.geometry sowie die selbst erstellte Function point\_offset())
+
+\item {} 
+Importiert den Zeckenstichdatensatz
+
+\item {} 
+Rekonstruiert Übung 10 und 11 aus letzter Woche um die Zeckenstiche 1x zufällig zu verschieben
+
+\end{enumerate}
+
+Der Code für diese Schritte 1 \textendash{} 4 lauten folgendermassen:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} Schritt 1}
+\PYG{k+kn}{import} \PYG{n+nn}{pandas} \PYG{k}{as} \PYG{n+nn}{pd}
+\PYG{k+kn}{import} \PYG{n+nn}{geopandas} \PYG{k}{as} \PYG{n+nn}{gpd}
+\PYG{k+kn}{import} \PYG{n+nn}{random}
+
+\PYG{c+c1}{\PYGZsh{} Schritt 2}
+\PYG{k+kn}{from} \PYG{n+nn}{shapely}\PYG{n+nn}{.}\PYG{n+nn}{geometry} \PYG{k+kn}{import} \PYG{n}{Point}
+
+\PYG{k}{def} \PYG{n+nf}{point\PYGZus{}offset}\PYG{p}{(}\PYG{n}{point}\PYG{p}{,} \PYG{n}{distance} \PYG{o}{=} \PYG{l+m+mi}{100}\PYG{p}{)}\PYG{p}{:}
+    \PYG{n}{x\PYGZus{}alt} \PYG{o}{=} \PYG{n}{point}\PYG{o}{.}\PYG{n}{x}
+    \PYG{n}{y\PYGZus{}alt} \PYG{o}{=} \PYG{n}{point}\PYG{o}{.}\PYG{n}{y}
+
+    \PYG{n}{distance} \PYG{o}{=} \PYG{n+nb}{int}\PYG{p}{(}\PYG{n}{distance}\PYG{p}{)}
+
+    \PYG{n}{x\PYGZus{}neu} \PYG{o}{=} \PYG{n}{x\PYGZus{}alt} \PYG{o}{+} \PYG{n}{random}\PYG{o}{.}\PYG{n}{randrange}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{n}{distance}\PYG{p}{,}\PYG{n}{distance}\PYG{p}{)}
+    \PYG{n}{y\PYGZus{}neu} \PYG{o}{=} \PYG{n}{y\PYGZus{}alt} \PYG{o}{+} \PYG{n}{random}\PYG{o}{.}\PYG{n}{randrange}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{n}{distance}\PYG{p}{,}\PYG{n}{distance}\PYG{p}{)}
+
+    \PYG{n}{point\PYGZus{}off} \PYG{o}{=} \PYG{n}{Point}\PYG{p}{(}\PYG{n}{x\PYGZus{}neu}\PYG{p}{,} \PYG{n}{y\PYGZus{}neu}\PYG{p}{)}
+
+    \PYG{k}{return}\PYG{p}{(}\PYG{n}{point\PYGZus{}off}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} Schritt 3}
+\PYG{n}{zeckenstiche} \PYG{o}{=} \PYG{n}{gpd}\PYG{o}{.}\PYG{n}{read\PYGZus{}file}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{zeckenstiche.shp}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} Schritt 4}
+\PYG{n}{zeckenstiche\PYGZus{}sim} \PYG{o}{=} \PYG{n}{gpd}\PYG{o}{.}\PYG{n}{GeoDataFrame}\PYG{p}{(}\PYG{p}{)}
+\PYG{n}{zeckenstiche\PYGZus{}sim}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{geometry}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{zeckenstiche}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{geometry}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{apply}\PYG{p}{(}\PYG{n}{point\PYGZus{}offset}\PYG{p}{)}
+\PYG{n}{zeckenstiche\PYGZus{}sim}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{ID}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{zeckenstiche}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{ID}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}
+\end{sphinxVerbatim}
+
+
+\section{Übung 1: Mit For\sphinxhyphen{}Loop Monte Carlo Simulation durchführen}
+\label{\detokenize{03_03_Zeckenstich_Simulation:ubung-1-mit-for-loop-monte-carlo-simulation-durchfuhren}}
+Kombiniere den Code aus Schritt 4 (siehe vorherige Seite) mit deinem Wissen über Loops, um diese einmalige Verschiebung der Punkte 50\sphinxhyphen{}mal (mit \sphinxcode{\sphinxupquote{range(50)}}) zu wiederholen. Denk daran: Du brauchst vor dem Loop eine leere Liste (z.B. \sphinxcode{\sphinxupquote{monte\_carlo = {[}{]}}}) damit du den Output aus jedem Loop mit \sphinxcode{\sphinxupquote{append()}}  abspeichern kannst. Erstelle auch eine neue Spalte \sphinxcode{\sphinxupquote{Run\_Nr}} mit der Nummer der Durchführung (die du vom Platzhalter erhältst).
+
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\noindent\sphinxincludegraphics{{montepython}.jpg}
+\caption{Quelle \sphinxhref{https://twitter.com/GregoryRHancock/status/1179734188716707846?s=20}{twitter.com}}\label{\detokenize{03_03_Zeckenstich_Simulation:id1}}\end{figure}
+
+
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{monte\PYGZus{}carlo} \PYG{o}{=} \PYG{p}{[}\PYG{p}{]}
+\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{50}\PYG{p}{)}\PYG{p}{:}
+    \PYG{n}{zeckenstiche\PYGZus{}sim} \PYG{o}{=} \PYG{n}{gpd}\PYG{o}{.}\PYG{n}{GeoDataFrame}\PYG{p}{(}\PYG{p}{)}
+    \PYG{n}{zeckenstiche\PYGZus{}sim}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{geometry}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{zeckenstiche}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{geometry}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{apply}\PYG{p}{(}\PYG{n}{point\PYGZus{}offset}\PYG{p}{)}
+    \PYG{n}{zeckenstiche\PYGZus{}sim}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{ID}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{zeckenstiche}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{ID}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}
+    \PYG{n}{zeckenstiche\PYGZus{}sim}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Run\PYGZus{}Nr}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{i}
+    \PYG{n}{monte\PYGZus{}carlo}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{zeckenstiche\PYGZus{}sim}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+
+\section{Übung 2: GeoDataFrames aus Simulation zusammenführen}
+\label{\detokenize{03_03_Zeckenstich_Simulation:ubung-2-geodataframes-aus-simulation-zusammenfuhren}}
+Schau dir die Outputs an.
+\begin{itemize}
+\item {} 
+Mit \sphinxcode{\sphinxupquote{type()}}:
+\begin{itemize}
+\item {} 
+Was für ein Datentyp ist \sphinxcode{\sphinxupquote{zeckenstiche\_sim}}?
+
+\item {} 
+Was für ein Datentyp ist \sphinxcode{\sphinxupquote{monte\_carlo}}?
+
+\end{itemize}
+
+\item {} 
+Mit \sphinxcode{\sphinxupquote{len()}}:
+\begin{itemize}
+\item {} 
+Wie vielen Elemente hat \sphinxcode{\sphinxupquote{zeckenstiche\_sim}}?
+
+\item {} 
+Wie viele Elemente hat \sphinxcode{\sphinxupquote{monte\_carlo}}?
+
+\end{itemize}
+
+\end{itemize}
+
+Worauf ich hinaus will: \sphinxcode{\sphinxupquote{zeckenstiche\_sim}} ist eine \sphinxstyleemphasis{GeoDataFrame} und \sphinxcode{\sphinxupquote{monte\_carlo}} ist eine Liste von \sphinxstyleemphasis{GeoDataFrames}. Glücklicherweise kann man eine Liste von ähnlichen GeoDataFrames (ähnlich im Sinne von: gleiche Spaltennamen und \sphinxhyphen{}typen) mit der Funktion \sphinxcode{\sphinxupquote{concat()}} aus \sphinxcode{\sphinxupquote{pandas}} zu einer einzigen \sphinxstyleemphasis{GeoDataFrame} zusammenführen. Führe die Funktion aus und speichere den Output als \sphinxcode{\sphinxupquote{monte\_carlo\_df}}.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n+nb}{type}\PYG{p}{(}\PYG{n}{zeckenstiche\PYGZus{}sim}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+geopandas.geodataframe.GeoDataFrame
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n+nb}{type}\PYG{p}{(}\PYG{n}{monte\PYGZus{}carlo}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+list
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{zeckenstiche\PYGZus{}sim}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+1076
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{monte\PYGZus{}carlo}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+50
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{monte\PYGZus{}carlo\PYGZus{}df} \PYG{o}{=} \PYG{n}{pd}\PYG{o}{.}\PYG{n}{concat}\PYG{p}{(}\PYG{n}{monte\PYGZus{}carlo}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+
+\section{Übung 3: Simulierte Daten visualisieren}
+\label{\detokenize{03_03_Zeckenstich_Simulation:ubung-3-simulierte-daten-visualisieren}}
+Exploriere nun \sphinxcode{\sphinxupquote{monte\_carlo\_df}}? Was ist es für ein Datentyp? Was hat es für Spalten? Visualisiere den Datensatz räumlich mit \sphinxcode{\sphinxupquote{monte\_carlo\_df.plot()}}.
+Optional: Wenn du Punkte mit der gleichen ID einer Farbe zuweisen möchtest, dann erreichst du dies mit der Option \sphinxcode{\sphinxupquote{column = "ID"}} (das geht natürlich nur, wenn du im Loop auch eine solche Spalte erstellt hast)
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{monte\PYGZus{}carlo\PYGZus{}df}\PYG{o}{.}\PYG{n}{head}\PYG{p}{(}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+                          geometry  ID  Run\PYGZus{}Nr
+0  POINT (2678971.000 1240857.000)   0       0
+1  POINT (2679753.000 1240809.000)   1       0
+2  POINT (2687525.000 1240812.000)   2       0
+3  POINT (2674822.000 1240906.000)   3       0
+4  POINT (2681727.000 1240874.000)   4       0
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{monte\PYGZus{}carlo\PYGZus{}df}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{column} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{ID}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYGZlt{}AxesSubplot:\PYGZgt{}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{monte\PYGZus{}carlo\PYGZus{}df}\PYG{o}{.}\PYG{n}{to\PYGZus{}file}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{monte\PYGZus{}carlo\PYGZus{}df.shp}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+
+\chapter{Waldanteil berechnen}
+\label{\detokenize{03_04_Waldanteil_Berechnen:waldanteil-berechnen}}\label{\detokenize{03_04_Waldanteil_Berechnen::doc}}
+Nun sind wir so weit, dass wir 50 Simulation der Zeckenstiche mit zufällig verschobenen Punkten vorbereitet haben. Wir haben also die gleiche Ausgangslage, mit der ihr den Themenblock «Datenqualität und Unsicherheiten» gestartet habt. Nun geht es darum:
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+Für jeden Simulierten Punkt zu bestimmen ob er innerhalb oder ausserhalb des Waldes liegt
+
+\item {} 
+Den Anteil der Punkte im Wald pro Simulation zu bestimmen
+
+\item {} 
+Die Verteilung dieser prozentualen Anteile über alle Simulationen zusammen zu fassen (mit einem Boxplot)
+
+\end{enumerate}
+
+Lade dafür den Datensatz “Wald.zip” von Moodle herunter und entpacke das Shapefile in deine \sphinxstyleemphasis{Working Directory}. Importiere den Datensatz mit \sphinxcode{\sphinxupquote{pd.read\_file()}} und speichere es als Variable \sphinxcode{\sphinxupquote{wald}}.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{pandas} \PYG{k}{as} \PYG{n+nn}{pd}
+\PYG{k+kn}{import} \PYG{n+nn}{geopandas} \PYG{k}{as} \PYG{n+nn}{gpd}
+
+\PYG{n}{monte\PYGZus{}carlo\PYGZus{}df} \PYG{o}{=} \PYG{n}{gpd}\PYG{o}{.}\PYG{n}{read\PYGZus{}file}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{monte\PYGZus{}carlo\PYGZus{}df.shp}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+
+\PYG{n}{monte\PYGZus{}carlo\PYGZus{}df}
+
+\PYG{n}{wald} \PYG{o}{=} \PYG{n}{gpd}\PYG{o}{.}\PYG{n}{read\PYGZus{}file}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{wald.shp}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{n}{zeckenstiche} \PYG{o}{=} \PYG{n}{gpd}\PYG{o}{.}\PYG{n}{read\PYGZus{}file}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{zeckenstiche.shp}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+
+\section{Übung 1: Wald oder nicht Wald?}
+\label{\detokenize{03_04_Waldanteil_Berechnen:ubung-1-wald-oder-nicht-wald}}
+Als erstes stellt sich die Frage, welche Punkte sich innerhalb eines Wald\sphinxhyphen{}Polygons befinden. In GIS Terminologie handelt es sich hier um einen \sphinxstyleemphasis{Spatial Join}.
+
+\sphinxstyleemphasis{Spatial Join} ist als Funktion im Modul \sphinxcode{\sphinxupquote{geopandas}} mit dem namen sjoin vorhanden. Wie auf \sphinxhref{https://geopandas.org/reference/geopandas.sjoin.html}{der Hilfeseite} beschrieben, müssen wir dieser \sphinxstyleemphasis{Function} zwei \sphinxstyleemphasis{GeoDataFrames} übergeben, die ge\sphinxhyphen{}joined werden sollen. Es können weitere, optionale Parameter angepasst werden, doch bei uns passen die Default werte.
+
+Führe \sphinxcode{\sphinxupquote{gpd.sjoin()}} auf die beiden Datensätze \sphinxcode{\sphinxupquote{monte\_carlo\_df}} und \sphinxcode{\sphinxupquote{wald}} aus. Beachte, das die Reihenfolge, mit welchen du die beiden GeoDataFrames der Funktion übergibst eine Rolle spielt. Versuche beide Varianten und wähle die korrekte aus. Stelle dir dazu die Frage: Was für ein Geometrietyp (Punkt / Linie / Polygon) soll der Output haben? Speichere den Output als \sphinxcode{\sphinxupquote{mote\_carlo\_sjoin}}.
+Hinweis: Allenfalls müssen das Koordinatensystem der beiden GeoDataFrames nochmals explizit gesetzt werden (z.B. mit \sphinxcode{\sphinxupquote{wald.set\_crs(epsg = 2056,allow\_override = True)}})
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{monte\PYGZus{}carlo\PYGZus{}df} \PYG{o}{=} \PYG{n}{monte\PYGZus{}carlo\PYGZus{}df}\PYG{o}{.}\PYG{n}{set\PYGZus{}crs}\PYG{p}{(}\PYG{n}{epsg} \PYG{o}{=} \PYG{l+m+mi}{2056}\PYG{p}{)}
+\PYG{n}{wald} \PYG{o}{=} \PYG{n}{wald}\PYG{o}{.}\PYG{n}{set\PYGZus{}crs}\PYG{p}{(}\PYG{n}{epsg} \PYG{o}{=} \PYG{l+m+mi}{2056}\PYG{p}{,}\PYG{n}{allow\PYGZus{}override} \PYG{o}{=} \PYG{k+kc}{True}\PYG{p}{)}
+
+\PYG{n}{monte\PYGZus{}carlo\PYGZus{}sjoin} \PYG{o}{=} \PYG{n}{gpd}\PYG{o}{.}\PYG{n}{sjoin}\PYG{p}{(}\PYG{n}{wald}\PYG{p}{,}\PYG{n}{monte\PYGZus{}carlo\PYGZus{}df}\PYG{p}{)}
+
+\PYG{n}{monte\PYGZus{}carlo\PYGZus{}sjoin}\PYG{o}{.}\PYG{n}{head}\PYG{p}{(}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+   Wald     Shape\PYGZus{}Leng    Shape\PYGZus{}Area  \PYGZbs{}
+0     1  921225.341854  7.963237e+07   
+0     1  921225.341854  7.963237e+07   
+0     1  921225.341854  7.963237e+07   
+0     1  921225.341854  7.963237e+07   
+0     1  921225.341854  7.963237e+07   
+
+                                            geometry  index\PYGZus{}right   ID  Run\PYGZus{}Nr  
+0  POLYGON Z ((2689962.355 1245335.250 644.591, 2...        20680  236      19  
+0  POLYGON Z ((2689962.355 1245335.250 644.591, 2...        29288  236      27  
+0  POLYGON Z ((2689962.355 1245335.250 644.591, 2...        26060  236      24  
+0  POLYGON Z ((2689962.355 1245335.250 644.591, 2...         7768  236       7  
+0  POLYGON Z ((2689962.355 1245335.250 644.591, 2...         4540  236       4  
+\end{sphinxVerbatim}
+
+
+\section{Übung 2: Anteil der Punkte im Wald}
+\label{\detokenize{03_04_Waldanteil_Berechnen:ubung-2-anteil-der-punkte-im-wald}}
+Wenn wir mit \sphinxcode{\sphinxupquote{len()}} die Anzahl Zeilen zwischen \sphinxcode{\sphinxupquote{monte\_carlo\_df}} und \sphinxcode{\sphinxupquote{mote\_carlo\_sjoin}} vergleichen, sehen wir, dass sich die Anzahl von 53’800 auf 24’021 reduziert hat. Im Mittel, über alle Simulationen, befinden sich also 44.5\%  (\(\frac{24021}{53800}\)) der Zeckenstiche im Wald. Das ist ja schon mal spannend, aber uns interessiert ja vor allem die Verteilung dieser Mittelwerte zwischen den Simulationen.
+
+Wir müssen also die von sjoin übrig gebliebenen Punkte pro Durchgang zählen und durch ursprüngliche Anzahl Zeckenstiche dividieren.  Ursprünglich waren es 1’076 Punkte, wie uns len(zeckenstiche) zeigt.
+
+In der Logik: DataFrame =\textgreater{} Nach «Durchgang» Gruppieren =\textgreater{} zählen =\textgreater{} dividieren. Genau in dieser Schreibweise können wir unsere Befehlskette aufbauen:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{mittelwerte} \PYG{o}{=} \PYG{n}{monte\PYGZus{}carlo\PYGZus{}sjoin}\PYG{o}{.}\PYG{n}{groupby}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Run\PYGZus{}Nr}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}\PYG{o}{.}\PYG{n}{size}\PYG{p}{(}\PYG{p}{)}\PYG{o}{/}\PYG{l+m+mi}{1075}
+\end{sphinxVerbatim}
+
+
+\section{Übung 3: Mittelwerte Visualisieren}
+\label{\detokenize{03_04_Waldanteil_Berechnen:ubung-3-mittelwerte-visualisieren}}
+Gratuliere! Wenn du an diesem Punkt angekommen bist hast du eine ganze Monte Carlo Simulation von A bis Z mit Python durchgeführt. Von hier an steht dir der Weg frei für noch komplexere Analysen. Zum Abschluss kannst du die Mittelwerte wir nun auf einfache Weise visualisieren. Versuche dabei die Methods \sphinxcode{\sphinxupquote{plot()}} und \sphinxcode{\sphinxupquote{plot.box()}} sowie \sphinxcode{\sphinxupquote{plot.hist()}}.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{mittelwerte}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{p}{)}\PYG{o}{.}\PYG{n}{set\PYGZus{}ylim}\PYG{p}{(}\PYG{l+m+mf}{0.4}\PYG{p}{,}\PYG{l+m+mf}{0.6}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+(0.4, 0.6)
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{mittelwerte}\PYG{o}{.}\PYG{n}{plot}\PYG{o}{.}\PYG{n}{box}\PYG{p}{(}\PYG{p}{)}\PYG{o}{.}\PYG{n}{set\PYGZus{}ylim}\PYG{p}{(}\PYG{l+m+mf}{0.4}\PYG{p}{,}\PYG{l+m+mf}{0.6}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+(0.4, 0.6)
+\end{sphinxVerbatim}
+
+\noindent\sphinxincludegraphics{{03_04_Waldanteil_Berechnen_8_1}.png}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{mittelwerte}\PYG{o}{.}\PYG{n}{plot}\PYG{o}{.}\PYG{n}{hist}\PYG{p}{(}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYGZlt{}AxesSubplot:ylabel=\PYGZsq{}Frequency\PYGZsq{}\PYGZgt{}
+\end{sphinxVerbatim}
+
+\noindent\sphinxincludegraphics{{03_04_Waldanteil_Berechnen_9_1}.png}
 
 
 

@@ -2,10 +2,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>Einführung &#8212; Coding in GIS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coding in GIS</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -14,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-dropdown.css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/sphinx-book-theme.js"></script>
     <script src="_static/jquery.js"></script>
@@ -24,11 +25,10 @@
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/mystnb.js"></script>
     <script src="_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -38,7 +38,6 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Einleitung" href="01_CodinginGIS1_uebung.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -52,61 +51,8 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+<div class="col-12 col-md-2 bd-sidebar site-navigation show single-page" id="site-navigation">
     
-        <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="index.html">
-  
-  
-  <h1 class="site-logo" id="site-title">Coding in GIS</h1>
-  
-</a>
-</div>
-
-<form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="#">
-   Einführung
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Coding in GIS I
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="01_CodinginGIS1_uebung.html">
-   Einleitung
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="01_CodinginGIS1_uebung.html#python-basics">
-   Python Basics
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="01_CodinginGIS1_uebung.html#python-modules">
-   Python Modules
-  </a>
- </li>
-</ul>
-
-</nav>
-
- <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
 </div>
 
 
@@ -121,31 +67,10 @@
     </div>
     <div class="col pl-2 topbar-main">
         
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
         <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
 
-    
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/intro.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
     
 </div>
         <!-- Source interaction buttons -->
@@ -157,6 +82,23 @@
                     class="fas fa-expand"></i></button></a>
 
         <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/intro.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
 
     </div>
 
@@ -177,8 +119,1938 @@
                 
   <div class="section" id="einfuhrung">
 <h1>Einführung<a class="headerlink" href="#einfuhrung" title="Permalink to this headline">¶</a></h1>
-<p>Dieses Dokument ist Teil des ZHAW AGI Modul und ist inhalt der drei Blöcke “Coding in GIS”.</p>
+<p>Dieses Dokument ist Teil des ZHAW AGI Modul und ist Inhalt der drei Blöcke “Coding in GIS”.</p>
+<p>Noch ein kurzer Hinweis zur Typografie dieses Dokumentes:</p>
+<ul class="simple">
+<li><p>Wenn sich im Fliesstext (Python- oder R-) Code befindet, wird er in <code class="docutils literal notranslate"><span class="pre">dieser</span> <span class="pre">Festschriftart</span></code> dargestellt</p></li>
+<li><p>Alleinstehende Codezeilen werden  !! HIER NOCH BESCHREIBEN!!!</p></li>
+<li><p>Englische Fachbegriffe, deren Übersetzung eher verwirrend als nützlich sein würde, werden <em>kursiv</em> hervorgehoben</p></li>
+</ul>
 <div class="toctree-wrapper compound">
+<span id="document-01_01_Einleitung"></span><div class="section" id="einleitung-zu-diesem-block">
+<h2>Einleitung zu diesem Block<a class="headerlink" href="#einleitung-zu-diesem-block" title="Permalink to this headline">¶</a></h2>
+<p>!EIN PAAR WORTE ZUR HEUTIGEN ÜBUNG!</p>
+<div class="attention admonition">
+<p class="admonition-title">Übungsziele</p>
+<ul class="simple">
+<li><p>JupyterLabs aufstarten, kennenlernen und bei Bedarf personalisieren</p></li>
+<li><p>Python kennen lernen, erste Interaktionen</p></li>
+<li><p>Die wichtigsten Datentypen in Python kennen lernen (bool, text, integer, float, list, dictionary, dataframe)</p></li>
+<li><p>Pandas DataFrames kennen lernen und einfache Manipulationen durchführen</p></li>
+<li><p>Geodaten (Vektor) in Python kennenlernen</p></li>
+<li><p>Geodaten in Python einfach visualisieren können</p></li>
+</ul>
+</div>
+</div>
+<span id="document-01_02_Python_Basics"></span><div class="section" id="python-basics">
+<h2>Python Basics<a class="headerlink" href="#python-basics" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="ubung-1-variablen-erstellen">
+<h3>Übung 1: Variablen erstellen<a class="headerlink" href="#ubung-1-variablen-erstellen" title="Permalink to this headline">¶</a></h3>
+<p>Wir beginnen damit, einfache Datentypen wie Zahlen, Text, boolsche Variabeln (siehe Vorlesungsfolien) sogenannten Variablen zu zuweisen. Führe die folgenden Schritte aus und schau dir nach jedem Schritt die erstellten Variablen jeweils im im Variable explorer von Spyder an</p>
+<ol class="simple">
+<li><p>Erstelle eine Variabel vorname mit deinem Vornamen</p></li>
+<li><p>Erstelle eine zweite Variabel nachname mit deinem Nachnamen</p></li>
+<li><p>Was sind vorname und nachname für Datentypen?</p></li>
+<li><p>Klebe die beiden Variabeln zusammen, ohne den Output zu speichern</p></li>
+<li><p>Erstelle eine Variabel groesse mit deiner Körpergrösse in Zentimeter auf Zentimeter genau. Was ist das für ein Datentyp?</p></li>
+<li><p>Ermittle deine Grösse in Meter auf der Basis von groesse. Was ist das für ein Datentyp?</p></li>
+<li><p>Erstelle eine boolsche Variable blond und setzte sie auf True wenn diese Eigenschaft auf dich zutrifft und False falls nicht.</p></li>
+</ol>
+<div class="tip admonition">
+<p class="admonition-title">Für R Nutzer</p>
+<ul class="simple">
+<li><p>In R gibt es die gleichen Primitiven Datentypen wie in Python: Boolean, String, Integer, Float. Die Bezeichnung ist jedoch leicht anders (Logical, Character, Integer, Numeric, Double)</p></li>
+<li><p>In R können Variablen genau gleich zugewiesen werden wie in Python (mit dem <code class="docutils literal notranslate"><span class="pre">=</span></code> Symbol). In R gibt es zudem noch die Möglichkeit, Variablen mit <code class="docutils literal notranslate"><span class="pre">&lt;-</span></code> zu zuweisen, in Python jedoch nicht</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="ubung-2-lists">
+<h3>Übung 2: Lists<a class="headerlink" href="#ubung-2-lists" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>Erstelle eine Variable <code class="docutils literal notranslate"><span class="pre">vornamen</span></code> bestehend aus einer <em>List</em> mit 3 Vornamen</p></li>
+<li><p>Erstelle eine zweite Variable <code class="docutils literal notranslate"><span class="pre">nachnamen</span></code> bestehend aus einer <em>List</em> mit 3 Nachnamen</p></li>
+<li><p>Erstelle eine Variable <code class="docutils literal notranslate"><span class="pre">groessen</span></code> bestehend aus einer <em>List</em> mit 3 Grössenangaben in Zentimeter.</p></li>
+</ol>
+<div class="tip admonition">
+<p class="admonition-title">Für R Nutzer</p>
+<p>Eine Python List entspricht eines R Vectors</p>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vornamen</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Christopher&quot;</span><span class="p">,</span> <span class="s2">&quot;Henning&quot;</span><span class="p">,</span> <span class="s2">&quot;Severin&quot;</span><span class="p">]</span>
+<span class="n">nachnamen</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Annen&quot;</span><span class="p">,</span><span class="s2">&quot;May&quot;</span><span class="p">,</span> <span class="s2">&quot;Kantereit&quot;</span><span class="p">]</span>
+
+<span class="n">groessen</span> <span class="o">=</span> <span class="p">[</span><span class="mi">174</span><span class="p">,</span> <span class="mi">182</span><span class="p">,</span> <span class="mi">162</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ubung-3-elemente-aus-liste-ansprechen">
+<h3>Übung 3: Elemente aus Liste ansprechen<a class="headerlink" href="#ubung-3-elemente-aus-liste-ansprechen" title="Permalink to this headline">¶</a></h3>
+<p>Wie erhältst du den ersten Eintrag in der Variable <code class="docutils literal notranslate"><span class="pre">vornamen</span></code>? Wie erhältst du den letzten Eintrag? Tipp: nutze dazu <code class="docutils literal notranslate"><span class="pre">[</span></code> und <code class="docutils literal notranslate"><span class="pre">]</span></code> sowie eine Zahl.</p>
+<div class="tip admonition">
+<p class="admonition-title">Für R Nutzer</p>
+<p>In R werden Elemente aus Vectors auf die gleiche Weise extrahiert. Nur ist in R das erste Element die Nummer 1, Python beginnt bei 0</p>
+</div>
+</div>
+<div class="section" id="ubung-4-liste-erganzen">
+<h3>Übung 4: Liste ergänzen<a class="headerlink" href="#ubung-4-liste-erganzen" title="Permalink to this headline">¶</a></h3>
+<p>Listen können durch der Method <code class="docutils literal notranslate"><span class="pre">append</span></code> ergänzt werden.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vornamen</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Malte&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ergänze in die Listen <code class="docutils literal notranslate"><span class="pre">vornamen</span></code>, <code class="docutils literal notranslate"><span class="pre">nachnamen</span></code> und <code class="docutils literal notranslate"><span class="pre">groessen</span></code> durch je einen Eintrag.</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nachnamen</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Huck&quot;</span><span class="p">)</span>
+
+<span class="n">groessen</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">177</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="input-dictionary-teil-i">
+<h3>Input: Dictionary (Teil I)<a class="headerlink" href="#input-dictionary-teil-i" title="Permalink to this headline">¶</a></h3>
+<p>Ähnlich wie eine List, ist eine Dictionary ein Behälter wo mehrere Elemente abgespeichert werden können. Wie bei einem Wörterbuch bekommt jedes Element ein “Schlüsselwort”, mit dem man den Eintrag finden kann.
+Unter dem Eintrag “trump” findet man im Langenscheidt Wörterbuch (1977) die Erklärung “erdichten, schwindeln, sich aus den Fingern saugen”.</p>
+<p><img alt="" src="_images/trump.jpg" /></p>
+<p>In Python würde man diese <em>Dictionary</em> folgendermassen erstellen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">langenscheidt</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;trump&quot;</span><span class="p">:</span><span class="s2">&quot;erdichten- schwindeln- sich aus den Fingern saugen&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Schlüssel (von nun an mit <em>Key</em> bezeichnet) des Eintrages lautet “trump” und der dazugehörige Wert (<em>Value</em>) “erdichten- schwindeln- aus den Fingern saugen”. Beachte die geschweiften Klammern (<code class="docutils literal notranslate"><span class="pre">{</span></code> und <code class="docutils literal notranslate"><span class="pre">}</span></code>) bei der Erstellung einer Dictionary.</p>
+<p>Eine <em>Dictionary</em> besteht aber meistens nicht aus einem, sondern aus mehreren Einträgen: Diese werden Kommagetrennt aufgeführt.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">langenscheidt</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;trump&quot;</span><span class="p">:</span><span class="s2">&quot;erdichten- schwindeln- sich aus den Fingern saugen&quot;</span><span class="p">,</span> <span class="s2">&quot;trumpery&quot;</span><span class="p">:</span><span class="s2">&quot;Plunder- Ramsch- Schund&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Der Clou der <em>Dictionary</em> ist, dass man nun einen Eintrag mittels dem <em>Key</em> aufrufen kann. Wenn wir also nun wissen wollen was “trump” heisst, ermitteln wir dies mit der nachstehenden Codezeile:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">langenscheidt</span><span class="p">[</span><span class="s2">&quot;trump&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;erdichten- schwindeln- sich aus den Fingern saugen&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Für R Nutzer</p>
+<p>Eine Python <em>Dictionary</em> entspricht einer R <em>List</em>. Diese werden in R nicht gleich erstellt, dafür aber auf die gleiche weise abgefragt wie <em>Dictionaries</em> in Python</p>
+</div>
+</div>
+<div class="section" id="ubung-5-dictionary">
+<h3>Übung 5: Dictionary<a class="headerlink" href="#ubung-5-dictionary" title="Permalink to this headline">¶</a></h3>
+<p>Erstelle eine <em>Dictionary</em> mit folgenden Einträgen: Vorname und Nachname von (d)einer Person. Weise diese Dictionary der Variable <code class="docutils literal notranslate"><span class="pre">me</span></code> zu.</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">me</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;vorname&quot;</span><span class="p">:</span> <span class="s2">&quot;Guido&quot;</span><span class="p">,</span> <span class="s2">&quot;nachname&quot;</span><span class="p">:</span> <span class="s2">&quot;van Rossum&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ubung-6-elemente-aus-dictionary-ansprechen">
+<h3>Übung 6: Elemente aus Dictionary ansprechen<a class="headerlink" href="#ubung-6-elemente-aus-dictionary-ansprechen" title="Permalink to this headline">¶</a></h3>
+<p>Rufe verschiedene Elemente aus der Dictionary via dem <em>Key</em> ab.</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">me</span><span class="p">[</span><span class="s2">&quot;vorname&quot;</span><span class="p">]</span>
+
+<span class="n">me</span><span class="p">[</span><span class="s2">&quot;nachname&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;van Rossum&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ubung-7-key-erganzen">
+<h3>Übung 7: Key ergänzen<a class="headerlink" href="#ubung-7-key-erganzen" title="Permalink to this headline">¶</a></h3>
+<p>Um einer <em>Dictionary</em> mit einem weiteren Eintrag zu ergänzen, geht man sehr ähnlich vor wie beim Abrufen von Einträgen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">langenscheidt</span><span class="p">[</span><span class="s2">&quot;trumpet&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;trompete&quot;</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ergänze gemäss nachstehendem Beispiel die Variable <code class="docutils literal notranslate"><span class="pre">me</span></code> durch den Eintrag <code class="docutils literal notranslate"><span class="pre">groesse</span></code>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Für R Nutzer</p>
+<p>Python <em>Dictionaries</em> werden nicht nur gleich abgerufen wie R <em>Lists</em>, sonder auch gleich ergänzt.</p>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">me</span><span class="p">[</span><span class="s2">&quot;groesse&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">181</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="input-dictionary-teil-ii">
+<h3>Input: Dictionary (Teil II)<a class="headerlink" href="#input-dictionary-teil-ii" title="Permalink to this headline">¶</a></h3>
+<p>Ein <em>Key</em> kann auch mehrere Einträge enthalten. An unserem Langenscheidts Beispiel: Das Wort “trump” ist zwar eindeutig, doch “trumpery” hat vier verschiedene Bedeutungen. In so einem Fall können wir einem Eintrag auch eine <em>List</em> von Werten zuweisen. Beachte die Eckigen Klammern und die Kommas, welche die Listeneinträge voneinander trennt.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">langenscheidt</span><span class="p">[</span><span class="s2">&quot;trumpery&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Plunder- Ramsch- Schund&quot;</span><span class="p">,</span> <span class="s2">&quot;Gewäsch- Quatsch&quot;</span><span class="p">,</span> <span class="s2">&quot;Schund- Kitsch&quot;</span><span class="p">,</span> <span class="s2">&quot;billig- nichtssagend&quot;</span><span class="p">]</span>    
+<span class="n">langenscheidt</span><span class="p">[</span><span class="s2">&quot;trumpery&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Plunder- Ramsch- Schund&#39;,
+ &#39;Gewäsch- Quatsch&#39;,
+ &#39;Schund- Kitsch&#39;,
+ &#39;billig- nichtssagend&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ubung-8-dictionary-mit-list">
+<h3>Übung 8: Dictionary mit List<a class="headerlink" href="#ubung-8-dictionary-mit-list" title="Permalink to this headline">¶</a></h3>
+<p>Erstelle eine neue Dictionary mit den gleichen Keys wie <code class="docutils literal notranslate"><span class="pre">me</span></code>, aber diesmal mit mehreren Einträgen pro <em>Key</em> (also mehreren Vornamen, Nachnamen usw.). Beachte, dass nun jeder Eintrag eine <em>List</em> sein muss. Weise diese Dictionary der Variabel <code class="docutils literal notranslate"><span class="pre">people</span></code> zu.</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">people</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;vornamen&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Christopher&quot;</span><span class="p">,</span> <span class="s2">&quot;Henning&quot;</span><span class="p">,</span> <span class="s2">&quot;Severin&quot;</span><span class="p">],</span> <span class="s2">&quot;nachnamen&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Annen&quot;</span><span class="p">,</span><span class="s2">&quot;May&quot;</span><span class="p">,</span> <span class="s2">&quot;Kantereit&quot;</span><span class="p">],</span> <span class="s2">&quot;groessen&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">174</span><span class="p">,</span> <span class="mi">182</span><span class="p">,</span> <span class="mi">162</span><span class="p">]}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ubung-9-functions">
+<h3>Übung 9: Functions<a class="headerlink" href="#ubung-9-functions" title="Permalink to this headline">¶</a></h3>
+<p>Bisher haben wir Objekte erstellt. Richtig interessant wird programmieren aber erst, wenn wir mit Objekte durch Funktionen (<em>Functions</em>) verändern. <em>Functions</em> führen bestimmte Tasks aus. Wende die Functions <code class="docutils literal notranslate"><span class="pre">len()</span></code> und <code class="docutils literal notranslate"><span class="pre">sum()</span></code> an den Listen <code class="docutils literal notranslate"><span class="pre">groessen</span></code> und <code class="docutils literal notranslate"><span class="pre">vornamen</span></code> an.</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">groessen</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">groessen</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>695
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">vornamen</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># sum(vornamen)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<span id="document-01_03_Python_Module"></span><div class="section" id="python-modules">
+<h2>Python Modules<a class="headerlink" href="#python-modules" title="Permalink to this headline">¶</a></h2>
+<p>Ähnlich wie R basiert Python auf Erweiterungen: Diese Erweiterungen heissen in R <em>Libraries</em> / <em>Packages</em>, in Python werden sie <em>Modules</em> genannt. Sie sind dazu da, gewisse Teilbereiche unseres Arbeitsprozesses zu vereinfachen. Eine Analogie dazu: Um ein Haus zu bauen sind wir auf verschiedene Spezialisten / Spezialistinnen angewiesen: Wir brauchen zum Beispiel eine Malerin oder einen Maler. Im Telfonbuch sind seitenweise Maler*innen aufgelistet, und jede*r arbeitet etwas anders. Um eine spezifische Malerin anzuheuern müssen wir zuerst den Kontakt herstellen und die Vertragsmodalitäten vereinbaren. Erst dann können wir sie in unseren Arbeitsprozess (Haus bauen) einbinden.</p>
+<p>Um diese Analogie auf unser Projekt zu übertragen: Das “Haus bauen” ist unser Forschungsprojekt (z.B. eine Bachelorarbeit). Ein “Telefonbuch”, wo die Spezialisten erfasst sind nennt ein <em>Reposoritory</em>. Den Erstkontakt mit der Malerin zu erstellen und die Vertragsmodalitäten zu vereinbaren bedeutet, die Erweiterung zu installieren. In R wird eine Erweiterung folgendermassen installiert:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">install</span><span class="o">.</span><span class="n">packages</span><span class="p">(</span><span class="s2">&quot;malerinMina&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In diesem Beispiel heisst die Erweiterung <code class="docutils literal notranslate"><span class="pre">malerinMina</span></code>. Das <em>Reposoritory</em> geben wir in R oft nicht an, weil in RStudio typischerweise schon eine Adresse hinterlegt ist. Wie wir in Python ein Modul installieren lernen wir später. Nehmen wir an dieser Stelle an, wir haben die Erweiterung <code class="docutils literal notranslate"><span class="pre">malerinMina</span></code> in Python installiert. Treiben wir an dieser Stelle die Analogie etwas weiter: Der Erstkontakt mit der Kleptnerin ist also erstellt und alle Vertragsmodalitäten sind vereinbart. Nun wollen wir an einem bestimmten Tag mit ihr arbeiten. Dafür müssen wir sie zuerst auf die Baustelle bestellen. Übersetzt auf programmieren bedeutet dies, wir müssen die Erweiterung in unsere Session laden. In R sieht der Befehl so aus:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">library</span><span class="p">(</span><span class="n">malerinMina</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In Python lautet der entsprechende Befehl:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">malerinMina</span>
+</pre></div>
+</div>
+<p>Erst jetzt können wir mit der Erweiterung arbeiten und die Fachexpertise unserer Malerin nutzen. Eine Expertise unserer Malerin ist es, Wände zu bemalen. Dafür gibt es eine <em>Function</em> <code class="docutils literal notranslate"><span class="pre">wand_bemalen()</span></code>. In R kann ich diese <em>Function</em> “einfach so” aufrufen:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wand_bemalen</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>In Python hingegen muss ich die Erweiterung, in der die <em>Function</em> enthalten ist, der <em>Function</em> mit einem Punkt voranstellen. Das sieht also folgendermassen aus:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">malerinMina</span><span class="o">.</span><span class="n">wand_bemalen</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Das ist zwar umständlicher, aber dafür weniger Fehleranfällig. Angenommen, unser Maurer kann ebenfalls Wände bemalen und hat die entsprechende <em>Function</em> <code class="docutils literal notranslate"><span class="pre">wand_bemalen()</span></code> ebenfalls. Dann ist in R nicht klar, welche Erweiterung gemeint ist und das kann zu Missverständnissen führen (vielleicht bemalt der Mauerer die Wände etwas anders als die Malerin). In Python ist im obigen Beispiel unmissverständlich, dass ich <code class="docutils literal notranslate"><span class="pre">wand_bemalen()</span></code> aus dem Modul <code class="docutils literal notranslate"><span class="pre">malerinMina</span></code> meine.</p>
+<p><strong>Das wichtigste in Kürze</strong></p>
+<ul class="simple">
+<li><p>Erweiterungen heissen in Python <em>Modules</em></p></li>
+<li><p>Vor der erstmaligen Nutzung muss ein <em>Module</em> installiert werden</p></li>
+<li><p>Vor der Verwendung in einer Session muss ein <em>Module</em> “geladen” werden. Dies muss für jede Session wiederholt werden!</p></li>
+<li><p>Ein <em>Module</em> wird in Python mit <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">modulename</span></code> geladen</p></li>
+<li><p>Eine <em>Function</em> aus einem <em>Module</em> wird folgendermassen aufgerufen: <code class="docutils literal notranslate"><span class="pre">modulname.function()</span></code></p></li>
+</ul>
+<div class="section" id="modul-mit-alias-importieren">
+<h3>Modul mit Alias importieren<a class="headerlink" href="#modul-mit-alias-importieren" title="Permalink to this headline">¶</a></h3>
+<p>Wenn es uns zu Umständlich ist jedesmal <code class="docutils literal notranslate"><span class="pre">malerinMina.wand_bemalen()</span></code> voll auszuschreiben können wir beim Importieren dem Modul auch einen “Alias” vergeben. Dies kann beispielsweise folgendermassen aussehen:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">malerinMina</span> <span class="k">as</span> <span class="nn">mm</span>
+<span class="n">mm</span><span class="o">.</span><span class="n">wand_bemalen</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Dies ist deshalb wichtig, weil sich für viele Module haben sich bestimmte Aliasse eingebürgert haben. Ihr macht sich das Leben leichter, wenn ihr euch an diese Konventionen (welche ihr noch kennenlernen werdet) hält.</p>
+</div>
+<div class="section" id="einzelne-function-importieren">
+<h3>Einzelne <em>Function</em> importieren<a class="headerlink" href="#einzelne-function-importieren" title="Permalink to this headline">¶</a></h3>
+<p>Was man auch noch machen kann, ist eine explizite <em>Function</em> aus einem Modul zu laden. Wenn man dies macht, kann man die Funktion ohne vorangestelltes Modul nutzen (genau wie in R). Dies sieht folgendermassen aus:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">malerinMina</span> <span class="kn">import</span> <span class="n">wand_bemalen</span><span class="p">()</span>
+<span class="n">wand_bemalen</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<span id="document-01_04_Tabellarische_Daten"></span><div class="section" id="tabellarische-daten">
+<h2>Tabellarische Daten<a class="headerlink" href="#tabellarische-daten" title="Permalink to this headline">¶</a></h2>
+<p>Schauen wir uns nochmals die <em>Dictionary</em> <code class="docutils literal notranslate"><span class="pre">people</span></code> an. Diese ist ein Spezialfall einer Dictionary: Jeder Eintrag besteht aus einer Liste von gleich vielen Werten. Diese Dictionary schreit förmlich danach, tabellarisch dargestellt zu werden. Dies wollen wir gewähren und brauchen dafür das Modul <code class="docutils literal notranslate"><span class="pre">pandas</span></code>. Importiere das Modul mit dem Alias <code class="docutils literal notranslate"><span class="pre">pd</span></code>.</p>
+<p>!! ACHTUNG: HIER FEHLT NOCH DIE EINFÜHRUNG INSTALLATION VON MODULEN !!</p>
+<div class="section" id="ubung-1-von-einer-dictionary-zu-einer-dataframe">
+<h3>Übung 1: von einer <em>Dictionary</em> zu einer <em>DataFrame</em><a class="headerlink" href="#ubung-1-von-einer-dictionary-zu-einer-dataframe" title="Permalink to this headline">¶</a></h3>
+<p>Wandle die Dictionary <code class="docutils literal notranslate"><span class="pre">people</span></code> in eine DataFrame um: Dazu musst du <code class="docutils literal notranslate"><span class="pre">people</span></code> als Argument der Funktion <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> übergeben: <code class="docutils literal notranslate"><span class="pre">pd.DataFrame(people)</span></code>. Weise den Output der Variable <code class="docutils literal notranslate"><span class="pre">people_df</span></code> zu.</p>
+<p><strong>Für R Nutzer</strong>: Auch in R gibt es <em>Dataframes</em>, diese sind aber in Base R integriert (brauchen deswegen keine Erweiterung wie <code class="docutils literal notranslate"><span class="pre">pandas</span></code>)</p>
+<div class="cell tag_remove-input docutils container">
+</div>
+</div>
+<div class="section" id="ubung-2-dataframe-in-csv-umwandeln">
+<h3>Übung 2: <em>DataFrame</em> in csv umwandeln<a class="headerlink" href="#ubung-2-dataframe-in-csv-umwandeln" title="Permalink to this headline">¶</a></h3>
+<p>In der Praxis kommen Tabellarische Daten meist als «csv» Dateien daher. Wir können aus unserer eben erstellten DataFrame sehr einfach eine csv Datei erstellen. Führe das mit folgendem Code aus:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">people_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;people.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ubung-3-csv-als-dataframe-importieren">
+<h3>Übung 3: CSV als <em>DataFrame</em> importieren<a class="headerlink" href="#ubung-3-csv-als-dataframe-importieren" title="Permalink to this headline">¶</a></h3>
+<p>Genau so einfach ist es eine csv zu importieren. Lade dazu die Datei “zeckenstiche.csv” von Moodle herunter und speichere es im aktuellen Arbeitsverzeichnis ab. Importiere mit folgendem Code die Datei “zeckenstiche.csv”. Schau dir <code class="docutils literal notranslate"><span class="pre">zeckenstiche</span></code> nach dem importieren an.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeckenstiche</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;zeckenstiche.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Hinweis</strong>: Dieser Code funktioniert nur, wenn “zeckenstiche.csv” im aktuellen Arbeitsverzeichnis (<em>Current Working Directory</em>) abgespeichert wird. Wenn du nicht sicher bist, wo dein aktuelles Arbeitsverzeichnis liegt, kannst du das Modul <code class="docutils literal notranslate"><span class="pre">os</span></code> laden und dies mit der Funktion <code class="docutils literal notranslate"><span class="pre">os.getcwd()</span></code> (get <strong>c</strong>urrent<strong>w</strong>orking<strong>d</strong>irectory) herausfinden.</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/home/rata/codingingis_book&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ubung-4-koordinaten-raumlich-darstellen">
+<h3>Übung 4: Koordinaten räumlich darstellen<a class="headerlink" href="#ubung-4-koordinaten-raumlich-darstellen" title="Permalink to this headline">¶</a></h3>
+<p>Die <em>DataFrame</em> <code class="docutils literal notranslate"><span class="pre">zeckenstiche</span></code> beinhaltet x und y Koordinaten für jeden Unfall in den gleichnamigen Spalten. Wir können die Stiche mit einem Scatterplot räumlich visualisieren. Führe dazu folgenden Code aus:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeckenstiche</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">,</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;x&#39;, ylabel=&#39;y&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ubung-5-einzelne-spalte-selektieren">
+<h3>Übung 5: Einzelne Spalte selektieren<a class="headerlink" href="#ubung-5-einzelne-spalte-selektieren" title="Permalink to this headline">¶</a></h3>
+<p>Um eine einzelne Spalte zu selektieren (z.B. die Spalte “ID”) kann man gleich vorgehen wie bei der Selektion eines Eintrage in einer <em>Dictionary</em>. Probiere es aus.</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;ID&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0          0
+1          1
+2          2
+3          3
+4          4
+        ... 
+1071    1071
+1072    1072
+1073    1073
+1074    1074
+1075    1075
+Name: ID, Length: 1076, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ubung-6-neue-spalte-erstellen">
+<h3>Übung 6: Neue Spalte erstellen<a class="headerlink" href="#ubung-6-neue-spalte-erstellen" title="Permalink to this headline">¶</a></h3>
+<p>Auch das Erstellen einer neuen Spalte ist identisch mit der Erstellung eines neuen <em>Dictionary</em> Eintrags. Folgende Zeile erstellt eine neue Spalte “Stichtyp” mit dem gleichen Wert in allen Zeilen (“Zecke”). Erstelle ebenfalls eine solche Spalte.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;Stichtyp&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Zecke&quot;</span>
+
+<span class="n">zeckenstiche</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ID</th>
+      <th>accuracy</th>
+      <th>x</th>
+      <th>y</th>
+      <th>Stichtyp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>65.617154</td>
+      <td>2678971.0</td>
+      <td>1240824.0</td>
+      <td>Zecke</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>257.492052</td>
+      <td>2679837.0</td>
+      <td>1240858.0</td>
+      <td>Zecke</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>163.533834</td>
+      <td>2687539.0</td>
+      <td>1240881.0</td>
+      <td>Zecke</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>185.000000</td>
+      <td>2674848.0</td>
+      <td>1240913.0</td>
+      <td>Zecke</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>228.215231</td>
+      <td>2681771.0</td>
+      <td>1240922.0</td>
+      <td>Zecke</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1071</th>
+      <td>1071</td>
+      <td>109.531946</td>
+      <td>2678005.0</td>
+      <td>1257344.0</td>
+      <td>Zecke</td>
+    </tr>
+    <tr>
+      <th>1072</th>
+      <td>1072</td>
+      <td>100.489274</td>
+      <td>2678005.0</td>
+      <td>1257347.0</td>
+      <td>Zecke</td>
+    </tr>
+    <tr>
+      <th>1073</th>
+      <td>1073</td>
+      <td>301.748529</td>
+      <td>2689893.0</td>
+      <td>1257351.0</td>
+      <td>Zecke</td>
+    </tr>
+    <tr>
+      <th>1074</th>
+      <td>1074</td>
+      <td>301.748542</td>
+      <td>2690668.0</td>
+      <td>1257369.0</td>
+      <td>Zecke</td>
+    </tr>
+    <tr>
+      <th>1075</th>
+      <td>1075</td>
+      <td>226.000000</td>
+      <td>2682852.0</td>
+      <td>1257531.0</td>
+      <td>Zecke</td>
+    </tr>
+  </tbody>
+</table>
+<p>1076 rows × 5 columns</p>
+</div></div></div>
+</div>
+</div>
+</div>
+<span id="document-01_05_GIS_in_Python"></span><div class="section" id="gis-in-python">
+<h2>GIS in Python<a class="headerlink" href="#gis-in-python" title="Permalink to this headline">¶</a></h2>
+<p>Die bisherigen Aufgaben hatten noch nicht viel mit GIS zu tun. Die Koordinaten der Zeckenstiche sind uns zwar bekannt, es handelt es dabei aber lediglich um Numerische xy-Werte, nicht um Geometrische Punkte mit einem Raumbezug. So bleiben uns bis jetzt alle räumlichen Operationen vorenthalten (zum Beispiel ob sich ein Stich im Wald befindet oder nicht), und wir können auch keine schönen Karten generieren.</p>
+<p>Um mit Geodaten in Python arbeiten zu können, müssen wir ein neues Modul importieren. Im Grunde genommen sind Vektordaten nicht mehr als Tabellen mit einer zusätzlichen “Geometrie”-Spalte, dementsprechend baut die “Geo”-Erweiterung auf <code class="docutils literal notranslate"><span class="pre">pandas</span></code> auf und heisst: <code class="docutils literal notranslate"><span class="pre">geopandas</span></code>.</p>
+<p>Du solltest <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> bereits installiert haben und das Modul in dein Script importieren. Importiere <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> mit dem Alias <code class="docutils literal notranslate"><span class="pre">gpd</span></code>.</p>
+<div class="section" id="ubung-1-dataframe-zu-geodataframe">
+<h3>Übung 1: <em>DataFrame</em> zu <em>GeoDataFrame</em><a class="headerlink" href="#ubung-1-dataframe-zu-geodataframe" title="Permalink to this headline">¶</a></h3>
+<p>Wie erwähnt sind die Zeckenstichdaten bisher lediglich als tabellarische Daten vorhanden. In ArcGIS Terminologie müssen wir die Operation “<a class="reference external" href="https://pro.arcgis.com/de/pro-app/tool-reference/data-management/xy-table-to-point.htm">XY Table to Point</a>” durchführen. In Python heisst das: Wir wandeln eine <em>DataFrame</em> in eine <em>GeoDataFrame</em> um. Zuerst erstellen wir eine Geometrie-Spalte aus den xy-Koordinaten mit der Funktion <code class="docutils literal notranslate"><span class="pre">points_from_xy</span></code> aus dem Modul <code class="docutils literal notranslate"><span class="pre">geopandas</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;geometry&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">points_from_xy</span><span class="p">(</span><span class="n">zeckenstiche</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">zeckenstiche</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Der Datensatz <code class="docutils literal notranslate"><span class="pre">zeckenstiche</span></code> hat jetzt aber noch nicht begriffen, dass es jetzt eine <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code> ist. Dies müssen wir dem Objekt erst noch mitteilen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeckenstiche</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">zeckenstiche</span><span class="p">)</span>
+
+<span class="n">zeckenstiche</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ID</th>
+      <th>accuracy</th>
+      <th>x</th>
+      <th>y</th>
+      <th>geometry</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>65.617154</td>
+      <td>2678971.0</td>
+      <td>1240824.0</td>
+      <td>POINT (2678971.000 1240824.000)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>257.492052</td>
+      <td>2679837.0</td>
+      <td>1240858.0</td>
+      <td>POINT (2679837.000 1240858.000)</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>163.533834</td>
+      <td>2687539.0</td>
+      <td>1240881.0</td>
+      <td>POINT (2687539.000 1240881.000)</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>185.000000</td>
+      <td>2674848.0</td>
+      <td>1240913.0</td>
+      <td>POINT (2674848.000 1240913.000)</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>228.215231</td>
+      <td>2681771.0</td>
+      <td>1240922.0</td>
+      <td>POINT (2681771.000 1240922.000)</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1071</th>
+      <td>1071</td>
+      <td>109.531946</td>
+      <td>2678005.0</td>
+      <td>1257344.0</td>
+      <td>POINT (2678005.000 1257344.000)</td>
+    </tr>
+    <tr>
+      <th>1072</th>
+      <td>1072</td>
+      <td>100.489274</td>
+      <td>2678005.0</td>
+      <td>1257347.0</td>
+      <td>POINT (2678005.000 1257347.000)</td>
+    </tr>
+    <tr>
+      <th>1073</th>
+      <td>1073</td>
+      <td>301.748529</td>
+      <td>2689893.0</td>
+      <td>1257351.0</td>
+      <td>POINT (2689893.000 1257351.000)</td>
+    </tr>
+    <tr>
+      <th>1074</th>
+      <td>1074</td>
+      <td>301.748542</td>
+      <td>2690668.0</td>
+      <td>1257369.0</td>
+      <td>POINT (2690668.000 1257369.000)</td>
+    </tr>
+    <tr>
+      <th>1075</th>
+      <td>1075</td>
+      <td>226.000000</td>
+      <td>2682852.0</td>
+      <td>1257531.0</td>
+      <td>POINT (2682852.000 1257531.000)</td>
+    </tr>
+  </tbody>
+</table>
+<p>1076 rows × 5 columns</p>
+</div></div></div>
+</div>
+<p>Jetzt, wo zeckenstiche eine GeoDataFrame ist, gibt es einen einfachen weg die Punkte räumlich zu visualisieren:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeckenstiche</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ubung-2-koordinatensystem-festlegen">
+<h3>Übung 2: Koordinatensystem festlegen<a class="headerlink" href="#ubung-2-koordinatensystem-festlegen" title="Permalink to this headline">¶</a></h3>
+<p>Wir wissen zwar, das unsere <em>GeoDataFrame</em> in Schweizer Landeskoordinaten (CH1903 LV95) zu verstehen ist, aber dies haben wir noch nirgends festgehalten. Das Koordinatensystem (Coordinate Reference System, CRS) können wir über das Attribut <code class="docutils literal notranslate"><span class="pre">crs</span></code> der <em>GeoDataFrame</em> festhalten. Das Koordinatensystem CH1903 LV95 hat den EPSG Code 2056, demnach muss das CRS folgendermassen festgelegt werden:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeckenstiche</span> <span class="o">=</span> <span class="n">zeckenstiche</span><span class="o">.</span><span class="n">set_crs</span><span class="p">(</span><span class="n">epsg</span> <span class="o">=</span> <span class="mi">2056</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nun ist das Koordinatensystem (<em>CRS</em>) als Attribut der <em>GeoDataFrame</em> gespeichert:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeckenstiche</span><span class="o">.</span><span class="n">crs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Projected CRS: EPSG:2056&gt;
+Name: CH1903+ / LV95
+Axis Info [cartesian]:
+- E[east]: Easting (metre)
+- N[north]: Northing (metre)
+Area of Use:
+- name: Europe - Liechtenstein and Switzerland
+- bounds: (5.96, 45.82, 10.49, 47.81)
+Coordinate Operation:
+- name: Swiss Oblique Mercator 1995
+- method: Hotine Oblique Mercator (variant B)
+Datum: CH1903+
+- Ellipsoid: Bessel 1841
+- Prime Meridian: Greenwich
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ubung-3-zeckenstiche-als-shapefile-exportieren">
+<h3>Übung 3: Zeckenstiche als Shapefile exportieren<a class="headerlink" href="#ubung-3-zeckenstiche-als-shapefile-exportieren" title="Permalink to this headline">¶</a></h3>
+<p>Zum Schluss exportieren wir unser Datensatz in ein Shapefile, damit wir das nächste Mal direkt mit einer <em>GeoDataFrame</em> arbeiten können. Genau wie wir in einer vorherigen Übung eine pandas DataFrame mit <code class="docutils literal notranslate"><span class="pre">.to_csv</span></code> in eine csv exportiert haben, gibt es für GeoDataFrames die Methode <code class="docutils literal notranslate"><span class="pre">.to_file</span></code>. Exportiere zeckenstiche mit dieser Methode in eine Shapefile.</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeckenstiche</span><span class="o">.</span><span class="n">to_file</span><span class="p">(</span><span class="s2">&quot;zeckenstiche.shp&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="toctree-wrapper compound">
+<span id="document-02_01_Einleitung"></span><div class="section" id="einleitung-zu-diesem-block">
+<h2>Einleitung zu diesem Block<a class="headerlink" href="#einleitung-zu-diesem-block" title="Permalink to this headline">¶</a></h2>
+<p>Letzte Woche habt ihr einen weiten Bogen gespannt: Von einfachen (primitiven) Datentypen bis hin zu Geodaten und deren Visualisierung. In dieser und der nächsten Übung (Coding in GIS II und III) wollen wir uns weiter mit den Zeckenstichdaten befassen. Wir werden im Wesentlichen ein Teil der Übung aus «Datenqualität und Unsicherheit» in Python rekonstruieren.
+In der Übung geht es um folgendes: Wir wissen das die Lagegenauigkeit der Zeckenstichmeldungen mit einer gewissen Unsicherheit behaftet sind. Um die Frage “Welcher Anteil der der Zeckenstiche befinden sich im Wald?” unter Berücksichtigung dieser Unsicherheit beantworten zu können, führen wir eine (Monte Carlo) Simulation durch.
+In dieser Simulation verändern wir die Position der Zeckenstichmeldungen zufällig und berechnen den Anteil der Zeckenstiche im Wald. Das zufällige Verschieben und berechnen wiederholen wir beliebig lange und bekommen für jede Wiederholung einen leicht unterschiedlichen Prozentwert. Die Verteilung dieser Prozentwerte ist die Antwort auf die ursprüngliche Frage (“Welcher Anteil…”) unter Berücksichtigung der Unsicherheit.</p>
+<p>Um eine solche, etwas komplexere Aufgabe lösen zu können müssen wir sie in einfachere Einzelschritte aufteilen. Diese bearbeiten wir in dieser und der kommenden Woche:</p>
+<ul class="simple">
+<li><p>Schritt 1: Einen Einzelpunkt zufällig verschieben</p></li>
+<li><p>Schritt 2: Alle Punkte einer GeoDataFrame zufällig verschieben (1 «Run»)</p></li>
+<li><p>Schritt 3: Alle Punkte einer GeoDataFrame mehrfach zufällig verschieben (z.B. 50 «Runs»)</p></li>
+<li><p>Schritt 4: Anteil der Punkte im Wald pro «Run» ermitteln</p></li>
+<li><p>Schritt 5: Verteilung dieser Mittelwerte visualisieren</p></li>
+</ul>
+<div class="attention admonition">
+<p class="admonition-title">Übungsziele</p>
+<ul class="simple">
+<li><p>Functions kennenlernen und beherrschen</p></li>
+<li><p>Einfache Geometrien manipulieren lernen</p></li>
+<li><p>Eigene Python-Scripts importieren können</p></li>
+<li><p>Function auf eine ganze Spalte einer (Geo-) DataFrame anwenden können.</p></li>
+</ul>
+</div>
+</div>
+<span id="document-02_02_Input_Functions"></span><div class="section" id="input-zu-functions">
+<h2>Input zu <em>Functions</em><a class="headerlink" href="#input-zu-functions" title="Permalink to this headline">¶</a></h2>
+<p>Bevor wir uns in die Simulation stürzen müssen wir noch lernen eigene <em>Functions</em> zu schreiben: Dies ist auch nicht weiter schwierig: Eine <em>Function</em> wird mit <code class="docutils literal notranslate"><span class="pre">def</span></code> eingeleitet, braucht einen Namen, einen Input und einen Output.</p>
+<p>Wenn wir zum Beispiel eine Function erstellen wollen die uns grüsst, so geht dies folgendermassen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sag_hallo</span><span class="p">():</span>
+    <span class="k">return</span><span class="p">(</span><span class="s2">&quot;Hallo!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Mit <code class="docutils literal notranslate"><span class="pre">def</span></code> sagen wir: “Jetzt definiere ich eine Function”.</p></li>
+<li><p>Danach kommt der Name der <em>Function</em>, in unserem Fall <code class="docutils literal notranslate"><span class="pre">sag_hallo</span></code> (mit diesem Namen können wir die <em>Function</em> später wieder abrufen).</p></li>
+<li><p>Als drittes kommen die runden Klammern, wo wir bei Bedarf Inputvariablen (sogenannte Parameter) festlegen können. In diesem ersten Beispiel habe ich keine Parameter festgelegt</p></li>
+<li><p>Nach der Klammer kommt ein Doppelpunkt was bedeutet: “jetzt wird gleich definiert, was die Funktion tun soll”</p></li>
+<li><p>Auf einer neuen Zeile wird eingerückt festgelegt, was die Function eben tun soll. Meist sind hier ein paar Zeilen Code vorhanden</p></li>
+<li><p>Die letzte eingerückte Zeile (in unserem Fall ist das die einzige Zeile) gibt mit return an, was die <em>Function</em> zurück geben soll (der Output). In unserem Fall soll sie “Hallo!”  zurück geben.</p></li>
+<li><p>Voila, das war’s schon! Jetzt können wir diese Function schon nutzen:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sag_hallo</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Hallo!&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Diese <em>Function</em> ohne Input ist wenig nützlich. Meist wollen wir der <em>Function</em> etwas - einen Input - übergeben können. Um eine <em>Function</em> zu erstellen die ein Argument annimmt geht man folgendermassen vor:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sag_hallo</span><span class="p">(</span><span class="n">vorname</span><span class="p">):</span>
+    <span class="k">return</span><span class="p">(</span><span class="s2">&quot;Hallo &quot;</span><span class="o">+</span><span class="n">vorname</span><span class="o">+</span><span class="s2">&quot;!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nun können wir der Function einen Paramter übergeben, damit wir persönlich gegrüsst werden. In folgendem Beispiel ist <code class="docutils literal notranslate"><span class="pre">vorname</span></code> ein Parameter, “Guido” ist sein Argument.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sag_hallo</span><span class="p">(</span><span class="s2">&quot;Guido&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Hallo Guido!&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Den Output können wir wie gewohnt einer neuen Variabel zuweisen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">persoenlicher_gruss</span> <span class="o">=</span> <span class="n">sag_hallo</span><span class="p">(</span><span class="s2">&quot;Guido&quot;</span><span class="p">)</span>
+<span class="n">persoenlicher_gruss</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Hallo Guido!&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<span id="document-02_03_Functions"></span><div class="section" id="ubungen-zu-functions">
+<h2>Übungen zu <em>Functions</em><a class="headerlink" href="#ubungen-zu-functions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="ubung-1-erste-function-erstellen">
+<h3>Übung 1: Erste <em>Function</em> erstellen<a class="headerlink" href="#ubung-1-erste-function-erstellen" title="Permalink to this headline">¶</a></h3>
+<p>Erstelle eine Function, die <code class="docutils literal notranslate"><span class="pre">gruezi</span></code> heisst, einen Nachnamen als Input annimmt und per Sie grüsst. Das Resultat soll in etwa folgendermassen aussehen:</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gruezi</span><span class="p">(</span><span class="n">nachname</span><span class="p">):</span>
+    <span class="k">return</span><span class="p">(</span><span class="s2">&quot;Guten Tag, &quot;</span><span class="o">+</span><span class="n">nachname</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gruezi</span><span class="p">(</span><span class="s2">&quot;Guido&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Guten Tag, Guido&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ubung-2-function-erweitern">
+<h3>Übung 2: <em>Function</em> erweitern<a class="headerlink" href="#ubung-2-function-erweitern" title="Permalink to this headline">¶</a></h3>
+<p>Erweitere die <em>Function</em> <code class="docutils literal notranslate"><span class="pre">gruezi</span></code> indem eine du einen weiteren Parameter namens <code class="docutils literal notranslate"><span class="pre">anrede</span></code> implementierst. Das Resultat soll in etwa folgendermassen aussehen:</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gruezi</span><span class="p">(</span><span class="n">nachname</span><span class="p">,</span> <span class="n">anrede</span><span class="p">):</span>
+    <span class="k">return</span><span class="p">(</span><span class="s2">&quot;Guten Tag, &quot;</span><span class="o">+</span><span class="n">anrede</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="o">+</span><span class="n">nachname</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gruezi</span><span class="p">(</span><span class="s2">&quot;van Rossum&quot;</span><span class="p">,</span><span class="s2">&quot;Herr&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Guten Tag, Herr van Rossum&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ubung-3-default-werte-festlegen">
+<h3>Übung 3: Default-Werte festlegen<a class="headerlink" href="#ubung-3-default-werte-festlegen" title="Permalink to this headline">¶</a></h3>
+<p>Man kann für die Parameter folgendermassen einen Standardwert festlegen: Beim Definieren der Function wird dem Parameter schon innerhalb der Klammer ein Argument zugewiesen (z.B. <code class="docutils literal notranslate"><span class="pre">anrede</span> <span class="pre">=</span> <span class="pre">&quot;Herr</span> <span class="pre">oder</span> <span class="pre">Frau&quot;</span></code>). Wenn anrede bei der Verwendung von <code class="docutils literal notranslate"><span class="pre">gruezi</span></code> nicht definiert wird, entspricht die Anrede nun «Herr oder Frau». Setzte einen Standardwert in der Anrede und teste die <em>Function</em>. Das Resultat soll in etwa folgendermassen aussehen:</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gruezi</span><span class="p">(</span><span class="n">nachname</span><span class="p">,</span> <span class="n">anrede</span> <span class="o">=</span> <span class="s2">&quot;Herr oder Frau&quot;</span><span class="p">):</span>
+    <span class="k">return</span><span class="p">(</span><span class="s2">&quot;Guten Tag, &quot;</span><span class="o">+</span><span class="n">anrede</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="o">+</span><span class="n">nachname</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gruezi</span><span class="p">(</span><span class="s2">&quot;van Rossum&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Guten Tag, Herr oder Frau van Rossum&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ubung-4-python-file-in-module-konvertieren">
+<h3>Übung 4: Python-File in Module konvertieren<a class="headerlink" href="#ubung-4-python-file-in-module-konvertieren" title="Permalink to this headline">¶</a></h3>
+<p>In der Vorlesung habt ihr gesehen, dass Modules nichts weiter sind als Python-Skripte in einem bestimmten Verzeichnis. Um das zu verdeutlichen kreieren wir nun unser eignes Module. Speichert dazu eure <em>Function</em> <code class="docutils literal notranslate"><span class="pre">gruezi</span></code> in einem neuen Skript mit dem Namen “myownmodule.py” in eurer Working Directory ab. Nun könnt ihr <code class="docutils literal notranslate"><span class="pre">myownmodule</span></code> wie jedes andere Module in euer Skript importieren.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">myownmodule</span>
+
+<span class="n">myownmodule</span><span class="o">.</span><span class="n">gruezi</span><span class="p">(</span><span class="s2">&quot;van Rossum&quot;</span><span class="p">,</span><span class="s2">&quot;Herr&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Guten Tag, Herr van Rossum&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="weitere-hinweise-zu-functions">
+<h3>Weitere Hinweise zu Functions<a class="headerlink" href="#weitere-hinweise-zu-functions" title="Permalink to this headline">¶</a></h3>
+<p>Hier noch zwei Hinweise zum Definieren von Functions:</p>
+<ul class="simple">
+<li><p>Wenn Parameter Default-Argumente zugewiesen werden, dann werden sie für den Nutzer automatisch zu optionalen Parametern.</p></li>
+<li><p>In der Definition einer Function werden optionale Parameter immer nach erforderlichen Parameter definiert.</p></li>
+</ul>
+<p>Jetzt noch zwei Hinweise zum Abrufen von Functions:</p>
+<ul class="simple">
+<li><p>Wenn die richtige Reihenfolge eingehalten wird, müssen die Parameter (z.B: <code class="docutils literal notranslate"><span class="pre">anrede</span> <span class="pre">=</span></code>, <code class="docutils literal notranslate"><span class="pre">nachname</span> <span class="pre">=</span></code>) nicht spezifiziert werden. Zum Beispiel:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gruezi</span><span class="p">(</span><span class="s2">&quot;van Rossum&quot;</span><span class="p">,</span> <span class="s2">&quot;Herr&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Guten Tag, Herr van Rossum&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Wenn die Parameter der Argumente spezifiziert werden, ist die Reihenfolge wiederum egal:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gruezi</span><span class="p">(</span><span class="n">anrede</span> <span class="o">=</span> <span class="s2">&quot;Herr&quot;</span><span class="p">,</span> <span class="n">nachname</span> <span class="o">=</span> <span class="s2">&quot;von Rossum&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Guten Tag, Herr von Rossum&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<span id="document-02_04_Einzelpunkt_Verschieben"></span><div class="section" id="einen-einzelpunkt-zufallig-verschieben">
+<h2>Einen Einzelpunkt zufällig verschieben<a class="headerlink" href="#einen-einzelpunkt-zufallig-verschieben" title="Permalink to this headline">¶</a></h2>
+<p>Um die Monte Carlo Simulation in Angriff zu nehmen, müssen wir als erstes einen Weg finden, wie wir Punkte zufällig verschieben können, zum Beispiel um 100m. Bei <em>GeoDataFrames</em> handelt es sich bei den Punkten um <code class="docutils literal notranslate"><span class="pre">Point()</span></code>-Objekte des Modules <code class="docutils literal notranslate"><span class="pre">shapely.geometry</span></code>. Wir importieren also genau diese <em>Function</em> und bei der Gelegenheit auch <code class="docutils literal notranslate"><span class="pre">geopandas</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+<span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">Point</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Als erster Schritt kreieren wir einen “Testpunkt” und entwickeln eine Methode, diesen zufällig zu verschieben (was wir mit einem Punkt schaffen, schaffen wir es auch mit Tausend Punkten). Beispielsweise können wir den Testpunkt mit den Koordinaten der alten Sternwarte Bern (bzw. deren Gedenktafel, s.u.) erstellen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sternwarte</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">2600000</span><span class="p">,</span><span class="mi">1200000</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sternwarte</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>POINT (2600000 1200000)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dieser konstruierte Punkt liegt im neuen Schweizer Koordinatensystem (CH1903+ LV95) auf der alten Sternwarte in Bern, bzw. auf deren Gedenktafel.</p>
+<div class="figure align-default" id="id1">
+<img alt="_images/sternwarte.jpg" src="_images/sternwarte.jpg" />
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Links: Koordinatensystem der Schweiz, mit dem (alten) Referenzwert Sternwarte Bern. Quelle: lv95.bve.be.ch
+rechts: Gedenktafel an die Alte Sternwarte Bern. Quelle: aiub.unibe.ch</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="ubung-1">
+<h3>Übung 1<a class="headerlink" href="#ubung-1" title="Permalink to this headline">¶</a></h3>
+<p>Wenn wir die Position eines Punktes verschieben wollen, dann müssen wir die Koordinaten wissen. Wir suchen also nach einem Weg, wie wir die x,y-Werte unseres Punktes <code class="docutils literal notranslate"><span class="pre">sternwarte</span></code> zurückerhalten. Erstelle den Punkt <code class="docutils literal notranslate"><span class="pre">sternwarte</span></code>. Versuche herauszufinden, wie das geht. Ich empfehle dazu folgende Schritte:</p>
+<ol class="simple">
+<li><p>Finde heraus, um was für einen Datentyp es sich beim Punkt handelt, nutze dafür <code class="docutils literal notranslate"><span class="pre">type()</span></code></p></li>
+<li><p>Recherchier diesen Datentyp im Internet</p></li>
+<li><p>Finde heraus, was für <em>Attributes</em> und <em>Methods</em> mit dem Datentyp assoziiert sind</p></li>
+</ol>
+<p>Wenn du die <code class="docutils literal notranslate"><span class="pre">x</span></code> und <code class="docutils literal notranslate"><span class="pre">y</span></code> Koordinaten hast, weise sie den Variabeln <code class="docutils literal notranslate"><span class="pre">x_alt</span></code>, resp. <code class="docutils literal notranslate"><span class="pre">y_alt</span></code> zu.
+Hinweis: Die Antwort ist verblüffend einfach. Verbringe nicht allzu viel Zeit mit dieser Übung. Frage mich oder deine Nachbarn, wenn du hier nicht weiterkommst.</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Schritt 1</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">sternwarte</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>shapely.geometry.point.Point
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Schritt 2</span>
+<span class="c1"># Es handelt sich offenbar um ein &quot;Shapely&quot; objekt https://shapely.readthedocs.io/en/latest/manual.html</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Schritt 3</span>
+<span class="c1"># Es sind diverse Methods mit diesem Datentyp assoziiert: https://shapely.readthedocs.io/en/latest/manual.html#general-attributes-and-methods</span>
+<span class="n">sternwarte</span><span class="o">.</span><span class="n">geom_type</span>
+
+<span class="c1"># Punkt objekte haben x, y und evt. z Koordinaten: https://shapely.readthedocs.io/en/latest/manual.html#points</span>
+<span class="n">sternwarte</span><span class="o">.</span><span class="n">x</span>
+<span class="n">sternwarte</span><span class="o">.</span><span class="n">y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1200000.0
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ubung-2-zufallswert-addieren">
+<h3>Übung 2: Zufallswert addieren<a class="headerlink" href="#ubung-2-zufallswert-addieren" title="Permalink to this headline">¶</a></h3>
+<p>Jetzt, wo wir die Koordinaten aus extrahieren können weisen wir sie zwei neuen Variabeln zu: <code class="docutils literal notranslate"><span class="pre">x_alt</span></code>, <code class="docutils literal notranslate"><span class="pre">y_alt</span></code>. Danach müssen wir eine Zufallswert zwischen -100 und 100 generieren, den wir zu <code class="docutils literal notranslate"><span class="pre">x_alt</span></code> resp. <code class="docutils literal notranslate"><span class="pre">y_alt</span></code> addieren können (das Koordinatensystem ist ja in Metern).  Wenn ich nach «Python random number» im Internet suche dann ist mein erstes Resultat bereits die Funktion <code class="docutils literal notranslate"><span class="pre">randrange</span></code> aus dem Modul <code class="docutils literal notranslate"><span class="pre">random</span></code>.</p>
+<p>Importiere dieses Modul und nutze die genannte Funktion um einen Versatz je für <code class="docutils literal notranslate"><span class="pre">x</span></code> und <code class="docutils literal notranslate"><span class="pre">y</span></code> zu generieren. Addiere diese beiden Zahlen zu <code class="docutils literal notranslate"><span class="pre">x_alt</span></code> resp. <code class="docutils literal notranslate"><span class="pre">y_alt</span></code> und speichere die Outputs als <code class="docutils literal notranslate"><span class="pre">x_neu</span></code> und <code class="docutils literal notranslate"><span class="pre">y_neu</span></code>.
+Nun können wir wieder <code class="docutils literal notranslate"><span class="pre">Point()</span></code> verwenden um aus <code class="docutils literal notranslate"><span class="pre">x_neu</span></code>, <code class="docutils literal notranslate"><span class="pre">y_neu</span></code> eine neue Punkt-Geometrie zu erstellen. Speichere diese neue Geometrie unter der Variabel <code class="docutils literal notranslate"><span class="pre">sternwarte_neu</span></code>.</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_alt</span> <span class="o">=</span> <span class="n">sternwarte</span><span class="o">.</span><span class="n">x</span>
+<span class="n">y_alt</span> <span class="o">=</span> <span class="n">sternwarte</span><span class="o">.</span><span class="n">y</span>
+
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">x_neu</span> <span class="o">=</span> <span class="n">x_alt</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">y_neu</span> <span class="o">=</span> <span class="n">y_alt</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="n">sternwarte_neu</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="n">x_neu</span><span class="p">,</span> <span class="n">y_neu</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sternwarte_neu</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>POINT (2599999 1200052)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ubung-3-arbeitsschritte-in-eine-function-verwandeln">
+<h3>Übung 3: Arbeitsschritte in eine <em>Function</em> verwandeln<a class="headerlink" href="#ubung-3-arbeitsschritte-in-eine-function-verwandeln" title="Permalink to this headline">¶</a></h3>
+<p>Jetzt sind die Einzelschritte zur Verschiebung eines Punktes klar. Da wir dies für viele Punkte machen müssen, ist es sinnvoll, aus den Arbeitsschritten eine <em>Function</em> zu erstellen. Erstelle eine Function <code class="docutils literal notranslate"><span class="pre">point_offset</span></code> welche als Input ein <code class="docutils literal notranslate"><span class="pre">Point()</span></code>-Objekt nimmt und ein leicht verschobenes <code class="docutils literal notranslate"><span class="pre">Point()</span></code>-Objekt zurück gibt. Wenn du möchtest kannst du die Distanz der Verschiebung als optionalen Parameter (wichtig!) definieren.</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">point_offset</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="n">distance</span> <span class="o">=</span> <span class="mi">100</span><span class="p">):</span>
+    <span class="n">x_alt</span> <span class="o">=</span> <span class="n">point</span><span class="o">.</span><span class="n">x</span>
+    <span class="n">y_alt</span> <span class="o">=</span> <span class="n">point</span><span class="o">.</span><span class="n">y</span>
+
+    <span class="n">distance</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">distance</span><span class="p">)</span>
+
+    <span class="n">x_neu</span> <span class="o">=</span> <span class="n">x_alt</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="o">-</span><span class="n">distance</span><span class="p">,</span><span class="n">distance</span><span class="p">)</span>
+    <span class="n">y_neu</span> <span class="o">=</span> <span class="n">y_alt</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="o">-</span><span class="n">distance</span><span class="p">,</span><span class="n">distance</span><span class="p">)</span>
+
+    <span class="n">point_off</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="n">x_neu</span><span class="p">,</span> <span class="n">y_neu</span><span class="p">)</span>
+
+    <span class="k">return</span><span class="p">(</span><span class="n">point_off</span><span class="p">)</span>
+
+<span class="n">point_offset</span><span class="p">(</span><span class="n">sternwarte</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/02_04_Einzelpunkt_Verschieben_15_0.svg" src="_images/02_04_Einzelpunkt_Verschieben_15_0.svg" /></div>
+</div>
+</div>
+<div class="section" id="output-visualisieren">
+<h3>Output visualisieren<a class="headerlink" href="#output-visualisieren" title="Permalink to this headline">¶</a></h3>
+<p>Nun ist es wichtig, dass wir unsere Function visuell überprüfen. Wir wenden die Function 1’000 mal auf den Punkt <code class="docutils literal notranslate"><span class="pre">sternwarte</span></code> an und schauen mal wie die Punkte verteilt werden. Für diesen Schritt gebe ich euch den fertigen Code, da ihr die dafür benötigten Techniken noch nicht gelernt habt. Füge diesen Code in dein Script ein und führe ihn aus. Allenfalls musst du den Code leicht an deine Situation anpassen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoSeries</span><span class="p">([</span><span class="n">point_offset</span><span class="p">(</span><span class="n">sternwarte</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1000</span><span class="p">)])</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">gpd</span><span class="o">.</span><span class="n">GeoSeries</span><span class="p">(</span><span class="n">sternwarte</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span> <span class="o">=</span> <span class="n">ax</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="optionale-ubung-fur-hochmotivierte-sehr-anspruchsvoll">
+<h3>Optionale Übung für <em>Hoch</em>motivierte (sehr anspruchsvoll)<a class="headerlink" href="#optionale-ubung-fur-hochmotivierte-sehr-anspruchsvoll" title="Permalink to this headline">¶</a></h3>
+<p>Wie in der obigen Grafik ersichtlich ist die Verteilung der Punkte bei unserer Herangehensweise Quadratisch. Im Extremfall liegt ein Punkt 100m östlich und 100m nördlich vom Ursprungspunkt entfernt, die euklidische Distanz zum Ursprungspunkt beträgt dann 141 Meter (<span class="math notranslate nohighlight">\(\sqrt{100^2+100^2}\)</span>). Wen das auch stört, der kann eine alternative Methode entwickeln den Punkt um maximal 100m zu verschieben. Tipps dazu könnt ihr gerne bei uns abholen.</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">point_offset2</span><span class="p">(</span><span class="n">point</span><span class="p">,</span><span class="n">distance</span><span class="p">,</span> <span class="n">distribution</span> <span class="o">=</span> <span class="s2">&quot;uniform&quot;</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">random</span>
+    <span class="kn">import</span> <span class="nn">math</span>
+    <span class="kn">import</span> <span class="nn">shapely</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">point</span><span class="o">.</span><span class="n">x</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">point</span><span class="o">.</span><span class="n">y</span>
+    <span class="c1"># Ein Winkel von 360 wird in Radians konvertiert</span>
+    <span class="n">rad</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">360</span><span class="p">))</span>
+    <span class="c1"># zwei Varianten: &quot;uniforme Verteilung oder Normalverteilung&quot;</span>
+    <span class="k">if</span> <span class="n">distribution</span> <span class="o">==</span> <span class="s2">&quot;uniform&quot;</span><span class="p">:</span>
+        <span class="n">offdist</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="o">-</span><span class="n">distance</span><span class="p">,</span><span class="n">distance</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">distribution</span> <span class="o">==</span> <span class="s2">&quot;normal&quot;</span><span class="p">:</span>
+        <span class="n">offdist</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">normalvariate</span><span class="p">(</span><span class="n">mu</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">sigma</span> <span class="o">=</span> <span class="n">distance</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+    <span class="c1"># Mit der Cosinusfunktion, dem Winkel (in Radians) und der Distanz wird der y_offset bestimmt</span>
+    <span class="n">y_offset</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">rad</span><span class="p">)</span><span class="o">*</span><span class="n">offdist</span>
+    <span class="c1"># Mit der Sinusfunktion wird der x_offset bestimmt</span>
+    <span class="n">x_offset</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">rad</span><span class="p">)</span><span class="o">*</span><span class="n">offdist</span>
+    <span class="n">x_neu</span> <span class="o">=</span> <span class="n">x</span><span class="o">+</span><span class="n">x_offset</span>
+    <span class="n">y_neu</span> <span class="o">=</span> <span class="n">y</span><span class="o">+</span><span class="n">y_offset</span>
+    <span class="n">point_off</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="n">x_neu</span><span class="p">,</span> <span class="n">y_neu</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">point_off</span><span class="p">)</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoSeries</span><span class="p">([</span><span class="n">point_offset2</span><span class="p">(</span><span class="n">sternwarte</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span> <span class="s2">&quot;uniform&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">)])</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">gpd</span><span class="o">.</span><span class="n">GeoSeries</span><span class="p">(</span><span class="n">sternwarte</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span> <span class="o">=</span> <span class="n">ax</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="_images/02_04_Einzelpunkt_Verschieben_19_1.png" src="_images/02_04_Einzelpunkt_Verschieben_19_1.png" />
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoSeries</span><span class="p">([</span><span class="n">point_offset2</span><span class="p">(</span><span class="n">sternwarte</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span> <span class="s2">&quot;normal&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">)])</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">gpd</span><span class="o">.</span><span class="n">GeoSeries</span><span class="p">(</span><span class="n">sternwarte</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span> <span class="o">=</span> <span class="n">ax</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="_images/02_04_Einzelpunkt_Verschieben_20_1.png" src="_images/02_04_Einzelpunkt_Verschieben_20_1.png" />
+</div>
+</div>
+</div>
+</div>
+<span id="document-02_05_Punkte_einer_GeoDataFrame_verschieben"></span><div class="section" id="punkte-einer-geodataframe-zufallig-verschieben">
+<h2>Punkte einer GeoDataFrame zufällig verschieben<a class="headerlink" href="#punkte-einer-geodataframe-zufallig-verschieben" title="Permalink to this headline">¶</a></h2>
+<p>Nun wollen wir den ganzen Zauber auf unsere richtigen Daten, die Zeckenstiche, anwenden. Dazu müssen wir zuerst den Zeckenstichdatensatz einlesen. Nutzt dazu die Function <code class="docutils literal notranslate"><span class="pre">gpd.read_file()</span></code> um das Shapefile, welches wir letzte Woche abgespeichert hatten, zu importieren. Wer dieses Shapefile nicht hat, findet eine Version auf Moodle. Speichere die Daten in als Variabel <code class="docutils literal notranslate"><span class="pre">zeckenstiche</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">Point</span>
+
+<span class="n">zeckenstiche</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;zeckenstiche.shp&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">point_offset</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="n">distance</span> <span class="o">=</span> <span class="mi">100</span><span class="p">):</span>
+    <span class="n">x_alt</span> <span class="o">=</span> <span class="n">point</span><span class="o">.</span><span class="n">x</span>
+    <span class="n">y_alt</span> <span class="o">=</span> <span class="n">point</span><span class="o">.</span><span class="n">y</span>
+
+    <span class="n">distance</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">distance</span><span class="p">)</span>
+
+    <span class="n">x_neu</span> <span class="o">=</span> <span class="n">x_alt</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="o">-</span><span class="n">distance</span><span class="p">,</span><span class="n">distance</span><span class="p">)</span>
+    <span class="n">y_neu</span> <span class="o">=</span> <span class="n">y_alt</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="o">-</span><span class="n">distance</span><span class="p">,</span><span class="n">distance</span><span class="p">)</span>
+
+    <span class="n">point_off</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="n">x_neu</span><span class="p">,</span> <span class="n">y_neu</span><span class="p">)</span>
+
+    <span class="k">return</span><span class="p">(</span><span class="n">point_off</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="ubung-1-alle-zeckenstiche-zufallig-verschieben">
+<h3>Übung 1: Alle Zeckenstiche zufällig verschieben<a class="headerlink" href="#ubung-1-alle-zeckenstiche-zufallig-verschieben" title="Permalink to this headline">¶</a></h3>
+<p>Um in <em>DataFrames</em> / <em>GeoDataFrames</em> ganze Spalten oder Zeilen zu verändern, stehen einem die <em>Methods</em> <code class="docutils literal notranslate"><span class="pre">ma</span></code>p, <code class="docutils literal notranslate"><span class="pre">apply</span></code> und <code class="docutils literal notranslate"><span class="pre">applymap</span></code> zur Verfügung. Es lohnt sich sehr, die verschiedenen Anwendungsbereiche dieser <em>Methods</em> kennen zu lernen, doch das würde den Umfang dieses Kurses überschreiten. Heute brauchen wir lediglich <code class="docutils literal notranslate"><span class="pre">apply</span></code>, welches wir auf die <code class="docutils literal notranslate"><span class="pre">geometry</span></code>-Spalte unserer <em>GeoDataFrame</em> anwenden.
+Um unsere eigene Function point_offset auf die Spalte geometry anzuwenden gehst du wie folgt vor: Selektiere die entsprechende Spalte (mit <code class="docutils literal notranslate"><span class="pre">[&quot;spaltenname&quot;]</span></code>) und verwende die Method apply mit der selbst erstellt Function point_offset als einziges Argument, und zwar ohne Klammer.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;geometry&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">point_offset</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span> <span class="c1"># .head kann man weglassen</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    POINT (2679058.000 1240873.000)
+1    POINT (2679849.000 1240867.000)
+2    POINT (2687632.000 1240840.000)
+3    POINT (2674751.000 1240826.000)
+4    POINT (2681812.000 1240976.000)
+Name: geometry, dtype: geometry
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ubung-2-neue-geodataframe-mit-simulierten-punkten-erstellen">
+<h3>Übung 2: Neue GeoDataFrame mit simulierten Punkten erstellen<a class="headerlink" href="#ubung-2-neue-geodataframe-mit-simulierten-punkten-erstellen" title="Permalink to this headline">¶</a></h3>
+<p>Was bei <code class="docutils literal notranslate"><span class="pre">apply()</span></code> rauskommt, sind nur die neuen, verschobenen Punkte. Um diese abzuspeichern erstellen wir eine leere GeoDataFrame und weisen den Output aus <code class="docutils literal notranslate"><span class="pre">apply()</span></code> einer neuen Spalte namens <code class="docutils literal notranslate"><span class="pre">geometry</span></code> zu.</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeckenstiche_sim</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">()</span>
+<span class="n">zeckenstiche_sim</span><span class="p">[</span><span class="s2">&quot;geometry&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;geometry&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">point_offset</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ubung-3-id-ubernehmen">
+<h3>Übung 3: ID übernehmen<a class="headerlink" href="#ubung-3-id-ubernehmen" title="Permalink to this headline">¶</a></h3>
+<p>Der generierte Datensatz <code class="docutils literal notranslate"><span class="pre">zeckenstiche_sim</span></code> verfügt nun nur über eine Geometriespalte, die anderen Spalten von <code class="docutils literal notranslate"><span class="pre">zeckenstiche</span></code> haben wir nicht übernommen. Bei den meisten Spalten ist uns das auch egal, aber die Zeckenstich ID wäre praktisch, um den simulierten Punkt zum Original Zeckenstich zurück führen zu können.</p>
+<p>Übertrage die ID von <code class="docutils literal notranslate"><span class="pre">zeckenstiche</span></code> auf <code class="docutils literal notranslate"><span class="pre">zeckenstiche_sim</span></code>. Verwende dazu die Selektion mit eckigen Klammern.</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeckenstiche_sim</span><span class="p">[</span><span class="s2">&quot;ID&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;ID&quot;</span><span class="p">]</span>
+<span class="n">zeckenstiche_sim</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>geometry</th>
+      <th>ID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>POINT (2679045.000 1240867.000)</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>POINT (2679876.000 1240954.000)</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>POINT (2687529.000 1240814.000)</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>POINT (2674791.000 1240958.000)</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>POINT (2681774.000 1240839.000)</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="ubung-4-mehrere-geodataframes-visualisieren">
+<h3>Übung 4: Mehrere <em>GeoDataFrames</em> visualisieren<a class="headerlink" href="#ubung-4-mehrere-geodataframes-visualisieren" title="Permalink to this headline">¶</a></h3>
+<p>Um zwei <em>GeoDataFrames</em> im gleichen Plot darzustellen, wird folgendermassen vorgegangen. Der erste Datensatz wird mit <code class="docutils literal notranslate"><span class="pre">.plot()</span></code> visualisiert, wobei der Output einer Variabel  (z.B. <code class="docutils literal notranslate"><span class="pre">basemap</span></code>)  zugewiesen wird. Danach wird der zweite Datensatz ebenfalls mit <code class="docutils literal notranslate"><span class="pre">.plot()</span></code> visualisiert, wobei auf den ersten Plot via dem Argument <code class="docutils literal notranslate"><span class="pre">ax</span></code> verwiesen wird.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">basemap</span> <span class="o">=</span> <span class="n">zeckenstiche</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">)</span>
+<span class="n">zeckenstiche_sim</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span> <span class="o">=</span> <span class="n">basemap</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="toctree-wrapper compound">
+<span id="document-03_01_Einleitung"></span><div class="section" id="einleitung-zu-diesem-block">
+<h2>Einleitung zu diesem Block<a class="headerlink" href="#einleitung-zu-diesem-block" title="Permalink to this headline">¶</a></h2>
+<p>!! HIER NOCH EINE EINLEITUNG SCHREIBEN !!</p>
+<div class="attention admonition">
+<p class="admonition-title">Übungsziele</p>
+<ul class="simple">
+<li><p>Functions kennenlernen und beherrschen</p></li>
+<li><p>Einfache Geometrien manipulieren lernen</p></li>
+<li><p>Eigene Python-Scripts importieren können</p></li>
+<li><p>Function auf eine ganze Spalte einer (Geo-) DataFrame anwenden können.</p></li>
+</ul>
+</div>
+</div>
+<span id="document-03_02_For_Loops"></span><div class="section" id="for-loops">
+<h2>For Loops<a class="headerlink" href="#for-loops" title="Permalink to this headline">¶</a></h2>
+<p>Nirgends ist der Aspekt der Automatisierung so sichtbar wie in For Loops. Loops sind «Schleifen» wo eine Aufgabe so lange wiederholt wird, bis ein Ende erreicht worden ist. Auch For-Loops sind im Grunde genommen sehr einfach:</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">platzhalter</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Iteration&quot;</span><span class="p">,</span><span class="n">platzhalter</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iteration 0
+Iteration 1
+Iteration 2
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>for legt fest, dass eine For-Loop beginnt</p></li>
+<li><p>Nach «for» kommt eine Platzhalter-Variabel, die beliebig heissen kann. Diese Variabel verändert sich innerhalb des-Loops</p></li>
+<li><p>Nach dem Platzhalter kommt der Begriff «in»</p></li>
+<li><p>Nach in wird der «Iterator» festgelegt, also worüber der For-Loop iterieren soll (hier: über eine Liste mit den Zahlen 0,1,2).</p></li>
+<li><p>Danach kommt, wie schon bei der Funktion ein Doppelpunkt «:» der Zeigt: «Nun legen wir gleich fest was im For-Loop passieren soll»</p></li>
+<li><p>Auf einer neuen Zeile wird eingerückt festgelegt, was in der For-Loop passieren soll. In unserem Fall wird wieder etwas Nonsens in die Konsole ausgespukt. Achtung: return() gibt’s in For-Loops nicht.</p></li>
+<li><p>Der Output des obigen For-Loops sieht folgendermassen aus:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Iteration</span> <span class="mi">0</span>
+<span class="n">Iteration</span> <span class="mi">1</span>
+<span class="n">Iteration</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Die Variabel «platzhalter» hat nach Beendigung des-Loops den gespeichert, der als letztes verwendet wurde:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">platzhalter</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="ubung-1-erste-for-loop-erstellen">
+<h3>Übung 1: Erste For-Loop erstellen<a class="headerlink" href="#ubung-1-erste-for-loop-erstellen" title="Permalink to this headline">¶</a></h3>
+<p>Erstelle eine For-Loop, die über eine Liste von 3 Namen iteriert, und jede Person in der Liste grüsst (Output in die Konsole mittels <code class="docutils literal notranslate"><span class="pre">print</span></code>).</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;Il Buono&quot;</span><span class="p">,</span> <span class="s2">&quot;Il Brutto&quot;</span><span class="p">,</span> <span class="s2">&quot;Il Cattivo&quot;</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ciao &quot;</span><span class="p">,</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ciao  Il Buono
+Ciao  Il Brutto
+Ciao  Il Cattivo
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ubung-2-for-loop-mit-range">
+<h3>Übung 2: For-Loop mit <code class="docutils literal notranslate"><span class="pre">range()</span></code><a class="headerlink" href="#ubung-2-for-loop-mit-range" title="Permalink to this headline">¶</a></h3>
+<p>Im Dummy-Beispiel der Einführung iterieren wir über eine Liste mit den Werten <code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">1</span></code> und <code class="docutils literal notranslate"><span class="pre">2</span></code>. Wenn wir aber über viele Werte iterieren wollen, ist es zu mühsam händisch eine Liste mit allen Werten zu erstellen. Mit range(n) erstellt Python ein Iterator mit den Zahlen <code class="docutils literal notranslate"><span class="pre">0</span></code> bis <code class="docutils literal notranslate"><span class="pre">n</span></code>. Repliziere den For-Loop aus der Einführung und ersetzte <code class="docutils literal notranslate"><span class="pre">[0,1,2]</span></code> mit <code class="docutils literal notranslate"><span class="pre">range(3)</span></code>.</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">platzhalter</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Iteration&quot;</span><span class="p">,</span><span class="n">platzhalter</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iteration 0
+Iteration 1
+Iteration 2
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="input-output-aus-for-loop">
+<h3>Input: Output aus For-Loop<a class="headerlink" href="#input-output-aus-for-loop" title="Permalink to this headline">¶</a></h3>
+<p>Bis jetzt haben wir lediglich Sachen in die Konsole herausgeben lassen, doch wie schon bei Functions ist der Zweck einer For-Loop meist, dass nach Durchführung etwas davon zurückbleibt. return() gibt es aber bei For-Loops nicht. Nehmen wir folgendes Beispiel (Brooks, M., 1997):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">schlagwort</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;bitch&quot;</span><span class="p">,</span><span class="s2">&quot;lover&quot;</span><span class="p">,</span><span class="s2">&quot;child&quot;</span><span class="p">,</span><span class="s2">&quot;mother&quot;</span><span class="p">,</span><span class="s2">&quot;sinner&quot;</span><span class="p">,</span><span class="s2">&quot;saint&quot;</span><span class="p">]:</span>
+    <span class="n">liedzeile</span> <span class="o">=</span> <span class="s2">&quot;I&#39;m a &quot;</span><span class="o">+</span> <span class="n">schlagwort</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="n">liedzeile</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>I&#39;m a bitch
+I&#39;m a lover
+I&#39;m a child
+I&#39;m a mother
+I&#39;m a sinner
+I&#39;m a saint
+</pre></div>
+</div>
+</div>
+</div>
+<p>Der Output von dieser For-Loop sind zwar sechs Liederzeilen, wenn wir die Variabel <code class="docutils literal notranslate"><span class="pre">liedzeile</span></code> anschauen ist dort nur das Resultat aus der letzten Durchführung gespeichert. Das gleiche gilt auch für die variabel <code class="docutils literal notranslate"><span class="pre">schlagwort</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">liedzeile</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;I&#39;m a saint&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">schlagwort</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;saint&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Das verrät uns etwas über die Funktionsweise des <em>For-Loops</em>: Bei jedem Durchgang werden die Variablen immer wieder überschrieben. Wenn wir also den Output des ganzen For-Loops abspeichern wollen, müssen wir dies etwas vorbereiten.
+Dafür erstellen wir unmittelbar for dem For-Loop einen leeren Behälter, zum Beispiel eine leere Liste (<code class="docutils literal notranslate"><span class="pre">strophe</span> <span class="pre">=</span> <span class="pre">[]</span></code>). Nun können wir innerhalb des <em>Loops</em> <code class="docutils literal notranslate"><span class="pre">append()</span></code> nutzen, um den Output von einem Durchgang dieser Liste hinzu zu fügen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">strophe</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">schlagwort</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;bitch&quot;</span><span class="p">,</span><span class="s2">&quot;lover&quot;</span><span class="p">,</span><span class="s2">&quot;child&quot;</span><span class="p">,</span><span class="s2">&quot;mother&quot;</span><span class="p">,</span><span class="s2">&quot;sinner&quot;</span><span class="p">,</span><span class="s2">&quot;saint&quot;</span><span class="p">]:</span>
+    <span class="n">liedzeile</span> <span class="o">=</span> <span class="s2">&quot;I&#39;m a &quot;</span><span class="o">+</span> <span class="n">schlagwort</span> 
+    <span class="n">strophe</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">liedzeile</span><span class="p">)</span>
+    
+<span class="n">strophe</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&quot;I&#39;m a bitch&quot;,
+ &quot;I&#39;m a lover&quot;,
+ &quot;I&#39;m a child&quot;,
+ &quot;I&#39;m a mother&quot;,
+ &quot;I&#39;m a sinner&quot;,
+ &quot;I&#39;m a saint&quot;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ubung-3-output-aus-for-loop-speichern">
+<h3>Übung 3: Output aus For-Loop speichern<a class="headerlink" href="#ubung-3-output-aus-for-loop-speichern" title="Permalink to this headline">¶</a></h3>
+<p>Erweitere deinen <em>For-Loop</em> aus Übung 1 so, dass der Output aller Durchgänge in einer Liste gespeichert werden.</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mylist</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;Il Buono&quot;</span><span class="p">,</span> <span class="s2">&quot;Il Brutto&quot;</span><span class="p">,</span> <span class="s2">&quot;Il Cattivo&quot;</span><span class="p">]:</span>
+    <span class="n">mylist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Ciao &quot;</span><span class="o">+</span><span class="n">name</span><span class="p">)</span>
+
+<span class="n">mylist</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Ciao Il Buono&#39;, &#39;Ciao Il Brutto&#39;, &#39;Ciao Il Cattivo&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<span id="document-03_03_Zeckenstich_Simulation"></span><div class="section" id="zeckenstich-simulation-mit-loop">
+<h2>Zeckenstich Simulation mit Loop<a class="headerlink" href="#zeckenstich-simulation-mit-loop" title="Permalink to this headline">¶</a></h2>
+<p>Letzte Woche hattet ihr alle Punkte Zeckenstich-GeoDataFrame einmal zufällig verschoben. Nun wo ihr die Funktionsweise von Loops kennt, könnt ihr diesen Schritt eine beliebige Anzahl mal wiederholen. Um auf den Stand der letzten Woche zu kommen müsst ihr folgende Schritte ausführen:</p>
+<ol class="simple">
+<li><p>Importiert die notwenigen Module (pandas, geopandas, random)</p></li>
+<li><p>Importiert die notwendigen Functions (Point aus shapely.geometry sowie die selbst erstellte Function point_offset())</p></li>
+<li><p>Importiert den Zeckenstichdatensatz</p></li>
+<li><p>Rekonstruiert Übung 10 und 11 aus letzter Woche um die Zeckenstiche 1x zufällig zu verschieben</p></li>
+</ol>
+<p>Der Code für diese Schritte 1 – 4 lauten folgendermassen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Schritt 1</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="c1"># Schritt 2</span>
+<span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">Point</span>
+
+<span class="k">def</span> <span class="nf">point_offset</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="n">distance</span> <span class="o">=</span> <span class="mi">100</span><span class="p">):</span>
+    <span class="n">x_alt</span> <span class="o">=</span> <span class="n">point</span><span class="o">.</span><span class="n">x</span>
+    <span class="n">y_alt</span> <span class="o">=</span> <span class="n">point</span><span class="o">.</span><span class="n">y</span>
+
+    <span class="n">distance</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">distance</span><span class="p">)</span>
+
+    <span class="n">x_neu</span> <span class="o">=</span> <span class="n">x_alt</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="o">-</span><span class="n">distance</span><span class="p">,</span><span class="n">distance</span><span class="p">)</span>
+    <span class="n">y_neu</span> <span class="o">=</span> <span class="n">y_alt</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="o">-</span><span class="n">distance</span><span class="p">,</span><span class="n">distance</span><span class="p">)</span>
+
+    <span class="n">point_off</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="n">x_neu</span><span class="p">,</span> <span class="n">y_neu</span><span class="p">)</span>
+
+    <span class="k">return</span><span class="p">(</span><span class="n">point_off</span><span class="p">)</span>
+
+<span class="c1"># Schritt 3</span>
+<span class="n">zeckenstiche</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;zeckenstiche.shp&quot;</span><span class="p">)</span>
+
+<span class="c1"># Schritt 4</span>
+<span class="n">zeckenstiche_sim</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">()</span>
+<span class="n">zeckenstiche_sim</span><span class="p">[</span><span class="s2">&quot;geometry&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;geometry&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">point_offset</span><span class="p">)</span>
+<span class="n">zeckenstiche_sim</span><span class="p">[</span><span class="s2">&quot;ID&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;ID&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="ubung-1-mit-for-loop-monte-carlo-simulation-durchfuhren">
+<h3>Übung 1: Mit For-Loop Monte Carlo Simulation durchführen<a class="headerlink" href="#ubung-1-mit-for-loop-monte-carlo-simulation-durchfuhren" title="Permalink to this headline">¶</a></h3>
+<p>Kombiniere den Code aus Schritt 4 (siehe vorherige Seite) mit deinem Wissen über Loops, um diese einmalige Verschiebung der Punkte 50-mal (mit <code class="docutils literal notranslate"><span class="pre">range(50)</span></code>) zu wiederholen. Denk daran: Du brauchst vor dem Loop eine leere Liste (z.B. <code class="docutils literal notranslate"><span class="pre">monte_carlo</span> <span class="pre">=</span> <span class="pre">[]</span></code>) damit du den Output aus jedem Loop mit <code class="docutils literal notranslate"><span class="pre">append()</span></code>  abspeichern kannst. Erstelle auch eine neue Spalte <code class="docutils literal notranslate"><span class="pre">Run_Nr</span></code> mit der Nummer der Durchführung (die du vom Platzhalter erhältst).</p>
+<div class="figure align-default" id="id1">
+<img alt="_images/montepython.jpg" src="_images/montepython.jpg" />
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Quelle <a class="reference external" href="https://twitter.com/GregoryRHancock/status/1179734188716707846?s=20">twitter.com</a></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">If someone does a Monte Carlo simulation study using Python, can we call it a “Monte Python” study? <br>Please?</p>&mdash; Gregory R. Hancock (@GregoryRHancock) <a href="https://twitter.com/GregoryRHancock/status/1179734188716707846?ref_src=twsrc%5Etfw">October 3, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> <div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">monte_carlo</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">):</span>
+    <span class="n">zeckenstiche_sim</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">()</span>
+    <span class="n">zeckenstiche_sim</span><span class="p">[</span><span class="s2">&quot;geometry&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;geometry&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">point_offset</span><span class="p">)</span>
+    <span class="n">zeckenstiche_sim</span><span class="p">[</span><span class="s2">&quot;ID&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;ID&quot;</span><span class="p">]</span>
+    <span class="n">zeckenstiche_sim</span><span class="p">[</span><span class="s2">&quot;Run_Nr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span>
+    <span class="n">monte_carlo</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">zeckenstiche_sim</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ubung-2-geodataframes-aus-simulation-zusammenfuhren">
+<h3>Übung 2: GeoDataFrames aus Simulation zusammenführen<a class="headerlink" href="#ubung-2-geodataframes-aus-simulation-zusammenfuhren" title="Permalink to this headline">¶</a></h3>
+<p>Schau dir die Outputs an.</p>
+<ul class="simple">
+<li><p>Mit <code class="docutils literal notranslate"><span class="pre">type()</span></code>:</p>
+<ul>
+<li><p>Was für ein Datentyp ist <code class="docutils literal notranslate"><span class="pre">zeckenstiche_sim</span></code>?</p></li>
+<li><p>Was für ein Datentyp ist <code class="docutils literal notranslate"><span class="pre">monte_carlo</span></code>?</p></li>
+</ul>
+</li>
+<li><p>Mit <code class="docutils literal notranslate"><span class="pre">len()</span></code>:</p>
+<ul>
+<li><p>Wie vielen Elemente hat <code class="docutils literal notranslate"><span class="pre">zeckenstiche_sim</span></code>?</p></li>
+<li><p>Wie viele Elemente hat <code class="docutils literal notranslate"><span class="pre">monte_carlo</span></code>?</p></li>
+</ul>
+</li>
+</ul>
+<p>Worauf ich hinaus will: <code class="docutils literal notranslate"><span class="pre">zeckenstiche_sim</span></code> ist eine <em>GeoDataFrame</em> und <code class="docutils literal notranslate"><span class="pre">monte_carlo</span></code> ist eine Liste von <em>GeoDataFrames</em>. Glücklicherweise kann man eine Liste von ähnlichen GeoDataFrames (ähnlich im Sinne von: gleiche Spaltennamen und -typen) mit der Funktion <code class="docutils literal notranslate"><span class="pre">concat()</span></code> aus <code class="docutils literal notranslate"><span class="pre">pandas</span></code> zu einer einzigen <em>GeoDataFrame</em> zusammenführen. Führe die Funktion aus und speichere den Output als <code class="docutils literal notranslate"><span class="pre">monte_carlo_df</span></code>.</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">zeckenstiche_sim</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>geopandas.geodataframe.GeoDataFrame
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">monte_carlo</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>list
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">zeckenstiche_sim</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1076
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">monte_carlo</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>50
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">monte_carlo_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">monte_carlo</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ubung-3-simulierte-daten-visualisieren">
+<h3>Übung 3: Simulierte Daten visualisieren<a class="headerlink" href="#ubung-3-simulierte-daten-visualisieren" title="Permalink to this headline">¶</a></h3>
+<p>Exploriere nun <code class="docutils literal notranslate"><span class="pre">monte_carlo_df</span></code>? Was ist es für ein Datentyp? Was hat es für Spalten? Visualisiere den Datensatz räumlich mit <code class="docutils literal notranslate"><span class="pre">monte_carlo_df.plot()</span></code>.
+Optional: Wenn du Punkte mit der gleichen ID einer Farbe zuweisen möchtest, dann erreichst du dies mit der Option <code class="docutils literal notranslate"><span class="pre">column</span> <span class="pre">=</span> <span class="pre">&quot;ID&quot;</span></code> (das geht natürlich nur, wenn du im Loop auch eine solche Spalte erstellt hast)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">monte_carlo_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>geometry</th>
+      <th>ID</th>
+      <th>Run_Nr</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>POINT (2678971.000 1240857.000)</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>POINT (2679753.000 1240809.000)</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>POINT (2687525.000 1240812.000)</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>POINT (2674822.000 1240906.000)</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>POINT (2681727.000 1240874.000)</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">monte_carlo_df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span> <span class="o">=</span> <span class="s2">&quot;ID&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">monte_carlo_df</span><span class="o">.</span><span class="n">to_file</span><span class="p">(</span><span class="s2">&quot;monte_carlo_df.shp&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<span id="document-03_04_Waldanteil_Berechnen"></span><div class="section" id="waldanteil-berechnen">
+<h2>Waldanteil berechnen<a class="headerlink" href="#waldanteil-berechnen" title="Permalink to this headline">¶</a></h2>
+<p>Nun sind wir so weit, dass wir 50 Simulation der Zeckenstiche mit zufällig verschobenen Punkten vorbereitet haben. Wir haben also die gleiche Ausgangslage, mit der ihr den Themenblock «Datenqualität und Unsicherheiten» gestartet habt. Nun geht es darum:</p>
+<ol class="simple">
+<li><p>Für jeden Simulierten Punkt zu bestimmen ob er innerhalb oder ausserhalb des Waldes liegt</p></li>
+<li><p>Den Anteil der Punkte im Wald pro Simulation zu bestimmen</p></li>
+<li><p>Die Verteilung dieser prozentualen Anteile über alle Simulationen zusammen zu fassen (mit einem Boxplot)</p></li>
+</ol>
+<p>Lade dafür den Datensatz “Wald.zip” von Moodle herunter und entpacke das Shapefile in deine <em>Working Directory</em>. Importiere den Datensatz mit <code class="docutils literal notranslate"><span class="pre">pd.read_file()</span></code> und speichere es als Variable <code class="docutils literal notranslate"><span class="pre">wald</span></code>.</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+
+<span class="n">monte_carlo_df</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;monte_carlo_df.shp&quot;</span><span class="p">)</span>
+
+<span class="n">monte_carlo_df</span>
+
+<span class="n">wald</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;wald.shp&quot;</span><span class="p">)</span>
+<span class="n">zeckenstiche</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;zeckenstiche.shp&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="ubung-1-wald-oder-nicht-wald">
+<h3>Übung 1: Wald oder nicht Wald?<a class="headerlink" href="#ubung-1-wald-oder-nicht-wald" title="Permalink to this headline">¶</a></h3>
+<p>Als erstes stellt sich die Frage, welche Punkte sich innerhalb eines Wald-Polygons befinden. In GIS Terminologie handelt es sich hier um einen <em>Spatial Join</em>.</p>
+<p><em>Spatial Join</em> ist als Funktion im Modul <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> mit dem namen sjoin vorhanden. Wie auf <a class="reference external" href="https://geopandas.org/reference/geopandas.sjoin.html">der Hilfeseite</a> beschrieben, müssen wir dieser <em>Function</em> zwei <em>GeoDataFrames</em> übergeben, die ge-joined werden sollen. Es können weitere, optionale Parameter angepasst werden, doch bei uns passen die Default werte.</p>
+<p>Führe <code class="docutils literal notranslate"><span class="pre">gpd.sjoin()</span></code> auf die beiden Datensätze <code class="docutils literal notranslate"><span class="pre">monte_carlo_df</span></code> und <code class="docutils literal notranslate"><span class="pre">wald</span></code> aus. Beachte, das die Reihenfolge, mit welchen du die beiden GeoDataFrames der Funktion übergibst eine Rolle spielt. Versuche beide Varianten und wähle die korrekte aus. Stelle dir dazu die Frage: Was für ein Geometrietyp (Punkt / Linie / Polygon) soll der Output haben? Speichere den Output als <code class="docutils literal notranslate"><span class="pre">mote_carlo_sjoin</span></code>.
+Hinweis: Allenfalls müssen das Koordinatensystem der beiden GeoDataFrames nochmals explizit gesetzt werden (z.B. mit <code class="docutils literal notranslate"><span class="pre">wald.set_crs(epsg</span> <span class="pre">=</span> <span class="pre">2056,allow_override</span> <span class="pre">=</span> <span class="pre">True)</span></code>)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">monte_carlo_df</span> <span class="o">=</span> <span class="n">monte_carlo_df</span><span class="o">.</span><span class="n">set_crs</span><span class="p">(</span><span class="n">epsg</span> <span class="o">=</span> <span class="mi">2056</span><span class="p">)</span>
+<span class="n">wald</span> <span class="o">=</span> <span class="n">wald</span><span class="o">.</span><span class="n">set_crs</span><span class="p">(</span><span class="n">epsg</span> <span class="o">=</span> <span class="mi">2056</span><span class="p">,</span><span class="n">allow_override</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+
+<span class="n">monte_carlo_sjoin</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">sjoin</span><span class="p">(</span><span class="n">wald</span><span class="p">,</span><span class="n">monte_carlo_df</span><span class="p">)</span>
+
+<span class="n">monte_carlo_sjoin</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Wald</th>
+      <th>Shape_Leng</th>
+      <th>Shape_Area</th>
+      <th>geometry</th>
+      <th>index_right</th>
+      <th>ID</th>
+      <th>Run_Nr</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>921225.341854</td>
+      <td>7.963237e+07</td>
+      <td>POLYGON Z ((2689962.355 1245335.250 644.591, 2...</td>
+      <td>20680</td>
+      <td>236</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>921225.341854</td>
+      <td>7.963237e+07</td>
+      <td>POLYGON Z ((2689962.355 1245335.250 644.591, 2...</td>
+      <td>29288</td>
+      <td>236</td>
+      <td>27</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>921225.341854</td>
+      <td>7.963237e+07</td>
+      <td>POLYGON Z ((2689962.355 1245335.250 644.591, 2...</td>
+      <td>26060</td>
+      <td>236</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>921225.341854</td>
+      <td>7.963237e+07</td>
+      <td>POLYGON Z ((2689962.355 1245335.250 644.591, 2...</td>
+      <td>7768</td>
+      <td>236</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>921225.341854</td>
+      <td>7.963237e+07</td>
+      <td>POLYGON Z ((2689962.355 1245335.250 644.591, 2...</td>
+      <td>4540</td>
+      <td>236</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="ubung-2-anteil-der-punkte-im-wald">
+<h3>Übung 2: Anteil der Punkte im Wald<a class="headerlink" href="#ubung-2-anteil-der-punkte-im-wald" title="Permalink to this headline">¶</a></h3>
+<p>Wenn wir mit <code class="docutils literal notranslate"><span class="pre">len()</span></code> die Anzahl Zeilen zwischen <code class="docutils literal notranslate"><span class="pre">monte_carlo_df</span></code> und <code class="docutils literal notranslate"><span class="pre">mote_carlo_sjoin</span></code> vergleichen, sehen wir, dass sich die Anzahl von 53’800 auf 24’021 reduziert hat. Im Mittel, über alle Simulationen, befinden sich also 44.5%  (<span class="math notranslate nohighlight">\(\frac{24021}{53800}\)</span>) der Zeckenstiche im Wald. Das ist ja schon mal spannend, aber uns interessiert ja vor allem die Verteilung dieser Mittelwerte zwischen den Simulationen.</p>
+<p>Wir müssen also die von sjoin übrig gebliebenen Punkte pro Durchgang zählen und durch ursprüngliche Anzahl Zeckenstiche dividieren.  Ursprünglich waren es 1’076 Punkte, wie uns len(zeckenstiche) zeigt.</p>
+<p>In der Logik: DataFrame =&gt; Nach «Durchgang» Gruppieren =&gt; zählen =&gt; dividieren. Genau in dieser Schreibweise können wir unsere Befehlskette aufbauen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mittelwerte</span> <span class="o">=</span> <span class="n">monte_carlo_sjoin</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;Run_Nr&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">/</span><span class="mi">1075</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ubung-3-mittelwerte-visualisieren">
+<h3>Übung 3: Mittelwerte Visualisieren<a class="headerlink" href="#ubung-3-mittelwerte-visualisieren" title="Permalink to this headline">¶</a></h3>
+<p>Gratuliere! Wenn du an diesem Punkt angekommen bist hast du eine ganze Monte Carlo Simulation von A bis Z mit Python durchgeführt. Von hier an steht dir der Weg frei für noch komplexere Analysen. Zum Abschluss kannst du die Mittelwerte wir nun auf einfache Weise visualisieren. Versuche dabei die Methods <code class="docutils literal notranslate"><span class="pre">plot()</span></code> und <code class="docutils literal notranslate"><span class="pre">plot.box()</span></code> sowie <code class="docutils literal notranslate"><span class="pre">plot.hist()</span></code>.</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mittelwerte</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mf">0.4</span><span class="p">,</span><span class="mf">0.6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.4, 0.6)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mittelwerte</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">box</span><span class="p">()</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mf">0.4</span><span class="p">,</span><span class="mf">0.6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.4, 0.6)
+</pre></div>
+</div>
+<img alt="_images/03_04_Waldanteil_Berechnen_8_1.png" src="_images/03_04_Waldanteil_Berechnen_8_1.png" />
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mittelwerte</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:ylabel=&#39;Frequency&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/03_04_Waldanteil_Berechnen_9_1.png" src="_images/03_04_Waldanteil_Berechnen_9_1.png" />
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 
@@ -210,7 +2082,6 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='right-next' id="next-link" href="01_CodinginGIS1_uebung.html" title="next page">Einleitung</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
