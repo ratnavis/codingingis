@@ -23,11 +23,11 @@ jobs:
     - name: Set up Python 3.7
       uses: actions/setup-python@v1
       with:
-        latexmk: 4.67 
         python-version: 3.7
 
     - name: Install dependencies
       run: |
+        sudo apt-get install latexmk
         pip install -r requirements.txt
 
     # Build the book
