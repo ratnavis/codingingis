@@ -15,3 +15,10 @@
   - file: 02_03_Functions
   - file: 02_04_Einzelpunkt_Verschieben
   - file: 02_05_Punkte_einer_GeoDataFrame_verschieben
+
+- part: Coding in GIS III
+  chapters:
+  - file: 03_01_Einleitung
+  - file: 03_02_For_Loops
+  - file: 03_03_Zeckenstich_Simulation
+  - file: 03_04_Waldanteil_Berechnen
