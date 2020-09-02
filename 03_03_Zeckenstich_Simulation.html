@@ -1,0 +1,575 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zeckenstich Simulation mit Loop &#8212; Coding in GIS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-dropdown.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Waldanteil berechnen" href="03_04_Waldanteil_Berechnen.html" />
+    <link rel="prev" title="For Loops" href="03_02_For_Loops.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Coding in GIS</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Einführung
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Coding in GIS I
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_01_Einleitung.html">
+   Einleitung zu diesem Block
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_02_Python_Basics.html">
+   Python Basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_03_Python_Module.html">
+   Python Modules
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_04_Tabellarische_Daten.html">
+   Tabellarische Daten
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_05_GIS_in_Python.html">
+   GIS in Python
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Coding in GIS II
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="02_01_Einleitung.html">
+   Einleitung zu diesem Block
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02_02_Input_Functions.html">
+   Input zu
+   <em>
+    Functions
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02_03_Functions.html">
+   Übungen zu
+   <em>
+    Functions
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02_04_Einzelpunkt_Verschieben.html">
+   Einen Einzelpunkt zufällig verschieben
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02_05_Punkte_einer_GeoDataFrame_verschieben.html">
+   Punkte einer GeoDataFrame zufällig verschieben
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Coding in GIS III
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_01_Einleitung.html">
+   Einleitung zu diesem Block
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_02_For_Loops.html">
+   For Loops
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Zeckenstich Simulation mit Loop
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_04_Waldanteil_Berechnen.html">
+   Waldanteil berechnen
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/03_03_Zeckenstich_Simulation.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/03_03_Zeckenstich_Simulation.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/03_03_Zeckenstich_Simulation.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ubung-1-mit-for-loop-monte-carlo-simulation-durchfuhren">
+   Übung 1: Mit For-Loop Monte Carlo Simulation durchführen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ubung-2-geodataframes-aus-simulation-zusammenfuhren">
+   Übung 2: GeoDataFrames aus Simulation zusammenführen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ubung-3-simulierte-daten-visualisieren">
+   Übung 3: Simulierte Daten visualisieren
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="zeckenstich-simulation-mit-loop">
+<h1>Zeckenstich Simulation mit Loop<a class="headerlink" href="#zeckenstich-simulation-mit-loop" title="Permalink to this headline">¶</a></h1>
+<p>Letzte Woche hattet ihr alle Punkte Zeckenstich-GeoDataFrame einmal zufällig verschoben. Nun wo ihr die Funktionsweise von Loops kennt, könnt ihr diesen Schritt eine beliebige Anzahl mal wiederholen. Um auf den Stand der letzten Woche zu kommen müsst ihr folgende Schritte ausführen:</p>
+<ol class="simple">
+<li><p>Importiert die notwenigen Module (pandas, geopandas, random)</p></li>
+<li><p>Importiert die notwendigen Functions (Point aus shapely.geometry sowie die selbst erstellte Function point_offset())</p></li>
+<li><p>Importiert den Zeckenstichdatensatz</p></li>
+<li><p>Rekonstruiert Übung 10 und 11 aus letzter Woche um die Zeckenstiche 1x zufällig zu verschieben</p></li>
+</ol>
+<p>Der Code für diese Schritte 1 – 4 lauten folgendermassen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Schritt 1</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="c1"># Schritt 2</span>
+<span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">Point</span>
+
+<span class="k">def</span> <span class="nf">point_offset</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="n">distance</span> <span class="o">=</span> <span class="mi">100</span><span class="p">):</span>
+    <span class="n">x_alt</span> <span class="o">=</span> <span class="n">point</span><span class="o">.</span><span class="n">x</span>
+    <span class="n">y_alt</span> <span class="o">=</span> <span class="n">point</span><span class="o">.</span><span class="n">y</span>
+
+    <span class="n">distance</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">distance</span><span class="p">)</span>
+
+    <span class="n">x_neu</span> <span class="o">=</span> <span class="n">x_alt</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="o">-</span><span class="n">distance</span><span class="p">,</span><span class="n">distance</span><span class="p">)</span>
+    <span class="n">y_neu</span> <span class="o">=</span> <span class="n">y_alt</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="o">-</span><span class="n">distance</span><span class="p">,</span><span class="n">distance</span><span class="p">)</span>
+
+    <span class="n">point_off</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="n">x_neu</span><span class="p">,</span> <span class="n">y_neu</span><span class="p">)</span>
+
+    <span class="k">return</span><span class="p">(</span><span class="n">point_off</span><span class="p">)</span>
+
+<span class="c1"># Schritt 3</span>
+<span class="n">zeckenstiche</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;zeckenstiche.shp&quot;</span><span class="p">)</span>
+
+<span class="c1"># Schritt 4</span>
+<span class="n">zeckenstiche_sim</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">()</span>
+<span class="n">zeckenstiche_sim</span><span class="p">[</span><span class="s2">&quot;geometry&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;geometry&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">point_offset</span><span class="p">)</span>
+<span class="n">zeckenstiche_sim</span><span class="p">[</span><span class="s2">&quot;ID&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;ID&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="ubung-1-mit-for-loop-monte-carlo-simulation-durchfuhren">
+<h2>Übung 1: Mit For-Loop Monte Carlo Simulation durchführen<a class="headerlink" href="#ubung-1-mit-for-loop-monte-carlo-simulation-durchfuhren" title="Permalink to this headline">¶</a></h2>
+<p>Kombiniere den Code aus Schritt 4 (siehe vorherige Seite) mit deinem Wissen über Loops, um diese einmalige Verschiebung der Punkte 50-mal (mit <code class="docutils literal notranslate"><span class="pre">range(50)</span></code>) zu wiederholen. Denk daran: Du brauchst vor dem Loop eine leere Liste (z.B. <code class="docutils literal notranslate"><span class="pre">monte_carlo</span> <span class="pre">=</span> <span class="pre">[]</span></code>) damit du den Output aus jedem Loop mit <code class="docutils literal notranslate"><span class="pre">append()</span></code>  abspeichern kannst. Erstelle auch eine neue Spalte <code class="docutils literal notranslate"><span class="pre">Run_Nr</span></code> mit der Nummer der Durchführung (die du vom Platzhalter erhältst).</p>
+<div class="figure align-default" id="id1">
+<img alt="_images/montepython.jpg" src="_images/montepython.jpg" />
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Quelle <a class="reference external" href="https://twitter.com/GregoryRHancock/status/1179734188716707846?s=20">twitter.com</a></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">If someone does a Monte Carlo simulation study using Python, can we call it a “Monte Python” study? <br>Please?</p>&mdash; Gregory R. Hancock (@GregoryRHancock) <a href="https://twitter.com/GregoryRHancock/status/1179734188716707846?ref_src=twsrc%5Etfw">October 3, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> <div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">monte_carlo</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">):</span>
+    <span class="n">zeckenstiche_sim</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">()</span>
+    <span class="n">zeckenstiche_sim</span><span class="p">[</span><span class="s2">&quot;geometry&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;geometry&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">point_offset</span><span class="p">)</span>
+    <span class="n">zeckenstiche_sim</span><span class="p">[</span><span class="s2">&quot;ID&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;ID&quot;</span><span class="p">]</span>
+    <span class="n">zeckenstiche_sim</span><span class="p">[</span><span class="s2">&quot;Run_Nr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span>
+    <span class="n">monte_carlo</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">zeckenstiche_sim</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ubung-2-geodataframes-aus-simulation-zusammenfuhren">
+<h2>Übung 2: GeoDataFrames aus Simulation zusammenführen<a class="headerlink" href="#ubung-2-geodataframes-aus-simulation-zusammenfuhren" title="Permalink to this headline">¶</a></h2>
+<p>Schau dir die Outputs an.</p>
+<ul class="simple">
+<li><p>Mit <code class="docutils literal notranslate"><span class="pre">type()</span></code>:</p>
+<ul>
+<li><p>Was für ein Datentyp ist <code class="docutils literal notranslate"><span class="pre">zeckenstiche_sim</span></code>?</p></li>
+<li><p>Was für ein Datentyp ist <code class="docutils literal notranslate"><span class="pre">monte_carlo</span></code>?</p></li>
+</ul>
+</li>
+<li><p>Mit <code class="docutils literal notranslate"><span class="pre">len()</span></code>:</p>
+<ul>
+<li><p>Wie vielen Elemente hat <code class="docutils literal notranslate"><span class="pre">zeckenstiche_sim</span></code>?</p></li>
+<li><p>Wie viele Elemente hat <code class="docutils literal notranslate"><span class="pre">monte_carlo</span></code>?</p></li>
+</ul>
+</li>
+</ul>
+<p>Worauf ich hinaus will: <code class="docutils literal notranslate"><span class="pre">zeckenstiche_sim</span></code> ist eine <em>GeoDataFrame</em> und <code class="docutils literal notranslate"><span class="pre">monte_carlo</span></code> ist eine Liste von <em>GeoDataFrames</em>. Glücklicherweise kann man eine Liste von ähnlichen GeoDataFrames (ähnlich im Sinne von: gleiche Spaltennamen und -typen) mit der Funktion <code class="docutils literal notranslate"><span class="pre">concat()</span></code> aus <code class="docutils literal notranslate"><span class="pre">pandas</span></code> zu einer einzigen <em>GeoDataFrame</em> zusammenführen. Führe die Funktion aus und speichere den Output als <code class="docutils literal notranslate"><span class="pre">monte_carlo_df</span></code>.</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">zeckenstiche_sim</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>geopandas.geodataframe.GeoDataFrame
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">monte_carlo</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>list
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">zeckenstiche_sim</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1076
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">monte_carlo</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>50
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">monte_carlo_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">monte_carlo</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ubung-3-simulierte-daten-visualisieren">
+<h2>Übung 3: Simulierte Daten visualisieren<a class="headerlink" href="#ubung-3-simulierte-daten-visualisieren" title="Permalink to this headline">¶</a></h2>
+<p>Exploriere nun <code class="docutils literal notranslate"><span class="pre">monte_carlo_df</span></code>? Was ist es für ein Datentyp? Was hat es für Spalten? Visualisiere den Datensatz räumlich mit <code class="docutils literal notranslate"><span class="pre">monte_carlo_df.plot()</span></code>.
+Optional: Wenn du Punkte mit der gleichen ID einer Farbe zuweisen möchtest, dann erreichst du dies mit der Option <code class="docutils literal notranslate"><span class="pre">column</span> <span class="pre">=</span> <span class="pre">&quot;ID&quot;</span></code> (das geht natürlich nur, wenn du im Loop auch eine solche Spalte erstellt hast)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">monte_carlo_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>geometry</th>
+      <th>ID</th>
+      <th>Run_Nr</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>POINT (2678986.000 1240826.000)</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>POINT (2679882.000 1240760.000)</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>POINT (2687477.000 1240858.000)</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>POINT (2674885.000 1240838.000)</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>POINT (2681861.000 1240913.000)</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">monte_carlo_df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span> <span class="o">=</span> <span class="s2">&quot;ID&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="_images/03_03_Zeckenstich_Simulation_14_1.png" src="_images/03_03_Zeckenstich_Simulation_14_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">monte_carlo_df</span><span class="o">.</span><span class="n">to_file</span><span class="p">(</span><span class="s2">&quot;monte_carlo_df.shp&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="03_02_For_Loops.html" title="previous page">For Loops</a>
+    <a class='right-next' id="next-link" href="03_04_Waldanteil_Berechnen.html" title="next page">Waldanteil berechnen</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Nils Ratnaweera<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="_static/js/index.js"></script>
+    
+  </body>
+</html>

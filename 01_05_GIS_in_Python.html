@@ -147,6 +147,33 @@
   </a>
  </li>
 </ul>
+<p class="caption">
+ <span class="caption-text">
+  Coding in GIS III
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_01_Einleitung.html">
+   Einleitung zu diesem Block
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_02_For_Loops.html">
+   For Loops
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_03_Zeckenstich_Simulation.html">
+   Zeckenstich Simulation mit Loop
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_04_Waldanteil_Berechnen.html">
+   Waldanteil berechnen
+  </a>
+ </li>
+</ul>
 
 </nav>
 
@@ -241,17 +268,13 @@
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ubung-1-dataframe-zu-geodataframe">
    Übung 1:
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     DataFrame
-    </span>
-   </code>
+   <em>
+    DataFrame
+   </em>
    zu
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     GeoDataFrame
-    </span>
-   </code>
+   <em>
+    GeoDataFrame
+   </em>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -280,7 +303,7 @@
 <p>Um mit Geodaten in Python arbeiten zu können, müssen wir ein neues Modul importieren. Im Grunde genommen sind Vektordaten nicht mehr als Tabellen mit einer zusätzlichen “Geometrie”-Spalte, dementsprechend baut die “Geo”-Erweiterung auf <code class="docutils literal notranslate"><span class="pre">pandas</span></code> auf und heisst: <code class="docutils literal notranslate"><span class="pre">geopandas</span></code>.</p>
 <p>Du solltest <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> bereits installiert haben und das Modul in dein Script importieren. Importiere <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> mit dem Alias <code class="docutils literal notranslate"><span class="pre">gpd</span></code>.</p>
 <div class="section" id="ubung-1-dataframe-zu-geodataframe">
-<h2>Übung 1: <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> zu <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code><a class="headerlink" href="#ubung-1-dataframe-zu-geodataframe" title="Permalink to this headline">¶</a></h2>
+<h2>Übung 1: <em>DataFrame</em> zu <em>GeoDataFrame</em><a class="headerlink" href="#ubung-1-dataframe-zu-geodataframe" title="Permalink to this headline">¶</a></h2>
 <p>Wie erwähnt sind die Zeckenstichdaten bisher lediglich als tabellarische Daten vorhanden. In ArcGIS Terminologie müssen wir die Operation “<a class="reference external" href="https://pro.arcgis.com/de/pro-app/tool-reference/data-management/xy-table-to-point.htm">XY Table to Point</a>” durchführen. In Python heisst das: Wir wandeln eine <em>DataFrame</em> in eine <em>GeoDataFrame</em> um. Zuerst erstellen wir eine Geometrie-Spalte aus den xy-Koordinaten mit der Funktion <code class="docutils literal notranslate"><span class="pre">points_from_xy</span></code> aus dem Modul <code class="docutils literal notranslate"><span class="pre">geopandas</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

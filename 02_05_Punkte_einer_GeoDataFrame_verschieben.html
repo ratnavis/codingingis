@@ -38,6 +38,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Einleitung zu diesem Block" href="03_01_Einleitung.html" />
     <link rel="prev" title="Einen Einzelpunkt zufällig verschieben" href="02_04_Einzelpunkt_Verschieben.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -143,6 +144,33 @@
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Punkte einer GeoDataFrame zufällig verschieben
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Coding in GIS III
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_01_Einleitung.html">
+   Einleitung zu diesem Block
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_02_For_Loops.html">
+   For Loops
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_03_Zeckenstich_Simulation.html">
+   Zeckenstich Simulation mit Loop
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_04_Waldanteil_Berechnen.html">
+   Waldanteil berechnen
   </a>
  </li>
 </ul>
@@ -311,11 +339,11 @@ Um unsere eigene Function point_offset auf die Spalte geometry anzuwenden gehst 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    POINT (2678990.000 1240869.000)
-1    POINT (2679746.000 1240897.000)
-2    POINT (2687599.000 1240952.000)
-3    POINT (2674933.000 1240937.000)
-4    POINT (2681760.000 1240934.000)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    POINT (2678886.000 1240774.000)
+1    POINT (2679741.000 1240885.000)
+2    POINT (2687622.000 1240957.000)
+3    POINT (2674794.000 1240902.000)
+4    POINT (2681743.000 1240982.000)
 Name: geometry, dtype: geometry
 </pre></div>
 </div>
@@ -325,7 +353,7 @@ Name: geometry, dtype: geometry
 <div class="section" id="ubung-2-neue-geodataframe-mit-simulierten-punkten-erstellen">
 <h2>Übung 2: Neue GeoDataFrame mit simulierten Punkten erstellen<a class="headerlink" href="#ubung-2-neue-geodataframe-mit-simulierten-punkten-erstellen" title="Permalink to this headline">¶</a></h2>
 <p>Was bei <code class="docutils literal notranslate"><span class="pre">apply()</span></code> rauskommt, sind nur die neuen, verschobenen Punkte. Um diese abzuspeichern erstellen wir eine leere GeoDataFrame und weisen den Output aus <code class="docutils literal notranslate"><span class="pre">apply()</span></code> einer neuen Spalte namens <code class="docutils literal notranslate"><span class="pre">geometry</span></code> zu.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeckenstiche_sim</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">()</span>
 <span class="n">zeckenstiche_sim</span><span class="p">[</span><span class="s2">&quot;geometry&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;geometry&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">point_offset</span><span class="p">)</span>
@@ -371,27 +399,27 @@ Name: geometry, dtype: geometry
   <tbody>
     <tr>
       <th>0</th>
-      <td>POINT (2678974.000 1240785.000)</td>
+      <td>POINT (2678894.000 1240753.000)</td>
       <td>0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>POINT (2679860.000 1240841.000)</td>
+      <td>POINT (2679919.000 1240912.000)</td>
       <td>1</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>POINT (2687571.000 1240889.000)</td>
+      <td>POINT (2687564.000 1240871.000)</td>
       <td>2</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>POINT (2674928.000 1240863.000)</td>
+      <td>POINT (2674940.000 1240997.000)</td>
       <td>3</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>POINT (2681807.000 1240870.000)</td>
+      <td>POINT (2681736.000 1240870.000)</td>
       <td>4</td>
     </tr>
   </tbody>
@@ -448,6 +476,7 @@ Name: geometry, dtype: geometry
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="02_04_Einzelpunkt_Verschieben.html" title="previous page">Einen Einzelpunkt zufällig verschieben</a>
+    <a class='right-next' id="next-link" href="03_01_Einleitung.html" title="next page">Einleitung zu diesem Block</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
