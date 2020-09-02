@@ -6,6 +6,7 @@
   - file: 01_02_Python_Basics
   - file: 01_03_Python_Module
   - file: 01_04_Tabellarische_Daten
+  - file: 01_05_GIS_in_Python
   
 - part: Coding in GIS II
   chapters:
@@ -13,3 +14,4 @@
   - file: 02_02_Input_Functions
   - file: 02_03_Functions
   - file: 02_04_Einzelpunkt_Verschieben
+  - file: 02_05_Punkte_einer_GeoDataFrame_verschieben
