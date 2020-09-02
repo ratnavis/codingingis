@@ -27,18 +27,11 @@ jobs:
 
     - name: Install dependencies
       run: |
-        sudo apt-get install latexmk
-        sudo apt-get install xzdec
-        tlmgr init-usertree
-        sudo apt-get install xzdec
-        tlmgr option repository ftp://tug.org/historic/systems/texlive/2017/tlnet-final
-        tlmgr install cmap
         pip install -r requirements.txt
 
     # Build the book
     - name: Build the book
       run: |
-        jupyter-book build . --builder pdflatex
         jupyter-book build .
 
     # Push the book's HTML to github-pages
