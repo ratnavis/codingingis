@@ -28,6 +28,7 @@ jobs:
     - name: Install dependencies
       run: |
         sudo apt-get install latexmk
+        tlmgr init-usertree
         tlmgr install cmap
         pip install -r requirements.txt
 
