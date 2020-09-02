@@ -36,6 +36,7 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Einleitung zu diesem Block" href="03_01_Einleitung.html" />
@@ -57,6 +58,8 @@
     
         <div class="navbar-brand-box">
 <a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/zhaw_lsfm_iunr_blau.jpg" class="logo" alt="logo">
   
   
   <h1 class="site-logo" id="site-title">Coding in GIS</h1>
@@ -180,7 +183,7 @@
  <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+  Built with ❤ and <a href="https://jupyterbook.org">Jupyter Book</a>
 </div>
 
 </div>
@@ -239,18 +242,13 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/02_05_Punkte_einer_GeoDataFrame_verschieben.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
         
+        <a class="jupyterhub-button" href="https://jupyterhub01.zhaw.ch/hub/user-redirect/git-pull?repo=https://github.com/ratnanil/codingingis/&urlpath=tree/codingingis/02_05_Punkte_einer_GeoDataFrame_verschieben.ipynb&branch=master"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
         
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/02_05_Punkte_einer_GeoDataFrame_verschieben.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
         
         
     </div>
@@ -345,11 +343,11 @@ Um unsere eigene Function point_offset auf die Spalte geometry anzuwenden gehst 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    POINT (2679046.000 1240880.000)
-1    POINT (2679884.000 1240855.000)
-2    POINT (2687476.000 1240913.000)
-3    POINT (2674842.000 1240897.000)
-4    POINT (2681750.000 1240959.000)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    POINT (2678893.000 1240740.000)
+1    POINT (2679825.000 1240811.000)
+2    POINT (2687620.000 1240968.000)
+3    POINT (2674871.000 1240994.000)
+4    POINT (2681679.000 1241013.000)
 Name: geometry, dtype: geometry
 </pre></div>
 </div>
@@ -405,27 +403,27 @@ Name: geometry, dtype: geometry
   <tbody>
     <tr>
       <th>0</th>
-      <td>POINT (2679057.000 1240830.000)</td>
+      <td>POINT (2679063.000 1240886.000)</td>
       <td>0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>POINT (2679767.000 1240803.000)</td>
+      <td>POINT (2679839.000 1240868.000)</td>
       <td>1</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>POINT (2687488.000 1240808.000)</td>
+      <td>POINT (2687441.000 1240957.000)</td>
       <td>2</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>POINT (2674932.000 1240996.000)</td>
+      <td>POINT (2674873.000 1240938.000)</td>
       <td>3</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>POINT (2681863.000 1240926.000)</td>
+      <td>POINT (2681697.000 1240828.000)</td>
       <td>4</td>
     </tr>
   </tbody>
