@@ -28,7 +28,9 @@ jobs:
     - name: Install dependencies
       run: |
         sudo apt-get install latexmk
+        sudo apt-get install xzdec
         tlmgr init-usertree
+        sudo apt-get install xzdec
         tlmgr option repository http://mirror.ctan.org/systems/texlive/tlnet
         tlmgr install cmap
         pip install -r requirements.txt
