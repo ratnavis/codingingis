@@ -25,14 +25,22 @@ jobs:
       with:
         python-version: 3.7
 
-    - name: Install dependencies
+    - name: Install conda / pip dependencies
       run: |
         pip install -r requirements.txt
+        
+    - name: install latex dependencies
+      run: |
+        sudo apt-get install texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra latexmk
 
     # Build the book
-    - name: Build the book
+    - name: Build the html-book
       run: |
         jupyter-book build .
+        
+    - name: Build the pdf book
+      run: |
+        jupyter-book build . --builder pdflatex
 
     # Push the book's HTML to github-pages
     - name: GitHub Pages action
