@@ -252,15 +252,21 @@
         
               <div>
                 
-  <p>Note to self, how did I create this book?</p>
+  <p>For others, and for future me, here some notes on how I created this (jupyter-) book</p>
 <ul class="simple">
-<li><p>read the documentation on <a class="reference external" href="https://jupyterbook.org">jupyterbook.org</a></p></li>
-<li><p>implemented the approach “<a class="reference external" href="https://jupyterbook.org/publish/gh-pages.html#automatically-host-your-book-with-github-actions">Automatically host your book with GitHub Actions</a>”</p></li>
-<li><p>modified the yaml file of the github action to also produce a pdf output (<a class="reference external" href="https://github.com/executablebooks/meta/discussions/124">but how do I get it back?</a>)</p></li>
+<li><p>90 % can be found in the jupyter-book documentation on <a class="reference external" href="https://jupyterbook.org">jupyterbook.org</a></p></li>
+<li><p>to build the book, I implemented the approach “<a class="reference external" href="https://jupyterbook.org/publish/gh-pages.html#automatically-host-your-book-with-github-actions">Automatically host your book with GitHub Actions</a>” which means that I dont need a local installation of jupyter books</p></li>
+<li><p>I modified the github action yaml file in such a way that:</p>
+<ul>
+<li><p>latex dependencies are installed on the server instance</p></li>
+<li><p>a pdf version of the book is also built <a class="reference external" href="https://jupyterbook.org/advanced/pdf.html#id5">using Latex</a></p></li>
+<li><p>this pdf version (which has a default location _build/latex/python.pdf) is renamed, commited and pushed using github actions (read <a class="reference external" href="https://github.com/executablebooks/meta/discussions/124">my question on this</a>)</p></li>
 </ul>
-<p>Tips:</p>
+</li>
+</ul>
+<p>Useful links:</p>
 <ul class="simple">
-<li><p>have a look at the <a class="reference external" href="https://sphinx-book-theme.readthedocs.io/en/latest/reference/demo.html">sphinx demo page</a> for some insight</p></li>
+<li><p>have a look at the <a class="reference external" href="https://sphinx-book-theme.readthedocs.io/en/latest/reference/demo.html">sphinx demo page</a> for some nice methods to format the document</p></li>
 </ul>
 
     <script type="text/x-thebe-config">
