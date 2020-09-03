@@ -44,7 +44,7 @@ jobs:
         
     - name: Build the pdf book
       run: |
-        jupyter-book build . --builder pdflatex --path-output
+        jupyter-book build . --builder pdflatex
 
     # Push the book's HTML to github-pages
     - name: GitHub Pages action
@@ -59,8 +59,9 @@ jobs:
     #  with:
     #    name: codingingis_pdf
     #    path: ./_build/latex/python.pdf
-        
-    - name: Commit pdf
+    
+    # This next step moves, renames and commits the created pdf
+    - name: Commit and rename pdf
       run: |
         mv ./_build/latex/python.pdf codingingis.pdf
         git config --local user.email "action@github.com"
