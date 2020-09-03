@@ -44,7 +44,7 @@ jobs:
         
     - name: Build the pdf book
       run: |
-        jupyter-book build . --builder pdflatex
+        jupyter-book build . --builder pdflatex --path-output pdf/
 
     # Push the book's HTML to github-pages
     - name: GitHub Pages action
@@ -58,14 +58,14 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: codingingis_pdf
-        path: /home/runner/work/codingingis/codingingis/_build/latex/python.pdf
+        path: /home/runner/work/codingingis/codingingis/pdf/_build/latex/python.pdf
         
     - name: Commit files
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add /home/runner/work/codingingis/codingingis/_build/latex/python.pdf
-        git commit -m "Add PDF"
+        git add /home/runner/work/codingingis/codingingis/pdf/_build/latex/python.pdf
+        git commit -m "update PDF version of the book"
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
