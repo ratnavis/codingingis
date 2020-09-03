@@ -76,7 +76,7 @@
   <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="index.html">
-   Willkommen bei Coding in GIS!
+   Willkommen bei Coding in GIS !
   </a>
  </li>
 </ul>
@@ -334,14 +334,33 @@
 <h2>Übung 1: Variablen erstellen<a class="headerlink" href="#ubung-1-variablen-erstellen" title="Permalink to this headline">¶</a></h2>
 <p>Wir beginnen damit, einfache Datentypen wie Zahlen, Text, boolsche Variabeln (siehe Vorlesungsfolien) sogenannten Variablen zu zuweisen. Führe die folgenden Schritte aus und schau dir nach jedem Schritt die erstellten Variablen jeweils im im Variable explorer von Spyder an</p>
 <ol class="simple">
-<li><p>Erstelle eine Variabel vorname mit deinem Vornamen</p></li>
-<li><p>Erstelle eine zweite Variabel nachname mit deinem Nachnamen</p></li>
-<li><p>Was sind vorname und nachname für Datentypen?</p></li>
+<li><p>Erstelle eine Variabel <code class="docutils literal notranslate"><span class="pre">vorname</span></code> mit deinem Vornamen</p></li>
+<li><p>Erstelle eine zweite Variabel <code class="docutils literal notranslate"><span class="pre">nachname</span></code> mit deinem Nachnamen</p></li>
+<li><p>Was sind <code class="docutils literal notranslate"><span class="pre">vorname</span></code> und <code class="docutils literal notranslate"><span class="pre">nachnam</span></code>e für Datentypen?</p></li>
 <li><p>Klebe die beiden Variabeln zusammen, ohne den Output zu speichern</p></li>
-<li><p>Erstelle eine Variabel groesse mit deiner Körpergrösse in Zentimeter auf Zentimeter genau. Was ist das für ein Datentyp?</p></li>
-<li><p>Ermittle deine Grösse in Meter auf der Basis von groesse. Was ist das für ein Datentyp?</p></li>
-<li><p>Erstelle eine boolsche Variable blond und setzte sie auf True wenn diese Eigenschaft auf dich zutrifft und False falls nicht.</p></li>
+<li><p>Erstelle eine Variabel <code class="docutils literal notranslate"><span class="pre">groesse</span></code> mit deiner Körpergrösse in Zentimeter. Was ist das für ein Datentyp?</p></li>
+<li><p>Ermittle deine Grösse in Meter auf der Basis von <code class="docutils literal notranslate"><span class="pre">groesse</span></code>. Was ist das für ein Datentyp?</p></li>
+<li><p>Erstelle eine boolsche Variable blond und setzte sie auf <code class="docutils literal notranslate"><span class="pre">True</span></code> wenn diese Eigenschaft auf dich zutrifft und <code class="docutils literal notranslate"><span class="pre">False</span></code> falls nicht.</p></li>
 </ol>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vorname</span> <span class="o">=</span> <span class="s2">&quot;Guido&quot;</span>
+<span class="n">nachname</span> <span class="o">=</span> <span class="s2">&quot;van Rossum&quot;</span>
+
+<span class="nb">type</span><span class="p">(</span><span class="n">vorname</span><span class="p">)</span> <span class="c1"># es handelt sich um den Datentyp &quot;str&quot;, also String (Text)</span>
+<span class="n">vorname</span><span class="o">+</span><span class="n">nachname</span>
+
+<span class="n">groesse</span> <span class="o">=</span> <span class="mi">184</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">groesse</span><span class="p">)</span> <span class="c1"># es handelt sich hierbei um den Datentyp &quot;integer&quot;</span>
+
+<span class="n">groesse_meter</span> <span class="o">=</span> <span class="n">groesse</span><span class="o">/</span><span class="mi">100</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">groesse_meter</span><span class="p">)</span> <span class="c1"># es handelt sich um den Datentyp &quot;float&quot;</span>
+
+<span class="n">blond</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="tip admonition">
 <p class="admonition-title">Für R Nutzer</p>
 <ul class="simple">
