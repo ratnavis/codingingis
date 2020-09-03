@@ -19,21 +19,22 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    # Install dependencies
+    # Install Python
     - name: Set up Python 3.7
       uses: actions/setup-python@v1
       with:
         python-version: 3.7
-
-    - name: Install conda / pip dependencies
+    # Install the python packages (from requirements.txt)
+    - name: Install python packages
       run: |
         pip install -r requirements.txt
-        
+    
+    # Install the latex things to create the pdf
     - name: install latex dependencies
       run: |
         sudo apt-get install texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra latexmk
 
-    # Build the book
+    # Build the html version of the book
     - name: Build the html-book
       run: |
         jupyter-book build .
@@ -48,4 +49,10 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./_build/html
-
+    
+    # This step uploads the created artifact to my github repo
+    - name: Upload pdf as artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: codingingis_pdf
+        path: /home/runner/work/codingingis/codingingis/_build/latex/python.pdf
