@@ -1,4 +1,5 @@
-- file: intro
+- file: index
+- file: typographie
 
 - part: Coding in GIS I
   chapters:
@@ -21,3 +22,4 @@
   - file: 03_01_Einleitung
   - file: 03_02_For_Loops
   - file: 03_03_Zeckenstich_Simulation
+  - file: 03_04_Waldanteil_Berechnen
