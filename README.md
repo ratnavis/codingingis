@@ -9,3 +9,9 @@ For others, and for future me, here some notes on how I created this (jupyter-) 
   
 Useful links:
 - have a look at the [sphinx demo page](https://sphinx-book-theme.readthedocs.io/en/latest/reference/demo.html) for some nice methods to format the document
+
+
+Nice ressources on the subject (because I don't know where es to put it right now):
+
+- https://geo-python-site.readthedocs.io/en/latest/
+- https://pythongis.org/
