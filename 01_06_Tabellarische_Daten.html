@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Input: Tabellarische Daten &#8212; Coding in GIS</title>
+    <title>Aufgabe: Tabellarische Daten &#8212; Coding in GIS</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -39,8 +39,8 @@
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Input: GIS in Python" href="01_05_GIS_in_Python.html" />
-    <link rel="prev" title="Input: Python Modules" href="01_03_Python_Module.html" />
+    <link rel="next" title="Einleitung zu diesem Block" href="02_01_Einleitung.html" />
+    <link rel="prev" title="Input: Python Modules" href="01_05_Python_Module.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -92,38 +92,33 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="01_01b_Primitive_Datentypen.html">
+  <a class="reference internal" href="01_02_Primitive_Datentypen.html">
    Input: Primitive Datentypen
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="01_01c_Zusammengesetzte_Datentypen.html">
-   Zusammengesetzte Datentypen
+  <a class="reference internal" href="01_03_Zusammengesetzte_Datentypen.html">
+   Input: Zusammengesetzte Datentypen
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="01_02_Aufgabe_A.html">
+  <a class="reference internal" href="01_04_Aufgabe_A.html">
    Aufgabe A: Lists
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="01_02b_Aufgabe_B.html">
+  <a class="reference internal" href="01_05_Aufgabe_B.html">
    Aufgabe B: Dictionaries
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="01_03_Python_Module.html">
+  <a class="reference internal" href="01_05_Python_Module.html">
    Input: Python Modules
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Input: Tabellarische Daten
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="01_05_GIS_in_Python.html">
-   Input: GIS in Python
+   Aufgabe: Tabellarische Daten
   </a>
  </li>
 </ul>
@@ -140,18 +135,28 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02_02_Input_Functions.html">
-   Input zu
+   Input:
+   <em>
+    Functions
+   </em>
+   Teil I
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02_03_Functions.html">
+   Aufgabe:
    <em>
     Functions
    </em>
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02_03_Functions.html">
-   Übungen zu
+  <a class="reference internal" href="02_03b_Input_Functions_II.html">
+   Input:
    <em>
     Functions
    </em>
+   Teil II
   </a>
  </li>
  <li class="toctree-l1">
@@ -184,6 +189,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="03_03_Zeckenstich_Simulation.html">
    Zeckenstich Simulation mit Loop
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_05_GIS_in_Python.html">
+   Aufgabe: GIS in Python
   </a>
  </li>
  <li class="toctree-l1">
@@ -233,7 +243,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/01_04_Tabellarische_Daten.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/01_06_Tabellarische_Daten.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -258,7 +268,7 @@
     <div class="dropdown-buttons">
         
         
-        <a class="jupyterhub-button" href="https://jupyterhub01.zhaw.ch/hub/user-redirect/git-pull?repo=https://github.com/ratnanil/codingingis&urlpath=lab/tree/codingingis/01_04_Tabellarische_Daten.ipynb&branch=master"><button type="button"
+        <a class="jupyterhub-button" href="https://jupyterhub01.zhaw.ch/hub/user-redirect/git-pull?repo=https://github.com/ratnanil/codingingis&urlpath=lab/tree/codingingis/01_06_Tabellarische_Daten.ipynb&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="_static/images/logo_jupyterhub.svg"
@@ -333,8 +343,8 @@
         
               <div>
                 
-  <div class="section" id="input-tabellarische-daten">
-<h1>Input: Tabellarische Daten<a class="headerlink" href="#input-tabellarische-daten" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="aufgabe-tabellarische-daten">
+<h1>Aufgabe: Tabellarische Daten<a class="headerlink" href="#aufgabe-tabellarische-daten" title="Permalink to this headline">¶</a></h1>
 <p>Schauen wir uns nochmals die <em>Dictionary</em> <code class="docutils literal notranslate"><span class="pre">people</span></code> an. Diese ist ein Spezialfall einer Dictionary: Jeder Eintrag besteht aus einer Liste von gleich vielen Werten. Wie bereits erwähnt, kann es in einem solchen Fall sinnvoll sein, die Dictionary als Tabelle darzustellen. Dafür brauchen wir das Modul <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, welches wir mit dem Alias <code class="docutils literal notranslate"><span class="pre">pd</span></code> importieren.</p>
 <div class="section" id="ubung-1-von-einer-dictionary-zu-einer-dataframe">
 <h2>Übung 1: von einer <em>Dictionary</em> zu einer <em>DataFrame</em><a class="headerlink" href="#ubung-1-von-einer-dictionary-zu-einer-dataframe" title="Permalink to this headline">¶</a></h2>
@@ -393,7 +403,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;x&#39;, ylabel=&#39;y&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/01_04_Tabellarische_Daten_14_1.png" src="_images/01_04_Tabellarische_Daten_14_1.png" />
+<img alt="_images/01_06_Tabellarische_Daten_14_1.png" src="_images/01_06_Tabellarische_Daten_14_1.png" />
 </div>
 </div>
 </div>
@@ -586,8 +596,8 @@ Name: ID, Length: 1076, dtype: int64
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="01_03_Python_Module.html" title="previous page">Input: Python Modules</a>
-    <a class='right-next' id="next-link" href="01_05_GIS_in_Python.html" title="next page">Input: GIS in Python</a>
+    <a class='left-prev' id="prev-link" href="01_05_Python_Module.html" title="previous page">Input: Python Modules</a>
+    <a class='right-next' id="next-link" href="02_01_Einleitung.html" title="next page">Einleitung zu diesem Block</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

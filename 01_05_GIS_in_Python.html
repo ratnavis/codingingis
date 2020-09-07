@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Input: GIS in Python &#8212; Coding in GIS</title>
+    <title>Aufgabe: GIS in Python &#8212; Coding in GIS</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -39,8 +39,8 @@
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Einleitung zu diesem Block" href="02_01_Einleitung.html" />
-    <link rel="prev" title="Input: Tabellarische Daten" href="01_04_Tabellarische_Daten.html" />
+    <link rel="next" title="Waldanteil berechnen" href="03_04_Waldanteil_Berechnen.html" />
+    <link rel="prev" title="Zeckenstich Simulation mit Loop" href="03_03_Zeckenstich_Simulation.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -85,45 +85,40 @@
   Coding in GIS I
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="01_01_Einleitung.html">
    Einleitung zu diesem Block
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="01_01b_Primitive_Datentypen.html">
+  <a class="reference internal" href="01_02_Primitive_Datentypen.html">
    Input: Primitive Datentypen
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="01_01c_Zusammengesetzte_Datentypen.html">
-   Zusammengesetzte Datentypen
+  <a class="reference internal" href="01_03_Zusammengesetzte_Datentypen.html">
+   Input: Zusammengesetzte Datentypen
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="01_02_Aufgabe_A.html">
+  <a class="reference internal" href="01_04_Aufgabe_A.html">
    Aufgabe A: Lists
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="01_02b_Aufgabe_B.html">
+  <a class="reference internal" href="01_05_Aufgabe_B.html">
    Aufgabe B: Dictionaries
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="01_03_Python_Module.html">
+  <a class="reference internal" href="01_05_Python_Module.html">
    Input: Python Modules
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="01_04_Tabellarische_Daten.html">
-   Input: Tabellarische Daten
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Input: GIS in Python
+  <a class="reference internal" href="01_06_Tabellarische_Daten.html">
+   Aufgabe: Tabellarische Daten
   </a>
  </li>
 </ul>
@@ -140,18 +135,28 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02_02_Input_Functions.html">
-   Input zu
+   Input:
+   <em>
+    Functions
+   </em>
+   Teil I
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02_03_Functions.html">
+   Aufgabe:
    <em>
     Functions
    </em>
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02_03_Functions.html">
-   Übungen zu
+  <a class="reference internal" href="02_03b_Input_Functions_II.html">
+   Input:
    <em>
     Functions
    </em>
+   Teil II
   </a>
  </li>
  <li class="toctree-l1">
@@ -170,7 +175,7 @@
   Coding in GIS III
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="03_01_Einleitung.html">
    Einleitung zu diesem Block
@@ -184,6 +189,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="03_03_Zeckenstich_Simulation.html">
    Zeckenstich Simulation mit Loop
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Aufgabe: GIS in Python
   </a>
  </li>
  <li class="toctree-l1">
@@ -310,8 +320,8 @@
         
               <div>
                 
-  <div class="section" id="input-gis-in-python">
-<h1>Input: GIS in Python<a class="headerlink" href="#input-gis-in-python" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="aufgabe-gis-in-python">
+<h1>Aufgabe: GIS in Python<a class="headerlink" href="#aufgabe-gis-in-python" title="Permalink to this headline">¶</a></h1>
 <p>Die bisherigen Aufgaben hatten noch nicht viel mit GIS zu tun. Die Koordinaten der Zeckenstiche sind uns zwar bekannt, es handelt es dabei aber lediglich um Numerische xy-Werte, nicht um Geometrische Punkte mit einem Raumbezug. So bleiben uns bis jetzt alle räumlichen Operationen vorenthalten (zum Beispiel ob sich ein Stich im Wald befindet oder nicht), und wir können auch keine schönen Karten generieren.</p>
 <p>Um mit Geodaten in Python arbeiten zu können, müssen wir ein neues Modul importieren. Im Grunde genommen sind Vektordaten nicht mehr als Tabellen mit einer zusätzlichen “Geometrie”-Spalte, dementsprechend baut die “Geo”-Erweiterung auf <code class="docutils literal notranslate"><span class="pre">pandas</span></code> auf und heisst: <code class="docutils literal notranslate"><span class="pre">geopandas</span></code>.</p>
 <p>Du solltest <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> bereits installiert haben und das Modul in dein Script importieren. Importiere <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> mit dem Alias <code class="docutils literal notranslate"><span class="pre">gpd</span></code>.</p>
@@ -547,8 +557,8 @@ Datum: CH1903+
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="01_04_Tabellarische_Daten.html" title="previous page">Input: Tabellarische Daten</a>
-    <a class='right-next' id="next-link" href="02_01_Einleitung.html" title="next page">Einleitung zu diesem Block</a>
+    <a class='left-prev' id="prev-link" href="03_03_Zeckenstich_Simulation.html" title="previous page">Zeckenstich Simulation mit Loop</a>
+    <a class='right-next' id="next-link" href="03_04_Waldanteil_Berechnen.html" title="next page">Waldanteil berechnen</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

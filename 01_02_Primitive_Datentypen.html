@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Willkommen bei Coding in GIS ! &#8212; Coding in GIS</title>
+    <title>Input: Primitive Datentypen &#8212; Coding in GIS</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -39,7 +39,8 @@
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Einleitung zu diesem Block" href="01_01_Einleitung.html" />
+    <link rel="next" title="Input: Zusammengesetzte Datentypen" href="01_03_Zusammengesetzte_Datentypen.html" />
+    <link rel="prev" title="Einleitung zu diesem Block" href="01_01_Einleitung.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -56,7 +57,7 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="#">
+<a class="navbar-brand text-wrap" href="index.html">
   
   <img src="_static/zhaw_lsfm_iunr_blau.jpg" class="logo" alt="logo">
   
@@ -74,7 +75,7 @@
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="#">
+  <a class="reference internal" href="index.html">
    Willkommen bei Coding in GIS !
   </a>
  </li>
@@ -84,14 +85,14 @@
   Coding in GIS I
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="01_01_Einleitung.html">
    Einleitung zu diesem Block
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="01_02_Primitive_Datentypen.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Input: Primitive Datentypen
   </a>
  </li>
@@ -242,7 +243,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/index.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/01_02_Primitive_Datentypen.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -267,7 +268,7 @@
     <div class="dropdown-buttons">
         
         
-        <a class="jupyterhub-button" href="https://jupyterhub01.zhaw.ch/hub/user-redirect/git-pull?repo=https://github.com/ratnanil/codingingis&urlpath=lab/tree/codingingis/index.ipynb&branch=master"><button type="button"
+        <a class="jupyterhub-button" href="https://jupyterhub01.zhaw.ch/hub/user-redirect/git-pull?repo=https://github.com/ratnanil/codingingis&urlpath=lab/tree/codingingis/01_02_Primitive_Datentypen.ipynb&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="_static/images/logo_jupyterhub.svg"
@@ -286,7 +287,34 @@
             <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
-            
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#boolean">
+   Boolean
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#string">
+   String
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#integer">
+   Integer
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#float">
+   Float
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#weitere-datentypen">
+   Weitere Datentypen
+  </a>
+ </li>
+</ul>
+
         </nav>
     </div>
 </div>
@@ -295,42 +323,127 @@
         
               <div>
                 
-  <div class="section" id="willkommen-bei-coding-in-gis">
-<h1>Willkommen bei <em>Coding in GIS</em> !<a class="headerlink" href="#willkommen-bei-coding-in-gis" title="Permalink to this headline">¶</a></h1>
-<p>Dieser kurze Kurs ist Bestandteil des übergreifenden Moduls “<a class="reference external" href="https://studienplaner.lsfm.zhaw.ch/module/angewandte-geoinformatik">Angewandte Geoinformatik</a>” der Zürcher Hochschule für Angewandte Wissenschaften (ZHAW). Er soll einen Einstieg in die Programmierwelt von Python bieten und spezifisch zeigen wie man räumliche Fragestellungen mit frei verfügbaren Programmen lösen kann. Die Voraussetzung für dieser Kurs ist eine Offenheit neue Tools und Ansätze kennen zu lernen sowie die Bereitschaft für Lösungorientiertes arbeiten und etwas Hartnäckigkeit.</p>
-<p>Das github-repo ist hier <a class="reference external" href="https://github.com/ratnanil/codingingis">ratnanil/codingingis</a>.</p>
+  <div class="section" id="input-primitive-datentypen">
+<h1>Input: Primitive Datentypen<a class="headerlink" href="#input-primitive-datentypen" title="Permalink to this headline">¶</a></h1>
+<p>Bei primitiven Datentypen handelt es sich um die einfachste Datenstruktur. Sie werden deshalb auch “atomare Datentypen” genannt: Alle komplexeren Datentypen (Tabellarische Daten, Bilder, Geodaten) basieren auf diesen einfachen Strukturen.</p>
 <div class="tip admonition">
-<p class="admonition-title">Online und pdf</p>
-<p>Dieses Buch ist als online version hier gehostet: <a class="reference external" href="https://ratnanil.github.io/codingingis">https://ratnanil.github.io/codingingis</a>. Es kann aber auch als pdf <a class="reference external" href="https://github.com/ratnanil/codingingis/raw/master/codingingis.pdf">hier</a> heruntergelanden werden.</p>
-</div>
-<p><strong>Typographie</strong></p>
-<p>Noch ein kurzer Hinweis zur Typografie dieses Dokumentes:</p>
+<p class="admonition-title">Für R Nutzer</p>
 <ul class="simple">
-<li><p>Wenn sich im Fliesstext (Python- oder R-) Code befindet, wird er in <code class="docutils literal notranslate"><span class="pre">dieser</span> <span class="pre">Festschriftart</span></code> dargestellt</p></li>
-<li><p>Alleinstehende Codezeilen werden folgendermassen dargestellt:</p></li>
+<li><p>In R gibt es die gleichen Primitiven Datentypen wie in Python: Boolean, String, Integer, Float. Die Bezeichnung ist jedoch leicht anders (Logical, Character, Integer, Numeric, Double)</p></li>
+<li><p>In R können Variablen genau gleich zugewiesen werden wie in Python (mit dem <code class="docutils literal notranslate"><span class="pre">=</span></code> Symbol). In R gibt es zudem noch die Möglichkeit, Variablen mit <code class="docutils literal notranslate"><span class="pre">&lt;-</span></code> zu zuweisen, in Python jedoch nicht</p></li>
 </ul>
-<div class="cell tag_remove-output docutils container">
+</div>
+<div class="section" id="boolean">
+<h2>Boolean<a class="headerlink" href="#boolean" title="Permalink to this headline">¶</a></h2>
+<p>Hierbei handelt es sich um den einfachsten Datentyp. Er beinhaltet nur zwei Zustände: Wahr oder Falsch. In Python werden diese mit <code class="docutils literal notranslate"><span class="pre">True</span></code> oder <code class="docutils literal notranslate"><span class="pre">False</span></code> definiert. Beispielsweise sind das Antworten auf geschlossene Fragen.</p>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Coding in GIS!&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">regen</span> <span class="o">=</span> <span class="kc">True</span>
 </pre></div>
 </div>
 </div>
 </div>
-<ul class="simple">
-<li><p>Englische Fachbegriffe, deren Übersetzung eher verwirrend als nützlich wäreb, werden <em>in dieser Weise</em> hervorgehoben</p></li>
-<li><p>Da viele von euch bereits Erfahrung in R haben, stelle ich immer wieder den Bezug zu dieser Programmiersprache her. Diese Verweise sind folgendermassen gekennzeichnet:</p></li>
-</ul>
-<div class="tip admonition">
-<p class="admonition-title">Für R Nutzer</p>
-<ul class="simple">
-<li><p>hier wird ein Bezug zu R gemacht</p></li>
-</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sonne</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="nb">type</span><span class="p">(</span><span class="n">sonne</span><span class="p">)</span>
+</pre></div>
 </div>
-<div class="toctree-wrapper compound">
 </div>
-<div class="toctree-wrapper compound">
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>bool
+</pre></div>
 </div>
-<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+<div class="section" id="string">
+<h2>String<a class="headerlink" href="#string" title="Permalink to this headline">¶</a></h2>
+<p>In sogenannten <em>Strings</em> werden Textinformationen gespeichert. Beispielsweise können das die Namen von Ortschaften sein.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stadt</span> <span class="o">=</span> <span class="s2">&quot;Bern&quot;</span>
+<span class="n">land</span> <span class="o">=</span> <span class="s2">&quot;Schweiz&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">stadt</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>str
+</pre></div>
+</div>
+</div>
+</div>
+<p>Strings können mit <code class="docutils literal notranslate"><span class="pre">+</span></code> miteinander verbunden werden</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stadt</span> <span class="o">+</span><span class="s2">&quot; ist die Hauptstadt der &quot;</span> <span class="o">+</span> <span class="n">land</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Bern ist die Hauptstadt der Schweiz&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="integer">
+<h2>Integer<a class="headerlink" href="#integer" title="Permalink to this headline">¶</a></h2>
+<p>In Integerwerten werden ganzzahlige Werte gespeichert, beispielsweise die Anzahl Einwohner einer Stadt.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bern_einwohner</span> <span class="o">=</span> <span class="mi">133115</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">bern_einwohner</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>int
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="float">
+<h2>Float<a class="headerlink" href="#float" title="Permalink to this headline">¶</a></h2>
+<p>Als <code class="docutils literal notranslate"><span class="pre">Float</span></code> werden Zahlen mit Nachkommastellen gespeichert, wie zum Beispiel die Temeratur in Grad Celsius.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bern_temp</span> <span class="o">=</span> <span class="mf">22.5</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">bern_temp</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>float
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="weitere-datentypen">
+<h2>Weitere Datentypen<a class="headerlink" href="#weitere-datentypen" title="Permalink to this headline">¶</a></h2>
+<p>Es gibt noch weitere Datentypen, auf die wir an dieser Stelle jedoch nicht eingehen.</p>
 </div>
 </div>
 
@@ -362,7 +475,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='right-next' id="next-link" href="01_01_Einleitung.html" title="next page">Einleitung zu diesem Block</a>
+    <a class='left-prev' id="prev-link" href="01_01_Einleitung.html" title="previous page">Einleitung zu diesem Block</a>
+    <a class='right-next' id="next-link" href="01_03_Zusammengesetzte_Datentypen.html" title="next page">Input: Zusammengesetzte Datentypen</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

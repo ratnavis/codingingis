@@ -39,8 +39,8 @@
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Input: Tabellarische Daten" href="01_04_Tabellarische_Daten.html" />
-    <link rel="prev" title="Aufgabe B: Dictionaries" href="01_02b_Aufgabe_B.html" />
+    <link rel="next" title="Aufgabe: Tabellarische Daten" href="01_06_Tabellarische_Daten.html" />
+    <link rel="prev" title="Aufgabe B: Dictionaries" href="01_05_Aufgabe_B.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -92,22 +92,22 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="01_01b_Primitive_Datentypen.html">
+  <a class="reference internal" href="01_02_Primitive_Datentypen.html">
    Input: Primitive Datentypen
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="01_01c_Zusammengesetzte_Datentypen.html">
-   Zusammengesetzte Datentypen
+  <a class="reference internal" href="01_03_Zusammengesetzte_Datentypen.html">
+   Input: Zusammengesetzte Datentypen
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="01_02_Aufgabe_A.html">
+  <a class="reference internal" href="01_04_Aufgabe_A.html">
    Aufgabe A: Lists
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="01_02b_Aufgabe_B.html">
+  <a class="reference internal" href="01_05_Aufgabe_B.html">
    Aufgabe B: Dictionaries
   </a>
  </li>
@@ -117,13 +117,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="01_04_Tabellarische_Daten.html">
-   Input: Tabellarische Daten
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="01_05_GIS_in_Python.html">
-   Input: GIS in Python
+  <a class="reference internal" href="01_06_Tabellarische_Daten.html">
+   Aufgabe: Tabellarische Daten
   </a>
  </li>
 </ul>
@@ -140,18 +135,28 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02_02_Input_Functions.html">
-   Input zu
+   Input:
+   <em>
+    Functions
+   </em>
+   Teil I
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02_03_Functions.html">
+   Aufgabe:
    <em>
     Functions
    </em>
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02_03_Functions.html">
-   Übungen zu
+  <a class="reference internal" href="02_03b_Input_Functions_II.html">
+   Input:
    <em>
     Functions
    </em>
+   Teil II
   </a>
  </li>
  <li class="toctree-l1">
@@ -184,6 +189,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="03_03_Zeckenstich_Simulation.html">
    Zeckenstich Simulation mit Loop
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_05_GIS_in_Python.html">
+   Aufgabe: GIS in Python
   </a>
  </li>
  <li class="toctree-l1">
@@ -233,7 +243,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/01_03_Python_Module.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/01_05_Python_Module.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -258,7 +268,7 @@
     <div class="dropdown-buttons">
         
         
-        <a class="jupyterhub-button" href="https://jupyterhub01.zhaw.ch/hub/user-redirect/git-pull?repo=https://github.com/ratnanil/codingingis&urlpath=lab/tree/codingingis/01_03_Python_Module.ipynb&branch=master"><button type="button"
+        <a class="jupyterhub-button" href="https://jupyterhub01.zhaw.ch/hub/user-redirect/git-pull?repo=https://github.com/ratnanil/codingingis&urlpath=lab/tree/codingingis/01_05_Python_Module.ipynb&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="_static/images/logo_jupyterhub.svg"
@@ -279,8 +289,18 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#header-rows-1">
-   header-rows: 1
+  <a class="reference internal nav-link" href="#erweiterung-installieren">
+   Erweiterung installieren
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#erweiterung-laden">
+   Erweiterung laden
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#erweiterung-verwenden">
+   Erweiterung verwenden
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -297,6 +317,15 @@
    importieren
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#alle-functions-importieren">
+   Alle
+   <em>
+    Functions
+   </em>
+   importieren
+  </a>
+ </li>
 </ul>
 
         </nav>
@@ -309,60 +338,92 @@
                 
   <div class="section" id="input-python-modules">
 <h1>Input: Python Modules<a class="headerlink" href="#input-python-modules" title="Permalink to this headline">¶</a></h1>
-<p>Ähnlich wie R basiert Python auf Erweiterungen: Diese Erweiterungen heissen in R <em>Libraries</em> / <em>Packages</em>, in Python werden sie <em>Modules</em> genannt. Sie sind dazu da, gewisse Teilbereiche unseres Arbeitsprozesses zu vereinfachen. Eine Analogie dazu: Um ein Haus zu bauen sind wir auf verschiedene Spezialisten / Spezialistinnen angewiesen: Wir brauchen zum Beispiel eine Malerin oder einen Maler. Im Telefonbuch sind seitenweise Maler*innen aufgelistet, und jede*r arbeitet etwas anders. Um eine spezifische Malerin anzuheuern müssen wir zuerst den Kontakt herstellen und die Vertragsmodalitäten vereinbaren. Erst dann können wir sie in unseren Arbeitsprozess (Haus bauen) einbinden.</p>
-<p>Um diese Analogie auf unser Projekt zu übertragen: Das “Haus bauen” ist unser Forschungsprojekt (z.B. eine Bachelorarbeit). Ein “Telefonbuch”, wo die Spezialisten erfasst sind nennt ein <em>Reposoritory</em>. Den Erstkontakt mit der Malerin zu erstellen und die Vertragsmodalitäten zu vereinbaren bedeutet, die Erweiterung zu installieren. In R wird eine Erweiterung folgendermassen installiert:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ow">in</span> <span class="n">R</span><span class="p">:</span>
-<span class="o">-----------------------------------------------------------</span>
-<span class="n">install</span><span class="o">.</span><span class="n">packages</span><span class="p">(</span><span class="s2">&quot;malerinWanger&quot;</span><span class="p">)</span>
+<p>Ähnlich wie R basiert Python auf Erweiterungen: Diese Erweiterungen heissen in R <em>Libraries</em> oder <em>Packages</em>, in Python werden sie <em>Modules</em> genannt. Sie sind dazu da, gewisse Teilbereiche unseres Arbeitsprozesses zu vereinfachen. Eine Analogie dazu: Um ein Haus zu bauen sind wir auf verschiedene Spezialisten / Spezialistinnen angewiesen: Wir brauchen zum Beispiel eine Malerin oder einen Maler. Im Telefonbuch sind seitenweise Maler*innen aufgelistet, und jede*r arbeitet etwas anders. Um eine spezifische Malerin anzuheuern müssen wir zuerst den Kontakt herstellen und die Vertragsmodalitäten vereinbaren. Erst dann können wir sie in unseren Arbeitsprozess (Haus bauen) einbinden. Um diese Analogie auf unser Projekt zu übertragen: Das “Haus bauen” ist unser Forschungsprojekt (z.B. eine Bachelorarbeit). Ein “Telefonbuch”, wo die Spezialisten erfasst sind nennt ein <em>Reposoritory</em>.</p>
+<div class="section" id="erweiterung-installieren">
+<h2>Erweiterung installieren<a class="headerlink" href="#erweiterung-installieren" title="Permalink to this headline">¶</a></h2>
+<p>Den Erstkontakt mit der Malerin zu erstellen und die Vertragsmodalitäten zu vereinbaren bedeutet, die Erweiterung zu installieren. In R ist die Installation einer <em>Library</em> ein R-Befehl und wird innerhalb von R ausgeführt. In Python ist dies leider etwas komplizierter, es braucht für die Installation einer Python library eine Zusatzsoftware. Diese lernen wir zu einem späteren Zeitpunkt kennen, schauen wir uns jetzt nur mal den R-Code zur Installation eines Packages an:</p>
+<table class="table">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>R</p></th>
+<th class="head"><p>python</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;malerinWanger&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>In diesem Beispiel heisst die Erweiterung <code class="docutils literal notranslate"><span class="pre">malerinWanger</span></code>. Das <em>Reposoritory</em> geben wir in R oft nicht an, weil in RStudio typischerweise schon eine Adresse hinterlegt ist. Wie wir in Python ein Modul installieren lernen wir später. Nehmen wir an dieser Stelle an, wir haben die Erweiterung <code class="docutils literal notranslate"><span class="pre">malerinWanger</span></code> in Python installiert. Treiben wir an dieser Stelle die Analogie etwas weiter: Der Erstkontakt mit der Malerin ist also erstellt und alle Vertragsmodalitäten sind vereinbart. Nun wollen wir an einem bestimmten Tag mit ihr arbeiten. Dafür müssen wir sie zuerst auf die Baustelle bestellen. Übersetzt auf programmieren bedeutet dies, wir müssen die Erweiterung in unsere Session laden. In R sieht der Befehl so aus:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ow">in</span> <span class="n">R</span><span class="p">:</span>                     <span class="o">|</span>       <span class="ow">in</span> <span class="n">Python</span><span class="p">:</span>
-<span class="o">--------------------------+----------------------------------</span>
-<span class="n">library</span><span class="p">(</span><span class="n">malerinWanger</span><span class="p">)</span>    <span class="o">|</span>       <span class="kn">import</span> <span class="nn">malerinWanger</span>
+</td>
+<td><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Module können nicht innerhalb </span>
+<span class="c1"># von Python installiert werden</span>
 </pre></div>
 </div>
-<hr class="docutils" />
-<div class="section" id="header-rows-1">
-<h2>header-rows: 1<a class="headerlink" href="#header-rows-1" title="Permalink to this headline">¶</a></h2>
-<ul>
-<li><ul class="simple">
-<li><p>R</p></li>
-<li><p>Python</p></li>
-</ul>
-</li>
-<li><ul>
-<li><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">test</span>
+</td>
+</tr>
+</tbody>
+</table>
+<p>In diesem Beispiel heisst die Erweiterung <code class="docutils literal notranslate"><span class="pre">malerinWanger</span></code>. Das <em>Reposoritory</em> geben wir in R meistens nicht an, weil in RStudio bereits eine Default-Adresse hinterlegt ist.</p>
+</div>
+<div class="section" id="erweiterung-laden">
+<h2>Erweiterung laden<a class="headerlink" href="#erweiterung-laden" title="Permalink to this headline">¶</a></h2>
+<p>Treiben wir an dieser Stelle die Analogie etwas weiter: Der Erstkontakt mit der Malerin ist also erstellt und alle Vertragsmodalitäten sind vereinbart. Nun wollen wir an einem bestimmten Tag mit ihr arbeiten. Dafür müssen wir sie zuerst auf die Baustelle bestellen. Übersetzt auf Programmieren bedeutet dies, wir müssen die Erweiterung in unsere Session laden. In R und Python sehen die Befehle folgendermassen aus:</p>
+<table class="table">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>R</p></th>
+<th class="head"><p>python</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">malerlinWanger</span><span class="p">)</span>
 </pre></div>
 </div>
-</li>
-<li><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">test2</span>
+</td>
+<td><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">malerinWanger</span>
 </pre></div>
 </div>
-</li>
-</ul>
-</li>
-</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="erweiterung-verwenden">
+<h2>Erweiterung verwenden<a class="headerlink" href="#erweiterung-verwenden" title="Permalink to this headline">¶</a></h2>
 <p>Erst jetzt können wir mit der Erweiterung arbeiten und die Fachexpertise unserer Malerin nutzen. Eine Expertise unserer Malerin ist es, Wände zu bemalen. Dafür gibt es eine <em>Function</em> <code class="docutils literal notranslate"><span class="pre">wand_bemalen()</span></code>. In R kann ich diese <em>Function</em> “einfach so” aufrufen. In Python hingegen muss ich die Erweiterung, in der die <em>Function</em> enthalten ist, der <em>Function</em> mit einem Punkt voranstellen. Das sieht also folgendermassen aus:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ow">in</span> <span class="n">R</span><span class="p">:</span>                    <span class="o">|</span>       <span class="ow">in</span> <span class="n">Python</span><span class="p">:</span>
-<span class="o">-------------------------+------------------------------------</span>
-<span class="n">wand_bemalen</span><span class="p">()</span>           <span class="o">|</span>        <span class="n">malerinWanger</span><span class="o">.</span><span class="n">wand_bemalen</span><span class="p">()</span>
+<table class="table">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>R</p></th>
+<th class="head"><p>python</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">wand_bemalen</span><span class="p">()</span>
 </pre></div>
 </div>
+</td>
+<td><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">malerinWanger</span><span class="o">.</span><span class="n">wand_bemalen</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
 <p>Das ist zwar umständlicher, aber dafür weniger Fehleranfällig. Angenommen, unser Maurer kann ebenfalls Wände bemalen und hat die entsprechende <em>Function</em> <code class="docutils literal notranslate"><span class="pre">wand_bemalen()</span></code> ebenfalls. Dann ist in R nicht klar, welche Erweiterung gemeint ist und das kann zu Missverständnissen führen (vielleicht bemalt der Mauerer die Wände etwas anders als die Malerin). In Python ist im obigen Beispiel unmissverständlich, dass ich <code class="docutils literal notranslate"><span class="pre">wand_bemalen()</span></code> aus dem Modul <code class="docutils literal notranslate"><span class="pre">malerinWanger</span></code> meine.</p>
-<p><strong>Das wichtigste in Kürze</strong></p>
-<ul class="simple">
-<li><p>Erweiterungen heissen in Python <em>Modules</em></p></li>
-<li><p>Vor der erstmaligen Nutzung muss ein <em>Module</em> installiert werden</p></li>
-<li><p>Vor der Verwendung in einer Session muss ein <em>Module</em> “geladen” werden. Dies muss für jede Session wiederholt werden!</p></li>
-<li><p>Ein <em>Module</em> wird in Python mit <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">modulename</span></code> geladen</p></li>
-<li><p>Eine <em>Function</em> aus einem <em>Module</em> wird folgendermassen aufgerufen: <code class="docutils literal notranslate"><span class="pre">modulname.function()</span></code></p></li>
-</ul>
 </div>
 <div class="section" id="modul-mit-alias-importieren">
 <h2>Modul mit Alias importieren<a class="headerlink" href="#modul-mit-alias-importieren" title="Permalink to this headline">¶</a></h2>
-<p>Wenn es uns zu Umständlich ist jedesmal <code class="docutils literal notranslate"><span class="pre">malerinWanger.wand_bemalen()</span></code> voll auszuschreiben können wir beim Importieren dem Modul auch einen “Alias” vergeben. Dies kann beispielsweise folgendermassen aussehen:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">malerinWanger</span> <span class="k">as</span> <span class="nn">mm</span>
+<p>Da es umständlich sein kann, jedesmal <code class="docutils literal notranslate"><span class="pre">malerinWanger.wand_bemalen()</span></code> voll auszuschreiben, können wir beim Importieren dem Modul auch einen “Alias” vergeben. Dies kann beispielsweise folgendermassen aussehen:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">malerinWanger</span> <span class="k">as</span> <span class="nn">mm</span>
 <span class="n">mm</span><span class="o">.</span><span class="n">wand_bemalen</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -370,10 +431,32 @@
 </div>
 <div class="section" id="einzelne-function-importieren">
 <h2>Einzelne <em>Function</em> importieren<a class="headerlink" href="#einzelne-function-importieren" title="Permalink to this headline">¶</a></h2>
-<p>Was man auch noch machen kann, ist eine explizite <em>Function</em> aus einem Modul zu laden. Wenn man dies macht, kann man die Funktion ohne vorangestelltes Modul nutzen (genau wie in R). Dies sieht folgendermassen aus:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">malerinWanger</span> <span class="kn">import</span> <span class="n">wand_bemalen</span><span class="p">()</span>
+<p>Es gibt noch die Variante, eine explizite <em>Function</em> aus einem Modul zu laden. Wenn man dies macht, kann man die Funktion ohne vorangestelltes Modul nutzen (genau wie in R). Dies sieht folgendermassen aus:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">malerinWanger</span> <span class="kn">import</span> <span class="n">wand_bemalen</span>
 <span class="n">wand_bemalen</span><span class="p">()</span>
 </pre></div>
+</div>
+</div>
+<div class="section" id="alle-functions-importieren">
+<h2>Alle <em>Functions</em> importieren<a class="headerlink" href="#alle-functions-importieren" title="Permalink to this headline">¶</a></h2>
+<p>Zusätzlich ist es möglich, <strong>alle</strong> <em>Functions</em> aus einem Modul zu importieren. Diese Notation wird nicht empfohlen und ist hier nur erwähnt, weil ihr allenfalls diese Schreibweise antreffen werdet.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">malerinWanger</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">wand_bemalen</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="attention admonition">
+<p class="admonition-title">Das wichtigste in Kürze</p>
+<ul class="simple">
+<li><p>Erweiterungen heissen in Python <em>Modules</em></p></li>
+<li><p>Vor der erstmaligen Nutzung muss ein <em>Module</em> installiert werden</p></li>
+<li><p>Vor der Verwendung in einer Session muss ein <em>Module</em> importiert werden</p></li>
+<li><p>Ein <em>Module</em> wird in Python mit <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">modulename</span></code> geladen</p></li>
+<li><p>Module müssen für <strong>jede Session</strong> importiert werden!</p></li>
+<li><p>Eine <em>Function</em> aus einem <em>Module</em> wird folgendermassen aufgerufen: <code class="docutils literal notranslate"><span class="pre">modulname.function()</span></code></p></li>
+<li><p>Ein Modul kann auch mit einem Alias importiert werden <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">modul</span> <span class="pre">as</span> <span class="pre">modulalias</span></code></p></li>
+<li><p>Eine Einzelne <em>Function</em> kann aus einem Modul explizit importiert werden: <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">malerinWanger</span> <span class="pre">import</span> <span class="pre">wand_bemalen</span></code></p></li>
+<li><p>Mit einem Platzhaltersymbol * können auch alle <em>Functions</em> aus einem Modul importiert werden: <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">malerinWanger</span> <span class="pre">import</span> <span class="pre">*</span></code></p></li>
+</ul>
 </div>
 </div>
 </div>
@@ -406,8 +489,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="01_02b_Aufgabe_B.html" title="previous page">Aufgabe B: Dictionaries</a>
-    <a class='right-next' id="next-link" href="01_04_Tabellarische_Daten.html" title="next page">Input: Tabellarische Daten</a>
+    <a class='left-prev' id="prev-link" href="01_05_Aufgabe_B.html" title="previous page">Aufgabe B: Dictionaries</a>
+    <a class='right-next' id="next-link" href="01_06_Tabellarische_Daten.html" title="next page">Aufgabe: Tabellarische Daten</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

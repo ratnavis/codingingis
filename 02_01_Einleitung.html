@@ -39,8 +39,8 @@
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Input zu Functions" href="02_02_Input_Functions.html" />
-    <link rel="prev" title="Input: GIS in Python" href="01_05_GIS_in_Python.html" />
+    <link rel="next" title="Input: Functions Teil I" href="02_02_Input_Functions.html" />
+    <link rel="prev" title="Aufgabe: Tabellarische Daten" href="01_06_Tabellarische_Daten.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -92,38 +92,33 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="01_01b_Primitive_Datentypen.html">
+  <a class="reference internal" href="01_02_Primitive_Datentypen.html">
    Input: Primitive Datentypen
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="01_01c_Zusammengesetzte_Datentypen.html">
-   Zusammengesetzte Datentypen
+  <a class="reference internal" href="01_03_Zusammengesetzte_Datentypen.html">
+   Input: Zusammengesetzte Datentypen
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="01_02_Aufgabe_A.html">
+  <a class="reference internal" href="01_04_Aufgabe_A.html">
    Aufgabe A: Lists
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="01_02b_Aufgabe_B.html">
+  <a class="reference internal" href="01_05_Aufgabe_B.html">
    Aufgabe B: Dictionaries
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="01_03_Python_Module.html">
+  <a class="reference internal" href="01_05_Python_Module.html">
    Input: Python Modules
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="01_04_Tabellarische_Daten.html">
-   Input: Tabellarische Daten
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="01_05_GIS_in_Python.html">
-   Input: GIS in Python
+  <a class="reference internal" href="01_06_Tabellarische_Daten.html">
+   Aufgabe: Tabellarische Daten
   </a>
  </li>
 </ul>
@@ -140,18 +135,28 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02_02_Input_Functions.html">
-   Input zu
+   Input:
+   <em>
+    Functions
+   </em>
+   Teil I
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02_03_Functions.html">
+   Aufgabe:
    <em>
     Functions
    </em>
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02_03_Functions.html">
-   Übungen zu
+  <a class="reference internal" href="02_03b_Input_Functions_II.html">
+   Input:
    <em>
     Functions
    </em>
+   Teil II
   </a>
  </li>
  <li class="toctree-l1">
@@ -184,6 +189,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="03_03_Zeckenstich_Simulation.html">
    Zeckenstich Simulation mit Loop
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_05_GIS_in_Python.html">
+   Aufgabe: GIS in Python
   </a>
  </li>
  <li class="toctree-l1">
@@ -288,15 +298,15 @@
                 
   <div class="section" id="einleitung-zu-diesem-block">
 <h1>Einleitung zu diesem Block<a class="headerlink" href="#einleitung-zu-diesem-block" title="Permalink to this headline">¶</a></h1>
-<p>Letzte Woche habt ihr einen weiten Bogen gespannt: Von einfachen (primitiven) Datentypen bis hin zu Geodaten und deren Visualisierung. In dieser und der nächsten Übung (Coding in GIS II und III) wollen wir uns weiter mit den Zeckenstichdaten befassen. Wir werden im Wesentlichen ein Teil der Übung aus «Datenqualität und Unsicherheit» in Python rekonstruieren.
-In der Übung geht es um folgendes: Wir wissen das die Lagegenauigkeit der Zeckenstichmeldungen mit einer gewissen Unsicherheit behaftet sind. Um die Frage “Welcher Anteil der der Zeckenstiche befinden sich im Wald?” unter Berücksichtigung dieser Unsicherheit beantworten zu können, führen wir eine (Monte Carlo) Simulation durch.
+<p>Letzte Woche haben wir einen weiten Bogen gespannt: Von einfachen (primitiven) Datentypen bis hin zu Tabellarischen. In dieser und der nächsten Übung (Coding in GIS II und III) wollen wir uns weiter mit den Zeckenstichdaten befassen. Wir werden im Wesentlichen ein Teil der Übung aus “Datenqualität und Unsicherheit” in Python rekonstruieren.</p>
+<p>In der Übung geht es um folgendes: Wir wissen das die Lagegenauigkeit der Zeckenstichmeldungen mit einer gewissen Unsicherheit behaftet sind. Um die Frage “Welcher Anteil der der Zeckenstiche befinden sich im Wald?” unter Berücksichtigung dieser Unsicherheit beantworten zu können, führen wir eine (Monte Carlo) Simulation durch.
 In dieser Simulation verändern wir die Position der Zeckenstichmeldungen zufällig und berechnen den Anteil der Zeckenstiche im Wald. Das zufällige Verschieben und berechnen wiederholen wir beliebig lange und bekommen für jede Wiederholung einen leicht unterschiedlichen Prozentwert. Die Verteilung dieser Prozentwerte ist die Antwort auf die ursprüngliche Frage (“Welcher Anteil…”) unter Berücksichtigung der Unsicherheit.</p>
 <p>Um eine solche, etwas komplexere Aufgabe lösen zu können müssen wir sie in einfachere Einzelschritte aufteilen. Diese bearbeiten wir in dieser und der kommenden Woche:</p>
 <ul class="simple">
 <li><p>Schritt 1: Einen Einzelpunkt zufällig verschieben</p></li>
-<li><p>Schritt 2: Alle Punkte einer GeoDataFrame zufällig verschieben (1 «Run»)</p></li>
-<li><p>Schritt 3: Alle Punkte einer GeoDataFrame mehrfach zufällig verschieben (z.B. 50 «Runs»)</p></li>
-<li><p>Schritt 4: Anteil der Punkte im Wald pro «Run» ermitteln</p></li>
+<li><p>Schritt 2: Alle Punkte einer GeoDataFrame zufällig verschieben (1 “Run”)</p></li>
+<li><p>Schritt 3: Alle Punkte einer GeoDataFrame mehrfach zufällig verschieben (z.B. 50 “Runs”)</p></li>
+<li><p>Schritt 4: Anteil der Punkte im Wald pro “Run” ermitteln</p></li>
 <li><p>Schritt 5: Verteilung dieser Mittelwerte visualisieren</p></li>
 </ul>
 <div class="attention admonition">
@@ -338,8 +348,8 @@ In dieser Simulation verändern wir die Position der Zeckenstichmeldungen zufäl
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="01_05_GIS_in_Python.html" title="previous page">Input: GIS in Python</a>
-    <a class='right-next' id="next-link" href="02_02_Input_Functions.html" title="next page">Input zu <em>Functions</em></a>
+    <a class='left-prev' id="prev-link" href="01_06_Tabellarische_Daten.html" title="previous page">Aufgabe: Tabellarische Daten</a>
+    <a class='right-next' id="next-link" href="02_02_Input_Functions.html" title="next page">Input: <em>Functions</em> Teil I</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
