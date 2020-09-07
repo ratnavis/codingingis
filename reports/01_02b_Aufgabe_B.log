@@ -22,7 +22,7 @@ len(groessen)
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mNameError[0m                                 Traceback (most recent call last)
-[0;32m<ipython-input-10-97619b63240a>[0m in [0;36m<module>[0;34m[0m
+[0;32m<ipython-input-11-97619b63240a>[0m in [0;36m<module>[0;34m[0m
 [0;32m----> 1[0;31m [0mlen[0m[0;34m([0m[0mgroessen[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m
 [0;31mNameError[0m: name 'groessen' is not defined
