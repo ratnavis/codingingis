@@ -39,7 +39,7 @@
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Python Basics" href="01_02_Python_Basics.html" />
+    <link rel="next" title="Aufgabe A: Primitive Datentypen und Lists" href="01_02_Aufgabe_A.html" />
     <link rel="prev" title="Primitive Datentypen" href="01_01b_Primitive_Datentypen.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -102,8 +102,13 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="01_02_Python_Basics.html">
-   Python Basics
+  <a class="reference internal" href="01_02_Aufgabe_A.html">
+   Aufgabe A: Primitive Datentypen und Lists
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_02b_Aufgabe_B.html">
+   Aufgabe B: Dictionaries
   </a>
  </li>
  <li class="toctree-l1">
@@ -288,6 +293,16 @@
    DataFrame
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tuples">
+   Tuples
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sets">
+   Sets
+  </a>
+ </li>
 </ul>
 
         </nav>
@@ -305,9 +320,9 @@
 <h2>List<a class="headerlink" href="#list" title="Permalink to this headline">¶</a></h2>
 <p>Eine <code class="docutils literal notranslate"><span class="pre">List</span></code>:</p>
 <ul class="simple">
-<li><p>Enthält mehrere Werte</p></li>
-<li><p>Die Reihenfolge wird gespeichert</p></li>
-<li><p>auch unterschiedliche Datentypen möglich</p></li>
+<li><p>speichert die Reihenfolge, in der die Werte eingegeben werden</p></li>
+<li><p>kann unterschiedliche Datentypen enthalten</p></li>
+<li><p>wird mit eckgigen Klammern (<code class="docutils literal notranslate"><span class="pre">[</span></code> und <code class="docutils literal notranslate"><span class="pre">]</span></code>) erstellt</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -376,16 +391,35 @@
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>```{admonition} Für R Nutzer
+:class: tip
+Eine Python List entspricht eines R Vectors 
+```
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  File &quot;&lt;ipython-input-7-c5ec95084d82&gt;&quot;, line 1
+    ```{admonition} Für R Nutzer
+    ^
+SyntaxError: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="dict">
 <h2>Dict<a class="headerlink" href="#dict" title="Permalink to this headline">¶</a></h2>
 <p>Eine <code class="docutils literal notranslate"><span class="pre">Dict</span></code>:</p>
 <ul class="simple">
-<li><p>Enthält mehrere Werte</p></li>
-<li><p>Reihenfolge wird nicht gespeichert</p></li>
-<li><p>jeder Wert («Value») hat einen Schlüssel («Key»)</p></li>
-<li><p>unterschiedliche Datentypen möglich</p></li>
+<li><p>speichert die Reihenfolge, in der die Werte eingegeben werden <strong>nicht</strong></p></li>
+<li><p>kann unterschiedliche Datentypen enthalten</p></li>
+<li><p>wird mit geschweiften Klammern (<code class="docutils literal notranslate"><span class="pre">{</span></code> und <code class="docutils literal notranslate"><span class="pre">}</span></code>) erstellt</p></li>
+<li><p>speichert für jeden Wert («Value») einen Schlüssel («Key»), mit dem er abgerufen werden kann:</p></li>
 </ul>
+<p><code class="docutils literal notranslate"><span class="pre">dict_name</span> <span class="pre">=</span> <span class="pre">{&quot;Key&quot;</span> <span class="pre">:</span> <span class="pre">&quot;Value}</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">menue</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Vorspeise&quot;</span><span class="p">:</span> <span class="s2">&quot;Suppe&quot;</span><span class="p">,</span>
@@ -439,7 +473,7 @@
 <li><p>Ein Spezialfall einer Dict:</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">values</span></code> sind <code class="docutils literal notranslate"><span class="pre">Lists</span></code> von gleicher Länge</p></li>
-<li><p>jede <code class="docutils literal notranslate"><span class="pre">List</span></code> besteht aus einem einzigen Datentyp</p></li>
+<li><p>alle Werte in einer <code class="docutils literal notranslate"><span class="pre">List</span></code> bestehen aus dem gleichen Datentyp</p></li>
 </ul>
 </li>
 <li><p>jeder <code class="docutils literal notranslate"><span class="pre">key</span></code> ist ein Spaltenname</p></li>
@@ -476,7 +510,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pandas.core.frame.DataFrame
 </pre></div>
 </div>
 </div>
@@ -549,6 +583,66 @@
 </div>
 </div>
 </div>
+<div class="section" id="tuples">
+<h2>Tuples<a class="headerlink" href="#tuples" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">Tuples</span></code> sind ähnlich wie <code class="docutils literal notranslate"><span class="pre">Lists</span></code>, nur können sie nachträglich nicht verändert werden. Das heisst, es ist nach der Erstellung keine Ergänzung von neuen Werten oder Löschung von bestehenden Werten möglich. <code class="docutils literal notranslate"><span class="pre">Tuples</span></code> werden mit runden Klammern (<code class="docutils literal notranslate"><span class="pre">(</span></code> und <code class="docutils literal notranslate"><span class="pre">)</span></code>) erstellt.</p>
+<p>Dieser Datentyp spielt im unserem Kurs <em>Coding in GIS</em> eine untergeorndete Rolle.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gewinner</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">gewinner</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tuple
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="sets">
+<h2>Sets<a class="headerlink" href="#sets" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">Sets</span></code> sind ähnlich wie <code class="docutils literal notranslate"><span class="pre">Dicts</span></code>, jedoch kommt jeder Wert nur 1x vor. Zudem verfügen <code class="docutils literal notranslate"><span class="pre">Sets</span></code> nicht über <code class="docutils literal notranslate"><span class="pre">keys</span></code> und <code class="docutils literal notranslate"><span class="pre">values</span></code>. Sie werden mit geschweiften Klammern (<code class="docutils literal notranslate"><span class="pre">{</span></code> und <code class="docutils literal notranslate"><span class="pre">}</span></code>) erstellt.</p>
+<p>Dieser Datentyp spielt im unserem Kurs <em>Coding in GIS</em> eine untergeorndete Rolle.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hexerei2</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hexerei2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1, 2, 3}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">hexerei2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>set
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -580,7 +674,7 @@
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="01_01b_Primitive_Datentypen.html" title="previous page">Primitive Datentypen</a>
-    <a class='right-next' id="next-link" href="01_02_Python_Basics.html" title="next page">Python Basics</a>
+    <a class='right-next' id="next-link" href="01_02_Aufgabe_A.html" title="next page">Aufgabe A: Primitive Datentypen und Lists</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
