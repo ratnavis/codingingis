@@ -6,7 +6,7 @@ html:
   favicon                   : favicon.png
 
 repository:
-  url                       : https://github.com/ratnanil/codingingis/
+  url                       : https://github.com/ratnanil/codingingis
   branch                    : master
 
 launch_buttons:
