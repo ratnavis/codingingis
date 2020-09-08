@@ -1,0 +1,1637 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.8.26)  8 SEP 2020 20:57
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**_build/latex/python.tex
+(./_build/latex/python.tex
+LaTeX2e <2020-02-02> patch level 2
+L3 programming layer <2020-02-14>
+
+! LaTeX Error: File `sphinxmanual.cls' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: cls)
+
+Enter file name: 
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2018/08/11 v1.3c Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+)
+   defining Unicode char U+00A0 (decimal 160)
+   defining Unicode char U+2500 (decimal 9472)
+   defining Unicode char U+2502 (decimal 9474)
+   defining Unicode char U+2514 (decimal 9492)
+   defining Unicode char U+251C (decimal 9500)
+   defining Unicode char U+2572 (decimal 9586)
+
+(/usr/share/texlive/texmf-dist/tex/latex/cmap/cmap.sty
+Package: cmap 2008/03/06 v1.0h CMap support: searchable PDF
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
+<<t1.cmap>>)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2020/01/20 v2.17e AMS math features
+\@mathmargin=\skip47
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks16
+\ex@=\dimen134
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen135
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count167
+LaTeX Info: Redefining \frac on input line 227.
+\uproot@=\count168
+\leftroot@=\count169
+LaTeX Info: Redefining \overline on input line 389.
+\classnum@=\count170
+\DOTSCASE@=\count171
+LaTeX Info: Redefining \ldots on input line 486.
+LaTeX Info: Redefining \dots on input line 489.
+LaTeX Info: Redefining \cdots on input line 610.
+\Mathstrutbox@=\box45
+\strutbox@=\box46
+\big@size=\dimen136
+LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
+\macc@depth=\count172
+\c@MaxMatrixCols=\count173
+\dotsspace@=\muskip16
+\c@parentequation=\count174
+\dspbrk@lvl=\count175
+\tag@help=\toks17
+\row@=\count176
+\column@=\count177
+\maxfields@=\count178
+\andhelp@=\toks18
+\eqnshift@=\dimen137
+\alignsep@=\dimen138
+\tagshift@=\dimen139
+\tagwidth@=\dimen140
+\totwidth@=\dimen141
+\lineht@=\dimen142
+\@envbody=\toks19
+\multlinegap=\skip48
+\multlinetaggap=\skip49
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2859.
+LaTeX Info: Redefining \] on input line 2860.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2020/02/14 3.40 The Babel package
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/switch.def
+File: switch.def 2020/02/14 3.40 Babel switching mechanism
+)
+(/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
+Language: english 2017/06/06 v3.3r English support from the babel system
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2020/02/14 3.40 Babel common definitions
+\babel@savecnt=\count179
+\U@D=\dimen143
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@readstream=\read2
+\bbl@dirlevel=\count180
+)
+Package babel Info: \l@canadian = using hyphenrules for english
+(babel)             (\language0) on input line 102.
+Package babel Info: \l@australian = using hyphenrules for ukenglish
+(babel)             (\language7) on input line 105.
+Package babel Info: \l@newzealand = using hyphenrules for ukenglish
+(babel)             (\language7) on input line 108.
+))
+! Missing number, treated as zero.
+<to be read again> 
+                   U
+l.29 \DeclareUnicodeCharacter{U+2692}{$\bullet$}
+                                                
+? 
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.29 \DeclareUnicodeCharacter{U+2692}{$\bullet$}
+                                                
+? 
+   defining Unicode char U+U+2692 (decimal 0)
+
+! Package inputenc Error: Cannot define non-active Unicode char value < 00A0.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.29 \DeclareUnicodeCharacter{U+2692}{$\bullet$}
+                                                
+? 
+! Missing number, treated as zero.
+<to be read again> 
+                   U
+l.30 \DeclareUnicodeCharacter{U+261E}{$\bullet$}
+                                                
+? 
+   defining Unicode char U+U+261E (decimal 0)
+
+! Package inputenc Error: Cannot define non-active Unicode char value < 00A0.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.30 \DeclareUnicodeCharacter{U+261E}{$\bullet$}
+                                                
+? 
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/times.sty
+Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
+)
+Overfull \hbox (55.26917pt too wide) in paragraph at lines 29--53
+[]\T1/cmr/m/n/10 U+2692
+ []
+
+
+Overfull \hbox (37.07428pt too wide) in paragraph at lines 29--53
+\T1/cmr/m/n/10 U+261E
+ []
+
+(/usr/share/texlive/texmf-dist/tex/latex/fncychap/fncychap.sty
+Package: fncychap 2007/07/30 v1.34 LaTeX package (Revised chapters)
+
+
+! LaTeX Error: Command \appendix undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.110 \renewcommand\appendix
+                            {\par
+? 
+\RW=\skip50
+\mylen=\skip51
+\myhi=\skip52
+\px=\skip53
+\py=\skip54
+\pyy=\skip55
+\pxx=\skip56
+\c@AlphaCnt=\count181
+\c@AlphaDecCnt=\count182
+)
+
+! LaTeX Error: File `sphinx.sty' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name: 
+
+! LaTeX Error: Unknown option `numfigreset=1' for package `sphinx'.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.57 
+     
+? 
+
+! LaTeX Error: Unknown option `mathnumfig' for package `sphinx'.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.57 
+     
+? 
+! Undefined control sequence.
+l.58 \fvset
+           {fontsize=\small}
+? 
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.58 \fvset{f
+             ontsize=\small}
+? 
+! Undefined control sequence.
+l.58 \fvset{fontsize=\small
+                           }
+? 
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks21
+)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+Overfull \hbox (60.6012pt too wide) in paragraph at lines 58--2
+[]\T1/cmr/m/n/10 fontsize=
+ []
+
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2019/11/07 v1.0c TeX engine tests
+))
+\Gm@cnth=\count183
+\Gm@cntv=\count184
+\c@Gm@tempcnt=\count185
+\Gm@bindingoffset=\dimen144
+\Gm@wd@mp=\dimen145
+\Gm@odd@mp=\dimen146
+\Gm@even@mp=\dimen147
+\Gm@layoutwidth=\dimen148
+\Gm@layoutheight=\dimen149
+\Gm@layouthoffset=\dimen150
+\Gm@layoutvoffset=\dimen151
+\Gm@dimlist=\toks22
+)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2020/01/14 v7.00d Hypertext links for LaTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
+)
+\@linkdim=\dimen152
+\Hy@linkcounter=\count186
+\Hy@pagecounter=\count187
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2020/01/14 v7.00d Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)
+\Hy@SavedSpaceFactor=\count188
+\pdfmajorversion=\count189
+Package hyperref Info: Hyper figures OFF on input line 4547.
+Package hyperref Info: Link nesting OFF on input line 4552.
+Package hyperref Info: Hyper index ON on input line 4555.
+Package hyperref Info: Plain pages OFF on input line 4562.
+Package hyperref Info: Backreferencing OFF on input line 4567.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4800.
+\c@Hy@tempcnt=\count190
+
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5159.
+\XeTeXLinkMargin=\dimen153
+
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count191
+\Field@Width=\dimen154
+\Fld@charsize=\dimen155
+Package hyperref Info: Hyper figures OFF on input line 6430.
+Package hyperref Info: Link nesting OFF on input line 6435.
+Package hyperref Info: Hyper index ON on input line 6438.
+Package hyperref Info: backreferencing OFF on input line 6445.
+Package hyperref Info: Link coloring OFF on input line 6450.
+Package hyperref Info: Link coloring with OCG OFF on input line 6455.
+Package hyperref Info: PDF/A mode OFF on input line 6460.
+LaTeX Info: Redefining \ref on input line 6500.
+LaTeX Info: Redefining \pageref on input line 6504.
+
+(/usr/share/texlive/texmf-dist/tex/generic/atbegshi/atbegshi.sty
+Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
+)
+
+Package hyperref Warning: Option `pdfpagelabels' is turned off
+(hyperref)                because \thepage is undefined.
+
+\c@Item=\count192
+\c@Hfootnote=\count193
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+ (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2020/01/14 v7.00d Hyperref driver for pdfTeX
+\Fld@listcount=\count194
+\c@bookmark@seq@number=\count195
+
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
+
+(/usr/share/texlive/texmf-dist/tex/latex/atveryend/atveryend.sty
+Package: atveryend 2019-12-11 v1.11 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+)
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+86.
+)
+\Hy@SectionHShift=\skip57
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/hypcap.sty
+Package: hypcap 2016/05/16 v1.12 Adjusting the anchors of captions (HO)
+)
+
+! LaTeX Error: File `sphinxmessages.sty' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name: 
+! Undefined control sequence.
+l.78 \release
+             {}
+? 
+
+! LaTeX Error: Command \releasename undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.81 \renewcommand{\releasename}
+                                {}
+? 
+\@indexfile=\write3
+\openout3 = `python.idx'.
+
+Writing index file python.idx
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count196
+\l__pdf_internal_box=\box47
+)
+No file python.aux.
+\openout1 = `python.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+
+! LaTeX Error: The font size command \normalsize is not defined:
+               there is probably something wrong with the class file.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.83 \begin{document}
+                     
+? 
+LaTeX Font Info:    Trying to load font information for T1+ptm on input line 83
+.
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd
+File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
+)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: letterpaper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(92.14519pt, 430.00462pt, 92.14519pt)
+* v-part:(T,H,B)=(95.39737pt, 556.47656pt, 143.09605pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=430.00462pt
+* \textheight=556.47656pt
+* \oddsidemargin=19.8752pt
+* \evensidemargin=19.8752pt
+* \topmargin=23.12738pt
+* \headheight=0.0pt
+* \headsep=0.0pt
+* \topskip=10.0pt
+* \footskip=0.0pt
+* \marginparwidth=0.0pt
+* \marginparsep=0.0pt
+* \columnsep=0.0pt
+* \skip\footins=12.0pt plus 4.0pt minus 4.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+\AtBeginShipoutBox=\box48
+Package hyperref Info: Link coloring OFF on input line 83.
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
+
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count197
+)
+LaTeX Info: Redefining \ref on input line 83.
+LaTeX Info: Redefining \pageref on input line 83.
+LaTeX Info: Redefining \nameref on input line 83.
+\@outlinefile=\write4
+\openout4 = `python.out'.
+
+
+! Undefined control sequence.
+l.86 \sphinxmaketitle
+                     
+? 
+! Undefined control sequence.
+l.88 \sphinxtableofcontents
+                           
+? 
+! Undefined control sequence.
+<argument> \undefinedpagestyle 
+                               
+l.89 \pagestyle{normal}
+                       
+? 
+! Undefined control sequence.
+l.93 ... des übergreifenden Moduls “\sphinxhref
+                                                  {https://studienplaner.lsf...
+
+? 
+
+Overfull \hbox (58.36035pt too wide) in paragraph at lines 93--94
+[]\T1/ptm/m/n/10 Dieser kurze Kurs ist Be-standteil des �ber-greifenden Moduls 
+^^Phttps://studienplaner.lsfm.zhaw.ch/module/angewandte-
+ []
+
+
+Overfull \hbox (9.4518pt too wide) in paragraph at lines 93--94
+\T1/ptm/m/n/10 geoinformatikAngewandte Geoin-for-matik^^Q der Z�rcher Hochschul
+e f�r Ange-wandte Wis-senschaften (ZHAW).
+ []
+
+! Undefined control sequence.
+l.95 Das github\sphinxhyphen
+                            {}repo ist hier \sphinxhref{https://github.com/r...
+
+? 
+! Undefined control sequence.
+l.95 ...ub\sphinxhyphen{}repo ist hier \sphinxhref
+                                                  {https://github.com/ratnan...
+
+? 
+
+! LaTeX Error: Environment sphinxadmonition undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.97 \begin{sphinxadmonition}
+                             {note}{Dieses Buch ist sowohl online als auch p...
+
+? 
+! Undefined control sequence.
+l.100 online: \sphinxurl
+                        {https://ratnanil.github.io/codingingis}
+? 
+! Undefined control sequence.
+l.103 pdf: \sphinxurl
+                     {https://github.com/ratnanil/codingingis/raw/master/cod...
+
+? 
+
+! LaTeX Error: \begin{document} ended by \end{sphinxadmonition}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.106 \end{sphinxadmonition}
+                            
+? 
+! Undefined control sequence.
+l.108 \sphinxstylestrong
+                        {Typographie}
+? 
+! Undefined control sequence.
+l.113 Wenn sich im Fliesstext (Python\sphinxhyphen
+                                                  {} oder R\sphinxhyphen{}) ...
+
+? 
+! Undefined control sequence.
+l.113 ...Python\sphinxhyphen{} oder R\sphinxhyphen
+                                                  {}) Code befindet, wird er...
+
+? 
+! Undefined control sequence.
+l.113 ...{}) Code befindet, wird er in \sphinxcode
+                                                  {\sphinxupquote{dieser Fes...
+
+? 
+! Undefined control sequence.
+l.113 ...et, wird er in \sphinxcode{\sphinxupquote
+                                                  {dieser Festschriftart}} d...
+
+? 
+! Undefined control sequence.
+l.116 ...zlich wären, werden \sphinxstyleemphasis
+                                                  {in dieser Weise} hervorge...
+
+? 
+
+! Package inputenc Error: Unicode character ☞ (U+261E)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.119 ...haben dieses Zeichen vorangestellt “☞
+                                                  ”, Kapitel mit Übungen ...
+
+? 
+
+! Package inputenc Error: Unicode character ⚒ (U+2692)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.119 ...��, Kapitel mit Übungen folgendes “⚒
+                                                  ”
+? 
+
+! LaTeX Error: Environment sphinxVerbatim undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.126 \begin{sphinxVerbatim}
+                            [commandchars=\\\{\}]
+? 
+! Undefined control sequence.
+l.127 \PYG
+          {n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Coding ...
+
+? 
+! Undefined control sequence.
+l.127 \PYG{n+nb}{print}\PYG
+                           {p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Coding ...
+
+? 
+! Undefined control sequence.
+l.127 \PYG{n+nb}{print}\PYG{p}{(}\PYG
+                                     {l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Coding ...
+
+? 
+! Undefined control sequence.
+l.127 ...+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq
+                                                  {}}\PYG{l+s+s2}{Coding in ...
+
+? 
+! Undefined control sequence.
+l.127 ...int}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG
+                                                  {l+s+s2}{Coding in GIS!}\P...
+
+? 
+! Undefined control sequence.
+l.127 ...PYGZdq{}}\PYG{l+s+s2}{Coding in GIS!}\PYG
+                                                  {l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+
+? 
+! Undefined control sequence.
+l.127 ...s+s2}{Coding in GIS!}\PYG{l+s+s2}{\PYGZdq
+                                                  {}}\PYG{p}{)}
+? 
+! Undefined control sequence.
+l.127 ...oding in GIS!}\PYG{l+s+s2}{\PYGZdq{}}\PYG
+                                                  {p}{)}
+? 
+! Interruption.
+<to be read again> 
+                   {
+l.127 ...ding in GIS!}\PYG{l+s+s2}{\PYGZdq{}}\PYG{
+                                                  p}{)}
+? 
+
+! LaTeX Error: \begin{document} ended by \end{sphinxVerbatim}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.128 \end{sphinxVerbatim}
+                          
+? 
+
+! LaTeX Error: Environment sphinxadmonition undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.135 \begin{sphinxadmonition}
+                              {note}{Für R Nutzer}
+? 
+
+! LaTeX Error: \begin{document} ended by \end{sphinxadmonition}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.141 \end{sphinxadmonition}
+                            
+? U+261E
+Type <return> to proceed, S to scroll future error messages,
+R to run without stopping, Q to run quietly,
+I to insert something, E to edit your file,
+1 or ... or 9 to ignore the next 1 to 9 tokens of input,
+H for help, X to quit.
+? 
+! Undefined control sequence.
+l.143 ...mit einem Klick auf das Plus\sphinxhyphen
+                                                  {}Symbol die Musterlösung...
+
+? 
+! Interruption.
+<to be read again> 
+                   {
+l.143 ...it einem Klick auf das Plus\sphinxhyphen{
+                                                  }Symbol die Musterlösung ...
+
+? 
+
+! LaTeX Error: Environment sphinxVerbatim undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.145 \begin{sphinxVerbatim}
+                            [commandchars=\\\{\}]
+? 
+! Undefined control sequence.
+l.146 \PYG
+          {c+c1}{\PYGZsh{} hier steht die Musterlösung der Aufgabe. Erst be...
+
+? 
+! Interruption.
+<to be read again> 
+                   {
+l.146 \PYG{
+           c+c1}{\PYGZsh{} hier steht die Musterlösung der Aufgabe. Erst be...
+
+? 
+! Undefined control sequence.
+l.146 \PYG{c+c1}{\PYGZsh
+                        {} hier steht die Musterlösung der Aufgabe. Erst be...
+
+? 
+! Undefined control sequence.
+l.147 \PYG
+          {c+c1}{\PYGZsh{} vergeblich versucht habt, die Aufgabe selbst zu l...
+
+? 
+! Undefined control sequence.
+l.147 \PYG{c+c1}{\PYGZsh
+                        {} vergeblich versucht habt, die Aufgabe selbst zu l...
+
+? 
+! Undefined control sequence.
+l.148 \PYG
+          {n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Don}\PY...
+
+? 
+! Undefined control sequence.
+l.148 \PYG{n+nb}{print}\PYG
+                           {p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Don}\PY...
+
+? 
+! Undefined control sequence.
+l.148 \PYG{n+nb}{print}\PYG{p}{(}\PYG
+                                     {l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Don}\PY...
+
+? 
+! Undefined control sequence.
+l.148 ...+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq
+                                                  {}}\PYG{l+s+s2}{Don}\PYG{l...
+
+? 
+! Undefined control sequence.
+l.148 ...int}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG
+                                                  {l+s+s2}{Don}\PYG{l+s+s2}{...
+
+? 
+! Undefined control sequence.
+l.148 ...G{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Don}\PYG
+                                                  {l+s+s2}{\PYGZsq{}}\PYG{l+...
+
+? 
+! Undefined control sequence.
+l.148 ...q{}}\PYG{l+s+s2}{Don}\PYG{l+s+s2}{\PYGZsq
+                                                  {}}\PYG{l+s+s2}{t peek!}\P...
+
+? 
+! Undefined control sequence.
+l.148 ...G{l+s+s2}{Don}\PYG{l+s+s2}{\PYGZsq{}}\PYG
+                                                  {l+s+s2}{t peek!}\PYG{l+s+...
+
+? 
+! Undefined control sequence.
+l.148 ...s+s2}{\PYGZsq{}}\PYG{l+s+s2}{t peek!}\PYG
+                                                  {l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+
+? 
+! Undefined control sequence.
+l.148 ...\PYG{l+s+s2}{t peek!}\PYG{l+s+s2}{\PYGZdq
+                                                  {}}\PYG{p}{)}
+? 
+! Undefined control sequence.
+l.148 ...s+s2}{t peek!}\PYG{l+s+s2}{\PYGZdq{}}\PYG
+                                                  {p}{)}
+? 
+
+! LaTeX Error: \begin{document} ended by \end{sphinxVerbatim}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.149 \end{sphinxVerbatim}
+                          
+? 
+! Undefined control sequence.
+l.152 \chapter
+              {Einleitung zu diesem Block}
+? 
+
+! LaTeX Error: Environment sphinxadmonition undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.154 \begin{sphinxadmonition}
+                              {note}{Übungsziele}
+? 
+
+! LaTeX Error: \begin{document} ended by \end{sphinxadmonition}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.169 \end{sphinxadmonition}
+                            
+? 
+! Undefined control sequence.
+l.172 \chapter
+              {☞ Primitive Datentypen}
+? 
+
+! Package inputenc Error: Unicode character ☞ (U+261E)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.172 \chapter{☞
+                   Primitive Datentypen}
+? 
+
+! LaTeX Error: Environment sphinxadmonition undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.176 \begin{sphinxadmonition}
+                              {note}{Für R Nutzer}
+? 
+! Undefined control sequence.
+l.182 ...werden wie in Python (mit dem \sphinxcode
+                                                  {\sphinxupquote{=}} Symbol...
+
+? 
+! Undefined control sequence.
+l.182 ...ython (mit dem \sphinxcode{\sphinxupquote
+                                                  {=}} Symbol). In R gibt es...
+
+? 
+! Undefined control sequence.
+l.182 ...e Möglichkeit, Variablen mit \sphinxcode
+                                                  {\sphinxupquote{\textless{...
+
+? 
+! Undefined control sequence.
+l.182 ... Variablen mit \sphinxcode{\sphinxupquote
+                                                  {\textless{}\sphinxhyphen{...
+
+? 
+! Undefined control sequence.
+l.182 ...e{\sphinxupquote{\textless{}\sphinxhyphen
+                                                  {}}} zu zuweisen, in Pytho...
+
+? 
+
+! LaTeX Error: \begin{document} ended by \end{sphinxadmonition}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.185 \end{sphinxadmonition}
+                            
+? 
+! Undefined control sequence.
+l.188 \section
+              {Boolean}
+? 
+! Undefined control sequence.
+l.190 ...h. In Python werden diese mit \sphinxcode
+                                                  {\sphinxupquote{True}} ode...
+
+? 
+! Undefined control sequence.
+l.190 ...rden diese mit \sphinxcode{\sphinxupquote
+                                                  {True}} oder \sphinxcode{\...
+
+? 
+! Undefined control sequence.
+l.190 ...de{\sphinxupquote{True}} oder \sphinxcode
+                                                  {\sphinxupquote{False}} de...
+
+? 
+! Undefined control sequence.
+l.190 ...te{True}} oder \sphinxcode{\sphinxupquote
+                                                  {False}} definiert. Beispi...
+
+? 
+
+! LaTeX Error: Environment sphinxVerbatim undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.192 \begin{sphinxVerbatim}
+                            [commandchars=\\\{\}]
+? 
+! Undefined control sequence.
+l.193 \PYG
+          {n}{regen} \PYG{o}{=} \PYG{k+kc}{True}
+? 
+! Undefined control sequence.
+l.193 \PYG{n}{regen} \PYG
+                         {o}{=} \PYG{k+kc}{True}
+? 
+! Undefined control sequence.
+l.193 \PYG{n}{regen} \PYG{o}{=} \PYG
+                                    {k+kc}{True}
+? 
+
+! LaTeX Error: \begin{document} ended by \end{sphinxVerbatim}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.194 \end{sphinxVerbatim}
+                          
+? 
+
+! LaTeX Error: Environment sphinxVerbatim undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.196 \begin{sphinxVerbatim}
+                            [commandchars=\\\{\}]
+? 
+! Undefined control sequence.
+l.197 \PYG
+          {n}{sonne} \PYG{o}{=} \PYG{k+kc}{False}
+? 
+! Undefined control sequence.
+l.197 \PYG{n}{sonne} \PYG
+                         {o}{=} \PYG{k+kc}{False}
+? 
+! Undefined control sequence.
+l.197 \PYG{n}{sonne} \PYG{o}{=} \PYG
+                                    {k+kc}{False}
+? 
+! Undefined control sequence.
+l.199 \PYG
+          {n+nb}{type}\PYG{p}{(}\PYG{n}{sonne}\PYG{p}{)}
+? 
+! Undefined control sequence.
+l.199 \PYG{n+nb}{type}\PYG
+                          {p}{(}\PYG{n}{sonne}\PYG{p}{)}
+? 
+! Undefined control sequence.
+l.199 \PYG{n+nb}{type}\PYG{p}{(}\PYG
+                                    {n}{sonne}\PYG{p}{)}
+? 
+! Undefined control sequence.
+l.199 \PYG{n+nb}{type}\PYG{p}{(}\PYG{n}{sonne}\PYG
+                                                  {p}{)}
+? 
+
+! LaTeX Error: \begin{document} ended by \end{sphinxVerbatim}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.200 \end{sphinxVerbatim}
+                          
+? 
+
+! LaTeX Error: Environment sphinxVerbatim undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.202 \begin{sphinxVerbatim}
+                            [commandchars=\\\{\}]
+? 
+
+! LaTeX Error: \begin{document} ended by \end{sphinxVerbatim}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.204 \end{sphinxVerbatim}
+                          
+? 
+! Undefined control sequence.
+l.207 \section
+              {String}
+? 
+! Undefined control sequence.
+l.209 In sogenannten \sphinxstyleemphasis
+                                         {Strings} werden Textinformationen ...
+
+? 
+
+! LaTeX Error: Environment sphinxVerbatim undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.211 \begin{sphinxVerbatim}
+                            [commandchars=\\\{\}]
+? 
+! Undefined control sequence.
+l.212 \PYG
+          {n}{stadt} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Bern}\PY...
+
+? 
+! Undefined control sequence.
+l.212 \PYG{n}{stadt} \PYG
+                         {o}{=} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Bern}\PY...
+
+? 
+! Undefined control sequence.
+l.212 \PYG{n}{stadt} \PYG{o}{=} \PYG
+                                    {l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Bern}\PY...
+
+? 
+! Undefined control sequence.
+l.212 ...n}{stadt} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq
+                                                  {}}\PYG{l+s+s2}{Bern}\PYG{...
+
+? 
+! Undefined control sequence.
+l.212 ...t} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}}\PYG
+                                                  {l+s+s2}{Bern}\PYG{l+s+s2}...
+
+? 
+! Undefined control sequence.
+l.212 ...{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Bern}\PYG
+                                                  {l+s+s2}{\PYGZdq{}}
+? 
+! Undefined control sequence.
+l.212 ...{}}\PYG{l+s+s2}{Bern}\PYG{l+s+s2}{\PYGZdq
+                                                  {}}
+? 
+! Undefined control sequence.
+l.213 \PYG
+          {n}{land} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Schweiz}\...
+
+? 
+! Undefined control sequence.
+l.213 \PYG{n}{land} \PYG
+                        {o}{=} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Schweiz}\...
+
+? 
+! Undefined control sequence.
+l.213 \PYG{n}{land} \PYG{o}{=} \PYG
+                                   {l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Schweiz}\...
+
+? 
+! Undefined control sequence.
+l.213 ...{n}{land} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq
+                                                  {}}\PYG{l+s+s2}{Schweiz}\P...
+
+? 
+! Undefined control sequence.
+l.213 ...d} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}}\PYG
+                                                  {l+s+s2}{Schweiz}\PYG{l+s+...
+
+? 
+! Undefined control sequence.
+l.213 ...s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Schweiz}\PYG
+                                                  {l+s+s2}{\PYGZdq{}}
+? 
+! Undefined control sequence.
+l.213 ...\PYG{l+s+s2}{Schweiz}\PYG{l+s+s2}{\PYGZdq
+                                                  {}}
+? 
+
+! LaTeX Error: \begin{document} ended by \end{sphinxVerbatim}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.214 \end{sphinxVerbatim}
+                          
+? 
+
+! LaTeX Error: Environment sphinxVerbatim undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.216 \begin{sphinxVerbatim}
+                            [commandchars=\\\{\}]
+? 
+! Undefined control sequence.
+l.217 \PYG
+          {n+nb}{type}\PYG{p}{(}\PYG{n}{stadt}\PYG{p}{)}
+? 
+! Undefined control sequence.
+l.217 \PYG{n+nb}{type}\PYG
+                          {p}{(}\PYG{n}{stadt}\PYG{p}{)}
+? 
+! Undefined control sequence.
+l.217 \PYG{n+nb}{type}\PYG{p}{(}\PYG
+                                    {n}{stadt}\PYG{p}{)}
+? 
+! Undefined control sequence.
+l.217 \PYG{n+nb}{type}\PYG{p}{(}\PYG{n}{stadt}\PYG
+                                                  {p}{)}
+? 
+
+! LaTeX Error: \begin{document} ended by \end{sphinxVerbatim}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.218 \end{sphinxVerbatim}
+                          
+? 
+
+! LaTeX Error: Environment sphinxVerbatim undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.220 \begin{sphinxVerbatim}
+                            [commandchars=\\\{\}]
+? 
+
+! LaTeX Error: \begin{document} ended by \end{sphinxVerbatim}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.222 \end{sphinxVerbatim}
+                          
+? 
+! Undefined control sequence.
+l.224 Strings können mit \sphinxcode
+                                     {\sphinxupquote{+}} miteinander verbund...
+
+? 
+! Undefined control sequence.
+l.224 ...gs können mit \sphinxcode{\sphinxupquote
+                                                  {+}} miteinander verbunden...
+
+? 
+
+! LaTeX Error: Environment sphinxVerbatim undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.226 \begin{sphinxVerbatim}
+                            [commandchars=\\\{\}]
+? 
+! Undefined control sequence.
+l.227 \PYG
+          {n}{stadt} \PYG{o}{+}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{ ist die ...
+
+? 
+! Undefined control sequence.
+l.227 \PYG{n}{stadt} \PYG
+                         {o}{+}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{ ist die ...
+
+? 
+! Undefined control sequence.
+l.227 \PYG{n}{stadt} \PYG{o}{+}\PYG
+                                   {l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{ ist die ...
+
+? 
+! Undefined control sequence.
+l.227 ...{n}{stadt} \PYG{o}{+}\PYG{l+s+s2}{\PYGZdq
+                                                  {}}\PYG{l+s+s2}{ ist die H...
+
+? 
+! Undefined control sequence.
+l.227 ...dt} \PYG{o}{+}\PYG{l+s+s2}{\PYGZdq{}}\PYG
+                                                  {l+s+s2}{ ist die Hauptsta...
+
+? 
+! Undefined control sequence.
+l.227 ...PYG{l+s+s2}{ ist die Hauptstadt der }\PYG
+                                                  {l+s+s2}{\PYGZdq{}} \PYG{o...
+
+? 
+! Undefined control sequence.
+l.227 ... die Hauptstadt der }\PYG{l+s+s2}{\PYGZdq
+                                                  {}} \PYG{o}{+} \PYG{n}{land}
+? 
+! Undefined control sequence.
+l.227 ...ptstadt der }\PYG{l+s+s2}{\PYGZdq{}} \PYG
+                                                  {o}{+} \PYG{n}{land}
+? 
+! Undefined control sequence.
+l.227 ... }\PYG{l+s+s2}{\PYGZdq{}} \PYG{o}{+} \PYG
+                                                  {n}{land}
+? 
+
+! LaTeX Error: \begin{document} ended by \end{sphinxVerbatim}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.228 \end{sphinxVerbatim}
+                          
+? 
+
+! LaTeX Error: Environment sphinxVerbatim undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.230 \begin{sphinxVerbatim}
+                            [commandchars=\\\{\}]
+? 
+! Undefined control sequence.
+l.231 \PYGZsq
+             {}Bern ist die Hauptstadt der Schweiz\PYGZsq{}
+? 
+! Undefined control sequence.
+l.231 ...ern ist die Hauptstadt der Schweiz\PYGZsq
+                                                  {}
+? 
+
+! LaTeX Error: \begin{document} ended by \end{sphinxVerbatim}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.232 \end{sphinxVerbatim}
+                          
+? 
+! Undefined control sequence.
+l.235 \section
+              {Integer}
+? 
+
+! LaTeX Error: Environment sphinxVerbatim undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.239 \begin{sphinxVerbatim}
+                            [commandchars=\\\{\}]
+? 
+! Undefined control sequence.
+l.240 \PYG
+          {n}{bern\PYGZus{}einwohner} \PYG{o}{=} \PYG{l+m+mi}{133115}
+? 
+! Undefined control sequence.
+l.240 \PYG{n}{bern\PYGZus
+                         {}einwohner} \PYG{o}{=} \PYG{l+m+mi}{133115}
+? 
+! Undefined control sequence.
+l.240 \PYG{n}{bern\PYGZus{}einwohner} \PYG
+                                          {o}{=} \PYG{l+m+mi}{133115}
+? 
+! Undefined control sequence.
+l.240 ...}{bern\PYGZus{}einwohner} \PYG{o}{=} \PYG
+                                                  {l+m+mi}{133115}
+? 
+
+! LaTeX Error: \begin{document} ended by \end{sphinxVerbatim}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.241 \end{sphinxVerbatim}
+                          
+? 
+
+! LaTeX Error: Environment sphinxVerbatim undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.243 \begin{sphinxVerbatim}
+                            [commandchars=\\\{\}]
+? 
+! Undefined control sequence.
+l.244 \PYG
+          {n+nb}{type}\PYG{p}{(}\PYG{n}{bern\PYGZus{}einwohner}\PYG{p}{)}
+? 
+! Undefined control sequence.
+l.244 \PYG{n+nb}{type}\PYG
+                          {p}{(}\PYG{n}{bern\PYGZus{}einwohner}\PYG{p}{)}
+? 
+! Undefined control sequence.
+l.244 \PYG{n+nb}{type}\PYG{p}{(}\PYG
+                                    {n}{bern\PYGZus{}einwohner}\PYG{p}{)}
+? 
+! Undefined control sequence.
+l.244 ...{n+nb}{type}\PYG{p}{(}\PYG{n}{bern\PYGZus
+                                                  {}einwohner}\PYG{p}{)}
+? 
+! Undefined control sequence.
+l.244 ...{p}{(}\PYG{n}{bern\PYGZus{}einwohner}\PYG
+                                                  {p}{)}
+? 
+
+! LaTeX Error: \begin{document} ended by \end{sphinxVerbatim}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.245 \end{sphinxVerbatim}
+                          
+? 
+
+! LaTeX Error: Environment sphinxVerbatim undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.247 \begin{sphinxVerbatim}
+                            [commandchars=\\\{\}]
+? 
+
+! LaTeX Error: \begin{document} ended by \end{sphinxVerbatim}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.249 \end{sphinxVerbatim}
+                          
+? 
+! Undefined control sequence.
+l.252 \section
+              {Float}
+? 
+! Undefined control sequence.
+l.254 Als \sphinxcode
+                     {\sphinxupquote{Float}} werden Zahlen mit Nachkommastel...
+
+? 
+! Undefined control sequence.
+l.254 Als \sphinxcode{\sphinxupquote
+                                    {Float}} werden Zahlen mit Nachkommastel...
+
+? 
+
+! LaTeX Error: Environment sphinxVerbatim undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.256 \begin{sphinxVerbatim}
+                            [commandchars=\\\{\}]
+? 
+! Undefined control sequence.
+l.257 \PYG
+          {n}{bern\PYGZus{}temp} \PYG{o}{=} \PYG{l+m+mf}{22.5}
+? 
+! Undefined control sequence.
+l.257 \PYG{n}{bern\PYGZus
+                         {}temp} \PYG{o}{=} \PYG{l+m+mf}{22.5}
+? 
+! Undefined control sequence.
+l.257 \PYG{n}{bern\PYGZus{}temp} \PYG
+                                     {o}{=} \PYG{l+m+mf}{22.5}
+? 
+! Undefined control sequence.
+l.257 \PYG{n}{bern\PYGZus{}temp} \PYG{o}{=} \PYG
+                                                {l+m+mf}{22.5}
+? 
+
+! LaTeX Error: \begin{document} ended by \end{sphinxVerbatim}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.258 \end{sphinxVerbatim}
+                          
+? 
+
+! LaTeX Error: Environment sphinxVerbatim undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.260 \begin{sphinxVerbatim}
+                            [commandchars=\\\{\}]
+? 
+! Undefined control sequence.
+l.261 \PYG
+          {n+nb}{type}\PYG{p}{(}\PYG{n}{bern\PYGZus{}temp}\PYG{p}{)}
+? 
+! Undefined control sequence.
+l.261 \PYG{n+nb}{type}\PYG
+                          {p}{(}\PYG{n}{bern\PYGZus{}temp}\PYG{p}{)}
+? 
+! Undefined control sequence.
+l.261 \PYG{n+nb}{type}\PYG{p}{(}\PYG
+                                    {n}{bern\PYGZus{}temp}\PYG{p}{)}
+? 
+! Undefined control sequence.
+l.261 ...{n+nb}{type}\PYG{p}{(}\PYG{n}{bern\PYGZus
+                                                  {}temp}\PYG{p}{)}
+? 
+! Undefined control sequence.
+l.261 ...}\PYG{p}{(}\PYG{n}{bern\PYGZus{}temp}\PYG
+                                                  {p}{)}
+? 
+
+! LaTeX Error: \begin{document} ended by \end{sphinxVerbatim}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.262 \end{sphinxVerbatim}
+                          
+? 
+
+! LaTeX Error: Environment sphinxVerbatim undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.264 \begin{sphinxVerbatim}
+                            [commandchars=\\\{\}]
+? 
+
+! LaTeX Error: \begin{document} ended by \end{sphinxVerbatim}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.266 \end{sphinxVerbatim}
+                          
+? 
+! Undefined control sequence.
+l.269 \section
+              {Weitere Datentypen}
+? 
+! Undefined control sequence.
+l.274 \chapter
+              {☞ Zusammengesetzte Datentypen}
+? 
+
+! Package inputenc Error: Unicode character ☞ (U+261E)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.274 \chapter{☞
+                   Zusammengesetzte Datentypen}
+? 
+! Undefined control sequence.
+l.279 \section
+              {List}
+? 
+! Undefined control sequence.
+l.281 Eine \sphinxcode
+                      {\sphinxupquote{List}}:
+? 
+! Undefined control sequence.
+l.281 Eine \sphinxcode{\sphinxupquote
+                                     {List}}:
+? 
+! Undefined control sequence.
+l.290 wird mit eckgigen Klammern (\sphinxcode
+                                             {\sphinxupquote{{[}}} und \sphi...
+
+? 
+! Undefined control sequence.
+l.290 ...igen Klammern (\sphinxcode{\sphinxupquote
+                                                  {{[}}} und \sphinxcode{\sp...
+
+? 
+! Undefined control sequence.
+l.290 ...code{\sphinxupquote{{[}}} und \sphinxcode
+                                                  {\sphinxupquote{{]}}}) ers...
+
+? 
+! Undefined control sequence.
+l.290 ...uote{{[}}} und \sphinxcode{\sphinxupquote
+                                                  {{]}}}) erstellt
+? 
+
+! LaTeX Error: Environment sphinxVerbatim undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.294 \begin{sphinxVerbatim}
+                            [commandchars=\\\{\}]
+? 
+! Undefined control sequence.
+l.295 \PYG
+          {n}{hexerei} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{3}\PYG{p}{,}\PYG{l+...
+
+? 
+! Undefined control sequence.
+l.295 \PYG{n}{hexerei} \PYG
+                           {o}{=} \PYG{p}{[}\PYG{l+m+mi}{3}\PYG{p}{,}\PYG{l+...
+
+? 
+! Undefined control sequence.
+l.295 \PYG{n}{hexerei} \PYG{o}{=} \PYG
+                                      {p}{[}\PYG{l+m+mi}{3}\PYG{p}{,}\PYG{l+...
+
+? 
+! Undefined control sequence.
+l.295 \PYG{n}{hexerei} \PYG{o}{=} \PYG{p}{[}\PYG
+                                                {l+m+mi}{3}\PYG{p}{,}\PYG{l+...
+
+? 
+! Undefined control sequence.
+l.295 ... \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{3}\PYG
+                                                  {p}{,}\PYG{l+m+mi}{1}\PYG{...
+
+? 
+! Undefined control sequence.
+l.295 ...} \PYG{p}{[}\PYG{l+m+mi}{3}\PYG{p}{,}\PYG
+                                                  {l+m+mi}{1}\PYG{p}{,}\PYG{...
+
+? 
+! Undefined control sequence.
+l.295 ...G{l+m+mi}{3}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG
+                                                  {p}{,}\PYG{l+m+mi}{2}\PYG{...
+
+? 
+! Undefined control sequence.
+l.295 ...3}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG
+                                                  {l+m+mi}{2}\PYG{p}{]}
+? 
+! Undefined control sequence.
+l.295 ...G{l+m+mi}{1}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG
+                                                  {p}{]}
+? 
+
+! LaTeX Error: \begin{document} ended by \end{sphinxVerbatim}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.296 \end{sphinxVerbatim}
+                          
+? 
+! Undefined control sequence.
+l.298 ...erste Wert wird in Python mit \sphinxcode
+                                                  {\sphinxupquote{0}} aufger...
+
+? 
+! Undefine
