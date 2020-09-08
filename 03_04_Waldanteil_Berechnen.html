@@ -39,7 +39,7 @@
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Aufgabe: GIS in Python" href="01_05_GIS_in_Python.html" />
+    <link rel="prev" title="Übung: GIS in Python" href="01_05_GIS_in_Python.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -102,12 +102,12 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_04_Aufgabe_A.html">
-   Aufgabe A: Lists
+   Übung: Lists
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_05_Aufgabe_B.html">
-   Aufgabe B: Dictionaries
+   Übung: Dictionaries
   </a>
  </li>
  <li class="toctree-l1">
@@ -117,7 +117,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_06_Tabellarische_Daten.html">
-   Aufgabe: Tabellarische Daten
+   Übung: Tabellarische Daten
   </a>
  </li>
 </ul>
@@ -136,14 +136,14 @@
   <a class="reference internal" href="02_02_Input_Functions.html">
    Input:
    <em>
-    Functions
+    Function
    </em>
-   Teil I
+   Basics
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02_03_Functions.html">
-   Aufgabe:
+   Übung:
    <em>
     Functions
    </em>
@@ -153,19 +153,23 @@
   <a class="reference internal" href="02_03b_Input_Functions_II.html">
    Input:
    <em>
-    Functions
+    Function
    </em>
-   Teil II
+   Advanced
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02_04_Einzelpunkt_Verschieben.html">
-   Einen Einzelpunkt zufällig verschieben
+   Übung: Einen Einzelpunkt zufällig verschieben
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02_05_Punkte_einer_GeoDataFrame_verschieben.html">
-   Punkte einer GeoDataFrame zufällig verschieben
+  <a class="reference internal" href="02_05_Punkte_einer_DataFrame_verschieben.html">
+   Übung Punkte einer
+   <em>
+    DataFrame
+   </em>
+   zufällig verschieben
   </a>
  </li>
 </ul>
@@ -182,7 +186,12 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="03_02_For_Loops.html">
-   For Loops
+   Übung: For Loops (Teil I)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_02b_For_Loops.html">
+   Übung: For Loops (Teil II)
   </a>
  </li>
  <li class="toctree-l1">
@@ -192,7 +201,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_05_GIS_in_Python.html">
-   Aufgabe: GIS in Python
+   Übung: GIS in Python
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -394,9 +403,9 @@ Hinweis: Allenfalls müssen das Koordinatensystem der beiden GeoDataFrames nochm
       <td>921225.341854</td>
       <td>7.963237e+07</td>
       <td>POLYGON Z ((2689962.355 1245335.250 644.591, 2...</td>
-      <td>51866</td>
+      <td>34650</td>
       <td>218</td>
-      <td>48</td>
+      <td>32</td>
     </tr>
     <tr>
       <th>0</th>
@@ -404,9 +413,9 @@ Hinweis: Allenfalls müssen das Koordinatensystem der beiden GeoDataFrames nochm
       <td>921225.341854</td>
       <td>7.963237e+07</td>
       <td>POLYGON Z ((2689962.355 1245335.250 644.591, 2...</td>
-      <td>50790</td>
+      <td>30346</td>
       <td>218</td>
-      <td>47</td>
+      <td>28</td>
     </tr>
     <tr>
       <th>0</th>
@@ -414,9 +423,9 @@ Hinweis: Allenfalls müssen das Koordinatensystem der beiden GeoDataFrames nochm
       <td>921225.341854</td>
       <td>7.963237e+07</td>
       <td>POLYGON Z ((2689962.355 1245335.250 644.591, 2...</td>
-      <td>14206</td>
       <td>218</td>
-      <td>13</td>
+      <td>218</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>0</th>
@@ -424,9 +433,9 @@ Hinweis: Allenfalls müssen das Koordinatensystem der beiden GeoDataFrames nochm
       <td>921225.341854</td>
       <td>7.963237e+07</td>
       <td>POLYGON Z ((2689962.355 1245335.250 644.591, 2...</td>
-      <td>7750</td>
+      <td>19586</td>
       <td>218</td>
-      <td>7</td>
+      <td>18</td>
     </tr>
     <tr>
       <th>0</th>
@@ -434,9 +443,9 @@ Hinweis: Allenfalls müssen das Koordinatensystem der beiden GeoDataFrames nochm
       <td>921225.341854</td>
       <td>7.963237e+07</td>
       <td>POLYGON Z ((2689962.355 1245335.250 644.591, 2...</td>
-      <td>26042</td>
+      <td>44334</td>
       <td>218</td>
-      <td>24</td>
+      <td>41</td>
     </tr>
   </tbody>
 </table>
@@ -529,7 +538,7 @@ Hinweis: Allenfalls müssen das Koordinatensystem der beiden GeoDataFrames nochm
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="01_05_GIS_in_Python.html" title="previous page">Aufgabe: GIS in Python</a>
+    <a class='left-prev' id="prev-link" href="01_05_GIS_in_Python.html" title="previous page">Übung: GIS in Python</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

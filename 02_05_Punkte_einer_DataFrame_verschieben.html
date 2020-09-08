@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Punkte einer GeoDataFrame zufällig verschieben &#8212; Coding in GIS</title>
+    <title>Übung Punkte einer DataFrame zufällig verschieben &#8212; Coding in GIS</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -40,7 +40,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Einleitung zu diesem Block" href="03_01_Einleitung.html" />
-    <link rel="prev" title="Einen Einzelpunkt zufällig verschieben" href="02_04_Einzelpunkt_Verschieben.html" />
+    <link rel="prev" title="Übung: Einen Einzelpunkt zufällig verschieben" href="02_04_Einzelpunkt_Verschieben.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -103,12 +103,12 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_04_Aufgabe_A.html">
-   Aufgabe A: Lists
+   Übung: Lists
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_05_Aufgabe_B.html">
-   Aufgabe B: Dictionaries
+   Übung: Dictionaries
   </a>
  </li>
  <li class="toctree-l1">
@@ -118,7 +118,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_06_Tabellarische_Daten.html">
-   Aufgabe: Tabellarische Daten
+   Übung: Tabellarische Daten
   </a>
  </li>
 </ul>
@@ -137,14 +137,14 @@
   <a class="reference internal" href="02_02_Input_Functions.html">
    Input:
    <em>
-    Functions
+    Function
    </em>
-   Teil I
+   Basics
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02_03_Functions.html">
-   Aufgabe:
+   Übung:
    <em>
     Functions
    </em>
@@ -154,19 +154,23 @@
   <a class="reference internal" href="02_03b_Input_Functions_II.html">
    Input:
    <em>
-    Functions
+    Function
    </em>
-   Teil II
+   Advanced
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02_04_Einzelpunkt_Verschieben.html">
-   Einen Einzelpunkt zufällig verschieben
+   Übung: Einen Einzelpunkt zufällig verschieben
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Punkte einer GeoDataFrame zufällig verschieben
+   Übung Punkte einer
+   <em>
+    DataFrame
+   </em>
+   zufällig verschieben
   </a>
  </li>
 </ul>
@@ -183,7 +187,12 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="03_02_For_Loops.html">
-   For Loops
+   Übung: For Loops (Teil I)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_02b_For_Loops.html">
+   Übung: For Loops (Teil II)
   </a>
  </li>
  <li class="toctree-l1">
@@ -193,7 +202,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_05_GIS_in_Python.html">
-   Aufgabe: GIS in Python
+   Übung: GIS in Python
   </a>
  </li>
  <li class="toctree-l1">
@@ -243,7 +252,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/02_05_Punkte_einer_GeoDataFrame_verschieben.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/02_05_Punkte_einer_DataFrame_verschieben.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -268,7 +277,7 @@
     <div class="dropdown-buttons">
         
         
-        <a class="jupyterhub-button" href="https://jupyterhub01.zhaw.ch/hub/user-redirect/git-pull?repo=https://github.com/ratnanil/codingingis&urlpath=lab/tree/codingingis/02_05_Punkte_einer_GeoDataFrame_verschieben.ipynb&branch=master"><button type="button"
+        <a class="jupyterhub-button" href="https://jupyterhub01.zhaw.ch/hub/user-redirect/git-pull?repo=https://github.com/ratnanil/codingingis&urlpath=lab/tree/codingingis/02_05_Punkte_einer_DataFrame_verschieben.ipynb&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="_static/images/logo_jupyterhub.svg"
@@ -299,15 +308,10 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ubung-3-id-ubernehmen">
-   Übung 3: ID übernehmen
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ubung-4-mehrere-geodataframes-visualisieren">
+  <a class="reference internal nav-link" href="#ubung-4-mehrere-dataframes-visualisieren">
    Übung 4: Mehrere
    <em>
-    GeoDataFrames
+    DataFrames
    </em>
    visualisieren
   </a>
@@ -322,83 +326,32 @@
         
               <div>
                 
-  <div class="section" id="punkte-einer-geodataframe-zufallig-verschieben">
-<h1>Punkte einer GeoDataFrame zufällig verschieben<a class="headerlink" href="#punkte-einer-geodataframe-zufallig-verschieben" title="Permalink to this headline">¶</a></h1>
-<p>Nun wollen wir den ganzen Zauber auf unsere richtigen Daten, die Zeckenstiche, anwenden. Dazu müssen wir zuerst den Zeckenstichdatensatz einlesen. Nutzt dazu die Function <code class="docutils literal notranslate"><span class="pre">gpd.read_file()</span></code> um das Shapefile, welches wir letzte Woche abgespeichert hatten, zu importieren. Wer dieses Shapefile nicht hat, findet eine Version auf Moodle. Speichere die Daten in als Variabel <code class="docutils literal notranslate"><span class="pre">zeckenstiche</span></code>.</p>
+  <div class="section" id="ubung-punkte-einer-dataframe-zufallig-verschieben">
+<h1>Übung Punkte einer <em>DataFrame</em> zufällig verschieben<a class="headerlink" href="#ubung-punkte-einer-dataframe-zufallig-verschieben" title="Permalink to this headline">¶</a></h1>
+<p>Jetzt wo wir wissen, wie man einen einzelnen Punkt zufällig verschiebt können wir unsere <em>Function</em> auf die richtigen Daten, die Zeckenstiche, anwenden. Die ist Schritt 2 in unserem Schema:</p>
+<ul class="simple">
+<li><p>Schritt 1: Einen Einzelpunkt zufällig verschieben ✓</p></li>
+<li><p><strong>Schritt 2: Alle Punkte einer DataFrame zufällig verschieben (1 “Run”)</strong></p></li>
+<li><p>Schritt 3: Alle Punkte einer DataFrame mehrfach zufällig verschieben (z.B. 50 “Runs”)</p></li>
+<li><p>Schritt 4: Anteil der Punkte im Wald pro “Run” ermitteln</p></li>
+<li><p>Schritt 5: Verteilung dieser Mittelwerte visualisieren</p></li>
+</ul>
+<p>Lade hierzu die nötigen Module und importiere die Zeckenstichdaten</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
 <span class="kn">import</span> <span class="nn">random</span>
-<span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">Point</span>
 
-<span class="n">zeckenstiche</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;zeckenstiche.shp&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">offset_coordinate</span><span class="p">(</span><span class="n">old</span><span class="p">,</span> <span class="n">distance</span> <span class="o">=</span> <span class="mi">100</span><span class="p">):</span>
+    <span class="n">new</span> <span class="o">=</span> <span class="n">old</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">normalvariate</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">distance</span><span class="p">)</span>
+
+    <span class="k">return</span><span class="p">(</span><span class="n">new</span><span class="p">)</span>
+
+<span class="c1"># mit &quot;head(10)&quot; importiere ich nur die ersten 10 Einträge des CSV. So kann ich den Workflow erstmal an einem kleineren Datensatz testen.</span>
+<span class="n">zeckenstiche</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;zeckenstiche.csv&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 
 
-<span class="k">def</span> <span class="nf">point_offset</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="n">distance</span> <span class="o">=</span> <span class="mi">100</span><span class="p">):</span>
-    <span class="n">x_alt</span> <span class="o">=</span> <span class="n">point</span><span class="o">.</span><span class="n">x</span>
-    <span class="n">y_alt</span> <span class="o">=</span> <span class="n">point</span><span class="o">.</span><span class="n">y</span>
-
-    <span class="n">distance</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">distance</span><span class="p">)</span>
-
-    <span class="n">x_neu</span> <span class="o">=</span> <span class="n">x_alt</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="o">-</span><span class="n">distance</span><span class="p">,</span><span class="n">distance</span><span class="p">)</span>
-    <span class="n">y_neu</span> <span class="o">=</span> <span class="n">y_alt</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="o">-</span><span class="n">distance</span><span class="p">,</span><span class="n">distance</span><span class="p">)</span>
-
-    <span class="n">point_off</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="n">x_neu</span><span class="p">,</span> <span class="n">y_neu</span><span class="p">)</span>
-
-    <span class="k">return</span><span class="p">(</span><span class="n">point_off</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/geopandas/_compat.py:88: UserWarning: The Shapely GEOS version (3.8.0-CAPI-1.13.1 ) is incompatible with the GEOS version PyGEOS was compiled with (3.8.1-CAPI-1.13.3). Conversions between both will be slow.
-  shapely_geos_version, geos_capi_version_string
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="ubung-1-alle-zeckenstiche-zufallig-verschieben">
-<h2>Übung 1: Alle Zeckenstiche zufällig verschieben<a class="headerlink" href="#ubung-1-alle-zeckenstiche-zufallig-verschieben" title="Permalink to this headline">¶</a></h2>
-<p>Um in <em>DataFrames</em> / <em>GeoDataFrames</em> ganze Spalten oder Zeilen zu verändern, stehen einem die <em>Methods</em> <code class="docutils literal notranslate"><span class="pre">ma</span></code>p, <code class="docutils literal notranslate"><span class="pre">apply</span></code> und <code class="docutils literal notranslate"><span class="pre">applymap</span></code> zur Verfügung. Es lohnt sich sehr, die verschiedenen Anwendungsbereiche dieser <em>Methods</em> kennen zu lernen, doch das würde den Umfang dieses Kurses überschreiten. Heute brauchen wir lediglich <code class="docutils literal notranslate"><span class="pre">apply</span></code>, welches wir auf die <code class="docutils literal notranslate"><span class="pre">geometry</span></code>-Spalte unserer <em>GeoDataFrame</em> anwenden.
-Um unsere eigene Function point_offset auf die Spalte geometry anzuwenden gehst du wie folgt vor: Selektiere die entsprechende Spalte (mit <code class="docutils literal notranslate"><span class="pre">[&quot;spaltenname&quot;]</span></code>) und verwende die Method apply mit der selbst erstellt Function point_offset als einziges Argument, und zwar ohne Klammer.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;geometry&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">point_offset</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span> <span class="c1"># .head kann man weglassen</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    POINT (2678910.000 1240792.000)
-1    POINT (2679877.000 1240917.000)
-2    POINT (2687471.000 1240809.000)
-3    POINT (2674928.000 1240939.000)
-4    POINT (2681860.000 1240987.000)
-Name: geometry, dtype: geometry
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="ubung-2-neue-geodataframe-mit-simulierten-punkten-erstellen">
-<h2>Übung 2: Neue GeoDataFrame mit simulierten Punkten erstellen<a class="headerlink" href="#ubung-2-neue-geodataframe-mit-simulierten-punkten-erstellen" title="Permalink to this headline">¶</a></h2>
-<p>Was bei <code class="docutils literal notranslate"><span class="pre">apply()</span></code> rauskommt, sind nur die neuen, verschobenen Punkte. Um diese abzuspeichern erstellen wir eine leere GeoDataFrame und weisen den Output aus <code class="docutils literal notranslate"><span class="pre">apply()</span></code> einer neuen Spalte namens <code class="docutils literal notranslate"><span class="pre">geometry</span></code> zu.</p>
-<div class="cell tag_hide-cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeckenstiche_sim</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">()</span>
-<span class="n">zeckenstiche_sim</span><span class="p">[</span><span class="s2">&quot;geometry&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;geometry&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">point_offset</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="ubung-3-id-ubernehmen">
-<h2>Übung 3: ID übernehmen<a class="headerlink" href="#ubung-3-id-ubernehmen" title="Permalink to this headline">¶</a></h2>
-<p>Der generierte Datensatz <code class="docutils literal notranslate"><span class="pre">zeckenstiche_sim</span></code> verfügt nun nur über eine Geometriespalte, die anderen Spalten von <code class="docutils literal notranslate"><span class="pre">zeckenstiche</span></code> haben wir nicht übernommen. Bei den meisten Spalten ist uns das auch egal, aber die Zeckenstich ID wäre praktisch, um den simulierten Punkt zum Original Zeckenstich zurück führen zu können.</p>
-<p>Übertrage die ID von <code class="docutils literal notranslate"><span class="pre">zeckenstiche</span></code> auf <code class="docutils literal notranslate"><span class="pre">zeckenstiche_sim</span></code>. Verwende dazu die Selektion mit eckigen Klammern.</p>
-<div class="cell tag_hide-cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeckenstiche_sim</span><span class="p">[</span><span class="s2">&quot;ID&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;ID&quot;</span><span class="p">]</span>
-<span class="n">zeckenstiche_sim</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="n">zeckenstiche</span>
 </pre></div>
 </div>
 </div>
@@ -421,56 +374,268 @@ Name: geometry, dtype: geometry
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>geometry</th>
       <th>ID</th>
+      <th>accuracy</th>
+      <th>x</th>
+      <th>y</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>POINT (2678886.000 1240850.000)</td>
       <td>0</td>
+      <td>65.617154</td>
+      <td>2678971.0</td>
+      <td>1240824.0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>POINT (2679931.000 1240826.000)</td>
       <td>1</td>
+      <td>257.492052</td>
+      <td>2679837.0</td>
+      <td>1240858.0</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>POINT (2687632.000 1240850.000)</td>
       <td>2</td>
+      <td>163.533834</td>
+      <td>2687539.0</td>
+      <td>1240881.0</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>POINT (2674761.000 1241000.000)</td>
       <td>3</td>
+      <td>185.000000</td>
+      <td>2674848.0</td>
+      <td>1240913.0</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>POINT (2681870.000 1240833.000)</td>
       <td>4</td>
+      <td>228.215231</td>
+      <td>2681771.0</td>
+      <td>1240922.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>5</td>
+      <td>257.492053</td>
+      <td>2690119.0</td>
+      <td>1240932.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>6</td>
+      <td>17.951638</td>
+      <td>2678477.0</td>
+      <td>1240956.0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>7</td>
+      <td>287.211395</td>
+      <td>2687505.0</td>
+      <td>1241029.0</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>8</td>
+      <td>301.748542</td>
+      <td>2681288.0</td>
+      <td>1241081.0</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>9</td>
+      <td>301.748542</td>
+      <td>2681268.0</td>
+      <td>1241111.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="section" id="ubung-1-alle-zeckenstiche-zufallig-verschieben">
+<h2>Übung 1: Alle Zeckenstiche zufällig verschieben<a class="headerlink" href="#ubung-1-alle-zeckenstiche-zufallig-verschieben" title="Permalink to this headline">¶</a></h2>
+<p>Um in <em>DataFrames</em> / <em>GeoDataFrames</em> ganze Spalten oder Zeilen zu verändern, stehen einem die <em>Methods</em> <code class="docutils literal notranslate"><span class="pre">map</span></code>, <code class="docutils literal notranslate"><span class="pre">apply</span></code> und <code class="docutils literal notranslate"><span class="pre">applymap</span></code> zur Verfügung. Es lohnt sich sehr, die verschiedenen Anwendungsbereiche dieser <em>Methods</em> kennen zu lernen, doch das würde den Umfang dieses Kurses überschreiten. Heute brauchen wir lediglich <code class="docutils literal notranslate"><span class="pre">apply</span></code>, welches wir einmal auf die <code class="docutils literal notranslate"><span class="pre">x</span></code>- und einmal auf die <code class="docutils literal notranslate"><span class="pre">y</span></code>-Spalte unserer <em>DataFrame</em> anwenden.
+Um unsere eigene Function <code class="docutils literal notranslate"><span class="pre">offset_coordinate</span></code> auf die Spalten anzuwenden gehst du wie folgt vor: Selektiere die entsprechende Spalte (mit <code class="docutils literal notranslate"><span class="pre">[&quot;spaltenname&quot;]</span></code>) und verwende die Method apply mit der selbst erstellt Function point_offset als einziges Argument, und zwar ohne Klammer.</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Musterlösung</span>
+
+<span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">offset_coordinate</span><span class="p">)</span>
+<span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">offset_coordinate</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    1.240936e+06
+1    1.240802e+06
+2    1.240812e+06
+3    1.240744e+06
+4    1.240842e+06
+Name: y, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ubung-2-neue-geodataframe-mit-simulierten-punkten-erstellen">
+<h2>Übung 2: Neue GeoDataFrame mit simulierten Punkten erstellen<a class="headerlink" href="#ubung-2-neue-geodataframe-mit-simulierten-punkten-erstellen" title="Permalink to this headline">¶</a></h2>
+<p>Was bei <code class="docutils literal notranslate"><span class="pre">apply()</span></code> rauskommt, sind nur die neuen, verschobenen Punkte. Um diese abzuspeichern erstellen wir neue Spalten in <code class="docutils literal notranslate"><span class="pre">zeckenstiche</span></code> namen <code class="docutils literal notranslate"><span class="pre">x_sim</span></code>/<code class="docutils literal notranslate"><span class="pre">y_sim</span></code>:</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Musterlösung</span>
+
+<span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;x_sim&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">offset_coordinate</span><span class="p">)</span>
+<span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;y_sim&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">offset_coordinate</span><span class="p">)</span>
+
+<span class="n">zeckenstiche</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ID</th>
+      <th>accuracy</th>
+      <th>x</th>
+      <th>y</th>
+      <th>x_sim</th>
+      <th>y_sim</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>65.617154</td>
+      <td>2678971.0</td>
+      <td>1240824.0</td>
+      <td>2.678872e+06</td>
+      <td>1.241000e+06</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>257.492052</td>
+      <td>2679837.0</td>
+      <td>1240858.0</td>
+      <td>2.679613e+06</td>
+      <td>1.240965e+06</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>163.533834</td>
+      <td>2687539.0</td>
+      <td>1240881.0</td>
+      <td>2.687497e+06</td>
+      <td>1.241049e+06</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>185.000000</td>
+      <td>2674848.0</td>
+      <td>1240913.0</td>
+      <td>2.674818e+06</td>
+      <td>1.240775e+06</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>228.215231</td>
+      <td>2681771.0</td>
+      <td>1240922.0</td>
+      <td>2.681765e+06</td>
+      <td>1.240570e+06</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>5</td>
+      <td>257.492053</td>
+      <td>2690119.0</td>
+      <td>1240932.0</td>
+      <td>2.690078e+06</td>
+      <td>1.240843e+06</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>6</td>
+      <td>17.951638</td>
+      <td>2678477.0</td>
+      <td>1240956.0</td>
+      <td>2.678440e+06</td>
+      <td>1.241082e+06</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>7</td>
+      <td>287.211395</td>
+      <td>2687505.0</td>
+      <td>1241029.0</td>
+      <td>2.687479e+06</td>
+      <td>1.241010e+06</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>8</td>
+      <td>301.748542</td>
+      <td>2681288.0</td>
+      <td>1241081.0</td>
+      <td>2.681338e+06</td>
+      <td>1.241135e+06</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>9</td>
+      <td>301.748542</td>
+      <td>2681268.0</td>
+      <td>1241111.0</td>
+      <td>2.681112e+06</td>
+      <td>1.241050e+06</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
 </div>
-<div class="section" id="ubung-4-mehrere-geodataframes-visualisieren">
-<h2>Übung 4: Mehrere <em>GeoDataFrames</em> visualisieren<a class="headerlink" href="#ubung-4-mehrere-geodataframes-visualisieren" title="Permalink to this headline">¶</a></h2>
-<p>Um zwei <em>GeoDataFrames</em> im gleichen Plot darzustellen, wird folgendermassen vorgegangen. Der erste Datensatz wird mit <code class="docutils literal notranslate"><span class="pre">.plot()</span></code> visualisiert, wobei der Output einer Variabel  (z.B. <code class="docutils literal notranslate"><span class="pre">basemap</span></code>)  zugewiesen wird. Danach wird der zweite Datensatz ebenfalls mit <code class="docutils literal notranslate"><span class="pre">.plot()</span></code> visualisiert, wobei auf den ersten Plot via dem Argument <code class="docutils literal notranslate"><span class="pre">ax</span></code> verwiesen wird.</p>
-<div class="cell docutils container">
+<div class="section" id="ubung-4-mehrere-dataframes-visualisieren">
+<h2>Übung 4: Mehrere <em>DataFrames</em> visualisieren<a class="headerlink" href="#ubung-4-mehrere-dataframes-visualisieren" title="Permalink to this headline">¶</a></h2>
+<p>Um zwei <em>DataFrames</em> im gleichen Plot darzustellen, wird folgendermassen vorgegangen. Der erste Datensatz wird mit <code class="docutils literal notranslate"><span class="pre">.plot()</span></code> visualisiert, wobei der Output einer Variabel  (z.B. <code class="docutils literal notranslate"><span class="pre">basemap</span></code>)  zugewiesen wird. Danach wird der zweite Datensatz ebenfalls mit <code class="docutils literal notranslate"><span class="pre">.plot()</span></code> visualisiert, wobei auf den ersten Plot via dem Argument <code class="docutils literal notranslate"><span class="pre">ax</span></code> verwiesen wird.</p>
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">basemap</span> <span class="o">=</span> <span class="n">zeckenstiche</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">)</span>
-<span class="n">zeckenstiche_sim</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span> <span class="o">=</span> <span class="n">basemap</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline # Könnt ihr ignorieren
+
+<span class="c1"># Musterlösung</span>
+
+<span class="n">basemap</span> <span class="o">=</span> <span class="n">zeckenstiche</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">)</span>
+<span class="n">zeckenstiche</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s2">&quot;x_sim&quot;</span><span class="p">,</span> <span class="s2">&quot;y_sim&quot;</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">basemap</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;blue&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;x_sim&#39;, ylabel=&#39;y_sim&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/02_05_Punkte_einer_GeoDataFrame_verschieben_9_1.png" src="_images/02_05_Punkte_einer_GeoDataFrame_verschieben_9_1.png" />
+<img alt="_images/02_05_Punkte_einer_DataFrame_verschieben_7_1.png" src="_images/02_05_Punkte_einer_DataFrame_verschieben_7_1.png" />
 </div>
 </div>
 </div>
@@ -504,7 +669,7 @@ Name: geometry, dtype: geometry
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="02_04_Einzelpunkt_Verschieben.html" title="previous page">Einen Einzelpunkt zufällig verschieben</a>
+    <a class='left-prev' id="prev-link" href="02_04_Einzelpunkt_Verschieben.html" title="previous page">Übung: Einen Einzelpunkt zufällig verschieben</a>
     <a class='right-next' id="next-link" href="03_01_Einleitung.html" title="next page">Einleitung zu diesem Block</a>
 
     </div>

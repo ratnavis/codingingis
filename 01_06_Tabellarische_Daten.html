@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aufgabe: Tabellarische Daten &#8212; Coding in GIS</title>
+    <title>Übung: Tabellarische Daten &#8212; Coding in GIS</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -103,12 +103,12 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_04_Aufgabe_A.html">
-   Aufgabe A: Lists
+   Übung: Lists
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_05_Aufgabe_B.html">
-   Aufgabe B: Dictionaries
+   Übung: Dictionaries
   </a>
  </li>
  <li class="toctree-l1">
@@ -118,7 +118,7 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Aufgabe: Tabellarische Daten
+   Übung: Tabellarische Daten
   </a>
  </li>
 </ul>
@@ -137,14 +137,14 @@
   <a class="reference internal" href="02_02_Input_Functions.html">
    Input:
    <em>
-    Functions
+    Function
    </em>
-   Teil I
+   Basics
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02_03_Functions.html">
-   Aufgabe:
+   Übung:
    <em>
     Functions
    </em>
@@ -154,19 +154,23 @@
   <a class="reference internal" href="02_03b_Input_Functions_II.html">
    Input:
    <em>
-    Functions
+    Function
    </em>
-   Teil II
+   Advanced
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02_04_Einzelpunkt_Verschieben.html">
-   Einen Einzelpunkt zufällig verschieben
+   Übung: Einen Einzelpunkt zufällig verschieben
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02_05_Punkte_einer_GeoDataFrame_verschieben.html">
-   Punkte einer GeoDataFrame zufällig verschieben
+  <a class="reference internal" href="02_05_Punkte_einer_DataFrame_verschieben.html">
+   Übung Punkte einer
+   <em>
+    DataFrame
+   </em>
+   zufällig verschieben
   </a>
  </li>
 </ul>
@@ -183,7 +187,12 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="03_02_For_Loops.html">
-   For Loops
+   Übung: For Loops (Teil I)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_02b_For_Loops.html">
+   Übung: For Loops (Teil II)
   </a>
  </li>
  <li class="toctree-l1">
@@ -193,7 +202,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_05_GIS_in_Python.html">
-   Aufgabe: GIS in Python
+   Übung: GIS in Python
   </a>
  </li>
  <li class="toctree-l1">
@@ -343,8 +352,8 @@
         
               <div>
                 
-  <div class="section" id="aufgabe-tabellarische-daten">
-<h1>Aufgabe: Tabellarische Daten<a class="headerlink" href="#aufgabe-tabellarische-daten" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="ubung-tabellarische-daten">
+<h1>Übung: Tabellarische Daten<a class="headerlink" href="#ubung-tabellarische-daten" title="Permalink to this headline">¶</a></h1>
 <p>Schauen wir uns nochmals die <em>Dictionary</em> <code class="docutils literal notranslate"><span class="pre">people</span></code> an. Diese ist ein Spezialfall einer Dictionary: Jeder Eintrag besteht aus einer Liste von gleich vielen Werten. Wie bereits erwähnt, kann es in einem solchen Fall sinnvoll sein, die Dictionary als Tabelle darzustellen. Dafür brauchen wir das Modul <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, welches wir mit dem Alias <code class="docutils literal notranslate"><span class="pre">pd</span></code> importieren.</p>
 <div class="section" id="ubung-1-von-einer-dictionary-zu-einer-dataframe">
 <h2>Übung 1: von einer <em>Dictionary</em> zu einer <em>DataFrame</em><a class="headerlink" href="#ubung-1-von-einer-dictionary-zu-einer-dataframe" title="Permalink to this headline">¶</a></h2>
@@ -395,15 +404,18 @@
 <p>Die <em>DataFrame</em> <code class="docutils literal notranslate"><span class="pre">zeckenstiche</span></code> beinhaltet x und y Koordinaten für jeden Unfall in den gleichnamigen Spalten. Wir können die Stiche mit einem Scatterplot räumlich visualisieren. Führe dazu folgenden Code aus:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeckenstiche</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">,</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline # Könnt ihr ignorieren
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">zeckenstiche</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">,</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;scaled&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;x&#39;, ylabel=&#39;y&#39;&gt;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UsageError: unrecognized arguments: # Könnt ihr ignorieren
 </pre></div>
 </div>
-<img alt="_images/01_06_Tabellarische_Daten_14_1.png" src="_images/01_06_Tabellarische_Daten_14_1.png" />
 </div>
 </div>
 </div>

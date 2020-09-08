@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aufgabe: GIS in Python &#8212; Coding in GIS</title>
+    <title>Übung: GIS in Python &#8212; Coding in GIS</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -103,12 +103,12 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_04_Aufgabe_A.html">
-   Aufgabe A: Lists
+   Übung: Lists
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_05_Aufgabe_B.html">
-   Aufgabe B: Dictionaries
+   Übung: Dictionaries
   </a>
  </li>
  <li class="toctree-l1">
@@ -118,7 +118,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_06_Tabellarische_Daten.html">
-   Aufgabe: Tabellarische Daten
+   Übung: Tabellarische Daten
   </a>
  </li>
 </ul>
@@ -137,14 +137,14 @@
   <a class="reference internal" href="02_02_Input_Functions.html">
    Input:
    <em>
-    Functions
+    Function
    </em>
-   Teil I
+   Basics
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02_03_Functions.html">
-   Aufgabe:
+   Übung:
    <em>
     Functions
    </em>
@@ -154,19 +154,23 @@
   <a class="reference internal" href="02_03b_Input_Functions_II.html">
    Input:
    <em>
-    Functions
+    Function
    </em>
-   Teil II
+   Advanced
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02_04_Einzelpunkt_Verschieben.html">
-   Einen Einzelpunkt zufällig verschieben
+   Übung: Einen Einzelpunkt zufällig verschieben
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02_05_Punkte_einer_GeoDataFrame_verschieben.html">
-   Punkte einer GeoDataFrame zufällig verschieben
+  <a class="reference internal" href="02_05_Punkte_einer_DataFrame_verschieben.html">
+   Übung Punkte einer
+   <em>
+    DataFrame
+   </em>
+   zufällig verschieben
   </a>
  </li>
 </ul>
@@ -183,7 +187,12 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="03_02_For_Loops.html">
-   For Loops
+   Übung: For Loops (Teil I)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_02b_For_Loops.html">
+   Übung: For Loops (Teil II)
   </a>
  </li>
  <li class="toctree-l1">
@@ -193,7 +202,7 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Aufgabe: GIS in Python
+   Übung: GIS in Python
   </a>
  </li>
  <li class="toctree-l1">
@@ -320,8 +329,8 @@
         
               <div>
                 
-  <div class="section" id="aufgabe-gis-in-python">
-<h1>Aufgabe: GIS in Python<a class="headerlink" href="#aufgabe-gis-in-python" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="ubung-gis-in-python">
+<h1>Übung: GIS in Python<a class="headerlink" href="#ubung-gis-in-python" title="Permalink to this headline">¶</a></h1>
 <p>Die bisherigen Aufgaben hatten noch nicht viel mit GIS zu tun. Die Koordinaten der Zeckenstiche sind uns zwar bekannt, es handelt es dabei aber lediglich um Numerische xy-Werte, nicht um Geometrische Punkte mit einem Raumbezug. So bleiben uns bis jetzt alle räumlichen Operationen vorenthalten (zum Beispiel ob sich ein Stich im Wald befindet oder nicht), und wir können auch keine schönen Karten generieren.</p>
 <p>Um mit Geodaten in Python arbeiten zu können, müssen wir ein neues Modul importieren. Im Grunde genommen sind Vektordaten nicht mehr als Tabellen mit einer zusätzlichen “Geometrie”-Spalte, dementsprechend baut die “Geo”-Erweiterung auf <code class="docutils literal notranslate"><span class="pre">pandas</span></code> auf und heisst: <code class="docutils literal notranslate"><span class="pre">geopandas</span></code>.</p>
 <p>Du solltest <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> bereits installiert haben und das Modul in dein Script importieren. Importiere <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> mit dem Alias <code class="docutils literal notranslate"><span class="pre">gpd</span></code>.</p>

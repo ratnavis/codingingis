@@ -102,12 +102,12 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_04_Aufgabe_A.html">
-   Aufgabe A: Lists
+   Übung: Lists
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_05_Aufgabe_B.html">
-   Aufgabe B: Dictionaries
+   Übung: Dictionaries
   </a>
  </li>
  <li class="toctree-l1">
@@ -117,7 +117,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_06_Tabellarische_Daten.html">
-   Aufgabe: Tabellarische Daten
+   Übung: Tabellarische Daten
   </a>
  </li>
 </ul>
@@ -136,14 +136,14 @@
   <a class="reference internal" href="02_02_Input_Functions.html">
    Input:
    <em>
-    Functions
+    Function
    </em>
-   Teil I
+   Basics
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02_03_Functions.html">
-   Aufgabe:
+   Übung:
    <em>
     Functions
    </em>
@@ -153,19 +153,23 @@
   <a class="reference internal" href="02_03b_Input_Functions_II.html">
    Input:
    <em>
-    Functions
+    Function
    </em>
-   Teil II
+   Advanced
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02_04_Einzelpunkt_Verschieben.html">
-   Einen Einzelpunkt zufällig verschieben
+   Übung: Einen Einzelpunkt zufällig verschieben
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02_05_Punkte_einer_GeoDataFrame_verschieben.html">
-   Punkte einer GeoDataFrame zufällig verschieben
+  <a class="reference internal" href="02_05_Punkte_einer_DataFrame_verschieben.html">
+   Übung Punkte einer
+   <em>
+    DataFrame
+   </em>
+   zufällig verschieben
   </a>
  </li>
 </ul>
@@ -182,7 +186,12 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="03_02_For_Loops.html">
-   For Loops
+   Übung: For Loops (Teil I)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_02b_For_Loops.html">
+   Übung: For Loops (Teil II)
   </a>
  </li>
  <li class="toctree-l1">
@@ -192,7 +201,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_05_GIS_in_Python.html">
-   Aufgabe: GIS in Python
+   Übung: GIS in Python
   </a>
  </li>
  <li class="toctree-l1">
@@ -300,13 +309,17 @@
 <p>Dieser kurze Kurs ist Bestandteil des übergreifenden Moduls “<a class="reference external" href="https://studienplaner.lsfm.zhaw.ch/module/angewandte-geoinformatik">Angewandte Geoinformatik</a>” der Zürcher Hochschule für Angewandte Wissenschaften (ZHAW). Er soll einen Einstieg in die Programmierwelt von Python bieten und spezifisch zeigen wie man räumliche Fragestellungen mit frei verfügbaren Programmen lösen kann. Die Voraussetzung für dieser Kurs ist eine Offenheit neue Tools und Ansätze kennen zu lernen sowie die Bereitschaft für Lösungorientiertes arbeiten und etwas Hartnäckigkeit.</p>
 <p>Das github-repo ist hier <a class="reference external" href="https://github.com/ratnanil/codingingis">ratnanil/codingingis</a>.</p>
 <div class="tip admonition">
-<p class="admonition-title">Online und pdf</p>
-<p>Dieses Buch ist als online version hier gehostet: <a class="reference external" href="https://ratnanil.github.io/codingingis">https://ratnanil.github.io/codingingis</a>. Es kann aber auch als pdf <a class="reference external" href="https://github.com/ratnanil/codingingis/raw/master/codingingis.pdf">hier</a> heruntergelanden werden.</p>
+<p class="admonition-title">Dieses Buch ist sowohl online als auch pdf version verfügbar:</p>
+<ul class="simple">
+<li><p>online: <a class="reference external" href="https://ratnanil.github.io/codingingis">https://ratnanil.github.io/codingingis</a></p></li>
+<li><p>pdf: <a class="reference external" href="https://github.com/ratnanil/codingingis/raw/master/codingingis.pdf">https://github.com/ratnanil/codingingis/raw/master/codingingis.pdf</a></p></li>
+</ul>
 </div>
 <p><strong>Typographie</strong></p>
 <p>Noch ein kurzer Hinweis zur Typografie dieses Dokumentes:</p>
 <ul class="simple">
 <li><p>Wenn sich im Fliesstext (Python- oder R-) Code befindet, wird er in <code class="docutils literal notranslate"><span class="pre">dieser</span> <span class="pre">Festschriftart</span></code> dargestellt</p></li>
+<li><p>Englische Begriffe, deren Übersetzung eher verwirrend als nützlich wären, werden <em>in dieser Weise</em> hervorgehoben</p></li>
 <li><p>Alleinstehende Codezeilen werden folgendermassen dargestellt:</p></li>
 </ul>
 <div class="cell tag_remove-output docutils container">
@@ -317,7 +330,6 @@
 </div>
 </div>
 <ul class="simple">
-<li><p>Englische Fachbegriffe, deren Übersetzung eher verwirrend als nützlich wäreb, werden <em>in dieser Weise</em> hervorgehoben</p></li>
 <li><p>Da viele von euch bereits Erfahrung in R haben, stelle ich immer wieder den Bezug zu dieser Programmiersprache her. Diese Verweise sind folgendermassen gekennzeichnet:</p></li>
 </ul>
 <div class="tip admonition">
@@ -325,6 +337,16 @@
 <ul class="simple">
 <li><p>hier wird ein Bezug zu R gemacht</p></li>
 </ul>
+</div>
+<p>In der Online Version dieses Buches werdet ihr häufig am rechten Rand einen Button mit der Aufschrift “Click to show” antreffen (in der PDF Version des Buches ist dieses interaktive Element nicht verfügbar). Im Kontext von Aufgaben seht ihr mit einem Klick auf das Plus-Symbol die Musterlösung der entsprechenden Aufgabe. Ich empfehle euch, diesen Button nur sehr zögerlich zu verwenden! Wenn ihr euch durch die Musterlösungen klickt werdet ihr sehr wenig aus diesem Modul mitnehmen.</p>
+<div class="cell tag_hide-input tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># hier steht die Musterlösung der Aufgabe. Erst betätigen wenn ihr </span>
+<span class="c1"># vergeblich versucht habt, die Aufgabe selbst zu lösen!</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Don&#39;t peek!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="toctree-wrapper compound">
 </div>

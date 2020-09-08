@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>&lt;no title&gt; &#8212; Coding in GIS</title>
+    <title>Übung: For Loops (Teil II) &#8212; Coding in GIS</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -39,6 +39,8 @@
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Zeckenstich Simulation mit Loop" href="03_03_Zeckenstich_Simulation.html" />
+    <link rel="prev" title="Übung: For Loops (Teil I)" href="03_02_For_Loops.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -177,7 +179,7 @@
   Coding in GIS III
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="03_01_Einleitung.html">
    Einleitung zu diesem Block
@@ -188,8 +190,8 @@
    Übung: For Loops (Teil I)
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="03_02b_For_Loops.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Übung: For Loops (Teil II)
   </a>
  </li>
@@ -250,9 +252,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/README.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/03_02b_For_Loops.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -269,6 +271,23 @@
 
         <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        <a class="jupyterhub-button" href="https://jupyterhub01.zhaw.ch/hub/user-redirect/git-pull?repo=https://github.com/ratnanil/codingingis&urlpath=lab/tree/codingingis/03_02b_For_Loops.ipynb&branch=master"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
+        
+        
+    </div>
+</div>
+
     </div>
 
     <!-- Table of contents -->
@@ -277,7 +296,14 @@
             <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
-            
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ubung-1-output-aus-for-loop-speichern">
+   Übung 1: Output aus For-Loop speichern
+  </a>
+ </li>
+</ul>
+
         </nav>
     </div>
 </div>
@@ -286,27 +312,102 @@
         
               <div>
                 
-  <p>For others, and for future me, here some notes on how I created this (jupyter-) book</p>
-<ul class="simple">
-<li><p>90 % can be found in the jupyter-book documentation on <a class="reference external" href="https://jupyterbook.org">jupyterbook.org</a></p></li>
-<li><p>to build the book, I implemented the approach “<a class="reference external" href="https://jupyterbook.org/publish/gh-pages.html#automatically-host-your-book-with-github-actions">Automatically host your book with GitHub Actions</a>” which means that I dont need a local installation of jupyter books</p></li>
-<li><p>I modified the github action yaml file in such a way that:</p>
-<ul>
-<li><p>latex dependencies are installed on the server instance</p></li>
-<li><p>a pdf version of the book is also built <a class="reference external" href="https://jupyterbook.org/advanced/pdf.html#id5">using Latex</a></p></li>
-<li><p>this pdf version (which has a default location _build/latex/python.pdf) is renamed, commited and pushed using github actions (read <a class="reference external" href="https://github.com/executablebooks/meta/discussions/124">my question on this</a>)</p></li>
-</ul>
-</li>
-</ul>
-<p>Useful links:</p>
-<ul class="simple">
-<li><p>have a look at the <a class="reference external" href="https://sphinx-book-theme.readthedocs.io/en/latest/reference/demo.html">sphinx demo page</a> for some nice methods to format the document</p></li>
-</ul>
-<p>Nice ressources on the subject (because I don’t know where es to put it right now):</p>
-<ul class="simple">
-<li><p>https://geo-python-site.readthedocs.io/en/latest/</p></li>
-<li><p>https://pythongis.org/</p></li>
-</ul>
+  <div class="section" id="ubung-for-loops-teil-ii">
+<h1>Übung: For Loops (Teil II)<a class="headerlink" href="#ubung-for-loops-teil-ii" title="Permalink to this headline">¶</a></h1>
+<p>Bis jetzt haben wir lediglich Sachen in die Konsole herausgeben lassen, doch wie schon bei Functions ist der Zweck einer For-Loop meist, dass nach Durchführung etwas davon zurückbleibt. <code class="docutils literal notranslate"><span class="pre">return()</span></code> gibt es wie bereits erwähnt bei <em>For-Loops</em> nicht. Nehmen wir folgendes Beispiel:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">schlagwort</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;bitch&quot;</span><span class="p">,</span><span class="s2">&quot;lover&quot;</span><span class="p">,</span><span class="s2">&quot;child&quot;</span><span class="p">,</span><span class="s2">&quot;mother&quot;</span><span class="p">,</span><span class="s2">&quot;sinner&quot;</span><span class="p">,</span><span class="s2">&quot;saint&quot;</span><span class="p">]:</span>
+    <span class="n">liedzeile</span> <span class="o">=</span> <span class="s2">&quot;I&#39;m a &quot;</span><span class="o">+</span> <span class="n">schlagwort</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="n">liedzeile</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>I&#39;m a bitch
+I&#39;m a lover
+I&#39;m a child
+I&#39;m a mother
+I&#39;m a sinner
+I&#39;m a saint
+</pre></div>
+</div>
+</div>
+</div>
+<p>Der Output von dieser For-Loop sind zwar sechs Liederzeilen, wenn wir die Variabel <code class="docutils literal notranslate"><span class="pre">liedzeile</span></code> anschauen ist dort nur das Resultat aus der letzten Durchführung gespeichert. Das gleiche gilt auch für die variabel <code class="docutils literal notranslate"><span class="pre">schlagwort</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">liedzeile</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;I&#39;m a saint&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">schlagwort</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;saint&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Das verrät uns etwas über die Funktionsweise des <em>For-Loops</em>: Bei jedem Durchgang werden die Variablen immer wieder überschrieben. Wenn wir also den Output des ganzen For-Loops abspeichern wollen, müssen wir dies etwas vorbereiten.
+Dafür erstellen wir unmittelbar for dem For-Loop einen leeren Behälter, zum Beispiel eine leere Liste (<code class="docutils literal notranslate"><span class="pre">strophe</span> <span class="pre">=</span> <span class="pre">[]</span></code>). Nun können wir innerhalb des <em>Loops</em> <code class="docutils literal notranslate"><span class="pre">append()</span></code> nutzen, um den Output von einem Durchgang dieser Liste hinzu zu fügen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">strophe</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">schlagwort</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;bitch&quot;</span><span class="p">,</span><span class="s2">&quot;lover&quot;</span><span class="p">,</span><span class="s2">&quot;child&quot;</span><span class="p">,</span><span class="s2">&quot;mother&quot;</span><span class="p">,</span><span class="s2">&quot;sinner&quot;</span><span class="p">,</span><span class="s2">&quot;saint&quot;</span><span class="p">]:</span>
+    <span class="n">liedzeile</span> <span class="o">=</span> <span class="s2">&quot;I&#39;m a &quot;</span><span class="o">+</span> <span class="n">schlagwort</span> 
+    <span class="n">strophe</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">liedzeile</span><span class="p">)</span>
+    
+<span class="n">strophe</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&quot;I&#39;m a bitch&quot;,
+ &quot;I&#39;m a lover&quot;,
+ &quot;I&#39;m a child&quot;,
+ &quot;I&#39;m a mother&quot;,
+ &quot;I&#39;m a sinner&quot;,
+ &quot;I&#39;m a saint&quot;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="ubung-1-output-aus-for-loop-speichern">
+<h2>Übung 1: Output aus For-Loop speichern<a class="headerlink" href="#ubung-1-output-aus-for-loop-speichern" title="Permalink to this headline">¶</a></h2>
+<p>Erweitere deinen <em>For-Loop</em> aus Übung 1 so, dass der Output aller Durchgänge in einer Liste gespeichert werden.</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Musterlösung</span>
+
+<span class="n">mylist</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;Il Buono&quot;</span><span class="p">,</span> <span class="s2">&quot;Il Brutto&quot;</span><span class="p">,</span> <span class="s2">&quot;Il Cattivo&quot;</span><span class="p">]:</span>
+    <span class="n">mylist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Ciao &quot;</span><span class="o">+</span><span class="n">name</span><span class="p">)</span>
+
+<span class="n">mylist</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Ciao Il Buono&#39;, &#39;Ciao Il Brutto&#39;, &#39;Ciao Il Cattivo&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -336,6 +437,8 @@
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="03_02_For_Loops.html" title="previous page">Übung: For Loops (Teil I)</a>
+    <a class='right-next' id="next-link" href="03_03_Zeckenstich_Simulation.html" title="next page">Zeckenstich Simulation mit Loop</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

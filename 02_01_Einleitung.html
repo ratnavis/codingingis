@@ -39,8 +39,8 @@
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Input: Functions Teil I" href="02_02_Input_Functions.html" />
-    <link rel="prev" title="Aufgabe: Tabellarische Daten" href="01_06_Tabellarische_Daten.html" />
+    <link rel="next" title="Input: Function Basics" href="02_02_Input_Functions.html" />
+    <link rel="prev" title="Übung: Tabellarische Daten" href="01_06_Tabellarische_Daten.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -103,12 +103,12 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_04_Aufgabe_A.html">
-   Aufgabe A: Lists
+   Übung: Lists
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_05_Aufgabe_B.html">
-   Aufgabe B: Dictionaries
+   Übung: Dictionaries
   </a>
  </li>
  <li class="toctree-l1">
@@ -118,7 +118,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_06_Tabellarische_Daten.html">
-   Aufgabe: Tabellarische Daten
+   Übung: Tabellarische Daten
   </a>
  </li>
 </ul>
@@ -137,14 +137,14 @@
   <a class="reference internal" href="02_02_Input_Functions.html">
    Input:
    <em>
-    Functions
+    Function
    </em>
-   Teil I
+   Basics
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02_03_Functions.html">
-   Aufgabe:
+   Übung:
    <em>
     Functions
    </em>
@@ -154,19 +154,23 @@
   <a class="reference internal" href="02_03b_Input_Functions_II.html">
    Input:
    <em>
-    Functions
+    Function
    </em>
-   Teil II
+   Advanced
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02_04_Einzelpunkt_Verschieben.html">
-   Einen Einzelpunkt zufällig verschieben
+   Übung: Einen Einzelpunkt zufällig verschieben
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02_05_Punkte_einer_GeoDataFrame_verschieben.html">
-   Punkte einer GeoDataFrame zufällig verschieben
+  <a class="reference internal" href="02_05_Punkte_einer_DataFrame_verschieben.html">
+   Übung Punkte einer
+   <em>
+    DataFrame
+   </em>
+   zufällig verschieben
   </a>
  </li>
 </ul>
@@ -183,7 +187,12 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="03_02_For_Loops.html">
-   For Loops
+   Übung: For Loops (Teil I)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_02b_For_Loops.html">
+   Übung: For Loops (Teil II)
   </a>
  </li>
  <li class="toctree-l1">
@@ -193,7 +202,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_05_GIS_in_Python.html">
-   Aufgabe: GIS in Python
+   Übung: GIS in Python
   </a>
  </li>
  <li class="toctree-l1">
@@ -298,14 +307,14 @@
                 
   <div class="section" id="einleitung-zu-diesem-block">
 <h1>Einleitung zu diesem Block<a class="headerlink" href="#einleitung-zu-diesem-block" title="Permalink to this headline">¶</a></h1>
-<p>Letzte Woche haben wir einen weiten Bogen gespannt: Von einfachen (primitiven) Datentypen bis hin zu Tabellarischen. In dieser und der nächsten Übung (Coding in GIS II und III) wollen wir uns weiter mit den Zeckenstichdaten befassen. Wir werden im Wesentlichen ein Teil der Übung aus “Datenqualität und Unsicherheit” in Python rekonstruieren.</p>
+<p>Letzte Woche haben wir einen weiten Bogen gespannt: Von einfachen (primitiven) Datentypen bis hin zu tabellarischen Daten. In dieser und der nächsten Blöcken (Coding in GIS II und III) wollen wir uns weiter mit den Zeckenstichdaten befassen. Wir werden im Wesentlichen ein Teil der Übung aus “Datenqualität und Unsicherheit” in Python rekonstruieren.</p>
 <p>In der Übung geht es um folgendes: Wir wissen das die Lagegenauigkeit der Zeckenstichmeldungen mit einer gewissen Unsicherheit behaftet sind. Um die Frage “Welcher Anteil der der Zeckenstiche befinden sich im Wald?” unter Berücksichtigung dieser Unsicherheit beantworten zu können, führen wir eine (Monte Carlo) Simulation durch.
 In dieser Simulation verändern wir die Position der Zeckenstichmeldungen zufällig und berechnen den Anteil der Zeckenstiche im Wald. Das zufällige Verschieben und berechnen wiederholen wir beliebig lange und bekommen für jede Wiederholung einen leicht unterschiedlichen Prozentwert. Die Verteilung dieser Prozentwerte ist die Antwort auf die ursprüngliche Frage (“Welcher Anteil…”) unter Berücksichtigung der Unsicherheit.</p>
 <p>Um eine solche, etwas komplexere Aufgabe lösen zu können müssen wir sie in einfachere Einzelschritte aufteilen. Diese bearbeiten wir in dieser und der kommenden Woche:</p>
 <ul class="simple">
 <li><p>Schritt 1: Einen Einzelpunkt zufällig verschieben</p></li>
-<li><p>Schritt 2: Alle Punkte einer GeoDataFrame zufällig verschieben (1 “Run”)</p></li>
-<li><p>Schritt 3: Alle Punkte einer GeoDataFrame mehrfach zufällig verschieben (z.B. 50 “Runs”)</p></li>
+<li><p>Schritt 2: Alle Punkte einer DataFrame zufällig verschieben (1 “Run”)</p></li>
+<li><p>Schritt 3: Alle Punkte einer DataFrame mehrfach zufällig verschieben (z.B. 50 “Runs”)</p></li>
 <li><p>Schritt 4: Anteil der Punkte im Wald pro “Run” ermitteln</p></li>
 <li><p>Schritt 5: Verteilung dieser Mittelwerte visualisieren</p></li>
 </ul>
@@ -348,8 +357,8 @@ In dieser Simulation verändern wir die Position der Zeckenstichmeldungen zufäl
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="01_06_Tabellarische_Daten.html" title="previous page">Aufgabe: Tabellarische Daten</a>
-    <a class='right-next' id="next-link" href="02_02_Input_Functions.html" title="next page">Input: <em>Functions</em> Teil I</a>
+    <a class='left-prev' id="prev-link" href="01_06_Tabellarische_Daten.html" title="previous page">Übung: Tabellarische Daten</a>
+    <a class='right-next' id="next-link" href="02_02_Input_Functions.html" title="next page">Input: <em>Function</em> Basics</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

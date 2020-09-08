@@ -17,13 +17,17 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply['content'])
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
+# Musterlösung
+
 len(groessen)
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mNameError[0m                                 Traceback (most recent call last)
-[0;32m<ipython-input-11-97619b63240a>[0m in [0;36m<module>[0;34m[0m
-[0;32m----> 1[0;31m [0mlen[0m[0;34m([0m[0mgroessen[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m<ipython-input-11-2853382417e4>[0m in [0;36m<module>[0;34m[0m
+[1;32m      1[0m [0;31m# Musterlösung[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      2[0m [0;34m[0m[0m
+[0;32m----> 3[0;31m [0mlen[0m[0;34m([0m[0mgroessen[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m
 [0;31mNameError[0m: name 'groessen' is not defined
 NameError: name 'groessen' is not defined

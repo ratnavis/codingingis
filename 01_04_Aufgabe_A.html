@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aufgabe A: Lists &#8212; Coding in GIS</title>
+    <title>Übung: Lists &#8212; Coding in GIS</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -39,7 +39,7 @@
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Aufgabe B: Dictionaries" href="01_05_Aufgabe_B.html" />
+    <link rel="next" title="Übung: Dictionaries" href="01_05_Aufgabe_B.html" />
     <link rel="prev" title="Input: Zusammengesetzte Datentypen" href="01_03_Zusammengesetzte_Datentypen.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -103,12 +103,12 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Aufgabe A: Lists
+   Übung: Lists
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_05_Aufgabe_B.html">
-   Aufgabe B: Dictionaries
+   Übung: Dictionaries
   </a>
  </li>
  <li class="toctree-l1">
@@ -118,7 +118,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_06_Tabellarische_Daten.html">
-   Aufgabe: Tabellarische Daten
+   Übung: Tabellarische Daten
   </a>
  </li>
 </ul>
@@ -137,14 +137,14 @@
   <a class="reference internal" href="02_02_Input_Functions.html">
    Input:
    <em>
-    Functions
+    Function
    </em>
-   Teil I
+   Basics
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02_03_Functions.html">
-   Aufgabe:
+   Übung:
    <em>
     Functions
    </em>
@@ -154,19 +154,23 @@
   <a class="reference internal" href="02_03b_Input_Functions_II.html">
    Input:
    <em>
-    Functions
+    Function
    </em>
-   Teil II
+   Advanced
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02_04_Einzelpunkt_Verschieben.html">
-   Einen Einzelpunkt zufällig verschieben
+   Übung: Einen Einzelpunkt zufällig verschieben
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02_05_Punkte_einer_GeoDataFrame_verschieben.html">
-   Punkte einer GeoDataFrame zufällig verschieben
+  <a class="reference internal" href="02_05_Punkte_einer_DataFrame_verschieben.html">
+   Übung Punkte einer
+   <em>
+    DataFrame
+   </em>
+   zufällig verschieben
   </a>
  </li>
 </ul>
@@ -183,7 +187,12 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="03_02_For_Loops.html">
-   For Loops
+   Übung: For Loops (Teil I)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_02b_For_Loops.html">
+   Übung: For Loops (Teil II)
   </a>
  </li>
  <li class="toctree-l1">
@@ -193,7 +202,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_05_GIS_in_Python.html">
-   Aufgabe: GIS in Python
+   Übung: GIS in Python
   </a>
  </li>
  <li class="toctree-l1">
@@ -318,8 +327,8 @@
         
               <div>
                 
-  <div class="section" id="aufgabe-a-lists">
-<h1>Aufgabe A: Lists<a class="headerlink" href="#aufgabe-a-lists" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="ubung-lists">
+<h1>Übung: Lists<a class="headerlink" href="#ubung-lists" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="ubung-1-variablen-erstellen">
 <h2>Übung 1: Variablen erstellen<a class="headerlink" href="#ubung-1-variablen-erstellen" title="Permalink to this headline">¶</a></h2>
 <p>Wir beginnen damit, einfache Datentypen wie Zahlen, Text, boolsche Variabeln (siehe Vorlesungsfolien) sogenannten Variablen zu zuweisen. Führe die folgenden Schritte aus und schau dir nach jedem Schritt die erstellten Variablen jeweils im im Variable explorer von Spyder an</p>
@@ -334,7 +343,9 @@
 </ol>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vorname</span> <span class="o">=</span> <span class="s2">&quot;Guido&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Musterlösung</span>
+
+<span class="n">vorname</span> <span class="o">=</span> <span class="s2">&quot;Guido&quot;</span>
 <span class="n">nachname</span> <span class="o">=</span> <span class="s2">&quot;van Rossum&quot;</span>
 
 <span class="nb">type</span><span class="p">(</span><span class="n">vorname</span><span class="p">)</span> <span class="c1"># es handelt sich um den Datentyp &quot;str&quot;, also String (Text)</span>
@@ -361,7 +372,9 @@
 </ol>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vornamen</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Christopher&quot;</span><span class="p">,</span> <span class="s2">&quot;Henning&quot;</span><span class="p">,</span> <span class="s2">&quot;Severin&quot;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Musterlösung</span>
+
+<span class="n">vornamen</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Christopher&quot;</span><span class="p">,</span> <span class="s2">&quot;Henning&quot;</span><span class="p">,</span> <span class="s2">&quot;Severin&quot;</span><span class="p">]</span>
 <span class="n">nachnamen</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Annen&quot;</span><span class="p">,</span><span class="s2">&quot;May&quot;</span><span class="p">,</span> <span class="s2">&quot;Kantereit&quot;</span><span class="p">]</span>
 
 <span class="n">groessen</span> <span class="o">=</span> <span class="p">[</span><span class="mi">174</span><span class="p">,</span> <span class="mi">182</span><span class="p">,</span> <span class="mi">162</span><span class="p">]</span>
@@ -391,7 +404,9 @@
 <p>Ergänze in die Listen <code class="docutils literal notranslate"><span class="pre">vornamen</span></code>, <code class="docutils literal notranslate"><span class="pre">nachnamen</span></code> und <code class="docutils literal notranslate"><span class="pre">groessen</span></code> durch je einen Eintrag.</p>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nachnamen</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Huck&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Musterlösung</span>
+
+<span class="n">nachnamen</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Huck&quot;</span><span class="p">)</span>
 
 <span class="n">groessen</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">177</span><span class="p">)</span>
 </pre></div>
@@ -430,7 +445,7 @@
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="01_03_Zusammengesetzte_Datentypen.html" title="previous page">Input: Zusammengesetzte Datentypen</a>
-    <a class='right-next' id="next-link" href="01_05_Aufgabe_B.html" title="next page">Aufgabe B: Dictionaries</a>
+    <a class='right-next' id="next-link" href="01_05_Aufgabe_B.html" title="next page">Übung: Dictionaries</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

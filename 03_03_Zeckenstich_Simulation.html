@@ -39,8 +39,8 @@
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Aufgabe: GIS in Python" href="01_05_GIS_in_Python.html" />
-    <link rel="prev" title="For Loops" href="03_02_For_Loops.html" />
+    <link rel="next" title="Übung: GIS in Python" href="01_05_GIS_in_Python.html" />
+    <link rel="prev" title="Übung: For Loops (Teil II)" href="03_02b_For_Loops.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -103,12 +103,12 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_04_Aufgabe_A.html">
-   Aufgabe A: Lists
+   Übung: Lists
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_05_Aufgabe_B.html">
-   Aufgabe B: Dictionaries
+   Übung: Dictionaries
   </a>
  </li>
  <li class="toctree-l1">
@@ -118,7 +118,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_06_Tabellarische_Daten.html">
-   Aufgabe: Tabellarische Daten
+   Übung: Tabellarische Daten
   </a>
  </li>
 </ul>
@@ -137,14 +137,14 @@
   <a class="reference internal" href="02_02_Input_Functions.html">
    Input:
    <em>
-    Functions
+    Function
    </em>
-   Teil I
+   Basics
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02_03_Functions.html">
-   Aufgabe:
+   Übung:
    <em>
     Functions
    </em>
@@ -154,19 +154,23 @@
   <a class="reference internal" href="02_03b_Input_Functions_II.html">
    Input:
    <em>
-    Functions
+    Function
    </em>
-   Teil II
+   Advanced
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02_04_Einzelpunkt_Verschieben.html">
-   Einen Einzelpunkt zufällig verschieben
+   Übung: Einen Einzelpunkt zufällig verschieben
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02_05_Punkte_einer_GeoDataFrame_verschieben.html">
-   Punkte einer GeoDataFrame zufällig verschieben
+  <a class="reference internal" href="02_05_Punkte_einer_DataFrame_verschieben.html">
+   Übung Punkte einer
+   <em>
+    DataFrame
+   </em>
+   zufällig verschieben
   </a>
  </li>
 </ul>
@@ -183,7 +187,12 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="03_02_For_Loops.html">
-   For Loops
+   Übung: For Loops (Teil I)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_02b_For_Loops.html">
+   Übung: For Loops (Teil II)
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -193,7 +202,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_05_GIS_in_Python.html">
-   Aufgabe: GIS in Python
+   Übung: GIS in Python
   </a>
  </li>
  <li class="toctree-l1">
@@ -289,13 +298,19 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ubung-1-mit-for-loop-monte-carlo-simulation-durchfuhren">
-   Übung 1: Mit For-Loop Monte Carlo Simulation durchführen
+  <a class="reference internal nav-link" href="#ubung-1-mit-for-loop-zeckenstiche-mehrfach-verschieben">
+   Übung 1: Mit For-Loop
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     zeckenstiche
+    </span>
+   </code>
+   mehrfach verschieben
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ubung-2-geodataframes-aus-simulation-zusammenfuhren">
-   Übung 2: GeoDataFrames aus Simulation zusammenführen
+  <a class="reference internal nav-link" href="#ubung-2-dataframes-aus-simulation-zusammenfuhren">
+   Übung 2: DataFrames aus Simulation zusammenführen
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -315,73 +330,211 @@
                 
   <div class="section" id="zeckenstich-simulation-mit-loop">
 <h1>Zeckenstich Simulation mit Loop<a class="headerlink" href="#zeckenstich-simulation-mit-loop" title="Permalink to this headline">¶</a></h1>
-<p>Letzte Woche hattet ihr alle Punkte Zeckenstich-GeoDataFrame einmal zufällig verschoben. Nun wo ihr die Funktionsweise von Loops kennt, könnt ihr diesen Schritt eine beliebige Anzahl mal wiederholen. Um auf den Stand der letzten Woche zu kommen müsst ihr folgende Schritte ausführen:</p>
-<ol class="simple">
-<li><p>Importiert die notwenigen Module (pandas, geopandas, random)</p></li>
-<li><p>Importiert die notwendigen Functions (Point aus shapely.geometry sowie die selbst erstellte Function point_offset())</p></li>
-<li><p>Importiert den Zeckenstichdatensatz</p></li>
-<li><p>Rekonstruiert Übung 10 und 11 aus letzter Woche um die Zeckenstiche 1x zufällig zu verschieben</p></li>
-</ol>
-<p>Der Code für diese Schritte 1 – 4 lauten folgendermassen:</p>
-<div class="cell docutils container">
+<p>Nun geht es weiter mit unserer Zeckenstich Monte-Carlo Simulation. Schritte 1 und 2 haben wir bereits erleidgt. Nun packen wir Schritt 3 an:</p>
+<ul class="simple">
+<li><p>Schritt 1: Einen Einzelpunkt zufällig verschieben ✓</p></li>
+<li><p>Schritt 2: Alle Punkte einer DataFrame zufällig verschieben (1 “Run”) ✓</p></li>
+<li><p><strong>Schritt 3: Alle Punkte einer DataFrame mehrfach zufällig verschieben (z.B. 50 “Runs”)</strong></p></li>
+<li><p>Schritt 4: Anteil der Punkte im Wald pro “Run” ermitteln</p></li>
+<li><p>Schritt 5: Verteilung dieser Mittelwerte visualisieren</p></li>
+</ul>
+<p>Ladet dafür die nötigen Module (<code class="docutils literal notranslate"><span class="pre">pandas</span></code> und <code class="docutils literal notranslate"><span class="pre">random</span></code>), holt euch die Funktion <code class="docutils literal notranslate"><span class="pre">offset_point()</span></code> und importiert den Datensatz <code class="docutils literal notranslate"><span class="pre">zeckenstiche.csv</span></code>.</p>
+<div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Schritt 1</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">random</span>
 
-<span class="c1"># Schritt 2</span>
-<span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">Point</span>
+<span class="k">def</span> <span class="nf">offset_coordinate</span><span class="p">(</span><span class="n">old</span><span class="p">,</span> <span class="n">distance</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">):</span>
+    <span class="n">new</span> <span class="o">=</span> <span class="n">old</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">normalvariate</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">distance</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">point_offset</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="n">distance</span> <span class="o">=</span> <span class="mi">100</span><span class="p">):</span>
-    <span class="n">x_alt</span> <span class="o">=</span> <span class="n">point</span><span class="o">.</span><span class="n">x</span>
-    <span class="n">y_alt</span> <span class="o">=</span> <span class="n">point</span><span class="o">.</span><span class="n">y</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">new</span><span class="p">)</span>
 
-    <span class="n">distance</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">distance</span><span class="p">)</span>
-
-    <span class="n">x_neu</span> <span class="o">=</span> <span class="n">x_alt</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="o">-</span><span class="n">distance</span><span class="p">,</span><span class="n">distance</span><span class="p">)</span>
-    <span class="n">y_neu</span> <span class="o">=</span> <span class="n">y_alt</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="o">-</span><span class="n">distance</span><span class="p">,</span><span class="n">distance</span><span class="p">)</span>
-
-    <span class="n">point_off</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="n">x_neu</span><span class="p">,</span> <span class="n">y_neu</span><span class="p">)</span>
-
-    <span class="k">return</span><span class="p">(</span><span class="n">point_off</span><span class="p">)</span>
-
-<span class="c1"># Schritt 3</span>
-<span class="n">zeckenstiche</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;zeckenstiche.shp&quot;</span><span class="p">)</span>
-
-<span class="c1"># Schritt 4</span>
-<span class="n">zeckenstiche_sim</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">()</span>
-<span class="n">zeckenstiche_sim</span><span class="p">[</span><span class="s2">&quot;geometry&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;geometry&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">point_offset</span><span class="p">)</span>
-<span class="n">zeckenstiche_sim</span><span class="p">[</span><span class="s2">&quot;ID&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;ID&quot;</span><span class="p">]</span>
+<span class="n">zeckenstiche</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;zeckenstiche.csv&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="ubung-1-mit-for-loop-zeckenstiche-mehrfach-verschieben">
+<h2>Übung 1: Mit For-Loop <code class="docutils literal notranslate"><span class="pre">zeckenstiche</span></code> mehrfach verschieben<a class="headerlink" href="#ubung-1-mit-for-loop-zeckenstiche-mehrfach-verschieben" title="Permalink to this headline">¶</a></h2>
+<p>Um euer Gedächnis etwas aufzufrischen: Letzte Woche hatten wir mit <code class="docutils literal notranslate"><span class="pre">apply()</span></code> sowie unserer eigenen <em>Function</em> <code class="docutils literal notranslate"><span class="pre">offset_coordinate</span></code> alle Koordinaten einer <em>DataFrame</em> verschoben und die neuen Koordinaten als neue Spalten abgespeichert.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;x_sim&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">offset_coordinate</span><span class="p">)</span>
+<span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;y_sim&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">offset_coordinate</span><span class="p">)</span>
+<span class="n">zeckenstiche</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/geopandas/_compat.py:88: UserWarning: The Shapely GEOS version (3.8.0-CAPI-1.13.1 ) is incompatible with the GEOS version PyGEOS was compiled with (3.8.1-CAPI-1.13.3). Conversions between both will be slow.
-  shapely_geos_version, geos_capi_version_string
-</pre></div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ID</th>
+      <th>accuracy</th>
+      <th>x</th>
+      <th>y</th>
+      <th>x_sim</th>
+      <th>y_sim</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>65.617154</td>
+      <td>2678971.0</td>
+      <td>1240824.0</td>
+      <td>2.678987e+06</td>
+      <td>1.241311e+06</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
+<p>Kombiniere dies nun mit deinem Wissen über Loops, um die Punkte der <em>DataFrame</em> nicht einmal, sondern 50 mal zu verschieben. Dazu brauchst du vor dem Loop eine leere Liste (z.B. <code class="docutils literal notranslate"><span class="pre">monte_carlo</span> <span class="pre">=</span> <span class="pre">[]</span></code>) damit du den Output aus jedem Loop mit <code class="docutils literal notranslate"><span class="pre">append()</span></code>  abspeichern kannst. Erstelle auch eine neue Spalte <code class="docutils literal notranslate"><span class="pre">Run_Nr</span></code> mit der Nummer der Durchführung (die du vom Platzhalter erhältst).</p>
+<div class="figure align-default" id="id1">
+<img alt="_images/montepython.jpg" src="_images/montepython.jpg" />
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Quelle <a class="reference external" href="https://twitter.com/GregoryRHancock/status/1179734188716707846?s=20">twitter.com</a></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
-</div>
-<div class="section" id="ubung-1-mit-for-loop-monte-carlo-simulation-durchfuhren">
-<h2>Übung 1: Mit For-Loop Monte Carlo Simulation durchführen<a class="headerlink" href="#ubung-1-mit-for-loop-monte-carlo-simulation-durchfuhren" title="Permalink to this headline">¶</a></h2>
-<p>Kombiniere den Code aus Schritt 4 (siehe vorherige Seite) mit deinem Wissen über Loops, um diese einmalige Verschiebung der Punkte 50-mal (mit <code class="docutils literal notranslate"><span class="pre">range(50)</span></code>) zu wiederholen. Denk daran: Du brauchst vor dem Loop eine leere Liste (z.B. <code class="docutils literal notranslate"><span class="pre">monte_carlo</span> <span class="pre">=</span> <span class="pre">[]</span></code>) damit du den Output aus jedem Loop mit <code class="docutils literal notranslate"><span class="pre">append()</span></code>  abspeichern kannst. Erstelle auch eine neue Spalte <code class="docutils literal notranslate"><span class="pre">Run_Nr</span></code> mit der Nummer der Durchführung (die du vom Platzhalter erhältst).</p>
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">If someone does a Monte Carlo simulation study using Python, can we call it a “Monte Python” study? <br>Please?</p>&mdash; Gregory R. Hancock (@GregoryRHancock) <a href="https://twitter.com/GregoryRHancock/status/1179734188716707846?ref_src=twsrc%5Etfw">October 3, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> <div class="cell tag_hide-cell docutils container">
+<div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">monte_carlo</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Musterlösung</span>
+
+<span class="n">monte_carlo</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">):</span>
-    <span class="n">zeckenstiche_sim</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">()</span>
-    <span class="n">zeckenstiche_sim</span><span class="p">[</span><span class="s2">&quot;geometry&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;geometry&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">point_offset</span><span class="p">)</span>
-    <span class="n">zeckenstiche_sim</span><span class="p">[</span><span class="s2">&quot;ID&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;ID&quot;</span><span class="p">]</span>
-    <span class="n">zeckenstiche_sim</span><span class="p">[</span><span class="s2">&quot;Run_Nr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span>
-    <span class="n">monte_carlo</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">zeckenstiche_sim</span><span class="p">)</span>
+    <span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;x_sim&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">offset_coordinate</span><span class="p">)</span>
+    <span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;y_sim&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">offset_coordinate</span><span class="p">)</span>
+    <span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;Run_Nr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span>
+    <span class="c1">#print(zeckenstiche)</span>
+    <span class="n">monte_carlo</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">zeckenstiche</span><span class="p">)</span>
+    
+<span class="n">monte_carlo</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[   ID   accuracy          x          y         x_sim         y_sim  Run_Nr
+ 0   0  65.617154  2678971.0  1240824.0  2.678093e+06  1.242027e+06      49,
+    ID   accuracy          x          y         x_sim         y_sim  Run_Nr
+ 0   0  65.617154  2678971.0  1240824.0  2.678093e+06  1.242027e+06      49,
+    ID   accuracy          x          y         x_sim         y_sim  Run_Nr
+ 0   0  65.617154  2678971.0  1240824.0  2.678093e+06  1.242027e+06      49,
+    ID   accuracy          x          y         x_sim         y_sim  Run_Nr
+ 0   0  65.617154  2678971.0  1240824.0  2.678093e+06  1.242027e+06      49,
+    ID   accuracy          x          y         x_sim         y_sim  Run_Nr
+ 0   0  65.617154  2678971.0  1240824.0  2.678093e+06  1.242027e+06      49,
+    ID   accuracy          x          y         x_sim         y_sim  Run_Nr
+ 0   0  65.617154  2678971.0  1240824.0  2.678093e+06  1.242027e+06      49,
+    ID   accuracy          x          y         x_sim         y_sim  Run_Nr
+ 0   0  65.617154  2678971.0  1240824.0  2.678093e+06  1.242027e+06      49,
+    ID   accuracy          x          y         x_sim         y_sim  Run_Nr
+ 0   0  65.617154  2678971.0  1240824.0  2.678093e+06  1.242027e+06      49,
+    ID   accuracy          x          y         x_sim         y_sim  Run_Nr
+ 0   0  65.617154  2678971.0  1240824.0  2.678093e+06  1.242027e+06      49,
+    ID   accuracy          x          y         x_sim         y_sim  Run_Nr
+ 0   0  65.617154  2678971.0  1240824.0  2.678093e+06  1.242027e+06      49,
+    ID   accuracy          x          y         x_sim         y_sim  Run_Nr
+ 0   0  65.617154  2678971.0  1240824.0  2.678093e+06  1.242027e+06      49,
+    ID   accuracy          x          y         x_sim         y_sim  Run_Nr
+ 0   0  65.617154  2678971.0  1240824.0  2.678093e+06  1.242027e+06      49,
+    ID   accuracy          x          y         x_sim         y_sim  Run_Nr
+ 0   0  65.617154  2678971.0  1240824.0  2.678093e+06  1.242027e+06      49,
+    ID   accuracy          x          y         x_sim         y_sim  Run_Nr
+ 0   0  65.617154  2678971.0  1240824.0  2.678093e+06  1.242027e+06      49,
+    ID   accuracy          x          y         x_sim         y_sim  Run_Nr
+ 0   0  65.617154  2678971.0  1240824.0  2.678093e+06  1.242027e+06      49,
+    ID   accuracy          x          y         x_sim         y_sim  Run_Nr
+ 0   0  65.617154  2678971.0  1240824.0  2.678093e+06  1.242027e+06      49,
+    ID   accuracy          x          y         x_sim         y_sim  Run_Nr
+ 0   0  65.617154  2678971.0  1240824.0  2.678093e+06  1.242027e+06      49,
+    ID   accuracy          x          y         x_sim         y_sim  Run_Nr
+ 0   0  65.617154  2678971.0  1240824.0  2.678093e+06  1.242027e+06      49,
+    ID   accuracy          x          y         x_sim         y_sim  Run_Nr
+ 0   0  65.617154  2678971.0  1240824.0  2.678093e+06  1.242027e+06      49,
+    ID   accuracy          x          y         x_sim         y_sim  Run_Nr
+ 0   0  65.617154  2678971.0  1240824.0  2.678093e+06  1.242027e+06      49,
+    ID   accuracy          x          y         x_sim         y_sim  Run_Nr
+ 0   0  65.617154  2678971.0  1240824.0  2.678093e+06  1.242027e+06      49,
+    ID   accuracy          x          y         x_sim         y_sim  Run_Nr
+ 0   0  65.617154  2678971.0  1240824.0  2.678093e+06  1.242027e+06      49,
+    ID   accuracy          x          y         x_sim         y_sim  Run_Nr
+ 0   0  65.617154  2678971.0  1240824.0  2.678093e+06  1.242027e+06      49,
+    ID   accuracy          x          y         x_sim         y_sim  Run_Nr
+ 0   0  65.617154  2678971.0  1240824.0  2.678093e+06  1.242027e+06      49,
+    ID   accuracy          x          y         x_sim         y_sim  Run_Nr
+ 0   0  65.617154  2678971.0  1240824.0  2.678093e+06  1.242027e+06      49,
+    ID   accuracy          x          y         x_sim         y_sim  Run_Nr
+ 0   0  65.617154  2678971.0  1240824.0  2.678093e+06  1.242027e+06      49,
+    ID   accuracy          x          y         x_sim         y_sim  Run_Nr
+ 0   0  65.617154  2678971.0  1240824.0  2.678093e+06  1.242027e+06      49,
+    ID   accuracy          x          y         x_sim         y_sim  Run_Nr
+ 0   0  65.617154  2678971.0  1240824.0  2.678093e+06  1.242027e+06      49,
+    ID   accuracy          x          y         x_sim         y_sim  Run_Nr
+ 0   0  65.617154  2678971.0  1240824.0  2.678093e+06  1.242027e+06      49,
+    ID   accuracy          x          y         x_sim         y_sim  Run_Nr
+ 0   0  65.617154  2678971.0  1240824.0  2.678093e+06  1.242027e+06      49,
+    ID   accuracy          x          y         x_sim         y_sim  Run_Nr
+ 0   0  65.617154  2678971.0  1240824.0  2.678093e+06  1.242027e+06      49,
+    ID   accuracy          x          y         x_sim         y_sim  Run_Nr
+ 0   0  65.617154  2678971.0  1240824.0  2.678093e+06  1.242027e+06      49,
+    ID   accuracy          x          y         x_sim         y_sim  Run_Nr
+ 0   0  65.617154  2678971.0  1240824.0  2.678093e+06  1.242027e+06      49,
+    ID   accuracy          x          y         x_sim         y_sim  Run_Nr
+ 0   0  65.617154  2678971.0  1240824.0  2.678093e+06  1.242027e+06      49,
+    ID   accuracy          x          y         x_sim         y_sim  Run_Nr
+ 0   0  65.617154  2678971.0  1240824.0  2.678093e+06  1.242027e+06      49,
+    ID   accuracy          x          y         x_sim         y_sim  Run_Nr
+ 0   0  65.617154  2678971.0  1240824.0  2.678093e+06  1.242027e+06      49,
+    ID   accuracy          x          y         x_sim         y_sim  Run_Nr
+ 0   0  65.617154  2678971.0  1240824.0  2.678093e+06  1.242027e+06      49,
+    ID   accuracy          x          y         x_sim         y_sim  Run_Nr
+ 0   0  65.617154  2678971.0  1240824.0  2.678093e+06  1.242027e+06      49,
+    ID   accuracy          x          y         x_sim         y_sim  Run_Nr
+ 0   0  65.617154  2678971.0  1240824.0  2.678093e+06  1.242027e+06      49,
+    ID   accuracy          x          y         x_sim         y_sim  Run_Nr
+ 0   0  65.617154  2678971.0  1240824.0  2.678093e+06  1.242027e+06      49,
+    ID   accuracy          x          y         x_sim         y_sim  Run_Nr
+ 0   0  65.617154  2678971.0  1240824.0  2.678093e+06  1.242027e+06      49,
+    ID   accuracy          x          y         x_sim         y_sim  Run_Nr
+ 0   0  65.617154  2678971.0  1240824.0  2.678093e+06  1.242027e+06      49,
+    ID   accuracy          x          y         x_sim         y_sim  Run_Nr
+ 0   0  65.617154  2678971.0  1240824.0  2.678093e+06  1.242027e+06      49,
+    ID   accuracy          x          y         x_sim         y_sim  Run_Nr
+ 0   0  65.617154  2678971.0  1240824.0  2.678093e+06  1.242027e+06      49,
+    ID   accuracy          x          y         x_sim         y_sim  Run_Nr
+ 0   0  65.617154  2678971.0  1240824.0  2.678093e+06  1.242027e+06      49,
+    ID   accuracy          x          y         x_sim         y_sim  Run_Nr
+ 0   0  65.617154  2678971.0  1240824.0  2.678093e+06  1.242027e+06      49,
+    ID   accuracy          x          y         x_sim         y_sim  Run_Nr
+ 0   0  65.617154  2678971.0  1240824.0  2.678093e+06  1.242027e+06      49,
+    ID   accuracy          x          y         x_sim         y_sim  Run_Nr
+ 0   0  65.617154  2678971.0  1240824.0  2.678093e+06  1.242027e+06      49,
+    ID   accuracy          x          y         x_sim         y_sim  Run_Nr
+ 0   0  65.617154  2678971.0  1240824.0  2.678093e+06  1.242027e+06      49,
+    ID   accuracy          x          y         x_sim         y_sim  Run_Nr
+ 0   0  65.617154  2678971.0  1240824.0  2.678093e+06  1.242027e+06      49]
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="section" id="ubung-2-geodataframes-aus-simulation-zusammenfuhren">
-<h2>Übung 2: GeoDataFrames aus Simulation zusammenführen<a class="headerlink" href="#ubung-2-geodataframes-aus-simulation-zusammenfuhren" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="ubung-2-dataframes-aus-simulation-zusammenfuhren">
+<h2>Übung 2: DataFrames aus Simulation zusammenführen<a class="headerlink" href="#ubung-2-dataframes-aus-simulation-zusammenfuhren" title="Permalink to this headline">¶</a></h2>
 <p>Schau dir die Outputs an.</p>
 <ul class="simple">
 <li><p>Mit <code class="docutils literal notranslate"><span class="pre">type()</span></code>:</p>
@@ -397,15 +550,15 @@
 </ul>
 </li>
 </ul>
-<p>Worauf ich hinaus will: <code class="docutils literal notranslate"><span class="pre">zeckenstiche_sim</span></code> ist eine <em>GeoDataFrame</em> und <code class="docutils literal notranslate"><span class="pre">monte_carlo</span></code> ist eine Liste von <em>GeoDataFrames</em>. Glücklicherweise kann man eine Liste von ähnlichen GeoDataFrames (ähnlich im Sinne von: gleiche Spaltennamen und -typen) mit der Funktion <code class="docutils literal notranslate"><span class="pre">concat()</span></code> aus <code class="docutils literal notranslate"><span class="pre">pandas</span></code> zu einer einzigen <em>GeoDataFrame</em> zusammenführen. Führe die Funktion aus und speichere den Output als <code class="docutils literal notranslate"><span class="pre">monte_carlo_df</span></code>.</p>
+<p>Worauf ich hinaus will: <code class="docutils literal notranslate"><span class="pre">zeckenstiche_sim</span></code> ist eine <em>DataFrame</em> und <code class="docutils literal notranslate"><span class="pre">monte_carlo</span></code> ist eine Liste von <em>DataFrames</em>. Glücklicherweise kann man eine Liste von ähnlichen GeoDataFrames (ähnlich im Sinne von: gleiche Spaltennamen und -typen) mit der Funktion <code class="docutils literal notranslate"><span class="pre">concat()</span></code> aus <code class="docutils literal notranslate"><span class="pre">pandas</span></code> zu einer einzigen <em>DataFrame</em> zusammenführen. Führe die Funktion aus und speichere den Output als <code class="docutils literal notranslate"><span class="pre">monte_carlo_df</span></code>.</p>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">zeckenstiche_sim</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">zeckenstiche</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>geopandas.geodataframe.GeoDataFrame
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pandas.core.frame.DataFrame
 </pre></div>
 </div>
 </div>
@@ -424,12 +577,12 @@
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">zeckenstiche_sim</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">zeckenstiche</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1076
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
 </pre></div>
 </div>
 </div>
@@ -456,11 +609,10 @@
 </div>
 <div class="section" id="ubung-3-simulierte-daten-visualisieren">
 <h2>Übung 3: Simulierte Daten visualisieren<a class="headerlink" href="#ubung-3-simulierte-daten-visualisieren" title="Permalink to this headline">¶</a></h2>
-<p>Exploriere nun <code class="docutils literal notranslate"><span class="pre">monte_carlo_df</span></code>? Was ist es für ein Datentyp? Was hat es für Spalten? Visualisiere den Datensatz räumlich mit <code class="docutils literal notranslate"><span class="pre">monte_carlo_df.plot()</span></code>.
-Optional: Wenn du Punkte mit der gleichen ID einer Farbe zuweisen möchtest, dann erreichst du dies mit der Option <code class="docutils literal notranslate"><span class="pre">column</span> <span class="pre">=</span> <span class="pre">&quot;ID&quot;</span></code> (das geht natürlich nur, wenn du im Loop auch eine solche Spalte erstellt hast)</p>
+<p>Exploriere nun <code class="docutils literal notranslate"><span class="pre">monte_carlo_df</span></code>? Was ist es für ein Datentyp? Was hat es für Spalten? Visualisiere den Datensatz räumlich mit <code class="docutils literal notranslate"><span class="pre">monte_carlo_df.plot.scatter()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">monte_carlo_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">monte_carlo_df</span>
 </pre></div>
 </div>
 </div>
@@ -483,41 +635,515 @@ Optional: Wenn du Punkte mit der gleichen ID einer Farbe zuweisen möchtest, dan
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>geometry</th>
       <th>ID</th>
+      <th>accuracy</th>
+      <th>x</th>
+      <th>y</th>
+      <th>x_sim</th>
+      <th>y_sim</th>
       <th>Run_Nr</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>POINT (2678989.000 1240777.000)</td>
       <td>0</td>
-      <td>0</td>
+      <td>65.617154</td>
+      <td>2678971.0</td>
+      <td>1240824.0</td>
+      <td>2.678093e+06</td>
+      <td>1.242027e+06</td>
+      <td>49</td>
     </tr>
     <tr>
-      <th>1</th>
-      <td>POINT (2679853.000 1240945.000)</td>
-      <td>1</td>
+      <th>0</th>
       <td>0</td>
+      <td>65.617154</td>
+      <td>2678971.0</td>
+      <td>1240824.0</td>
+      <td>2.678093e+06</td>
+      <td>1.242027e+06</td>
+      <td>49</td>
     </tr>
     <tr>
-      <th>2</th>
-      <td>POINT (2687498.000 1240912.000)</td>
-      <td>2</td>
+      <th>0</th>
       <td>0</td>
+      <td>65.617154</td>
+      <td>2678971.0</td>
+      <td>1240824.0</td>
+      <td>2.678093e+06</td>
+      <td>1.242027e+06</td>
+      <td>49</td>
     </tr>
     <tr>
-      <th>3</th>
-      <td>POINT (2674795.000 1240847.000)</td>
-      <td>3</td>
+      <th>0</th>
       <td>0</td>
+      <td>65.617154</td>
+      <td>2678971.0</td>
+      <td>1240824.0</td>
+      <td>2.678093e+06</td>
+      <td>1.242027e+06</td>
+      <td>49</td>
     </tr>
     <tr>
-      <th>4</th>
-      <td>POINT (2681710.000 1240958.000)</td>
-      <td>4</td>
+      <th>0</th>
       <td>0</td>
+      <td>65.617154</td>
+      <td>2678971.0</td>
+      <td>1240824.0</td>
+      <td>2.678093e+06</td>
+      <td>1.242027e+06</td>
+      <td>49</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>65.617154</td>
+      <td>2678971.0</td>
+      <td>1240824.0</td>
+      <td>2.678093e+06</td>
+      <td>1.242027e+06</td>
+      <td>49</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>65.617154</td>
+      <td>2678971.0</td>
+      <td>1240824.0</td>
+      <td>2.678093e+06</td>
+      <td>1.242027e+06</td>
+      <td>49</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>65.617154</td>
+      <td>2678971.0</td>
+      <td>1240824.0</td>
+      <td>2.678093e+06</td>
+      <td>1.242027e+06</td>
+      <td>49</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>65.617154</td>
+      <td>2678971.0</td>
+      <td>1240824.0</td>
+      <td>2.678093e+06</td>
+      <td>1.242027e+06</td>
+      <td>49</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>65.617154</td>
+      <td>2678971.0</td>
+      <td>1240824.0</td>
+      <td>2.678093e+06</td>
+      <td>1.242027e+06</td>
+      <td>49</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>65.617154</td>
+      <td>2678971.0</td>
+      <td>1240824.0</td>
+      <td>2.678093e+06</td>
+      <td>1.242027e+06</td>
+      <td>49</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>65.617154</td>
+      <td>2678971.0</td>
+      <td>1240824.0</td>
+      <td>2.678093e+06</td>
+      <td>1.242027e+06</td>
+      <td>49</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>65.617154</td>
+      <td>2678971.0</td>
+      <td>1240824.0</td>
+      <td>2.678093e+06</td>
+      <td>1.242027e+06</td>
+      <td>49</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>65.617154</td>
+      <td>2678971.0</td>
+      <td>1240824.0</td>
+      <td>2.678093e+06</td>
+      <td>1.242027e+06</td>
+      <td>49</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>65.617154</td>
+      <td>2678971.0</td>
+      <td>1240824.0</td>
+      <td>2.678093e+06</td>
+      <td>1.242027e+06</td>
+      <td>49</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>65.617154</td>
+      <td>2678971.0</td>
+      <td>1240824.0</td>
+      <td>2.678093e+06</td>
+      <td>1.242027e+06</td>
+      <td>49</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>65.617154</td>
+      <td>2678971.0</td>
+      <td>1240824.0</td>
+      <td>2.678093e+06</td>
+      <td>1.242027e+06</td>
+      <td>49</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>65.617154</td>
+      <td>2678971.0</td>
+      <td>1240824.0</td>
+      <td>2.678093e+06</td>
+      <td>1.242027e+06</td>
+      <td>49</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>65.617154</td>
+      <td>2678971.0</td>
+      <td>1240824.0</td>
+      <td>2.678093e+06</td>
+      <td>1.242027e+06</td>
+      <td>49</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>65.617154</td>
+      <td>2678971.0</td>
+      <td>1240824.0</td>
+      <td>2.678093e+06</td>
+      <td>1.242027e+06</td>
+      <td>49</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>65.617154</td>
+      <td>2678971.0</td>
+      <td>1240824.0</td>
+      <td>2.678093e+06</td>
+      <td>1.242027e+06</td>
+      <td>49</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>65.617154</td>
+      <td>2678971.0</td>
+      <td>1240824.0</td>
+      <td>2.678093e+06</td>
+      <td>1.242027e+06</td>
+      <td>49</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>65.617154</td>
+      <td>2678971.0</td>
+      <td>1240824.0</td>
+      <td>2.678093e+06</td>
+      <td>1.242027e+06</td>
+      <td>49</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>65.617154</td>
+      <td>2678971.0</td>
+      <td>1240824.0</td>
+      <td>2.678093e+06</td>
+      <td>1.242027e+06</td>
+      <td>49</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>65.617154</td>
+      <td>2678971.0</td>
+      <td>1240824.0</td>
+      <td>2.678093e+06</td>
+      <td>1.242027e+06</td>
+      <td>49</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>65.617154</td>
+      <td>2678971.0</td>
+      <td>1240824.0</td>
+      <td>2.678093e+06</td>
+      <td>1.242027e+06</td>
+      <td>49</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>65.617154</td>
+      <td>2678971.0</td>
+      <td>1240824.0</td>
+      <td>2.678093e+06</td>
+      <td>1.242027e+06</td>
+      <td>49</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>65.617154</td>
+      <td>2678971.0</td>
+      <td>1240824.0</td>
+      <td>2.678093e+06</td>
+      <td>1.242027e+06</td>
+      <td>49</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>65.617154</td>
+      <td>2678971.0</td>
+      <td>1240824.0</td>
+      <td>2.678093e+06</td>
+      <td>1.242027e+06</td>
+      <td>49</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>65.617154</td>
+      <td>2678971.0</td>
+      <td>1240824.0</td>
+      <td>2.678093e+06</td>
+      <td>1.242027e+06</td>
+      <td>49</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>65.617154</td>
+      <td>2678971.0</td>
+      <td>1240824.0</td>
+      <td>2.678093e+06</td>
+      <td>1.242027e+06</td>
+      <td>49</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>65.617154</td>
+      <td>2678971.0</td>
+      <td>1240824.0</td>
+      <td>2.678093e+06</td>
+      <td>1.242027e+06</td>
+      <td>49</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>65.617154</td>
+      <td>2678971.0</td>
+      <td>1240824.0</td>
+      <td>2.678093e+06</td>
+      <td>1.242027e+06</td>
+      <td>49</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>65.617154</td>
+      <td>2678971.0</td>
+      <td>1240824.0</td>
+      <td>2.678093e+06</td>
+      <td>1.242027e+06</td>
+      <td>49</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>65.617154</td>
+      <td>2678971.0</td>
+      <td>1240824.0</td>
+      <td>2.678093e+06</td>
+      <td>1.242027e+06</td>
+      <td>49</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>65.617154</td>
+      <td>2678971.0</td>
+      <td>1240824.0</td>
+      <td>2.678093e+06</td>
+      <td>1.242027e+06</td>
+      <td>49</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>65.617154</td>
+      <td>2678971.0</td>
+      <td>1240824.0</td>
+      <td>2.678093e+06</td>
+      <td>1.242027e+06</td>
+      <td>49</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>65.617154</td>
+      <td>2678971.0</td>
+      <td>1240824.0</td>
+      <td>2.678093e+06</td>
+      <td>1.242027e+06</td>
+      <td>49</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>65.617154</td>
+      <td>2678971.0</td>
+      <td>1240824.0</td>
+      <td>2.678093e+06</td>
+      <td>1.242027e+06</td>
+      <td>49</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>65.617154</td>
+      <td>2678971.0</td>
+      <td>1240824.0</td>
+      <td>2.678093e+06</td>
+      <td>1.242027e+06</td>
+      <td>49</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>65.617154</td>
+      <td>2678971.0</td>
+      <td>1240824.0</td>
+      <td>2.678093e+06</td>
+      <td>1.242027e+06</td>
+      <td>49</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>65.617154</td>
+      <td>2678971.0</td>
+      <td>1240824.0</td>
+      <td>2.678093e+06</td>
+      <td>1.242027e+06</td>
+      <td>49</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>65.617154</td>
+      <td>2678971.0</td>
+      <td>1240824.0</td>
+      <td>2.678093e+06</td>
+      <td>1.242027e+06</td>
+      <td>49</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>65.617154</td>
+      <td>2678971.0</td>
+      <td>1240824.0</td>
+      <td>2.678093e+06</td>
+      <td>1.242027e+06</td>
+      <td>49</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>65.617154</td>
+      <td>2678971.0</td>
+      <td>1240824.0</td>
+      <td>2.678093e+06</td>
+      <td>1.242027e+06</td>
+      <td>49</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>65.617154</td>
+      <td>2678971.0</td>
+      <td>1240824.0</td>
+      <td>2.678093e+06</td>
+      <td>1.242027e+06</td>
+      <td>49</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>65.617154</td>
+      <td>2678971.0</td>
+      <td>1240824.0</td>
+      <td>2.678093e+06</td>
+      <td>1.242027e+06</td>
+      <td>49</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>65.617154</td>
+      <td>2678971.0</td>
+      <td>1240824.0</td>
+      <td>2.678093e+06</td>
+      <td>1.242027e+06</td>
+      <td>49</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>65.617154</td>
+      <td>2678971.0</td>
+      <td>1240824.0</td>
+      <td>2.678093e+06</td>
+      <td>1.242027e+06</td>
+      <td>49</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>65.617154</td>
+      <td>2678971.0</td>
+      <td>1240824.0</td>
+      <td>2.678093e+06</td>
+      <td>1.242027e+06</td>
+      <td>49</td>
     </tr>
   </tbody>
 </table>
@@ -525,22 +1151,15 @@ Optional: Wenn du Punkte mit der gleichen ID einer Farbe zuweisen möchtest, dan
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">monte_carlo_df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span> <span class="o">=</span> <span class="s2">&quot;ID&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">monte_carlo_df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s2">&quot;x_sim&quot;</span><span class="p">,</span><span class="s2">&quot;y_sim&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;x_sim&#39;, ylabel=&#39;y_sim&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/03_03_Zeckenstich_Simulation_15_1.png" src="_images/03_03_Zeckenstich_Simulation_15_1.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">monte_carlo_df</span><span class="o">.</span><span class="n">to_file</span><span class="p">(</span><span class="s2">&quot;monte_carlo_df.shp&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
+<img alt="_images/03_03_Zeckenstich_Simulation_17_1.png" src="_images/03_03_Zeckenstich_Simulation_17_1.png" />
 </div>
 </div>
 </div>
@@ -574,8 +1193,8 @@ Optional: Wenn du Punkte mit der gleichen ID einer Farbe zuweisen möchtest, dan
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="03_02_For_Loops.html" title="previous page">For Loops</a>
-    <a class='right-next' id="next-link" href="01_05_GIS_in_Python.html" title="next page">Aufgabe: GIS in Python</a>
+    <a class='left-prev' id="prev-link" href="03_02b_For_Loops.html" title="previous page">Übung: For Loops (Teil II)</a>
+    <a class='right-next' id="next-link" href="01_05_GIS_in_Python.html" title="next page">Übung: GIS in Python</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
