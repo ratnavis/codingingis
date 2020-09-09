@@ -333,7 +333,6 @@
 <li><p>Schritt 2: Alle Punkte einer DataFrame zufällig verschieben (1 “Run”) ✓</p></li>
 <li><p><strong>Schritt 3: Alle Punkte einer DataFrame mehrfach zufällig verschieben (z.B. 50 “Runs”)</strong></p></li>
 <li><p>Schritt 4: Anteil der Punkte im Wald pro “Run” ermitteln</p></li>
-<li><p>Schritt 5: Verteilung dieser Mittelwerte visualisieren</p></li>
 </ul>
 <p>Ladet dafür die nötigen Module (<code class="docutils literal notranslate"><span class="pre">pandas</span></code> und <code class="docutils literal notranslate"><span class="pre">random</span></code>), holt euch die Funktion <code class="docutils literal notranslate"><span class="pre">offset_point()</span></code> und importiert den Datensatz <code class="docutils literal notranslate"><span class="pre">zeckenstiche.csv</span></code>. Tipp: Importiert mit <code class="docutils literal notranslate"><span class="pre">head(5)</span></code> nur die ersten 5 Zeile aus dem csv, das macht die die Entwicklung des Loops leichter.</p>
 <div class="cell tag_hide-cell docutils container">
@@ -397,62 +396,62 @@
     <tr>
       <th>0</th>
       <td>2550</td>
-      <td>2.681002e+06</td>
-      <td>1.250809e+06</td>
+      <td>2.681095e+06</td>
+      <td>1.250489e+06</td>
     </tr>
     <tr>
       <th>1</th>
       <td>10437</td>
-      <td>2.681174e+06</td>
-      <td>1.250559e+06</td>
+      <td>2.681129e+06</td>
+      <td>1.250527e+06</td>
     </tr>
     <tr>
       <th>2</th>
       <td>9174</td>
-      <td>2.680944e+06</td>
-      <td>1.250776e+06</td>
+      <td>2.681155e+06</td>
+      <td>1.250771e+06</td>
     </tr>
     <tr>
       <th>3</th>
       <td>8773</td>
-      <td>2.681072e+06</td>
-      <td>1.250628e+06</td>
+      <td>2.681123e+06</td>
+      <td>1.250806e+06</td>
     </tr>
     <tr>
       <th>4</th>
       <td>2764</td>
-      <td>2.680873e+06</td>
-      <td>1.250758e+06</td>
+      <td>2.681124e+06</td>
+      <td>1.250770e+06</td>
     </tr>
     <tr>
       <th>5</th>
       <td>2513</td>
-      <td>2.681053e+06</td>
-      <td>1.250870e+06</td>
+      <td>2.680993e+06</td>
+      <td>1.250722e+06</td>
     </tr>
     <tr>
       <th>6</th>
       <td>9185</td>
-      <td>2.681213e+06</td>
-      <td>1.250657e+06</td>
+      <td>2.681228e+06</td>
+      <td>1.250602e+06</td>
     </tr>
     <tr>
       <th>7</th>
       <td>28521</td>
-      <td>2.681109e+06</td>
-      <td>1.250677e+06</td>
+      <td>2.681069e+06</td>
+      <td>1.250776e+06</td>
     </tr>
     <tr>
       <th>8</th>
       <td>26745</td>
-      <td>2.680955e+06</td>
-      <td>1.250740e+06</td>
+      <td>2.681261e+06</td>
+      <td>1.250843e+06</td>
     </tr>
     <tr>
       <th>9</th>
       <td>27391</td>
-      <td>2.681016e+06</td>
-      <td>1.250698e+06</td>
+      <td>2.681174e+06</td>
+      <td>1.250766e+06</td>
     </tr>
   </tbody>
 </table>
@@ -592,36 +591,36 @@
     <tr>
       <th>0</th>
       <td>2550</td>
-      <td>2.680947e+06</td>
-      <td>1.250631e+06</td>
+      <td>2.681137e+06</td>
+      <td>1.250859e+06</td>
       <td>0</td>
     </tr>
     <tr>
       <th>1</th>
       <td>10437</td>
-      <td>2.680987e+06</td>
-      <td>1.250689e+06</td>
+      <td>2.680883e+06</td>
+      <td>1.250722e+06</td>
       <td>0</td>
     </tr>
     <tr>
       <th>2</th>
       <td>9174</td>
-      <td>2.681076e+06</td>
-      <td>1.250497e+06</td>
+      <td>2.681285e+06</td>
+      <td>1.250671e+06</td>
       <td>0</td>
     </tr>
     <tr>
       <th>3</th>
       <td>8773</td>
-      <td>2.681077e+06</td>
-      <td>1.250789e+06</td>
+      <td>2.681092e+06</td>
+      <td>1.250746e+06</td>
       <td>0</td>
     </tr>
     <tr>
       <th>4</th>
       <td>2764</td>
-      <td>2.681091e+06</td>
-      <td>1.250630e+06</td>
+      <td>2.681195e+06</td>
+      <td>1.250659e+06</td>
       <td>0</td>
     </tr>
   </tbody>
