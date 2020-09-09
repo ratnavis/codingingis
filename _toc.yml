@@ -23,7 +23,7 @@
   chapters:
   - file: 03_01_Einleitung
   - file: 03_02_For_Loops
-  - file: 03_02b_For_Loops
-  - file: 03_03_Zeckenstich_Simulation
-  - file: 01_05_GIS_in_Python
-  - file: 03_04_Waldanteil_Berechnen
+  - file: 03_03_For_Loops
+  - file: 03_04_Zeckenstich_Simulation
+  - file: 03_05_GIS_in_Python
+  - file: 03_06_Waldanteil_Berechnen
