@@ -17,7 +17,6 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-dropdown.css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/sphinx-book-theme.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
@@ -27,8 +26,6 @@
     <script src="_static/copybutton.js"></script>
     <script src="_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -39,8 +36,8 @@
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Waldanteil berechnen" href="03_04_Waldanteil_Berechnen.html" />
-    <link rel="prev" title="Zeckenstich Simulation mit Loop" href="03_03_Zeckenstich_Simulation.html" />
+    <link rel="next" title="Übung: Waldanteil berechnen" href="03_06_Waldanteil_Berechnen.html" />
+    <link rel="prev" title="Übung: Zeckenstich Simulation mit Loop" href="03_04_Zeckenstich_Simulation.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -191,13 +188,13 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="03_02b_For_Loops.html">
+  <a class="reference internal" href="03_03_For_Loops.html">
    Übung: For Loops (Teil II)
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="03_03_Zeckenstich_Simulation.html">
-   Zeckenstich Simulation mit Loop
+  <a class="reference internal" href="03_04_Zeckenstich_Simulation.html">
+   Übung: Zeckenstich Simulation mit Loop
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -206,8 +203,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="03_04_Waldanteil_Berechnen.html">
-   Waldanteil berechnen
+  <a class="reference internal" href="03_06_Waldanteil_Berechnen.html">
+   Übung: Waldanteil berechnen
   </a>
  </li>
 </ul>
@@ -252,7 +249,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/01_05_GIS_in_Python.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/03_05_GIS_in_Python.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -277,7 +274,7 @@
     <div class="dropdown-buttons">
         
         
-        <a class="jupyterhub-button" href="https://jupyterhub01.zhaw.ch/hub/user-redirect/git-pull?repo=https://github.com/ratnanil/codingingis&urlpath=lab/tree/codingingis/01_05_GIS_in_Python.ipynb&branch=master"><button type="button"
+        <a class="jupyterhub-button" href="https://jupyterhub01.zhaw.ch/hub/user-redirect/git-pull?repo=https://github.com/ratnanil/codingingis&urlpath=lab/tree/codingingis/03_05_GIS_in_Python.ipynb&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="_static/images/logo_jupyterhub.svg"
@@ -319,6 +316,11 @@
    Übung 3: Zeckenstiche als Shapefile exportieren
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ubung-4-optional-export-als-geopackage">
+   Übung 4 (Optional): Export als Geopackage
+  </a>
+ </li>
 </ul>
 
         </nav>
@@ -331,152 +333,94 @@
                 
   <div class="section" id="ubung-gis-in-python">
 <h1>Übung: GIS in Python<a class="headerlink" href="#ubung-gis-in-python" title="Permalink to this headline">¶</a></h1>
-<p>Die bisherigen Aufgaben hatten noch nicht viel mit GIS zu tun. Die Koordinaten der Zeckenstiche sind uns zwar bekannt, es handelt es dabei aber lediglich um Numerische xy-Werte, nicht um Geometrische Punkte mit einem Raumbezug. So bleiben uns bis jetzt alle räumlichen Operationen vorenthalten (zum Beispiel ob sich ein Stich im Wald befindet oder nicht), und wir können auch keine schönen Karten generieren.</p>
-<p>Um mit Geodaten in Python arbeiten zu können, müssen wir ein neues Modul importieren. Im Grunde genommen sind Vektordaten nicht mehr als Tabellen mit einer zusätzlichen “Geometrie”-Spalte, dementsprechend baut die “Geo”-Erweiterung auf <code class="docutils literal notranslate"><span class="pre">pandas</span></code> auf und heisst: <code class="docutils literal notranslate"><span class="pre">geopandas</span></code>.</p>
-<p>Du solltest <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> bereits installiert haben und das Modul in dein Script importieren. Importiere <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> mit dem Alias <code class="docutils literal notranslate"><span class="pre">gpd</span></code>.</p>
+<p>Bis jetzt haben wir noch nicht mit eigentlich Geodaten gearbeitet. Die x / y Werte der Zeckenstiche repräsentatieren zwar Zeckenstiche in der Schweiz (sie sind also im Schweizer Koordinatensystem), dies ist aber nur uns bewusst (Python weiss davon nichts). Der Raumbezug fehlt noch, und den stellen wir an dieser Stelle her. Warum? Weil wir im nächsten Schritt unserer Todo Liste (s.u.) berechnen müssen, wie viele Zeckenstiche sich im Wald befinden. Das ist eine räumliche Abfrage, die sich ohne räumliche Objekte nicht bewerkstelligen lässt.</p>
+<ul class="simple">
+<li><p>Schritt 1: Einen Einzelpunkt zufällig verschieben ✓</p></li>
+<li><p>Schritt 2: Alle Punkte einer DataFrame zufällig verschieben (1 “Run”) ✓</p></li>
+<li><p>Schritt 3: Alle Punkte einer DataFrame mehrfach zufällig verschieben (z.B. 50 “Runs”) ✓</p></li>
+<li><p><strong>Schritt 4: Anteil der Punkte im Wald pro “Run” ermitteln</strong></p></li>
+<li><p>Schritt 5: Verteilung dieser Mittelwerte visualisieren</p></li>
+</ul>
+<p>Um mit Geodaten in Python arbeiten zu können, müssen wir ein neues Modul importieren. Im Grunde genommen sind Vektordaten nicht mehr als Tabellen mit einer zusätzlichen “Geometrie”-Spalte. Dementsprechend müssen wir <code class="docutils literal notranslate"><span class="pre">pandas</span></code> nur ein bisschen erweitern um mit Vektordaten arbeiten zu können, und diese “Geo”-Erweiterung lautet: <code class="docutils literal notranslate"><span class="pre">geopandas</span></code>.</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vorbereitung der Arbeitsumgebung </span>
+<span class="c1"># (nur wenn ihr in einer neuen Session startet)</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="n">zeckenstiche</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;zeckenstiche.csv&quot;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">offset_coordinate</span><span class="p">(</span><span class="n">old</span><span class="p">,</span> <span class="n">distance</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">):</span>
+    <span class="n">new</span> <span class="o">=</span> <span class="n">old</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">normalvariate</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">distance</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">new</span><span class="p">)</span>
+
+<span class="n">monte_carlo</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">zeckenstiche_sim</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+
+    <span class="n">zeckenstiche_sim</span><span class="p">[</span><span class="s2">&quot;ID&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;ID&quot;</span><span class="p">]</span>
+
+    <span class="n">zeckenstiche_sim</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">offset_coordinate</span><span class="p">)</span>
+    <span class="n">zeckenstiche_sim</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">offset_coordinate</span><span class="p">)</span>
+    <span class="n">zeckenstiche_sim</span><span class="p">[</span><span class="s2">&quot;Run_Nr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span>
+    <span class="n">monte_carlo</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">zeckenstiche_sim</span><span class="p">)</span>
+    
+<span class="n">monte_carlo_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">monte_carlo</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="ubung-1-dataframe-zu-geodataframe">
 <h2>Übung 1: <em>DataFrame</em> zu <em>GeoDataFrame</em><a class="headerlink" href="#ubung-1-dataframe-zu-geodataframe" title="Permalink to this headline">¶</a></h2>
 <p>Wie erwähnt sind die Zeckenstichdaten bisher lediglich als tabellarische Daten vorhanden. In ArcGIS Terminologie müssen wir die Operation “<a class="reference external" href="https://pro.arcgis.com/de/pro-app/tool-reference/data-management/xy-table-to-point.htm">XY Table to Point</a>” durchführen. In Python heisst das: Wir wandeln eine <em>DataFrame</em> in eine <em>GeoDataFrame</em> um. Zuerst erstellen wir eine Geometrie-Spalte aus den xy-Koordinaten mit der Funktion <code class="docutils literal notranslate"><span class="pre">points_from_xy</span></code> aus dem Modul <code class="docutils literal notranslate"><span class="pre">geopandas</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;geometry&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">points_from_xy</span><span class="p">(</span><span class="n">zeckenstiche</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">zeckenstiche</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Der Datensatz <code class="docutils literal notranslate"><span class="pre">zeckenstiche</span></code> hat jetzt aber noch nicht begriffen, dass es jetzt eine <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code> ist. Dies müssen wir dem Objekt erst noch mitteilen:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeckenstiche</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">zeckenstiche</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
 
-<span class="n">zeckenstiche</span>
+
+<span class="n">monte_carlo_df</span><span class="p">[</span><span class="s2">&quot;geometry&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">points_from_xy</span><span class="p">(</span><span class="n">monte_carlo_df</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">monte_carlo_df</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/geopandas/_compat.py:88: UserWarning: The Shapely GEOS version (3.8.0-CAPI-1.13.1 ) is incompatible with the GEOS version PyGEOS was compiled with (3.8.1-CAPI-1.13.3). Conversions between both will be slow.
+  shapely_geos_version, geos_capi_version_string
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">monte_carlo_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pandas.core.frame.DataFrame
+</pre></div>
+</div>
+</div>
+</div>
+<p>Der Datensatz <code class="docutils literal notranslate"><span class="pre">monte_carlo_df</span></code> hat jetzt aber noch nicht begriffen, dass es jetzt eine <em>GeoDataFrame</em> ist. Dies müssen wir dem Objekt erst noch mitteilen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">monte_carlo_df</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">monte_carlo_df</span><span class="p">)</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ID</th>
-      <th>accuracy</th>
-      <th>x</th>
-      <th>y</th>
-      <th>geometry</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>0</td>
-      <td>65.617154</td>
-      <td>2678971.0</td>
-      <td>1240824.0</td>
-      <td>POINT (2678971.000 1240824.000)</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1</td>
-      <td>257.492052</td>
-      <td>2679837.0</td>
-      <td>1240858.0</td>
-      <td>POINT (2679837.000 1240858.000)</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2</td>
-      <td>163.533834</td>
-      <td>2687539.0</td>
-      <td>1240881.0</td>
-      <td>POINT (2687539.000 1240881.000)</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>3</td>
-      <td>185.000000</td>
-      <td>2674848.0</td>
-      <td>1240913.0</td>
-      <td>POINT (2674848.000 1240913.000)</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>4</td>
-      <td>228.215231</td>
-      <td>2681771.0</td>
-      <td>1240922.0</td>
-      <td>POINT (2681771.000 1240922.000)</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>1071</th>
-      <td>1071</td>
-      <td>109.531946</td>
-      <td>2678005.0</td>
-      <td>1257344.0</td>
-      <td>POINT (2678005.000 1257344.000)</td>
-    </tr>
-    <tr>
-      <th>1072</th>
-      <td>1072</td>
-      <td>100.489274</td>
-      <td>2678005.0</td>
-      <td>1257347.0</td>
-      <td>POINT (2678005.000 1257347.000)</td>
-    </tr>
-    <tr>
-      <th>1073</th>
-      <td>1073</td>
-      <td>301.748529</td>
-      <td>2689893.0</td>
-      <td>1257351.0</td>
-      <td>POINT (2689893.000 1257351.000)</td>
-    </tr>
-    <tr>
-      <th>1074</th>
-      <td>1074</td>
-      <td>301.748542</td>
-      <td>2690668.0</td>
-      <td>1257369.0</td>
-      <td>POINT (2690668.000 1257369.000)</td>
-    </tr>
-    <tr>
-      <th>1075</th>
-      <td>1075</td>
-      <td>226.000000</td>
-      <td>2682852.0</td>
-      <td>1257531.0</td>
-      <td>POINT (2682852.000 1257531.000)</td>
-    </tr>
-  </tbody>
-</table>
-<p>1076 rows × 5 columns</p>
-</div></div></div>
+<span class="nb">type</span><span class="p">(</span><span class="n">monte_carlo_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>geopandas.geodataframe.GeoDataFrame
+</pre></div>
+</div>
+</div>
 </div>
 <p>Jetzt, wo zeckenstiche eine GeoDataFrame ist, gibt es einen einfachen weg die Punkte räumlich zu visualisieren:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeckenstiche</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">monte_carlo_df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span> <span class="o">=</span> <span class="s2">&quot;ID&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -484,7 +428,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
 </pre></div>
 </div>
-<img alt="_images/01_05_GIS_in_Python_8_1.png" src="_images/01_05_GIS_in_Python_8_1.png" />
+<img alt="_images/03_05_GIS_in_Python_10_1.png" src="_images/03_05_GIS_in_Python_10_1.png" />
 </div>
 </div>
 </div>
@@ -493,7 +437,7 @@
 <p>Wir wissen zwar, das unsere <em>GeoDataFrame</em> in Schweizer Landeskoordinaten (CH1903 LV95) zu verstehen ist, aber dies haben wir noch nirgends festgehalten. Das Koordinatensystem (Coordinate Reference System, CRS) können wir über das Attribut <code class="docutils literal notranslate"><span class="pre">crs</span></code> der <em>GeoDataFrame</em> festhalten. Das Koordinatensystem CH1903 LV95 hat den EPSG Code 2056, demnach muss das CRS folgendermassen festgelegt werden:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeckenstiche</span> <span class="o">=</span> <span class="n">zeckenstiche</span><span class="o">.</span><span class="n">set_crs</span><span class="p">(</span><span class="n">epsg</span> <span class="o">=</span> <span class="mi">2056</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">monte_carlo_df</span> <span class="o">=</span> <span class="n">monte_carlo_df</span><span class="o">.</span><span class="n">set_crs</span><span class="p">(</span><span class="n">epsg</span> <span class="o">=</span> <span class="mi">2056</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -501,7 +445,7 @@
 <p>Nun ist das Koordinatensystem (<em>CRS</em>) als Attribut der <em>GeoDataFrame</em> gespeichert:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeckenstiche</span><span class="o">.</span><span class="n">crs</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">monte_carlo_df</span><span class="o">.</span><span class="n">crs</span>
 </pre></div>
 </div>
 </div>
@@ -530,7 +474,20 @@ Datum: CH1903+
 <p>Zum Schluss exportieren wir unser Datensatz in ein Shapefile, damit wir das nächste Mal direkt mit einer <em>GeoDataFrame</em> arbeiten können. Genau wie wir in einer vorherigen Übung eine pandas DataFrame mit <code class="docutils literal notranslate"><span class="pre">.to_csv</span></code> in eine csv exportiert haben, gibt es für GeoDataFrames die Methode <code class="docutils literal notranslate"><span class="pre">.to_file</span></code>. Exportiere zeckenstiche mit dieser Methode in eine Shapefile.</p>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeckenstiche</span><span class="o">.</span><span class="n">to_file</span><span class="p">(</span><span class="s2">&quot;zeckenstiche.shp&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Musterlösung</span>
+
+<span class="n">monte_carlo_df</span><span class="o">.</span><span class="n">to_file</span><span class="p">(</span><span class="s2">&quot;monte_carlo_df.shp&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ubung-4-optional-export-als-geopackage">
+<h2>Übung 4 (Optional): Export als Geopackage<a class="headerlink" href="#ubung-4-optional-export-als-geopackage" title="Permalink to this headline">¶</a></h2>
+<p>Shapefiles sind ein ganz schreckliches Format (siehe <a class="reference external" href="http://switchfromshapefile.org/">switchfromshapefile.org</a>). Viel praktischer sind an dieser Stelel zum Beispiel <em>Geopackages</em>. Ihr könnt <code class="docutils literal notranslate"><span class="pre">monte_carlo_df</span></code> auch mit folgender Codezeile als <em>Geopackage</em> exportieren.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">monte_carlo_df</span><span class="o">.</span><span class="n">to_file</span><span class="p">(</span><span class="s2">&quot;monte_carlo_df.gpkg&quot;</span><span class="p">,</span> <span class="n">layer</span> <span class="o">=</span> <span class="s2">&quot;monte_carlo_simulation&quot;</span><span class="p">,</span><span class="n">driver</span> <span class="o">=</span> <span class="s2">&quot;GPKG&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -566,8 +523,8 @@ Datum: CH1903+
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="03_03_Zeckenstich_Simulation.html" title="previous page">Zeckenstich Simulation mit Loop</a>
-    <a class='right-next' id="next-link" href="03_04_Waldanteil_Berechnen.html" title="next page">Waldanteil berechnen</a>
+    <a class='left-prev' id="prev-link" href="03_04_Zeckenstich_Simulation.html" title="previous page">Übung: Zeckenstich Simulation mit Loop</a>
+    <a class='right-next' id="next-link" href="03_06_Waldanteil_Berechnen.html" title="next page">Übung: Waldanteil berechnen</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

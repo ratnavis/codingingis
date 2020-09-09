@@ -17,7 +17,6 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-dropdown.css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/sphinx-book-theme.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
@@ -27,8 +26,6 @@
     <script src="_static/copybutton.js"></script>
     <script src="_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -191,23 +188,23 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="03_02b_For_Loops.html">
+  <a class="reference internal" href="03_03_For_Loops.html">
    Übung: For Loops (Teil II)
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="03_03_Zeckenstich_Simulation.html">
-   Zeckenstich Simulation mit Loop
+  <a class="reference internal" href="03_04_Zeckenstich_Simulation.html">
+   Übung: Zeckenstich Simulation mit Loop
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="01_05_GIS_in_Python.html">
+  <a class="reference internal" href="03_05_GIS_in_Python.html">
    Übung: GIS in Python
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="03_04_Waldanteil_Berechnen.html">
-   Waldanteil berechnen
+  <a class="reference internal" href="03_06_Waldanteil_Berechnen.html">
+   Übung: Waldanteil berechnen
   </a>
  </li>
 </ul>
@@ -316,6 +313,11 @@
    visualisieren
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ubung-5-genauigkeitsangaben-der-punkte-mitberucksichtigen">
+   Übung 5: Genauigkeitsangaben der Punkte mitberücksichtigen.
+  </a>
+ </li>
 </ul>
 
         </nav>
@@ -344,8 +346,7 @@
 
 <span class="k">def</span> <span class="nf">offset_coordinate</span><span class="p">(</span><span class="n">old</span><span class="p">,</span> <span class="n">distance</span> <span class="o">=</span> <span class="mi">100</span><span class="p">):</span>
     <span class="n">new</span> <span class="o">=</span> <span class="n">old</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">normalvariate</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">distance</span><span class="p">)</span>
-
-    <span class="k">return</span><span class="p">(</span><span class="n">new</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">new</span>
 
 <span class="c1"># mit &quot;head(10)&quot; importiere ich nur die ersten 10 Einträge des CSV. So kann ich den Workflow erstmal an einem kleineren Datensatz testen.</span>
 <span class="n">zeckenstiche</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;zeckenstiche.csv&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
@@ -383,73 +384,73 @@
   <tbody>
     <tr>
       <th>0</th>
-      <td>0</td>
-      <td>65.617154</td>
-      <td>2678971.0</td>
-      <td>1240824.0</td>
+      <td>2550</td>
+      <td>439.128951</td>
+      <td>2681116</td>
+      <td>1250648</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>1</td>
-      <td>257.492052</td>
-      <td>2679837.0</td>
-      <td>1240858.0</td>
+      <td>10437</td>
+      <td>301.748542</td>
+      <td>2681092</td>
+      <td>1250672</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>2</td>
-      <td>163.533834</td>
-      <td>2687539.0</td>
-      <td>1240881.0</td>
+      <td>9174</td>
+      <td>301.748542</td>
+      <td>2681128</td>
+      <td>1250683</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>3</td>
-      <td>185.000000</td>
-      <td>2674848.0</td>
-      <td>1240913.0</td>
+      <td>8773</td>
+      <td>301.748542</td>
+      <td>2681111</td>
+      <td>1250683</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>4</td>
-      <td>228.215231</td>
-      <td>2681771.0</td>
-      <td>1240922.0</td>
+      <td>2764</td>
+      <td>301.748529</td>
+      <td>2681131</td>
+      <td>1250692</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>5</td>
-      <td>257.492053</td>
-      <td>2690119.0</td>
-      <td>1240932.0</td>
+      <td>2513</td>
+      <td>301.748529</td>
+      <td>2681171</td>
+      <td>1250711</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>6</td>
-      <td>17.951638</td>
-      <td>2678477.0</td>
-      <td>1240956.0</td>
+      <td>9185</td>
+      <td>301.748542</td>
+      <td>2681107</td>
+      <td>1250712</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>7</td>
-      <td>287.211395</td>
-      <td>2687505.0</td>
-      <td>1241029.0</td>
+      <td>28521</td>
+      <td>301.748542</td>
+      <td>2681124</td>
+      <td>1250720</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>8</td>
+      <td>26745</td>
       <td>301.748542</td>
-      <td>2681288.0</td>
-      <td>1241081.0</td>
+      <td>2681117</td>
+      <td>1250725</td>
     </tr>
     <tr>
       <th>9</th>
-      <td>9</td>
+      <td>27391</td>
       <td>301.748542</td>
-      <td>2681268.0</td>
-      <td>1241111.0</td>
+      <td>2681138</td>
+      <td>1250725</td>
     </tr>
   </tbody>
 </table>
@@ -457,23 +458,27 @@
 </div>
 <div class="section" id="ubung-1-alle-zeckenstiche-zufallig-verschieben">
 <h2>Übung 1: Alle Zeckenstiche zufällig verschieben<a class="headerlink" href="#ubung-1-alle-zeckenstiche-zufallig-verschieben" title="Permalink to this headline">¶</a></h2>
-<p>Um in <em>DataFrames</em> / <em>GeoDataFrames</em> ganze Spalten oder Zeilen zu verändern, stehen einem die <em>Methods</em> <code class="docutils literal notranslate"><span class="pre">map</span></code>, <code class="docutils literal notranslate"><span class="pre">apply</span></code> und <code class="docutils literal notranslate"><span class="pre">applymap</span></code> zur Verfügung. Es lohnt sich sehr, die verschiedenen Anwendungsbereiche dieser <em>Methods</em> kennen zu lernen, doch das würde den Umfang dieses Kurses überschreiten. Heute brauchen wir lediglich <code class="docutils literal notranslate"><span class="pre">apply</span></code>, welches wir einmal auf die <code class="docutils literal notranslate"><span class="pre">x</span></code>- und einmal auf die <code class="docutils literal notranslate"><span class="pre">y</span></code>-Spalte unserer <em>DataFrame</em> anwenden.
-Um unsere eigene Function <code class="docutils literal notranslate"><span class="pre">offset_coordinate</span></code> auf die Spalten anzuwenden gehst du wie folgt vor: Selektiere die entsprechende Spalte (mit <code class="docutils literal notranslate"><span class="pre">[&quot;spaltenname&quot;]</span></code>) und verwende die Method apply mit der selbst erstellt Function point_offset als einziges Argument, und zwar ohne Klammer.</p>
+<p>Nun können wir die <em>Function</em> <code class="docutils literal notranslate"><span class="pre">offset_coordinate()</span></code> auf die gesamte Spalten <code class="docutils literal notranslate"><span class="pre">x</span></code> und <code class="docutils literal notranslate"><span class="pre">y</span></code> der <em>DataFrame</em> zeckenstiche anwenden. Nutze eckige Klammern um die entsprechende Spalte zu wählen.</p>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Musterlösung</span>
 
-<span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">offset_coordinate</span><span class="p">)</span>
-<span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">offset_coordinate</span><span class="p">)</span>
+<span class="n">offset_coordinate</span><span class="p">(</span><span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">],</span> <span class="n">distance</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">offset_coordinate</span><span class="p">(</span><span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">],</span> <span class="n">distance</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    1.240936e+06
-1    1.240802e+06
-2    1.240812e+06
-3    1.240744e+06
-4    1.240842e+06
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    1.250551e+06
+1    1.250575e+06
+2    1.250586e+06
+3    1.250586e+06
+4    1.250595e+06
+5    1.250614e+06
+6    1.250615e+06
+7    1.250623e+06
+8    1.250628e+06
+9    1.250628e+06
 Name: y, dtype: float64
 </pre></div>
 </div>
@@ -482,15 +487,138 @@ Name: y, dtype: float64
 </div>
 <div class="section" id="ubung-2-neue-geodataframe-mit-simulierten-punkten-erstellen">
 <h2>Übung 2: Neue GeoDataFrame mit simulierten Punkten erstellen<a class="headerlink" href="#ubung-2-neue-geodataframe-mit-simulierten-punkten-erstellen" title="Permalink to this headline">¶</a></h2>
-<p>Was bei <code class="docutils literal notranslate"><span class="pre">apply()</span></code> rauskommt, sind nur die neuen, verschobenen Punkte. Um diese abzuspeichern erstellen wir neue Spalten in <code class="docutils literal notranslate"><span class="pre">zeckenstiche</span></code> namen <code class="docutils literal notranslate"><span class="pre">x_sim</span></code>/<code class="docutils literal notranslate"><span class="pre">y_sim</span></code>:</p>
+<p>Um die neuen, verschobenen Koordianten abzuspeichern erstellen wir zuerst eine neue, leere DataFrame (z.B. <code class="docutils literal notranslate"><span class="pre">zeckenstiche_sim</span></code>) und fügen den Output als neue Spalten dieser <em>DataFrame</em> hinzu. Auch die “ID” könnt ihr als neue Spalte hinzufügen, so behalten wir den Bezug zum ursprünglichen Datensatz.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Musterlösung</span>
 
-<span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;x_sim&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">offset_coordinate</span><span class="p">)</span>
-<span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;y_sim&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">offset_coordinate</span><span class="p">)</span>
+<span class="n">zeckenstiche_sim</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
 
-<span class="n">zeckenstiche</span>
+<span class="n">zeckenstiche_sim</span><span class="p">[</span><span class="s2">&quot;ID&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;ID&quot;</span><span class="p">]</span>
+
+<span class="n">zeckenstiche_sim</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">offset_coordinate</span><span class="p">(</span><span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">],</span> <span class="n">distance</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">zeckenstiche_sim</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">offset_coordinate</span><span class="p">(</span><span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">],</span> <span class="n">distance</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">zeckenstiche_sim</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ID</th>
+      <th>x</th>
+      <th>y</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2550</td>
+      <td>2.681235e+06</td>
+      <td>2.681127e+06</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>10437</td>
+      <td>2.681211e+06</td>
+      <td>2.681103e+06</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>9174</td>
+      <td>2.681247e+06</td>
+      <td>2.681139e+06</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>8773</td>
+      <td>2.681230e+06</td>
+      <td>2.681122e+06</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2764</td>
+      <td>2.681250e+06</td>
+      <td>2.681142e+06</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2513</td>
+      <td>2.681290e+06</td>
+      <td>2.681182e+06</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>9185</td>
+      <td>2.681226e+06</td>
+      <td>2.681118e+06</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>28521</td>
+      <td>2.681243e+06</td>
+      <td>2.681135e+06</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>26745</td>
+      <td>2.681236e+06</td>
+      <td>2.681128e+06</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>27391</td>
+      <td>2.681257e+06</td>
+      <td>2.681149e+06</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="ubung-4-mehrere-dataframes-visualisieren">
+<h2>Übung 4: Mehrere <em>DataFrames</em> visualisieren<a class="headerlink" href="#ubung-4-mehrere-dataframes-visualisieren" title="Permalink to this headline">¶</a></h2>
+<p>Um zwei <em>DataFrames</em> im gleichen Plot darzustellen, wird folgendermassen vorgegangen. Der erste Datensatz wird mit <code class="docutils literal notranslate"><span class="pre">.plot()</span></code> visualisiert, wobei der Output einer Variabel  (z.B. <code class="docutils literal notranslate"><span class="pre">basemap</span></code>)  zugewiesen wird. Danach wird der zweite Datensatz ebenfalls mit <code class="docutils literal notranslate"><span class="pre">.plot()</span></code> visualisiert, wobei auf den ersten Plot via dem Argument <code class="docutils literal notranslate"><span class="pre">ax</span></code> verwiesen wird.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Musterlösung</span>
+
+<span class="n">basemap</span> <span class="o">=</span> <span class="n">zeckenstiche</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">)</span>
+<span class="n">zeckenstiche_sim</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">basemap</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;x&#39;, ylabel=&#39;y&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/02_05_Punkte_einer_DataFrame_verschieben_8_1.png" src="_images/02_05_Punkte_einer_DataFrame_verschieben_8_1.png" />
+</div>
+</div>
+<p>Bei den roten Punkten handelt es sich um die Original-Zeckenstichen, bei den blauen um die simulierten (leicht verschobnen) Zeckenstiche.</p>
+</div>
+<div class="section" id="ubung-5-genauigkeitsangaben-der-punkte-mitberucksichtigen">
+<h2>Übung 5: Genauigkeitsangaben der Punkte mitberücksichtigen.<a class="headerlink" href="#ubung-5-genauigkeitsangaben-der-punkte-mitberucksichtigen" title="Permalink to this headline">¶</a></h2>
+<p>Bisher haben wir alle Punkte um die gleiche Distanz verschoben. Wenn wir unsere <em>DataFrame</em> “zeckensiche” genau anschauen, steht uns eine Genauigkeitsangabe pro Punkt zur Verfügung: Die Spalte “accuracy”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeckenstiche</span>
 </pre></div>
 </div>
 </div>
@@ -517,126 +645,182 @@ Name: y, dtype: float64
       <th>accuracy</th>
       <th>x</th>
       <th>y</th>
-      <th>x_sim</th>
-      <th>y_sim</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>0</td>
-      <td>65.617154</td>
-      <td>2678971.0</td>
-      <td>1240824.0</td>
-      <td>2.678872e+06</td>
-      <td>1.241000e+06</td>
+      <td>2550</td>
+      <td>439.128951</td>
+      <td>2681116</td>
+      <td>1250648</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>1</td>
-      <td>257.492052</td>
-      <td>2679837.0</td>
-      <td>1240858.0</td>
-      <td>2.679613e+06</td>
-      <td>1.240965e+06</td>
+      <td>10437</td>
+      <td>301.748542</td>
+      <td>2681092</td>
+      <td>1250672</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>2</td>
-      <td>163.533834</td>
-      <td>2687539.0</td>
-      <td>1240881.0</td>
-      <td>2.687497e+06</td>
-      <td>1.241049e+06</td>
+      <td>9174</td>
+      <td>301.748542</td>
+      <td>2681128</td>
+      <td>1250683</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>3</td>
-      <td>185.000000</td>
-      <td>2674848.0</td>
-      <td>1240913.0</td>
-      <td>2.674818e+06</td>
-      <td>1.240775e+06</td>
+      <td>8773</td>
+      <td>301.748542</td>
+      <td>2681111</td>
+      <td>1250683</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>4</td>
-      <td>228.215231</td>
-      <td>2681771.0</td>
-      <td>1240922.0</td>
-      <td>2.681765e+06</td>
-      <td>1.240570e+06</td>
+      <td>2764</td>
+      <td>301.748529</td>
+      <td>2681131</td>
+      <td>1250692</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>5</td>
-      <td>257.492053</td>
-      <td>2690119.0</td>
-      <td>1240932.0</td>
-      <td>2.690078e+06</td>
-      <td>1.240843e+06</td>
+      <td>2513</td>
+      <td>301.748529</td>
+      <td>2681171</td>
+      <td>1250711</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>6</td>
-      <td>17.951638</td>
-      <td>2678477.0</td>
-      <td>1240956.0</td>
-      <td>2.678440e+06</td>
-      <td>1.241082e+06</td>
+      <td>9185</td>
+      <td>301.748542</td>
+      <td>2681107</td>
+      <td>1250712</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>7</td>
-      <td>287.211395</td>
-      <td>2687505.0</td>
-      <td>1241029.0</td>
-      <td>2.687479e+06</td>
-      <td>1.241010e+06</td>
+      <td>28521</td>
+      <td>301.748542</td>
+      <td>2681124</td>
+      <td>1250720</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>8</td>
+      <td>26745</td>
       <td>301.748542</td>
-      <td>2681288.0</td>
-      <td>1241081.0</td>
-      <td>2.681338e+06</td>
-      <td>1.241135e+06</td>
+      <td>2681117</td>
+      <td>1250725</td>
     </tr>
     <tr>
       <th>9</th>
-      <td>9</td>
+      <td>27391</td>
       <td>301.748542</td>
-      <td>2681268.0</td>
-      <td>1241111.0</td>
-      <td>2.681112e+06</td>
-      <td>1.241050e+06</td>
+      <td>2681138</td>
+      <td>1250725</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="ubung-4-mehrere-dataframes-visualisieren">
-<h2>Übung 4: Mehrere <em>DataFrames</em> visualisieren<a class="headerlink" href="#ubung-4-mehrere-dataframes-visualisieren" title="Permalink to this headline">¶</a></h2>
-<p>Um zwei <em>DataFrames</em> im gleichen Plot darzustellen, wird folgendermassen vorgegangen. Der erste Datensatz wird mit <code class="docutils literal notranslate"><span class="pre">.plot()</span></code> visualisiert, wobei der Output einer Variabel  (z.B. <code class="docutils literal notranslate"><span class="pre">basemap</span></code>)  zugewiesen wird. Danach wird der zweite Datensatz ebenfalls mit <code class="docutils literal notranslate"><span class="pre">.plot()</span></code> visualisiert, wobei auf den ersten Plot via dem Argument <code class="docutils literal notranslate"><span class="pre">ax</span></code> verwiesen wird.</p>
-<div class="cell tag_hide-input docutils container">
+<p>Diese Spalte sagt was darüber aus, wie sicher der/die Nutzer*in bei der Standortsangabe war. Wir können diese Angabe auch nutzen um den offset <em>pro Punkt</em> festzulegen.</p>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline # Könnt ihr ignorieren
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeckenstiche_sim</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">offset_coordinate</span><span class="p">(</span><span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">],</span> <span class="n">distance</span> <span class="o">=</span> <span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;accuracy&quot;</span><span class="p">])</span>
 
-<span class="c1"># Musterlösung</span>
+<span class="n">zeckenstiche_sim</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">offset_coordinate</span><span class="p">(</span><span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">],</span> <span class="n">distance</span> <span class="o">=</span> <span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;accuracy&quot;</span><span class="p">])</span>
 
-<span class="n">basemap</span> <span class="o">=</span> <span class="n">zeckenstiche</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">)</span>
-<span class="n">zeckenstiche</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s2">&quot;x_sim&quot;</span><span class="p">,</span> <span class="s2">&quot;y_sim&quot;</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">basemap</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+<span class="n">zeckenstiche_sim</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;x_sim&#39;, ylabel=&#39;y_sim&#39;&gt;
-</pre></div>
-</div>
-<img alt="_images/02_05_Punkte_einer_DataFrame_verschieben_7_1.png" src="_images/02_05_Punkte_einer_DataFrame_verschieben_7_1.png" />
-</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ID</th>
+      <th>x</th>
+      <th>y</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2550</td>
+      <td>2.681189e+06</td>
+      <td>1.250518e+06</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>10437</td>
+      <td>2.681142e+06</td>
+      <td>1.250582e+06</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>9174</td>
+      <td>2.681178e+06</td>
+      <td>1.250593e+06</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>8773</td>
+      <td>2.681161e+06</td>
+      <td>1.250593e+06</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2764</td>
+      <td>2.681181e+06</td>
+      <td>1.250602e+06</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2513</td>
+      <td>2.681221e+06</td>
+      <td>1.250621e+06</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>9185</td>
+      <td>2.681157e+06</td>
+      <td>1.250622e+06</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>28521</td>
+      <td>2.681174e+06</td>
+      <td>1.250630e+06</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>26745</td>
+      <td>2.681167e+06</td>
+      <td>1.250635e+06</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>27391</td>
+      <td>2.681188e+06</td>
+      <td>1.250635e+06</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </div>
 </div>
