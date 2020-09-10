@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Input: Primitive Datentypen &#8212; Coding in GIS</title>
+    <title>Primitive Datentypen &#8212; Coding in GIS</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -36,7 +36,7 @@
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Input: Zusammengesetzte Datentypen" href="01_03_Zusammengesetzte_Datentypen.html" />
+    <link rel="next" title="Zusammengesetzte Datentypen" href="01_03_Zusammengesetzte_Datentypen.html" />
     <link rel="prev" title="Einleitung zu diesem Block" href="01_01_Einleitung.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -90,32 +90,22 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Input: Primitive Datentypen
+   Primitive Datentypen
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_03_Zusammengesetzte_Datentypen.html">
-   Input: Zusammengesetzte Datentypen
+   Zusammengesetzte Datentypen
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="01_04_Aufgabe_A.html">
-   Übung: Lists
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="01_05_Aufgabe_B.html">
-   Übung: Dictionaries
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="01_05_Python_Module.html">
-   Input: Python Modules
+  <a class="reference internal" href="01_05_Fokus_Dictionaries.html">
+   Dictionaries
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_06_Tabellarische_Daten.html">
-   Übung: Tabellarische Daten
+   Tabellarische Daten
   </a>
  </li>
 </ul>
@@ -131,8 +121,12 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02_02_Input_Functions.html">
-   Input:
+  <a class="reference internal" href="02_01b_Python_Module.html">
+   Input: Python Modules
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02_02_Functions_I.html">
    <em>
     Function
    </em>
@@ -140,16 +134,7 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02_03_Functions.html">
-   Übung:
-   <em>
-    Functions
-   </em>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="02_03b_Input_Functions_II.html">
-   Input:
+  <a class="reference internal" href="02_03_Functions_II.html">
    <em>
     Function
    </em>
@@ -158,7 +143,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02_04_Einzelpunkt_Verschieben.html">
-   Übung: Einen Einzelpunkt zufällig verschieben
+   Einen Einzelpunkt zufällig verschieben
   </a>
  </li>
  <li class="toctree-l1">
@@ -315,8 +300,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#weitere-datentypen">
-   Weitere Datentypen
+  <a class="reference internal nav-link" href="#ubung-variablen-erstellen">
+   Übung: Variablen erstellen
   </a>
  </li>
 </ul>
@@ -329,15 +314,35 @@
         
               <div>
                 
-  <div class="section" id="input-primitive-datentypen">
-<h1>Input: Primitive Datentypen<a class="headerlink" href="#input-primitive-datentypen" title="Permalink to this headline">¶</a></h1>
-<p>Bei primitiven Datentypen handelt es sich um die einfachste Datenstruktur. Sie werden deshalb auch “atomare Datentypen” genannt: Alle komplexeren Datentypen (Tabellarische Daten, Bilder, Geodaten) basieren auf diesen einfachen Strukturen.</p>
+  <div class="section" id="primitive-datentypen">
+<h1>Primitive Datentypen<a class="headerlink" href="#primitive-datentypen" title="Permalink to this headline">¶</a></h1>
+<p>Bei primitiven Datentypen handelt es sich um die kleinste Einheit der Programmiersprache, sie werden deshalb auch “atomare Datentypen” genannt. Alle komplexeren Datentypen (Tabellarische Daten, Bilder, Geodaten) basieren auf diesen einfachen Strukturen. Die für uns wichtigsten Datentypen lauten: <em>Boolean</em>, <em>String</em>, <em>Integer</em> und <em>Float</em>.</p>
 <div class="tip admonition">
 <p class="admonition-title">Für R Nutzer</p>
 <ul class="simple">
-<li><p>In R gibt es die gleichen Primitiven Datentypen wie in Python: Boolean, String, Integer, Float. Die Bezeichnung ist jedoch leicht anders (Logical, Character, Integer, Numeric, Double)</p></li>
-<li><p>In R können Variablen genau gleich zugewiesen werden wie in Python (mit dem <code class="docutils literal notranslate"><span class="pre">=</span></code> Symbol). In R gibt es zudem noch die Möglichkeit, Variablen mit <code class="docutils literal notranslate"><span class="pre">&lt;-</span></code> zu zuweisen, in Python jedoch nicht</p></li>
+<li><p>In R gibt es die gleichen Primitiven Datentypen wie in Python:</p></li>
 </ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Python</p></th>
+<th class="head"><p>R</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Boolean</p></td>
+<td><p>Logical</p></td>
+</tr>
+<tr class="row-odd"><td><p>String</p></td>
+<td><p>Character</p></td>
+</tr>
+<tr class="row-even"><td><p>Integer</p></td>
+<td><p>Integer</p></td>
+</tr>
+<tr class="row-odd"><td><p>Float</p></td>
+<td><p>Double</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="section" id="boolean">
 <h2>Boolean<a class="headerlink" href="#boolean" title="Permalink to this headline">¶</a></h2>
@@ -447,9 +452,39 @@
 </div>
 </div>
 </div>
-<div class="section" id="weitere-datentypen">
-<h2>Weitere Datentypen<a class="headerlink" href="#weitere-datentypen" title="Permalink to this headline">¶</a></h2>
-<p>Es gibt noch weitere Datentypen, auf die wir an dieser Stelle jedoch nicht eingehen.</p>
+<div class="section" id="ubung-variablen-erstellen">
+<h2>Übung: Variablen erstellen<a class="headerlink" href="#ubung-variablen-erstellen" title="Permalink to this headline">¶</a></h2>
+<p>Führe die folgenden Schritte aus und schau dir nach jedem Schritt die erstellten Variablen jeweils im im Variable explorer von Jupyter an</p>
+<ol class="simple">
+<li><p>Erstelle eine Variabel <code class="docutils literal notranslate"><span class="pre">vorname</span></code> mit deinem Vornamen</p></li>
+<li><p>Erstelle eine zweite Variabel <code class="docutils literal notranslate"><span class="pre">nachname</span></code> mit deinem Nachnamen</p></li>
+<li><p>Was sind <code class="docutils literal notranslate"><span class="pre">vorname</span></code> und <code class="docutils literal notranslate"><span class="pre">nachnam</span></code>e für Datentypen?</p></li>
+<li><p>Klebe die beiden Variabeln zusammen, ohne den Output zu speichern</p></li>
+<li><p>Erstelle eine Variabel <code class="docutils literal notranslate"><span class="pre">groesse</span></code> mit deiner Körpergrösse in Zentimeter. Was ist das für ein Datentyp?</p></li>
+<li><p>Ermittle deine Grösse in Meter auf der Basis von <code class="docutils literal notranslate"><span class="pre">groesse</span></code>. Was ist das für ein Datentyp?</p></li>
+<li><p>Erstelle eine boolsche Variable blond und setzte sie auf <code class="docutils literal notranslate"><span class="pre">True</span></code> wenn diese Eigenschaft auf dich zutrifft und <code class="docutils literal notranslate"><span class="pre">False</span></code> falls nicht.</p></li>
+</ol>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Musterlösung</span>
+
+<span class="n">vorname</span> <span class="o">=</span> <span class="s2">&quot;Guido&quot;</span>
+<span class="n">nachname</span> <span class="o">=</span> <span class="s2">&quot;van Rossum&quot;</span>
+
+<span class="nb">type</span><span class="p">(</span><span class="n">vorname</span><span class="p">)</span> <span class="c1"># es handelt sich um den Datentyp &quot;str&quot;, also String (Text)</span>
+<span class="n">vorname</span><span class="o">+</span><span class="n">nachname</span>
+
+<span class="n">groesse</span> <span class="o">=</span> <span class="mi">184</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">groesse</span><span class="p">)</span> <span class="c1"># es handelt sich hierbei um den Datentyp &quot;integer&quot;</span>
+
+<span class="n">groesse_meter</span> <span class="o">=</span> <span class="n">groesse</span><span class="o">/</span><span class="mi">100</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">groesse_meter</span><span class="p">)</span> <span class="c1"># es handelt sich um den Datentyp &quot;float&quot;</span>
+
+<span class="n">blond</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 
@@ -482,7 +517,7 @@
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="01_01_Einleitung.html" title="previous page">Einleitung zu diesem Block</a>
-    <a class='right-next' id="next-link" href="01_03_Zusammengesetzte_Datentypen.html" title="next page">Input: Zusammengesetzte Datentypen</a>
+    <a class='right-next' id="next-link" href="01_03_Zusammengesetzte_Datentypen.html" title="next page">Zusammengesetzte Datentypen</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

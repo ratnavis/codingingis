@@ -90,32 +90,22 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_02_Primitive_Datentypen.html">
-   Input: Primitive Datentypen
+   Primitive Datentypen
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_03_Zusammengesetzte_Datentypen.html">
-   Input: Zusammengesetzte Datentypen
+   Zusammengesetzte Datentypen
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="01_04_Aufgabe_A.html">
-   Übung: Lists
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="01_05_Aufgabe_B.html">
-   Übung: Dictionaries
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="01_05_Python_Module.html">
-   Input: Python Modules
+  <a class="reference internal" href="01_05_Fokus_Dictionaries.html">
+   Dictionaries
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_06_Tabellarische_Daten.html">
-   Übung: Tabellarische Daten
+   Tabellarische Daten
   </a>
  </li>
 </ul>
@@ -131,8 +121,12 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02_02_Input_Functions.html">
-   Input:
+  <a class="reference internal" href="02_01b_Python_Module.html">
+   Input: Python Modules
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02_02_Functions_I.html">
    <em>
     Function
    </em>
@@ -140,16 +134,7 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02_03_Functions.html">
-   Übung:
-   <em>
-    Functions
-   </em>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="02_03b_Input_Functions_II.html">
-   Input:
+  <a class="reference internal" href="02_03_Functions_II.html">
    <em>
     Function
    </em>
@@ -158,7 +143,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02_04_Einzelpunkt_Verschieben.html">
-   Übung: Einen Einzelpunkt zufällig verschieben
+   Einen Einzelpunkt zufällig verschieben
   </a>
  </li>
  <li class="toctree-l1">
@@ -304,6 +289,16 @@
                 
   <div class="section" id="einleitung-zu-diesem-block">
 <h1>Einleitung zu diesem Block<a class="headerlink" href="#einleitung-zu-diesem-block" title="Permalink to this headline">¶</a></h1>
+<p>Heute wollen wir uns weiter mit den Zeckenstichdaten befassen. Wir werden im Wesentlichen ein Teil der Übung aus “Datenqualität und Unsicherheit” in Python rekonstruieren.</p>
+<p>In der Übung geht es um folgendes: Wir wissen das die Lagegenauigkeit der Zeckenstichmeldungen mit einer gewissen Unsicherheit behaftet sind. Um die Frage “Welcher Anteil der der Zeckenstiche befinden sich im Wald?” unter Berücksichtigung dieser Unsicherheit beantworten zu können, führen wir eine (Monte Carlo) Simulation durch.
+In dieser Simulation verändern wir die Position der Zeckenstichmeldungen zufällig und berechnen den Anteil der Zeckenstiche im Wald. Das zufällige Verschieben und berechnen wiederholen wir beliebig lange und bekommen für jede Wiederholung einen leicht unterschiedlichen Prozentwert. Die Verteilung dieser Prozentwerte ist die Antwort auf die ursprüngliche Frage (“Welcher Anteil…”) unter Berücksichtigung der Unsicherheit.</p>
+<p>Um eine solche, etwas komplexere Aufgabe lösen zu können müssen wir sie in einfachere Einzelschritte aufteilen. Diese bearbeiten wir in dieser und der kommenden Woche:</p>
+<ul class="simple">
+<li><p>Schritt 1: Einen Einzelpunkt zufällig verschieben</p></li>
+<li><p>Schritt 2: Alle Punkte einer DataFrame zufällig verschieben (1 “Run”)</p></li>
+<li><p>Schritt 3: Alle Punkte einer DataFrame mehrfach zufällig verschieben (z.B. 50 “Runs”)</p></li>
+<li><p>Schritt 4: Anteil der Punkte im Wald pro “Run” ermitteln</p></li>
+</ul>
 <div class="attention admonition">
 <p class="admonition-title">Übungsziele</p>
 <ul class="simple">

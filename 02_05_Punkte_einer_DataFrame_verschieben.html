@@ -37,7 +37,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Einleitung zu diesem Block" href="03_01_Einleitung.html" />
-    <link rel="prev" title="Übung: Einen Einzelpunkt zufällig verschieben" href="02_04_Einzelpunkt_Verschieben.html" />
+    <link rel="prev" title="Einen Einzelpunkt zufällig verschieben" href="02_04_Einzelpunkt_Verschieben.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -90,32 +90,22 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_02_Primitive_Datentypen.html">
-   Input: Primitive Datentypen
+   Primitive Datentypen
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_03_Zusammengesetzte_Datentypen.html">
-   Input: Zusammengesetzte Datentypen
+   Zusammengesetzte Datentypen
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="01_04_Aufgabe_A.html">
-   Übung: Lists
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="01_05_Aufgabe_B.html">
-   Übung: Dictionaries
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="01_05_Python_Module.html">
-   Input: Python Modules
+  <a class="reference internal" href="01_05_Fokus_Dictionaries.html">
+   Dictionaries
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_06_Tabellarische_Daten.html">
-   Übung: Tabellarische Daten
+   Tabellarische Daten
   </a>
  </li>
 </ul>
@@ -131,8 +121,12 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02_02_Input_Functions.html">
-   Input:
+  <a class="reference internal" href="02_01b_Python_Module.html">
+   Input: Python Modules
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02_02_Functions_I.html">
    <em>
     Function
    </em>
@@ -140,16 +134,7 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02_03_Functions.html">
-   Übung:
-   <em>
-    Functions
-   </em>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="02_03b_Input_Functions_II.html">
-   Input:
+  <a class="reference internal" href="02_03_Functions_II.html">
    <em>
     Function
    </em>
@@ -158,7 +143,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02_04_Einzelpunkt_Verschieben.html">
-   Übung: Einen Einzelpunkt zufällig verschieben
+   Einen Einzelpunkt zufällig verschieben
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -330,14 +315,7 @@
                 
   <div class="section" id="ubung-punkte-einer-dataframe-zufallig-verschieben">
 <h1>Übung Punkte einer <em>DataFrame</em> zufällig verschieben<a class="headerlink" href="#ubung-punkte-einer-dataframe-zufallig-verschieben" title="Permalink to this headline">¶</a></h1>
-<p>Jetzt wo wir wissen, wie man einen einzelnen Punkt zufällig verschiebt können wir unsere <em>Function</em> auf die richtigen Daten, die Zeckenstiche, anwenden. Die ist Schritt 2 in unserem Schema:</p>
-<ul class="simple">
-<li><p>Schritt 1: Einen Einzelpunkt zufällig verschieben ✓</p></li>
-<li><p><strong>Schritt 2: Alle Punkte einer DataFrame zufällig verschieben (1 “Run”)</strong></p></li>
-<li><p>Schritt 3: Alle Punkte einer DataFrame mehrfach zufällig verschieben (z.B. 50 “Runs”)</p></li>
-<li><p>Schritt 4: Anteil der Punkte im Wald pro “Run” ermitteln</p></li>
-</ul>
-<p>Lade hierzu die nötigen Module und importiere die Zeckenstichdaten</p>
+<p>Nun wollen wir usere Function <code class="docutils literal notranslate"><span class="pre">offset_coordinate()</span></code> auf alle Zeckenstich-Koordinaten anwenden. Lade hierzu den Zeckenstich-Datensatz ein.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -348,7 +326,7 @@
     <span class="k">return</span> <span class="n">new</span>
 
 <span class="c1"># mit &quot;head(10)&quot; importiere ich nur die ersten 10 Einträge des CSV. So kann ich den Workflow erstmal an einem kleineren Datensatz testen.</span>
-<span class="n">zeckenstiche</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;zeckenstiche.csv&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">zeckenstiche</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;zeckenstiche.csv&quot;</span><span class="p">)</span>
 
 
 <span class="n">zeckenstiche</span>
@@ -468,16 +446,16 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    1.250397e+06
-1    1.250421e+06
-2    1.250432e+06
-3    1.250432e+06
-4    1.250441e+06
-5    1.250460e+06
-6    1.250461e+06
-7    1.250469e+06
-8    1.250474e+06
-9    1.250474e+06
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    1.250862e+06
+1    1.250886e+06
+2    1.250897e+06
+3    1.250897e+06
+4    1.250906e+06
+5    1.250925e+06
+6    1.250926e+06
+7    1.250934e+06
+8    1.250939e+06
+9    1.250939e+06
 Name: y, dtype: float64
 </pre></div>
 </div>
@@ -529,62 +507,62 @@ Name: y, dtype: float64
     <tr>
       <th>0</th>
       <td>2550</td>
-      <td>2.681417e+06</td>
-      <td>2.681069e+06</td>
+      <td>2.681164e+06</td>
+      <td>2.681319e+06</td>
     </tr>
     <tr>
       <th>1</th>
       <td>10437</td>
-      <td>2.681393e+06</td>
-      <td>2.681045e+06</td>
+      <td>2.681140e+06</td>
+      <td>2.681295e+06</td>
     </tr>
     <tr>
       <th>2</th>
       <td>9174</td>
-      <td>2.681429e+06</td>
-      <td>2.681081e+06</td>
+      <td>2.681176e+06</td>
+      <td>2.681331e+06</td>
     </tr>
     <tr>
       <th>3</th>
       <td>8773</td>
-      <td>2.681412e+06</td>
-      <td>2.681064e+06</td>
+      <td>2.681159e+06</td>
+      <td>2.681314e+06</td>
     </tr>
     <tr>
       <th>4</th>
       <td>2764</td>
-      <td>2.681432e+06</td>
-      <td>2.681084e+06</td>
+      <td>2.681179e+06</td>
+      <td>2.681334e+06</td>
     </tr>
     <tr>
       <th>5</th>
       <td>2513</td>
-      <td>2.681472e+06</td>
-      <td>2.681124e+06</td>
+      <td>2.681219e+06</td>
+      <td>2.681374e+06</td>
     </tr>
     <tr>
       <th>6</th>
       <td>9185</td>
-      <td>2.681408e+06</td>
-      <td>2.681060e+06</td>
+      <td>2.681155e+06</td>
+      <td>2.681310e+06</td>
     </tr>
     <tr>
       <th>7</th>
       <td>28521</td>
-      <td>2.681425e+06</td>
-      <td>2.681077e+06</td>
+      <td>2.681172e+06</td>
+      <td>2.681327e+06</td>
     </tr>
     <tr>
       <th>8</th>
       <td>26745</td>
-      <td>2.681418e+06</td>
-      <td>2.681070e+06</td>
+      <td>2.681165e+06</td>
+      <td>2.681320e+06</td>
     </tr>
     <tr>
       <th>9</th>
       <td>27391</td>
-      <td>2.681439e+06</td>
-      <td>2.681091e+06</td>
+      <td>2.681186e+06</td>
+      <td>2.681341e+06</td>
     </tr>
   </tbody>
 </table>
@@ -760,62 +738,62 @@ Name: y, dtype: float64
     <tr>
       <th>0</th>
       <td>2550</td>
-      <td>2.682134e+06</td>
-      <td>1.250830e+06</td>
+      <td>2.681418e+06</td>
+      <td>1.250369e+06</td>
     </tr>
     <tr>
       <th>1</th>
       <td>10437</td>
-      <td>2.681791e+06</td>
-      <td>1.250797e+06</td>
+      <td>2.681299e+06</td>
+      <td>1.250480e+06</td>
     </tr>
     <tr>
       <th>2</th>
       <td>9174</td>
-      <td>2.681827e+06</td>
-      <td>1.250808e+06</td>
+      <td>2.681335e+06</td>
+      <td>1.250491e+06</td>
     </tr>
     <tr>
       <th>3</th>
       <td>8773</td>
-      <td>2.681810e+06</td>
-      <td>1.250808e+06</td>
+      <td>2.681318e+06</td>
+      <td>1.250491e+06</td>
     </tr>
     <tr>
       <th>4</th>
       <td>2764</td>
-      <td>2.681830e+06</td>
-      <td>1.250817e+06</td>
+      <td>2.681338e+06</td>
+      <td>1.250500e+06</td>
     </tr>
     <tr>
       <th>5</th>
       <td>2513</td>
-      <td>2.681870e+06</td>
-      <td>1.250836e+06</td>
+      <td>2.681378e+06</td>
+      <td>1.250519e+06</td>
     </tr>
     <tr>
       <th>6</th>
       <td>9185</td>
-      <td>2.681806e+06</td>
-      <td>1.250837e+06</td>
+      <td>2.681314e+06</td>
+      <td>1.250520e+06</td>
     </tr>
     <tr>
       <th>7</th>
       <td>28521</td>
-      <td>2.681823e+06</td>
-      <td>1.250845e+06</td>
+      <td>2.681331e+06</td>
+      <td>1.250528e+06</td>
     </tr>
     <tr>
       <th>8</th>
       <td>26745</td>
-      <td>2.681816e+06</td>
-      <td>1.250850e+06</td>
+      <td>2.681324e+06</td>
+      <td>1.250533e+06</td>
     </tr>
     <tr>
       <th>9</th>
       <td>27391</td>
-      <td>2.681837e+06</td>
-      <td>1.250850e+06</td>
+      <td>2.681345e+06</td>
+      <td>1.250533e+06</td>
     </tr>
   </tbody>
 </table>
@@ -852,7 +830,7 @@ Name: y, dtype: float64
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="02_04_Einzelpunkt_Verschieben.html" title="previous page">Übung: Einen Einzelpunkt zufällig verschieben</a>
+    <a class='left-prev' id="prev-link" href="02_04_Einzelpunkt_Verschieben.html" title="previous page">Einen Einzelpunkt zufällig verschieben</a>
     <a class='right-next' id="next-link" href="03_01_Einleitung.html" title="next page">Einleitung zu diesem Block</a>
 
     </div>

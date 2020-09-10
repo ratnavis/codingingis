@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Übung: Dictionaries &#8212; Coding in GIS</title>
+    <title>Dictionaries &#8212; Coding in GIS</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -36,8 +36,8 @@
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Input: Python Modules" href="01_05_Python_Module.html" />
-    <link rel="prev" title="Übung: Lists" href="01_04_Aufgabe_A.html" />
+    <link rel="next" title="Tabellarische Daten" href="01_06_Tabellarische_Daten.html" />
+    <link rel="prev" title="Zusammengesetzte Datentypen" href="01_03_Zusammengesetzte_Datentypen.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -90,32 +90,22 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_02_Primitive_Datentypen.html">
-   Input: Primitive Datentypen
+   Primitive Datentypen
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_03_Zusammengesetzte_Datentypen.html">
-   Input: Zusammengesetzte Datentypen
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="01_04_Aufgabe_A.html">
-   Übung: Lists
+   Zusammengesetzte Datentypen
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Übung: Dictionaries
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="01_05_Python_Module.html">
-   Input: Python Modules
+   Dictionaries
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_06_Tabellarische_Daten.html">
-   Übung: Tabellarische Daten
+   Tabellarische Daten
   </a>
  </li>
 </ul>
@@ -131,8 +121,12 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02_02_Input_Functions.html">
-   Input:
+  <a class="reference internal" href="02_01b_Python_Module.html">
+   Input: Python Modules
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02_02_Functions_I.html">
    <em>
     Function
    </em>
@@ -140,16 +134,7 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02_03_Functions.html">
-   Übung:
-   <em>
-    Functions
-   </em>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="02_03b_Input_Functions_II.html">
-   Input:
+  <a class="reference internal" href="02_03_Functions_II.html">
    <em>
     Function
    </em>
@@ -158,7 +143,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02_04_Einzelpunkt_Verschieben.html">
-   Übung: Einen Einzelpunkt zufällig verschieben
+   Einen Einzelpunkt zufällig verschieben
   </a>
  </li>
  <li class="toctree-l1">
@@ -249,7 +234,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/01_05_Aufgabe_B.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/01_05_Fokus_Dictionaries.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -274,7 +259,7 @@
     <div class="dropdown-buttons">
         
         
-        <a class="jupyterhub-button" href="https://jupyterhub01.zhaw.ch/hub/user-redirect/git-pull?repo=https://github.com/ratnanil/codingingis&urlpath=lab/tree/codingingis/01_05_Aufgabe_B.ipynb&branch=master"><button type="button"
+        <a class="jupyterhub-button" href="https://jupyterhub01.zhaw.ch/hub/user-redirect/git-pull?repo=https://github.com/ratnanil/codingingis&urlpath=lab/tree/codingingis/01_05_Fokus_Dictionaries.ipynb&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="_static/images/logo_jupyterhub.svg"
@@ -295,8 +280,8 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ubung-1-dictionary">
-   Übung 1: Dictionary
+  <a class="reference internal nav-link" href="#ubung-1-dictionary-erstellen">
+   Übung 1: Dictionary erstellen
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -310,18 +295,20 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#input">
-   Input
+  <a class="reference internal nav-link" href="#ubung-4-mehrere-values-pro-key">
+   Übung 4: Mehrere
+   <em>
+    Values
+   </em>
+   pro
+   <em>
+    Key
+   </em>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ubung-4-dictionary-mit-list">
-   Übung 4: Dictionary mit List
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ubung-5-functions">
-   Übung 5: Functions
+  <a class="reference internal nav-link" href="#ubung-5-dictionary-mit-list">
+   Übung 5: Dictionary mit List
   </a>
  </li>
 </ul>
@@ -334,8 +321,9 @@
         
               <div>
                 
-  <div class="section" id="ubung-dictionaries">
-<h1>Übung: Dictionaries<a class="headerlink" href="#ubung-dictionaries" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="dictionaries">
+<h1>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this headline">¶</a></h1>
+<p>In den letzten Übungen haben wir die wichtigsten Datentypen kennengelernt. Nun wollen wir ein besonderen Fokus auf den Datentyp <em>Dictionary</em> legen.</p>
 <p>Ähnlich wie eine List, ist eine Dictionary ein Behälter wo mehrere Elemente abgespeichert werden können. Wie bei einem Wörterbuch bekommt jedes Element ein “Schlüsselwort”, mit dem man den Eintrag finden kann.
 Unter dem Eintrag “trump” findet man im Langenscheidt Wörterbuch (1977) die Erklärung “erdichten, schwindeln, sich aus den Fingern saugen”.</p>
 <p><img alt="" src="_images/trump.jpg" /></p>
@@ -373,8 +361,8 @@ Unter dem Eintrag “trump” findet man im Langenscheidt Wörterbuch (1977) die
 <p class="admonition-title">Für R Nutzer</p>
 <p>Eine Python <em>Dictionary</em> entspricht einer R <em>List</em>. Diese werden in R nicht gleich erstellt, dafür aber auf die gleiche weise abgefragt wie <em>Dictionaries</em> in Python</p>
 </div>
-<div class="section" id="ubung-1-dictionary">
-<h2>Übung 1: Dictionary<a class="headerlink" href="#ubung-1-dictionary" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="ubung-1-dictionary-erstellen">
+<h2>Übung 1: Dictionary erstellen<a class="headerlink" href="#ubung-1-dictionary-erstellen" title="Permalink to this headline">¶</a></h2>
 <p>Erstelle eine <em>Dictionary</em> mit folgenden Einträgen: Vorname und Nachname von (d)einer Person. Weise diese Dictionary der Variable <code class="docutils literal notranslate"><span class="pre">me</span></code> zu.</p>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
@@ -425,10 +413,6 @@ Unter dem Eintrag “trump” findet man im Langenscheidt Wörterbuch (1977) die
 </div>
 </div>
 <p>Ergänze gemäss nachstehendem Beispiel die Variable <code class="docutils literal notranslate"><span class="pre">me</span></code> durch den Eintrag <code class="docutils literal notranslate"><span class="pre">groesse</span></code>.</p>
-<div class="tip admonition">
-<p class="admonition-title">Für R Nutzer</p>
-<p>Python <em>Dictionaries</em> werden nicht nur gleich abgerufen wie R <em>Lists</em>, sonder auch gleich ergänzt.</p>
-</div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">me</span><span class="p">[</span><span class="s2">&quot;groesse&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">181</span>
@@ -437,12 +421,15 @@ Unter dem Eintrag “trump” findet man im Langenscheidt Wörterbuch (1977) die
 </div>
 </div>
 </div>
-<div class="section" id="input">
-<h2>Input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="ubung-4-mehrere-values-pro-key">
+<h2>Übung 4: Mehrere <em>Values</em> pro <em>Key</em><a class="headerlink" href="#ubung-4-mehrere-values-pro-key" title="Permalink to this headline">¶</a></h2>
 <p>Ein <em>Key</em> kann auch mehrere Einträge enthalten. An unserem Langenscheidts Beispiel: Das Wort “trump” ist zwar eindeutig, doch “trumpery” hat vier verschiedene Bedeutungen. In so einem Fall können wir einem Eintrag auch eine <em>List</em> von Werten zuweisen. Beachte die Eckigen Klammern und die Kommas, welche die Listeneinträge voneinander trennt.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">langenscheidt</span><span class="p">[</span><span class="s2">&quot;trumpery&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Plunder- Ramsch- Schund&quot;</span><span class="p">,</span> <span class="s2">&quot;Gewäsch- Quatsch&quot;</span><span class="p">,</span> <span class="s2">&quot;Schund- Kitsch&quot;</span><span class="p">,</span> <span class="s2">&quot;billig- nichtssagend&quot;</span><span class="p">]</span>    
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">langenscheidt</span><span class="p">[</span><span class="s2">&quot;trumpery&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Plunder- Ramsch- Schund&quot;</span><span class="p">,</span> 
+                             <span class="s2">&quot;Gewäsch- Quatsch&quot;</span><span class="p">,</span> 
+                             <span class="s2">&quot;Schund- Kitsch&quot;</span><span class="p">,</span> 
+                             <span class="s2">&quot;billig- nichtssagend&quot;</span><span class="p">]</span>    
 <span class="n">langenscheidt</span><span class="p">[</span><span class="s2">&quot;trumpery&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -456,61 +443,9 @@ Unter dem Eintrag “trump” findet man im Langenscheidt Wörterbuch (1977) die
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="ubung-4-dictionary-mit-list">
-<h2>Übung 4: Dictionary mit List<a class="headerlink" href="#ubung-4-dictionary-mit-list" title="Permalink to this headline">¶</a></h2>
-<p>Erstelle eine neue Dictionary mit den gleichen Keys wie <code class="docutils literal notranslate"><span class="pre">me</span></code>, aber diesmal mit mehreren Einträgen pro <em>Key</em> (also mehreren Vornamen, Nachnamen usw.). Beachte, dass nun jeder Eintrag eine <em>List</em> sein muss. Weise diese Dictionary der Variabel <code class="docutils literal notranslate"><span class="pre">people</span></code> zu.</p>
-<div class="cell tag_hide-cell docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">people</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;vornamen&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Christopher&quot;</span><span class="p">,</span> <span class="s2">&quot;Henning&quot;</span><span class="p">,</span> <span class="s2">&quot;Severin&quot;</span><span class="p">],</span> <span class="s2">&quot;nachnamen&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Annen&quot;</span><span class="p">,</span><span class="s2">&quot;May&quot;</span><span class="p">,</span> <span class="s2">&quot;Kantereit&quot;</span><span class="p">],</span> <span class="s2">&quot;groessen&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">174</span><span class="p">,</span> <span class="mi">182</span><span class="p">,</span> <span class="mi">162</span><span class="p">]}</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="ubung-5-functions">
-<h2>Übung 5: Functions<a class="headerlink" href="#ubung-5-functions" title="Permalink to this headline">¶</a></h2>
-<p>Bisher haben wir Objekte erstellt. Richtig interessant wird programmieren aber erst, wenn wir mit Objekte durch Funktionen (<em>Functions</em>) verändern. <em>Functions</em> führen bestimmte Tasks aus. Wende die Functions <code class="docutils literal notranslate"><span class="pre">len()</span></code> und <code class="docutils literal notranslate"><span class="pre">sum()</span></code> an den Listen <code class="docutils literal notranslate"><span class="pre">groessen</span></code> und <code class="docutils literal notranslate"><span class="pre">vornamen</span></code> an.</p>
-<div class="cell tag_hide-cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Musterlösung</span>
-
-<span class="nb">len</span><span class="p">(</span><span class="n">groessen</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mf">2853382417e4</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Musterlösung</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> 
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="nb">len</span><span class="p">(</span><span class="n">groessen</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;groessen&#39; is not defined
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell tag_hide-cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Musterlösung</span>
-
-<span class="nb">sum</span><span class="p">(</span><span class="n">groessen</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>695
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell tag_hide-cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Musterlösung</span>
-
-<span class="nb">len</span><span class="p">(</span><span class="n">vornamen</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">langenscheidt</span><span class="p">[</span><span class="s2">&quot;trumpery&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -520,11 +455,15 @@ Unter dem Eintrag “trump” findet man im Langenscheidt Wörterbuch (1977) die
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="ubung-5-dictionary-mit-list">
+<h2>Übung 5: Dictionary mit List<a class="headerlink" href="#ubung-5-dictionary-mit-list" title="Permalink to this headline">¶</a></h2>
+<p>Erstelle eine neue Dictionary mit den gleichen Keys wie <code class="docutils literal notranslate"><span class="pre">me</span></code>, aber diesmal mit mehreren Einträgen pro <em>Key</em> (also mehreren Vornamen, Nachnamen usw.). Beachte, dass nun jeder Eintrag eine <em>List</em> sein muss. Weise diese Dictionary der Variabel <code class="docutils literal notranslate"><span class="pre">people</span></code> zu.</p>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Musterlösung</span>
 
-<span class="c1"># sum(vornamen)</span>
+<span class="n">people</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;vornamen&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Christopher&quot;</span><span class="p">,</span> <span class="s2">&quot;Henning&quot;</span><span class="p">,</span> <span class="s2">&quot;Severin&quot;</span><span class="p">],</span> <span class="s2">&quot;nachnamen&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Annen&quot;</span><span class="p">,</span><span class="s2">&quot;May&quot;</span><span class="p">,</span> <span class="s2">&quot;Kantereit&quot;</span><span class="p">],</span> <span class="s2">&quot;groessen&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">174</span><span class="p">,</span> <span class="mi">182</span><span class="p">,</span> <span class="mi">162</span><span class="p">]}</span>
 </pre></div>
 </div>
 </div>
@@ -560,8 +499,8 @@ Unter dem Eintrag “trump” findet man im Langenscheidt Wörterbuch (1977) die
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="01_04_Aufgabe_A.html" title="previous page">Übung: Lists</a>
-    <a class='right-next' id="next-link" href="01_05_Python_Module.html" title="next page">Input: Python Modules</a>
+    <a class='left-prev' id="prev-link" href="01_03_Zusammengesetzte_Datentypen.html" title="previous page">Zusammengesetzte Datentypen</a>
+    <a class='right-next' id="next-link" href="01_06_Tabellarische_Daten.html" title="next page">Tabellarische Daten</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

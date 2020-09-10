@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Übung: Tabellarische Daten &#8212; Coding in GIS</title>
+    <title>Tabellarische Daten &#8212; Coding in GIS</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -37,7 +37,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Einleitung zu diesem Block" href="02_01_Einleitung.html" />
-    <link rel="prev" title="Input: Python Modules" href="01_05_Python_Module.html" />
+    <link rel="prev" title="Dictionaries" href="01_05_Fokus_Dictionaries.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -90,32 +90,22 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_02_Primitive_Datentypen.html">
-   Input: Primitive Datentypen
+   Primitive Datentypen
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_03_Zusammengesetzte_Datentypen.html">
-   Input: Zusammengesetzte Datentypen
+   Zusammengesetzte Datentypen
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="01_04_Aufgabe_A.html">
-   Übung: Lists
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="01_05_Aufgabe_B.html">
-   Übung: Dictionaries
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="01_05_Python_Module.html">
-   Input: Python Modules
+  <a class="reference internal" href="01_05_Fokus_Dictionaries.html">
+   Dictionaries
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Übung: Tabellarische Daten
+   Tabellarische Daten
   </a>
  </li>
 </ul>
@@ -131,8 +121,12 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02_02_Input_Functions.html">
-   Input:
+  <a class="reference internal" href="02_01b_Python_Module.html">
+   Input: Python Modules
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02_02_Functions_I.html">
    <em>
     Function
    </em>
@@ -140,16 +134,7 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02_03_Functions.html">
-   Übung:
-   <em>
-    Functions
-   </em>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="02_03b_Input_Functions_II.html">
-   Input:
+  <a class="reference internal" href="02_03_Functions_II.html">
    <em>
     Function
    </em>
@@ -158,7 +143,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02_04_Einzelpunkt_Verschieben.html">
-   Übung: Einen Einzelpunkt zufällig verschieben
+   Einen Einzelpunkt zufällig verschieben
   </a>
  </li>
  <li class="toctree-l1">
@@ -349,13 +334,19 @@
         
               <div>
                 
-  <div class="section" id="ubung-tabellarische-daten">
-<h1>Übung: Tabellarische Daten<a class="headerlink" href="#ubung-tabellarische-daten" title="Permalink to this headline">¶</a></h1>
-<p>Schauen wir uns nochmals die <em>Dictionary</em> <code class="docutils literal notranslate"><span class="pre">people</span></code> an. Diese ist ein Spezialfall einer Dictionary: Jeder Eintrag besteht aus einer Liste von gleich vielen Werten. Wie bereits erwähnt, kann es in einem solchen Fall sinnvoll sein, die Dictionary als Tabelle darzustellen. Dafür brauchen wir das Modul <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, welches wir mit dem Alias <code class="docutils literal notranslate"><span class="pre">pd</span></code> importieren.</p>
+  <div class="section" id="tabellarische-daten">
+<h1>Tabellarische Daten<a class="headerlink" href="#tabellarische-daten" title="Permalink to this headline">¶</a></h1>
+<p>Schauen wir uns nochmals die <em>Dictionary</em> <code class="docutils literal notranslate"><span class="pre">people</span></code> an aus der letzten Übung an. Diese ist ein Spezialfall einer Dictionary: Jeder Eintrag besteht aus einer Liste von gleich vielen Werten. Wie bereits erwähnt, kann es in einem solchen Fall sinnvoll sein, die Dictionary als Tabelle darzustellen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">people</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;vornamen&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Christopher&quot;</span><span class="p">,</span> <span class="s2">&quot;Henning&quot;</span><span class="p">,</span> <span class="s2">&quot;Severin&quot;</span><span class="p">],</span> <span class="s2">&quot;nachnamen&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Annen&quot;</span><span class="p">,</span><span class="s2">&quot;May&quot;</span><span class="p">,</span> <span class="s2">&quot;Kantereit&quot;</span><span class="p">],</span> <span class="s2">&quot;groessen&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">174</span><span class="p">,</span> <span class="mi">182</span><span class="p">,</span> <span class="mi">162</span><span class="p">]}</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="ubung-1-von-einer-dictionary-zu-einer-dataframe">
 <h2>Übung 1: von einer <em>Dictionary</em> zu einer <em>DataFrame</em><a class="headerlink" href="#ubung-1-von-einer-dictionary-zu-einer-dataframe" title="Permalink to this headline">¶</a></h2>
 <p>Wandle die Dictionary <code class="docutils literal notranslate"><span class="pre">people</span></code> in eine DataFrame um: Dazu musst du <code class="docutils literal notranslate"><span class="pre">people</span></code> als Argument der Funktion <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> übergeben: <code class="docutils literal notranslate"><span class="pre">pd.DataFrame(people)</span></code>. Weise den Output der Variable <code class="docutils literal notranslate"><span class="pre">people_df</span></code> zu.</p>
-<p><strong>Für R Nutzer</strong>: Auch in R gibt es <em>Dataframes</em>, diese sind aber in Base R integriert (brauchen deswegen keine Erweiterung wie <code class="docutils literal notranslate"><span class="pre">pandas</span></code>)</p>
 <div class="cell tag_remove-input docutils container">
 </div>
 </div>
@@ -411,7 +402,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2681088.05, 2681174.95, 1250644.15, 1250728.85)
 </pre></div>
 </div>
-<img alt="_images/01_06_Tabellarische_Daten_15_1.png" src="_images/01_06_Tabellarische_Daten_15_1.png" />
+<img alt="_images/01_06_Tabellarische_Daten_14_1.png" src="_images/01_06_Tabellarische_Daten_14_1.png" />
 </div>
 </div>
 </div>
@@ -594,7 +585,7 @@ Name: ID, dtype: int64
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="01_05_Python_Module.html" title="previous page">Input: Python Modules</a>
+    <a class='left-prev' id="prev-link" href="01_05_Fokus_Dictionaries.html" title="previous page">Dictionaries</a>
     <a class='right-next' id="next-link" href="02_01_Einleitung.html" title="next page">Einleitung zu diesem Block</a>
 
     </div>

@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Übung: Functions &#8212; Coding in GIS</title>
+    <title>Function Basics &#8212; Coding in GIS</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -36,8 +36,8 @@
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Input: Function Advanced" href="02_03b_Input_Functions_II.html" />
-    <link rel="prev" title="Input: Function Basics" href="02_02_Input_Functions.html" />
+    <link rel="next" title="Function Advanced" href="02_03_Functions_II.html" />
+    <link rel="prev" title="Input: Python Modules" href="02_01b_Python_Module.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -90,32 +90,22 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_02_Primitive_Datentypen.html">
-   Input: Primitive Datentypen
+   Primitive Datentypen
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_03_Zusammengesetzte_Datentypen.html">
-   Input: Zusammengesetzte Datentypen
+   Zusammengesetzte Datentypen
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="01_04_Aufgabe_A.html">
-   Übung: Lists
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="01_05_Aufgabe_B.html">
-   Übung: Dictionaries
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="01_05_Python_Module.html">
-   Input: Python Modules
+  <a class="reference internal" href="01_05_Fokus_Dictionaries.html">
+   Dictionaries
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_06_Tabellarische_Daten.html">
-   Übung: Tabellarische Daten
+   Tabellarische Daten
   </a>
  </li>
 </ul>
@@ -131,25 +121,20 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02_02_Input_Functions.html">
-   Input:
+  <a class="reference internal" href="02_01b_Python_Module.html">
+   Input: Python Modules
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    <em>
     Function
    </em>
    Basics
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Übung:
-   <em>
-    Functions
-   </em>
-  </a>
- </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02_03b_Input_Functions_II.html">
-   Input:
+  <a class="reference internal" href="02_03_Functions_II.html">
    <em>
     Function
    </em>
@@ -158,7 +143,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02_04_Einzelpunkt_Verschieben.html">
-   Übung: Einen Einzelpunkt zufällig verschieben
+   Einen Einzelpunkt zufällig verschieben
   </a>
  </li>
  <li class="toctree-l1">
@@ -249,7 +234,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/02_03_Functions.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/02_02_Functions_I.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -274,7 +259,7 @@
     <div class="dropdown-buttons">
         
         
-        <a class="jupyterhub-button" href="https://jupyterhub01.zhaw.ch/hub/user-redirect/git-pull?repo=https://github.com/ratnanil/codingingis&urlpath=lab/tree/codingingis/02_03_Functions.ipynb&branch=master"><button type="button"
+        <a class="jupyterhub-button" href="https://jupyterhub01.zhaw.ch/hub/user-redirect/git-pull?repo=https://github.com/ratnanil/codingingis&urlpath=lab/tree/codingingis/02_02_Functions_I.ipynb&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="_static/images/logo_jupyterhub.svg"
@@ -327,8 +312,75 @@
         
               <div>
                 
-  <div class="section" id="ubung-functions">
-<h1>Übung: <em>Functions</em><a class="headerlink" href="#ubung-functions" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="function-basics">
+<h1><em>Function</em> Basics<a class="headerlink" href="#function-basics" title="Permalink to this headline">¶</a></h1>
+<p>Ein Grundprinzip von Programmieren ist “DRY” (<em>Don’t repeat yourself</em>). Wenn unser script sehr viele gleiche oder sehr ähnliche Codezeilen enthält ist das ein Zeichen dafür, dass man besser eine <em>Function</em> schreiben sollte. Das hat viele Vorteile: Unter anderem muss man Fehler nur an einer Stelle beheben. Deshalb: Um mit Python gut zurecht zu kommen ist das schreiben von eigenen <em>Functions</em> unerlässlich. Sie sind auch nicht weiter schwierig: Eine <em>Function</em> wird mit <code class="docutils literal notranslate"><span class="pre">def</span></code> eingeleitet, braucht einen Namen, einen Input und einen Output.</p>
+<p>Wenn wir zum Beispiel eine Function erstellen wollen die uns grüsst, so geht dies folgendermassen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sag_hallo</span><span class="p">():</span>
+    <span class="k">return</span> <span class="s2">&quot;Hallo!&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Mit <code class="docutils literal notranslate"><span class="pre">def</span></code> sagen wir: “Jetzt definiere ich eine Function”.</p></li>
+<li><p>Danach kommt der Name der <em>Function</em>, in unserem Fall <code class="docutils literal notranslate"><span class="pre">sag_hallo</span></code> (mit diesem Namen können wir die <em>Function</em> später wieder abrufen).</p></li>
+<li><p>Als drittes kommen die runden Klammern, wo wir bei Bedarf Inputvariablen (sogenannte Parameter) festlegen können. In diesem ersten Beispiel habe ich keine Parameter festgelegt</p></li>
+<li><p>Nach der Klammer kommt ein Doppelpunkt was bedeutet: “jetzt wird gleich definiert, was die Funktion tun soll”</p></li>
+<li><p>Auf einer neuen Zeile wird eingerückt festgelegt, was die Function eben tun soll. Meist sind hier ein paar Zeilen Code vorhanden</p></li>
+<li><p>Die letzte eingerückte Zeile (in unserem Fall ist das die einzige Zeile) gibt mit <code class="docutils literal notranslate"><span class="pre">return</span></code> an, was die <em>Function</em> zurück geben soll (der Output). In unserem Fall soll sie “Hallo!”  zurück geben.</p></li>
+</ul>
+<p>Das war’s schon! Jetzt können wir diese <em>Function</em> schon nutzen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sag_hallo</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Hallo!&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Diese <em>Function</em> ohne Input ist wenig nützlich. Meist wollen wir der <em>Function</em> etwas - einen Input - übergeben können. Beispielsweise könnten wir der <em>Function</em> unseren Vornamen übergeben, damit wir persönlich gegrüsst werden:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sag_hallo</span><span class="p">(</span><span class="n">vorname</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s2">&quot;Hallo &quot;</span> <span class="o">+</span> <span class="n">vorname</span> <span class="o">+</span> <span class="s2">&quot;!&quot;</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nun können wir der Function einen Parameter übergeben. In folgendem Beispiel ist <code class="docutils literal notranslate"><span class="pre">vorname</span></code> ein Parameter, “Guido” ist sein Argument.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sag_hallo</span><span class="p">(</span><span class="s2">&quot;Guido&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Hallo Guido!&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Den Output können wir wie gewohnt einer neuen Variabel zuweisen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">persoenlicher_gruss</span> <span class="o">=</span> <span class="n">sag_hallo</span><span class="p">(</span><span class="s2">&quot;Guido&quot;</span><span class="p">)</span>
+<span class="n">persoenlicher_gruss</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Hallo Guido!&#39;
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="ubung-1-erste-function-erstellen">
 <h2>Übung 1: Erste <em>Function</em> erstellen<a class="headerlink" href="#ubung-1-erste-function-erstellen" title="Permalink to this headline">¶</a></h2>
 <p>Erstelle eine Function, die <code class="docutils literal notranslate"><span class="pre">gruezi</span></code> heisst, einen Nachnamen als Input annimmt und per Sie grüsst. Das Resultat soll in etwa folgendermassen aussehen:</p>
@@ -437,8 +489,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="02_02_Input_Functions.html" title="previous page">Input: <em>Function</em> Basics</a>
-    <a class='right-next' id="next-link" href="02_03b_Input_Functions_II.html" title="next page">Input: <em>Function</em> Advanced</a>
+    <a class='left-prev' id="prev-link" href="02_01b_Python_Module.html" title="previous page">Input: Python Modules</a>
+    <a class='right-next' id="next-link" href="02_03_Functions_II.html" title="next page"><em>Function</em> Advanced</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

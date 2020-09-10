@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Input: Zusammengesetzte Datentypen &#8212; Coding in GIS</title>
+    <title>Zusammengesetzte Datentypen &#8212; Coding in GIS</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -36,8 +36,8 @@
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Übung: Lists" href="01_04_Aufgabe_A.html" />
-    <link rel="prev" title="Input: Primitive Datentypen" href="01_02_Primitive_Datentypen.html" />
+    <link rel="next" title="Dictionaries" href="01_05_Fokus_Dictionaries.html" />
+    <link rel="prev" title="Primitive Datentypen" href="01_02_Primitive_Datentypen.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -90,32 +90,22 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_02_Primitive_Datentypen.html">
-   Input: Primitive Datentypen
+   Primitive Datentypen
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Input: Zusammengesetzte Datentypen
+   Zusammengesetzte Datentypen
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="01_04_Aufgabe_A.html">
-   Übung: Lists
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="01_05_Aufgabe_B.html">
-   Übung: Dictionaries
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="01_05_Python_Module.html">
-   Input: Python Modules
+  <a class="reference internal" href="01_05_Fokus_Dictionaries.html">
+   Dictionaries
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_06_Tabellarische_Daten.html">
-   Übung: Tabellarische Daten
+   Tabellarische Daten
   </a>
  </li>
 </ul>
@@ -131,8 +121,12 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02_02_Input_Functions.html">
-   Input:
+  <a class="reference internal" href="02_01b_Python_Module.html">
+   Input: Python Modules
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02_02_Functions_I.html">
    <em>
     Function
    </em>
@@ -140,16 +134,7 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02_03_Functions.html">
-   Übung:
-   <em>
-    Functions
-   </em>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="02_03b_Input_Functions_II.html">
-   Input:
+  <a class="reference internal" href="02_03_Functions_II.html">
    <em>
     Function
    </em>
@@ -158,7 +143,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02_04_Einzelpunkt_Verschieben.html">
-   Übung: Einen Einzelpunkt zufällig verschieben
+   Einen Einzelpunkt zufällig verschieben
   </a>
  </li>
  <li class="toctree-l1">
@@ -310,13 +295,23 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tuples">
-   Tuples
+  <a class="reference internal nav-link" href="#weitere-strukturen">
+   Weitere Strukturen
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sets">
-   Sets
+  <a class="reference internal nav-link" href="#ubung-1-lists">
+   Übung 1: Lists
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ubung-2-elemente-aus-liste-ansprechen">
+   Übung 2: Elemente aus Liste ansprechen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ubung-3-liste-erganzen">
+   Übung 3: Liste ergänzen
   </a>
  </li>
 </ul>
@@ -329,9 +324,33 @@
         
               <div>
                 
-  <div class="section" id="input-zusammengesetzte-datentypen">
-<h1>Input: Zusammengesetzte Datentypen<a class="headerlink" href="#input-zusammengesetzte-datentypen" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="zusammengesetzte-datentypen">
+<h1>Zusammengesetzte Datentypen<a class="headerlink" href="#zusammengesetzte-datentypen" title="Permalink to this headline">¶</a></h1>
 <p>Basierend auf den “atomaren” oder primitiven Datentypen exisiteren komplexere Datenstrukturen, die aber an sich immer noch sehr einfach sind.</p>
+<div class="tip admonition">
+<p class="admonition-title">Für R Nutzer</p>
+<ul class="simple">
+<li><p>In R gibt es die gleichen zusammengesetzten Datentypen wie in Python:</p></li>
+</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Python</p></th>
+<th class="head"><p>R</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>List</p></td>
+<td><p>Vector</p></td>
+</tr>
+<tr class="row-odd"><td><p>Dict</p></td>
+<td><p>List</p></td>
+</tr>
+<tr class="row-even"><td><p>DataFrame</p></td>
+<td><p>Dataframe</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="section" id="list">
 <h2>List<a class="headerlink" href="#list" title="Permalink to this headline">¶</a></h2>
 <p>Eine <code class="docutils literal notranslate"><span class="pre">List</span></code>:</p>
@@ -407,10 +426,6 @@
 </div>
 </div>
 </div>
-<div class="tip admonition">
-<p class="admonition-title">Für R Nutzer</p>
-<p>Eine Python List entspricht eines R Vectors</p>
-</div>
 </div>
 <div class="section" id="dict">
 <h2>Dict<a class="headerlink" href="#dict" title="Permalink to this headline">¶</a></h2>
@@ -469,38 +484,12 @@
 </div>
 <div class="section" id="dataframe">
 <h2>DataFrame<a class="headerlink" href="#dataframe" title="Permalink to this headline">¶</a></h2>
-<p>Bei den bisherigen Datentypen handelte es sich um Strukturen, die in der Standartinstallation von Python enhalten sind. Tabellarische Strukturen sind in Python, im Gegensatz zu R, nicht standardmässig vorhanden. Dazu brauchen wir eine Erweiterung zu Python: Was es sich damit auf sich hat und wie diese installiert wird erfahren wir später. An dieser Stelle möchte ich nur die Struktur <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> vorstellen. <code class="docutils literal notranslate"><span class="pre">DataFrames</span></code> sind:</p>
-<ul class="simple">
-<li><p>Tabellarische Daten</p></li>
-<li><p>Ein Spezialfall einer Dict:</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">values</span></code> sind <code class="docutils literal notranslate"><span class="pre">Lists</span></code> von gleicher Länge</p></li>
-<li><p>alle Werte in einer <code class="docutils literal notranslate"><span class="pre">List</span></code> bestehen aus dem gleichen Datentyp</p></li>
-</ul>
-</li>
-<li><p>jeder <code class="docutils literal notranslate"><span class="pre">key</span></code> ist ein Spaltenname</p></li>
-</ul>
-<div class="cell tag_hide-cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-</pre></div>
-</div>
-</div>
-</div>
+<p>Bei den bisherigen Datentypen handelte es sich um Strukturen, die in der Standartinstallation von Python enhalten sind. Tabellarische Strukturen sind in Python, im Gegensatz zu R, nicht standardmässig vorhanden. Dazu brauchen wir eine Erweiterung zu Python: Was es sich damit auf sich hat und wie diese installiert wird erfahren wir später. An dieser Stelle möchte ich nur die Struktur <em>DataFrame</em> vorstellen. <em>DataFrames</em> sind tabellarische Daten. Man kann sie auch als “Spezialfall” einer <em>Dict</em> betrachten, wo alle Werte (also <em>Keys</em>) die gleiche Länge haben.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">menue2</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Typ&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Vorspeise&quot;</span><span class="p">,</span><span class="s2">&quot;Hauptspeise&quot;</span><span class="p">,</span><span class="s2">&quot;Dessert&quot;</span><span class="p">],</span>
           <span class="s2">&quot;Beschreibung&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Suppe&quot;</span><span class="p">,</span><span class="s2">&quot;Gratin mit Spinat&quot;</span><span class="p">,</span> <span class="s2">&quot;Himbeerglacé&quot;</span><span class="p">],</span>
-          <span class="s2">&quot;Preis&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">7.50</span><span class="p">,</span> <span class="mf">32.0</span><span class="p">,</span> <span class="mf">10.50</span><span class="p">]}</span>
-
-<span class="n">menue2</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Typ&#39;: [&#39;Vorspeise&#39;, &#39;Hauptspeise&#39;, &#39;Dessert&#39;],
- &#39;Beschreibung&#39;: [&#39;Suppe&#39;, &#39;Gratin mit Spinat&#39;, &#39;Himbeerglacé&#39;],
- &#39;Preis&#39;: [7.5, 32.0, 10.5]}
+          <span class="s2">&quot;Preis&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">7.50</span><span class="p">,</span> <span class="mf">32.0</span><span class="p">,</span> <span class="s2">&quot;10.50&quot;</span><span class="p">]}</span>
 </pre></div>
 </div>
 </div>
@@ -517,10 +506,12 @@
 </div>
 </div>
 </div>
+<p>Beachte, dass nun aus den <em>Key</em> Spaltennamen werden:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">menue_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">menue2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> <span class="c1"># Was diese Zeile beudeutet lernen wir später</span>
 
+<span class="n">menue_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">menue2</span><span class="p">)</span>
 <span class="n">menue_df</span>
 </pre></div>
 </div>
@@ -560,13 +551,13 @@
       <th>1</th>
       <td>Hauptspeise</td>
       <td>Gratin mit Spinat</td>
-      <td>32.0</td>
+      <td>32</td>
     </tr>
     <tr>
       <th>2</th>
       <td>Dessert</td>
       <td>Himbeerglacé</td>
-      <td>10.5</td>
+      <td>10.50</td>
     </tr>
   </tbody>
 </table>
@@ -585,61 +576,75 @@
 </div>
 </div>
 </div>
-<div class="section" id="tuples">
-<h2>Tuples<a class="headerlink" href="#tuples" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">Tuples</span></code> sind ähnlich wie <code class="docutils literal notranslate"><span class="pre">Lists</span></code>, nur können sie nachträglich nicht verändert werden. Das heisst, es ist nach der Erstellung keine Ergänzung von neuen Werten oder Löschung von bestehenden Werten möglich. <code class="docutils literal notranslate"><span class="pre">Tuples</span></code> werden mit runden Klammern (<code class="docutils literal notranslate"><span class="pre">(</span></code> und <code class="docutils literal notranslate"><span class="pre">)</span></code>) erstellt.</p>
-<p>Dieser Datentyp spielt im unserem Kurs <em>Coding in GIS</em> eine untergeorndete Rolle.</p>
-<div class="cell docutils container">
+<div class="section" id="weitere-strukturen">
+<h2>Weitere Strukturen<a class="headerlink" href="#weitere-strukturen" title="Permalink to this headline">¶</a></h2>
+<p>In Python gibt es noch weitere zusammengesetzte Datentypen wie <em>Tuples</em> und <em>Sets</em>. Diese spielen im unserem Kurs aber eine untergeorndete Rolle. Ich erwähne sie an dieser Stelle zwei häufig gennante Typen, damit ihr sie schon mal gehört habt:</p>
+<ul class="simple">
+<li><p><em>Tuples</em>:</p>
+<ul>
+<li><p>sind ähnlich wie <em>Lists</em>, nur können sie nachträglich nicht verändert werden. Das heisst, es ist nach der Erstellung keine Ergänzung von neuen Werten oder Löschung von bestehenden Werten möglich.</p></li>
+<li><p>sie werden mit runden Klammern (<code class="docutils literal notranslate"><span class="pre">(</span></code> und <code class="docutils literal notranslate"><span class="pre">)</span></code>) erstellt (<code class="docutils literal notranslate"><span class="pre">mytuple</span> <span class="pre">=</span> <span class="pre">(2,2,1)</span></code>).</p></li>
+</ul>
+</li>
+<li><p><em>Sets</em></p>
+<ul>
+<li><p>sind ähnlich wie <em>Dicts</em>, verfügen nicht über <code class="docutils literal notranslate"><span class="pre">keys</span></code> und <code class="docutils literal notranslate"><span class="pre">values</span></code></p></li>
+<li><p>jeder Wert wird nur 1x gespeichert (Duplikate werden automatisch gelöscht)</p></li>
+<li><p>Sie werden mit geschweiften Klammern (<code class="docutils literal notranslate"><span class="pre">{</span></code> und <code class="docutils literal notranslate"><span class="pre">}</span></code>) erstellt.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="ubung-1-lists">
+<h2>Übung 1: Lists<a class="headerlink" href="#ubung-1-lists" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Erstelle eine Variable <code class="docutils literal notranslate"><span class="pre">vornamen</span></code> bestehend aus einer <em>List</em> mit 3 Vornamen</p></li>
+<li><p>Erstelle eine zweite Variable <code class="docutils literal notranslate"><span class="pre">nachnamen</span></code> bestehend aus einer <em>List</em> mit 3 Nachnamen</p></li>
+<li><p>Erstelle eine Variable <code class="docutils literal notranslate"><span class="pre">groessen</span></code> bestehend aus einer <em>List</em> mit 3 Grössenangaben in Zentimeter.</p></li>
+</ol>
+<div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gewinner</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Musterlösung</span>
+
+<span class="n">vornamen</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Christopher&quot;</span><span class="p">,</span> <span class="s2">&quot;Henning&quot;</span><span class="p">,</span> <span class="s2">&quot;Severin&quot;</span><span class="p">]</span>
+<span class="n">nachnamen</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Annen&quot;</span><span class="p">,</span><span class="s2">&quot;May&quot;</span><span class="p">,</span> <span class="s2">&quot;Kantereit&quot;</span><span class="p">]</span>
+
+<span class="n">groessen</span> <span class="o">=</span> <span class="p">[</span><span class="mi">174</span><span class="p">,</span> <span class="mi">182</span><span class="p">,</span> <span class="mi">162</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="ubung-2-elemente-aus-liste-ansprechen">
+<h2>Übung 2: Elemente aus Liste ansprechen<a class="headerlink" href="#ubung-2-elemente-aus-liste-ansprechen" title="Permalink to this headline">¶</a></h2>
+<p>Wie erhältst du den ersten Eintrag in der Variable <code class="docutils literal notranslate"><span class="pre">vornamen</span></code>? Wie erhältst du den letzten Eintrag? Tipp: nutze dazu <code class="docutils literal notranslate"><span class="pre">[</span></code> und <code class="docutils literal notranslate"><span class="pre">]</span></code> sowie eine Zahl.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">gewinner</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Musterlösung</span>
+
+<span class="n">vornamen</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tuple
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Christopher&#39;
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="section" id="sets">
-<h2>Sets<a class="headerlink" href="#sets" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">Sets</span></code> sind ähnlich wie <code class="docutils literal notranslate"><span class="pre">Dicts</span></code>, jedoch kommt jeder Wert nur 1x vor. Zudem verfügen <code class="docutils literal notranslate"><span class="pre">Sets</span></code> nicht über <code class="docutils literal notranslate"><span class="pre">keys</span></code> und <code class="docutils literal notranslate"><span class="pre">values</span></code>. Sie werden mit geschweiften Klammern (<code class="docutils literal notranslate"><span class="pre">{</span></code> und <code class="docutils literal notranslate"><span class="pre">}</span></code>) erstellt.</p>
-<p>Dieser Datentyp spielt im unserem Kurs <em>Coding in GIS</em> eine untergeorndete Rolle.</p>
-<div class="cell docutils container">
+<div class="section" id="ubung-3-liste-erganzen">
+<h2>Übung 3: Liste ergänzen<a class="headerlink" href="#ubung-3-liste-erganzen" title="Permalink to this headline">¶</a></h2>
+<p>Listen können durch der Method <code class="docutils literal notranslate"><span class="pre">append</span></code> ergänzt werden.</p>
+<p>vornamen.append(“Malte”)</p>
+<p>Ergänze in die Listen <code class="docutils literal notranslate"><span class="pre">vornamen</span></code>, <code class="docutils literal notranslate"><span class="pre">nachnamen</span></code> und <code class="docutils literal notranslate"><span class="pre">groessen</span></code> durch je einen Eintrag.</p>
+<div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hexerei2</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">}</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hexerei2</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1, 2, 3}
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">hexerei2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>set
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Musterlösung</span>
+
+<span class="n">nachnamen</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Huck&quot;</span><span class="p">)</span>
+
+<span class="n">groessen</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">177</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -675,8 +680,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="01_02_Primitive_Datentypen.html" title="previous page">Input: Primitive Datentypen</a>
-    <a class='right-next' id="next-link" href="01_04_Aufgabe_A.html" title="next page">Übung: Lists</a>
+    <a class='left-prev' id="prev-link" href="01_02_Primitive_Datentypen.html" title="previous page">Primitive Datentypen</a>
+    <a class='right-next' id="next-link" href="01_05_Fokus_Dictionaries.html" title="next page">Dictionaries</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
