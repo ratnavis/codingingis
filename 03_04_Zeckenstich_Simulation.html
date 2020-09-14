@@ -381,87 +381,68 @@
     <tr>
       <th>0</th>
       <td>2550</td>
-      <td>2.681180e+06</td>
-      <td>1.250724e+06</td>
+      <td>2.681106e+06</td>
+      <td>1.250797e+06</td>
     </tr>
     <tr>
       <th>1</th>
       <td>10437</td>
-      <td>2.681162e+06</td>
-      <td>1.250547e+06</td>
+      <td>2.681156e+06</td>
+      <td>1.250557e+06</td>
     </tr>
     <tr>
       <th>2</th>
       <td>9174</td>
-      <td>2.681237e+06</td>
-      <td>1.250737e+06</td>
+      <td>2.681110e+06</td>
+      <td>1.250788e+06</td>
     </tr>
     <tr>
       <th>3</th>
       <td>8773</td>
-      <td>2.680935e+06</td>
-      <td>1.250646e+06</td>
+      <td>2.681077e+06</td>
+      <td>1.250738e+06</td>
     </tr>
     <tr>
       <th>4</th>
       <td>2764</td>
-      <td>2.681177e+06</td>
-      <td>1.250672e+06</td>
+      <td>2.681162e+06</td>
+      <td>1.250787e+06</td>
     </tr>
     <tr>
       <th>5</th>
       <td>2513</td>
-      <td>2.681018e+06</td>
-      <td>1.250677e+06</td>
+      <td>2.681206e+06</td>
+      <td>1.250731e+06</td>
     </tr>
     <tr>
       <th>6</th>
       <td>9185</td>
-      <td>2.681135e+06</td>
-      <td>1.250645e+06</td>
+      <td>2.681348e+06</td>
+      <td>1.250661e+06</td>
     </tr>
     <tr>
       <th>7</th>
       <td>28521</td>
-      <td>2.681314e+06</td>
-      <td>1.250788e+06</td>
+      <td>2.680862e+06</td>
+      <td>1.250763e+06</td>
     </tr>
     <tr>
       <th>8</th>
       <td>26745</td>
-      <td>2.681010e+06</td>
-      <td>1.250807e+06</td>
+      <td>2.681061e+06</td>
+      <td>1.250696e+06</td>
     </tr>
     <tr>
       <th>9</th>
       <td>27391</td>
-      <td>2.681194e+06</td>
-      <td>1.250737e+06</td>
+      <td>2.681132e+06</td>
+      <td>1.250717e+06</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
 <p>Kombiniere dies nun mit deinem Wissen über Loops, um die Punkte der <em>DataFrame</em> nicht einmal, sondern 5 mal zu verschieben. Dazu brauchst du vor dem Loop eine leere Liste (z.B. <code class="docutils literal notranslate"><span class="pre">monte_carlo</span> <span class="pre">=</span> <span class="pre">[]</span></code>) damit du den Output aus jedem Loop mit <code class="docutils literal notranslate"><span class="pre">append()</span></code>  abspeichern kannst. Erstelle auch eine neue Spalte <code class="docutils literal notranslate"><span class="pre">Run_Nr</span></code> mit der Nummer der Durchführung (die du vom Platzhalter erhältst).</p>
-<div class="cell tag_hide-cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Musterlösung</span>
-
-<span class="n">monte_carlo</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-    <span class="n">zeckenstiche_sim</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
-
-    <span class="n">zeckenstiche_sim</span><span class="p">[</span><span class="s2">&quot;ID&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;ID&quot;</span><span class="p">]</span>
-
-    <span class="n">zeckenstiche_sim</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">offset_coordinate</span><span class="p">)</span>
-    <span class="n">zeckenstiche_sim</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">offset_coordinate</span><span class="p">)</span>
-    <span class="n">zeckenstiche_sim</span><span class="p">[</span><span class="s2">&quot;Run_Nr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span>
-    <span class="n">monte_carlo</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">zeckenstiche_sim</span><span class="p">)</span>
-    
-</pre></div>
-</div>
-</div>
-</div>
 </div>
 <div class="section" id="ubung-2-dataframes-aus-simulation-zusammenfuhren">
 <h2>Übung 2: DataFrames aus Simulation zusammenführen<a class="headerlink" href="#ubung-2-dataframes-aus-simulation-zusammenfuhren" title="Permalink to this headline">¶</a></h2>
@@ -540,92 +521,6 @@
 <div class="section" id="ubung-3-simulierte-daten-visualisieren">
 <h2>Übung 3: Simulierte Daten visualisieren<a class="headerlink" href="#ubung-3-simulierte-daten-visualisieren" title="Permalink to this headline">¶</a></h2>
 <p>Exploriere nun <code class="docutils literal notranslate"><span class="pre">monte_carlo_df</span></code>. Was ist es für ein Datentyp? Was hat es für Spalten? Visualisiere den Datensatz räumlich mit <code class="docutils literal notranslate"><span class="pre">monte_carlo_df.plot.scatter()</span></code>.</p>
-<div class="cell tag_hide-input docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Musterlösung</span>
-<span class="n">monte_carlo_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ID</th>
-      <th>x</th>
-      <th>y</th>
-      <th>Run_Nr</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>2550</td>
-      <td>2.681172e+06</td>
-      <td>1.250626e+06</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>10437</td>
-      <td>2.681137e+06</td>
-      <td>1.250709e+06</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>9174</td>
-      <td>2.681043e+06</td>
-      <td>1.250759e+06</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>8773</td>
-      <td>2.680982e+06</td>
-      <td>1.250821e+06</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2764</td>
-      <td>2.681059e+06</td>
-      <td>1.250589e+06</td>
-      <td>0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<div class="cell tag_hide-input docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Musterlösung</span>
-<span class="n">monte_carlo_df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">,</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="s2">&quot;ID&quot;</span><span class="p">,</span> <span class="n">colormap</span> <span class="o">=</span> <span class="s2">&quot;viridis&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;x&#39;, ylabel=&#39;y&#39;&gt;
-</pre></div>
-</div>
-<img alt="_images/03_04_Zeckenstich_Simulation_18_1.png" src="_images/03_04_Zeckenstich_Simulation_18_1.png" />
-</div>
-</div>
 </div>
 </div>
 

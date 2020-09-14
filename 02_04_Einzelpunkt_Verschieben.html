@@ -336,43 +336,10 @@ rechts: Gedenktafel an die Alte Sternwarte Bern. Quelle: aiub.unibe.ch</span><a 
 <h2>Übung 1: Zufallswerte generieren<a class="headerlink" href="#ubung-1-zufallswerte-generieren" title="Permalink to this headline">¶</a></h2>
 <p>Es sind verschiedene Methoden Denkbar, wie wir ein neues <code class="docutils literal notranslate"><span class="pre">x</span></code>,<code class="docutils literal notranslate"><span class="pre">y</span></code> Koordinatenpaar aus den bestehenden Koordinaten bestimmen. Die einfachste Variante ist es wohl, zu jedem Achsenwert (<code class="docutils literal notranslate"><span class="pre">x</span></code>/<code class="docutils literal notranslate"><span class="pre">y</span></code>) einzeln einen Zufallswert zu addieren, z.B. von -100 bis +100.</p>
 <p>Wie generiert man aber Zufallszahlen in Python? Versuche dies selbst mittels deiner Lieblingssuchmaschine herauszufinden.</p>
-<div class="cell tag_hide-cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Musterlösung</span>
-
-<span class="kn">import</span> <span class="nn">random</span>
-
-<span class="c1"># Uniforme verteilte Werte (zw. -100 bis +100)</span>
-<span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
-
-<span class="c1"># Normalverteilte Werte mit </span>
-<span class="c1"># Mittelwert 0 und</span>
-<span class="c1"># Standartabweichung 100  </span>
-<span class="c1"># Achtung: bei dieser Standartabweichung sind ca 30% der Werte &gt; 100!</span>
-<span class="n">random</span><span class="o">.</span><span class="n">normalvariate</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-239.85210810792051
-</pre></div>
-</div>
-</div>
-</div>
 </div>
 <div class="section" id="ubung-2-zufallswerte-addieren">
 <h2>Übung 2: Zufallswerte addieren<a class="headerlink" href="#ubung-2-zufallswerte-addieren" title="Permalink to this headline">¶</a></h2>
 <p>Addiere nun die Zufallszahlen zu den Dummy-Werten um <code class="docutils literal notranslate"><span class="pre">x_neu</span></code> und <code class="docutils literal notranslate"><span class="pre">y_neu</span></code> zu erhalten.</p>
-<div class="cell tag_hide-cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Musterlösung</span>
-
-<span class="n">x_neu</span> <span class="o">=</span> <span class="n">x</span><span class="o">+</span><span class="n">random</span><span class="o">.</span><span class="n">normalvariate</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
-<span class="n">y_neu</span> <span class="o">=</span> <span class="n">y</span><span class="o">+</span><span class="n">random</span><span class="o">.</span><span class="n">normalvariate</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">x_neu</span><span class="p">,</span> <span class="n">y_neu</span><span class="p">)</span>
@@ -380,7 +347,7 @@ rechts: Gedenktafel an die Alte Sternwarte Bern. Quelle: aiub.unibe.ch</span><a 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2600109.1421617507 1199966.2459923283
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2600011.0986750047 1199934.7391528513
 </pre></div>
 </div>
 </div>
@@ -389,26 +356,6 @@ rechts: Gedenktafel an die Alte Sternwarte Bern. Quelle: aiub.unibe.ch</span><a 
 <div class="section" id="ubung-3-arbeitsschritte-in-eine-function-verwandeln">
 <h2>Übung 3: Arbeitsschritte in eine <em>Function</em> verwandeln<a class="headerlink" href="#ubung-3-arbeitsschritte-in-eine-function-verwandeln" title="Permalink to this headline">¶</a></h2>
 <p>Jetzt sind die Einzelschritte zur Verschiebung eines Punktes klar. Da wir dies für viele Punkte machen müssen, ist es sinnvoll, aus den Arbeitsschritten eine <em>Function</em> zu erstellen. Erstelle eine Function <code class="docutils literal notranslate"><span class="pre">point_offset</span></code> welche als Input eine <code class="docutils literal notranslate"><span class="pre">x</span></code> <strong>oder</strong> <code class="docutils literal notranslate"><span class="pre">y</span></code>Koordinate annimmt und eine leicht verschobene Koordinate zurück gibt. Wenn du möchtest kannst du die Distanz der Verschiebung als optionalen Parameter (mit <em>Default = 100</em>) definieren.</p>
-<div class="cell tag_hide-cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Musterlösung</span>
-
-<span class="k">def</span> <span class="nf">offset_coordinate</span><span class="p">(</span><span class="n">old</span><span class="p">,</span> <span class="n">distance</span> <span class="o">=</span> <span class="mi">100</span><span class="p">):</span>
-    <span class="n">new</span> <span class="o">=</span> <span class="n">old</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">normalvariate</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">distance</span><span class="p">)</span>
-
-    <span class="k">return</span><span class="p">(</span><span class="n">new</span><span class="p">)</span>
-
-
-<span class="n">offset_coordinate</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2599903.5440284754
-</pre></div>
-</div>
-</div>
-</div>
 </div>
 <div class="section" id="ubung-4-output-visualisieren">
 <h2>Übung 4: Output visualisieren<a class="headerlink" href="#ubung-4-output-visualisieren" title="Permalink to this headline">¶</a></h2>

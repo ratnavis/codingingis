@@ -436,158 +436,14 @@
 <div class="section" id="ubung-1-alle-zeckenstiche-zufallig-verschieben">
 <h2>Übung 1: Alle Zeckenstiche zufällig verschieben<a class="headerlink" href="#ubung-1-alle-zeckenstiche-zufallig-verschieben" title="Permalink to this headline">¶</a></h2>
 <p>Nun können wir die <em>Function</em> <code class="docutils literal notranslate"><span class="pre">offset_coordinate()</span></code> auf die gesamte Spalten <code class="docutils literal notranslate"><span class="pre">x</span></code> und <code class="docutils literal notranslate"><span class="pre">y</span></code> der <em>DataFrame</em> zeckenstiche anwenden. Nutze eckige Klammern um die entsprechende Spalte zu wählen.</p>
-<div class="cell tag_hide-cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Musterlösung</span>
-
-<span class="n">offset_coordinate</span><span class="p">(</span><span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">],</span> <span class="n">distance</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>
-<span class="n">offset_coordinate</span><span class="p">(</span><span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">],</span> <span class="n">distance</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    1.250862e+06
-1    1.250886e+06
-2    1.250897e+06
-3    1.250897e+06
-4    1.250906e+06
-5    1.250925e+06
-6    1.250926e+06
-7    1.250934e+06
-8    1.250939e+06
-9    1.250939e+06
-Name: y, dtype: float64
-</pre></div>
-</div>
-</div>
-</div>
 </div>
 <div class="section" id="ubung-2-neue-geodataframe-mit-simulierten-punkten-erstellen">
 <h2>Übung 2: Neue GeoDataFrame mit simulierten Punkten erstellen<a class="headerlink" href="#ubung-2-neue-geodataframe-mit-simulierten-punkten-erstellen" title="Permalink to this headline">¶</a></h2>
 <p>Um die neuen, verschobenen Koordianten abzuspeichern erstellen wir zuerst eine neue, leere DataFrame (z.B. <code class="docutils literal notranslate"><span class="pre">zeckenstiche_sim</span></code>) und fügen den Output als neue Spalten dieser <em>DataFrame</em> hinzu. Auch die “ID” könnt ihr als neue Spalte hinzufügen, so behalten wir den Bezug zum ursprünglichen Datensatz.</p>
-<div class="cell tag_hide-input docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Musterlösung</span>
-
-<span class="n">zeckenstiche_sim</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
-
-<span class="n">zeckenstiche_sim</span><span class="p">[</span><span class="s2">&quot;ID&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;ID&quot;</span><span class="p">]</span>
-
-<span class="n">zeckenstiche_sim</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">offset_coordinate</span><span class="p">(</span><span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">],</span> <span class="n">distance</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>
-<span class="n">zeckenstiche_sim</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">offset_coordinate</span><span class="p">(</span><span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">],</span> <span class="n">distance</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>
-<span class="n">zeckenstiche_sim</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ID</th>
-      <th>x</th>
-      <th>y</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>2550</td>
-      <td>2.681164e+06</td>
-      <td>2.681319e+06</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>10437</td>
-      <td>2.681140e+06</td>
-      <td>2.681295e+06</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>9174</td>
-      <td>2.681176e+06</td>
-      <td>2.681331e+06</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>8773</td>
-      <td>2.681159e+06</td>
-      <td>2.681314e+06</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2764</td>
-      <td>2.681179e+06</td>
-      <td>2.681334e+06</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>2513</td>
-      <td>2.681219e+06</td>
-      <td>2.681374e+06</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>9185</td>
-      <td>2.681155e+06</td>
-      <td>2.681310e+06</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>28521</td>
-      <td>2.681172e+06</td>
-      <td>2.681327e+06</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>26745</td>
-      <td>2.681165e+06</td>
-      <td>2.681320e+06</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>27391</td>
-      <td>2.681186e+06</td>
-      <td>2.681341e+06</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
 </div>
 <div class="section" id="ubung-4-mehrere-dataframes-visualisieren">
 <h2>Übung 4: Mehrere <em>DataFrames</em> visualisieren<a class="headerlink" href="#ubung-4-mehrere-dataframes-visualisieren" title="Permalink to this headline">¶</a></h2>
 <p>Um zwei <em>DataFrames</em> im gleichen Plot darzustellen, wird folgendermassen vorgegangen. Der erste Datensatz wird mit <code class="docutils literal notranslate"><span class="pre">.plot()</span></code> visualisiert, wobei der Output einer Variabel  (z.B. <code class="docutils literal notranslate"><span class="pre">basemap</span></code>)  zugewiesen wird. Danach wird der zweite Datensatz ebenfalls mit <code class="docutils literal notranslate"><span class="pre">.plot()</span></code> visualisiert, wobei auf den ersten Plot via dem Argument <code class="docutils literal notranslate"><span class="pre">ax</span></code> verwiesen wird.</p>
-<div class="cell tag_hide-input docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Musterlösung</span>
-
-<span class="n">basemap</span> <span class="o">=</span> <span class="n">zeckenstiche</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">)</span>
-<span class="n">zeckenstiche_sim</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">basemap</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;blue&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;x&#39;, ylabel=&#39;y&#39;&gt;
-</pre></div>
-</div>
-<img alt="_images/02_05_Punkte_einer_DataFrame_verschieben_8_1.png" src="_images/02_05_Punkte_einer_DataFrame_verschieben_8_1.png" />
-</div>
-</div>
 <p>Bei den roten Punkten handelt es sich um die Original-Zeckenstichen, bei den blauen um die simulierten (leicht verschobnen) Zeckenstiche.</p>
 </div>
 <div class="section" id="ubung-5-genauigkeitsangaben-der-punkte-mitberucksichtigen">
@@ -738,62 +594,62 @@ Name: y, dtype: float64
     <tr>
       <th>0</th>
       <td>2550</td>
-      <td>2.681418e+06</td>
-      <td>1.250369e+06</td>
+      <td>2.681112e+06</td>
+      <td>1.250335e+06</td>
     </tr>
     <tr>
       <th>1</th>
       <td>10437</td>
-      <td>2.681299e+06</td>
-      <td>1.250480e+06</td>
+      <td>2.681089e+06</td>
+      <td>1.250457e+06</td>
     </tr>
     <tr>
       <th>2</th>
       <td>9174</td>
-      <td>2.681335e+06</td>
-      <td>1.250491e+06</td>
+      <td>2.681125e+06</td>
+      <td>1.250468e+06</td>
     </tr>
     <tr>
       <th>3</th>
       <td>8773</td>
-      <td>2.681318e+06</td>
-      <td>1.250491e+06</td>
+      <td>2.681108e+06</td>
+      <td>1.250468e+06</td>
     </tr>
     <tr>
       <th>4</th>
       <td>2764</td>
-      <td>2.681338e+06</td>
-      <td>1.250500e+06</td>
+      <td>2.681128e+06</td>
+      <td>1.250477e+06</td>
     </tr>
     <tr>
       <th>5</th>
       <td>2513</td>
-      <td>2.681378e+06</td>
-      <td>1.250519e+06</td>
+      <td>2.681168e+06</td>
+      <td>1.250496e+06</td>
     </tr>
     <tr>
       <th>6</th>
       <td>9185</td>
-      <td>2.681314e+06</td>
-      <td>1.250520e+06</td>
+      <td>2.681104e+06</td>
+      <td>1.250497e+06</td>
     </tr>
     <tr>
       <th>7</th>
       <td>28521</td>
-      <td>2.681331e+06</td>
-      <td>1.250528e+06</td>
+      <td>2.681121e+06</td>
+      <td>1.250505e+06</td>
     </tr>
     <tr>
       <th>8</th>
       <td>26745</td>
-      <td>2.681324e+06</td>
-      <td>1.250533e+06</td>
+      <td>2.681114e+06</td>
+      <td>1.250510e+06</td>
     </tr>
     <tr>
       <th>9</th>
       <td>27391</td>
-      <td>2.681345e+06</td>
-      <td>1.250533e+06</td>
+      <td>2.681135e+06</td>
+      <td>1.250510e+06</td>
     </tr>
   </tbody>
 </table>
