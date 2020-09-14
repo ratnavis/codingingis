@@ -15,7 +15,7 @@ def musterloesung(notebooks,tag = "remove-cell"):
         for cell in ntbk.cells:
             cell_tags = cell.get('metadata', {}).get('tags', [])
             # If the word "Musterlösung" contained in the cell content
-            if "Musterlösung" in cell["source"]:
+            if "# Musterlösung" in cell["source"]:
                 # removes all tags starting with "remove-" or "hide-"
                 cell_tags = [i for i in cell_tags if not re.match("remove|hide-.+",i)]
                 if tag != "": cell_tags.append(tag)    
