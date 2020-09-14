@@ -326,12 +326,7 @@
                 
   <div class="section" id="zusammengesetzte-datentypen">
 <h1>Zusammengesetzte Datentypen<a class="headerlink" href="#zusammengesetzte-datentypen" title="Permalink to this headline">¶</a></h1>
-<p>Basierend auf den “atomaren” oder primitiven Datentypen exisiteren komplexere Datenstrukturen, die aber an sich immer noch sehr einfach sind.</p>
-<div class="tip admonition">
-<p class="admonition-title">Für R Nutzer</p>
-<ul class="simple">
-<li><p>In R gibt es die gleichen zusammengesetzten Datentypen wie in Python:</p></li>
-</ul>
+<p>Im letzten Kapitel haben wir primitive Datentypen angeschaut. Diese stellen eine gute Basis dar, in der Praxis haben wir aber meistens nicht <em>einen</em> Temperaturwert, sondern eine Liste von Temperaturwerten. Wir haben nicht <em>einen</em> Vornamen sondern eine Tabelle mit Vor- und Nachnamen. Dafür gibt es in Python komplexere Datenstrukturen die als Gefässe für primitive Datentypen betrachtet werden können.  Auch hier finden wir viele Ähnlichkeiten mit R:</p>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Python</p></th>
@@ -350,7 +345,6 @@
 </tr>
 </tbody>
 </table>
-</div>
 <div class="section" id="list">
 <h2>List<a class="headerlink" href="#list" title="Permalink to this headline">¶</a></h2>
 <p>Eine <code class="docutils literal notranslate"><span class="pre">List</span></code>:</p>
@@ -366,7 +360,7 @@
 </div>
 </div>
 </div>
-<p>Der erste Wert wird in Python mit <code class="docutils literal notranslate"><span class="pre">0</span></code> aufgerufen:</p>
+<p>Der erste Wert wird in Python mit <code class="docutils literal notranslate"><span class="pre">0</span></code> (!!!) aufgerufen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hexerei</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -434,9 +428,8 @@
 <li><p>speichert die Reihenfolge, in der die Werte eingegeben werden <strong>nicht</strong></p></li>
 <li><p>kann unterschiedliche Datentypen enthalten</p></li>
 <li><p>wird mit geschweiften Klammern (<code class="docutils literal notranslate"><span class="pre">{</span></code> und <code class="docutils literal notranslate"><span class="pre">}</span></code>) erstellt</p></li>
-<li><p>speichert für jeden Wert («Value») einen Schlüssel («Key»), mit dem er abgerufen werden kann:</p></li>
+<li><p>speichert für jeden Wert (“Value”) einen Schlüssel (“Key”), mit dem er abgerufen werden kann: <code class="docutils literal notranslate"><span class="pre">dict_name</span> <span class="pre">=</span> <span class="pre">{&quot;Key&quot;</span> <span class="pre">:</span> <span class="pre">&quot;Value}</span></code></p></li>
 </ul>
-<p><code class="docutils literal notranslate"><span class="pre">dict_name</span> <span class="pre">=</span> <span class="pre">{&quot;Key&quot;</span> <span class="pre">:</span> <span class="pre">&quot;Value}</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">menue</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Vorspeise&quot;</span><span class="p">:</span> <span class="s2">&quot;Suppe&quot;</span><span class="p">,</span>
@@ -605,13 +598,18 @@
 </div>
 <div class="section" id="ubung-2-elemente-aus-liste-ansprechen">
 <h2>Übung 2: Elemente aus Liste ansprechen<a class="headerlink" href="#ubung-2-elemente-aus-liste-ansprechen" title="Permalink to this headline">¶</a></h2>
-<p>Wie erhältst du den ersten Eintrag in der Variable <code class="docutils literal notranslate"><span class="pre">vornamen</span></code>? Wie erhältst du den letzten Eintrag? Tipp: nutze dazu <code class="docutils literal notranslate"><span class="pre">[</span></code> und <code class="docutils literal notranslate"><span class="pre">]</span></code> sowie eine Zahl.</p>
+<p>Wie erhältst du den ersten Eintrag in der Variable <code class="docutils literal notranslate"><span class="pre">vornamen</span></code>?</p>
 </div>
 <div class="section" id="ubung-3-liste-erganzen">
 <h2>Übung 3: Liste ergänzen<a class="headerlink" href="#ubung-3-liste-erganzen" title="Permalink to this headline">¶</a></h2>
-<p>Listen können durch der Method <code class="docutils literal notranslate"><span class="pre">append</span></code> ergänzt werden.</p>
-<p>vornamen.append(“Malte”)</p>
-<p>Ergänze in die Listen <code class="docutils literal notranslate"><span class="pre">vornamen</span></code>, <code class="docutils literal notranslate"><span class="pre">nachnamen</span></code> und <code class="docutils literal notranslate"><span class="pre">groessen</span></code> durch je einen Eintrag.</p>
+<p>Listen können durch der Method <code class="docutils literal notranslate"><span class="pre">append</span></code> ergänzt werden (s.u.). Ergänze in die Listen <code class="docutils literal notranslate"><span class="pre">vornamen</span></code>, <code class="docutils literal notranslate"><span class="pre">nachnamen</span></code> und <code class="docutils literal notranslate"><span class="pre">groessen</span></code> durch je einen Eintrag.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vornamen</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Malte&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 

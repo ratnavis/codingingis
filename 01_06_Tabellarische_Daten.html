@@ -363,7 +363,8 @@
 </div>
 <div class="section" id="ubung-3-csv-als-dataframe-importieren">
 <h2>Übung 3: CSV als <em>DataFrame</em> importieren<a class="headerlink" href="#ubung-3-csv-als-dataframe-importieren" title="Permalink to this headline">¶</a></h2>
-<p>Genau so einfach ist es eine csv zu importieren. Lade dazu die Datei “zeckenstiche.csv” von Moodle herunter und speichere es im aktuellen Arbeitsverzeichnis ab. Importiere mit folgendem Code die Datei “zeckenstiche.csv”. Schau dir <code class="docutils literal notranslate"><span class="pre">zeckenstiche</span></code> nach dem importieren an.</p>
+<p>Genau so einfach ist es eine csv zu importieren. Lade dazu die Datei “zeckenstiche.csv” von Moodle herunter und speichere es im aktuellen Arbeitsverzeichnis ab.</p>
+<p>Importiere mit folgendem Code die Datei “zeckenstiche.csv”. Schau dir <code class="docutils literal notranslate"><span class="pre">zeckenstiche</span></code> nach dem importieren an.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeckenstiche</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;zeckenstiche.csv&quot;</span><span class="p">)</span>
@@ -371,7 +372,13 @@
 </div>
 </div>
 </div>
-<p><strong>Hinweis</strong>: Dieser Code funktioniert nur, wenn “zeckenstiche.csv” im aktuellen Arbeitsverzeichnis (<em>Current Working Directory</em>) abgespeichert wird. Wenn du nicht sicher bist, wo dein aktuelles Arbeitsverzeichnis liegt, kannst du das Modul <code class="docutils literal notranslate"><span class="pre">os</span></code> laden und dies mit der Funktion <code class="docutils literal notranslate"><span class="pre">os.getcwd()</span></code> (get <strong>c</strong>urrent<strong>w</strong>orking<strong>d</strong>irectory) herausfinden.</p>
+<div class="tip admonition">
+<p class="admonition-title">Achtung!</p>
+<ul class="simple">
+<li><p>Wenn du auf dem JupyterHub Server arbeitest dann ist dein Arbeitsverzeichnis ebenfalls <em>auf dem Server</em>. Das heisst, du musst “zeckenstiche.csv” auf den Server hochladen. Dies kannst du mit dem Button “Upload Files” im Tab “File Browswer” bewerkstelligen.</p></li>
+<li><p>der obige Code funktioniert nur, wenn “zeckenstiche.csv” im aktuellen Arbeitsverzeichnis (<em>Current Working Directory</em>) abgespeichert ist. Wenn du nicht sicher bist, wo dein aktuelles Arbeitsverzeichnis liegt, kannst du das Modul <code class="docutils literal notranslate"><span class="pre">os</span></code> laden und dies mit der Funktion <code class="docutils literal notranslate"><span class="pre">os.getcwd()</span></code> (get <strong>c</strong>urrent<strong>w</strong>orking<strong>d</strong>irectory) herausfinden.</p></li>
+</ul>
+</div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>

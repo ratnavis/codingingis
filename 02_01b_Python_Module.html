@@ -338,84 +338,90 @@
 <div class="section" id="erweiterung-installieren">
 <h2>Erweiterung installieren<a class="headerlink" href="#erweiterung-installieren" title="Permalink to this headline">¶</a></h2>
 <p>Den Erstkontakt mit der Malerin zu erstellen und die Vertragsmodalitäten zu vereinbaren bedeutet, die Erweiterung zu installieren. In R ist die Installation einer <em>Library</em> ein R-Befehl und wird innerhalb von R ausgeführt. In Python ist dies leider etwas komplizierter, es braucht für die Installation einer Python library eine Zusatzsoftware. Diese lernen wir zu einem späteren Zeitpunkt kennen, schauen wir uns jetzt nur mal den R-Code zur Installation eines Packages an:</p>
-<table class="table">
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>R</p></th>
-<th class="head"><p>python</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;malerin&quot;</span><span class="p">)</span>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<p class="card-text">in R:</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;malerin&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</td>
-<td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># mit conda</span>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<p class="card-text">In Python:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># mit conda</span>
 conda install -c conda-foge malerin 
 <span class="c1"># mit pip</span>
 pip install malerin
 </pre></div>
 </div>
-</td>
-</tr>
-</tbody>
-</table>
+</div>
+</div>
+</div>
+</div>
+</div>
 <p>In diesem Beispiel heisst die Erweiterung <code class="docutils literal notranslate"><span class="pre">malerin</span></code>. Das <em>Reposoritory</em> geben wir in R meistens nicht an, weil in RStudio bereits eine Default-Adresse hinterlegt ist.</p>
 </div>
 <div class="section" id="erweiterung-laden">
 <h2>Erweiterung laden<a class="headerlink" href="#erweiterung-laden" title="Permalink to this headline">¶</a></h2>
 <p>Treiben wir an dieser Stelle die Analogie etwas weiter: Der Erstkontakt mit der Malerin ist also erstellt und alle Vertragsmodalitäten sind vereinbart. Nun wollen wir an einem bestimmten Tag mit ihr arbeiten. Dafür müssen wir sie zuerst auf die Baustelle bestellen. Übersetzt auf Programmieren bedeutet dies, wir müssen die Erweiterung in unsere Session laden. In R und Python sehen die Befehle folgendermassen aus:</p>
-<table class="table">
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>R</p></th>
-<th class="head"><p>python</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">malerin</span><span class="p">)</span>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<p class="card-text">in R:</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">malerin</span><span class="p">)</span>
 </pre></div>
 </div>
-</td>
-<td><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">malerin</span>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<p class="card-text">in Python:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">malerin</span>
 </pre></div>
 </div>
-</td>
-</tr>
-</tbody>
-</table>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="erweiterung-verwenden">
 <h2>Erweiterung verwenden<a class="headerlink" href="#erweiterung-verwenden" title="Permalink to this headline">¶</a></h2>
 <p>Erst jetzt können wir mit der Erweiterung arbeiten und die Fachexpertise unserer Malerin nutzen. Eine Expertise unserer Malerin ist es, Wände zu bemalen. Dafür gibt es eine <em>Function</em> <code class="docutils literal notranslate"><span class="pre">wand_bemalen()</span></code>. In R kann ich diese <em>Function</em> “einfach so” aufrufen. In Python hingegen muss ich die Erweiterung, in der die <em>Function</em> enthalten ist, der <em>Function</em> mit einem Punkt voranstellen. Das sieht also folgendermassen aus:</p>
-<table class="table">
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>R</p></th>
-<th class="head"><p>python</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">wand_bemalen</span><span class="p">()</span>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<p class="card-text">in R:</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">wand_bemalen</span><span class="p">()</span>
 </pre></div>
 </div>
-</td>
-<td><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">malerin</span><span class="o">.</span><span class="n">wand_bemalen</span><span class="p">()</span>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<p class="card-text">in Python:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">malerin</span><span class="o">.</span><span class="n">wand_bemalen</span><span class="p">()</span>
 </pre></div>
 </div>
-</td>
-</tr>
-</tbody>
-</table>
+</div>
+</div>
+</div>
+</div>
+</div>
 <p>Das ist zwar umständlicher, aber dafür weniger Fehleranfällig. Angenommen, unser Maurer kann ebenfalls Wände bemalen und hat die entsprechende <em>Function</em> <code class="docutils literal notranslate"><span class="pre">wand_bemalen()</span></code> ebenfalls. Dann ist in R nicht klar, welche Erweiterung gemeint ist und das kann zu Missverständnissen führen (vielleicht bemalt der Mauerer die Wände etwas anders als die Malerin). In Python ist im obigen Beispiel unmissverständlich, dass ich <code class="docutils literal notranslate"><span class="pre">wand_bemalen()</span></code> aus dem Modul <code class="docutils literal notranslate"><span class="pre">malerin</span></code> meine.</p>
 </div>
 <div class="section" id="modul-mit-alias-importieren">
