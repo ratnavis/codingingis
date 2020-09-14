@@ -121,8 +121,13 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="02_01a_Virtual_Environments.html">
+   Virtual Environments mit Conda
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="02_01b_Python_Module.html">
-   Input: Python Modules
+   Python Modules
   </a>
  </li>
  <li class="toctree-l1">
@@ -363,8 +368,7 @@
 </div>
 <div class="section" id="ubung-3-csv-als-dataframe-importieren">
 <h2>Übung 3: CSV als <em>DataFrame</em> importieren<a class="headerlink" href="#ubung-3-csv-als-dataframe-importieren" title="Permalink to this headline">¶</a></h2>
-<p>Genau so einfach ist es eine csv zu importieren. Lade dazu die Datei “zeckenstiche.csv” von Moodle herunter und speichere es im aktuellen Arbeitsverzeichnis ab.</p>
-<p>Importiere mit folgendem Code die Datei “zeckenstiche.csv”. Schau dir <code class="docutils literal notranslate"><span class="pre">zeckenstiche</span></code> nach dem importieren an.</p>
+<p>Genau so einfach ist es eine csv zu importieren. Lade <a class="reference external" href="https://raw.githubusercontent.com/ratnanil/codingingis/master/zeckenstiche.csv">hier die Datei “zeckenstiche.csv”</a> (Rechtsklick –&gt; Ziel speichern unter) herunter und speichere es im aktuellen Arbeitsverzeichnis ab. Importiere mit folgendem Code die Datei “zeckenstiche.csv”. Schau dir <code class="docutils literal notranslate"><span class="pre">zeckenstiche</span></code> nach dem importieren im “Variable Inspector” an.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeckenstiche</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;zeckenstiche.csv&quot;</span><span class="p">)</span>
@@ -375,28 +379,18 @@
 <div class="tip admonition">
 <p class="admonition-title">Achtung!</p>
 <ul class="simple">
-<li><p>Wenn du auf dem JupyterHub Server arbeitest dann ist dein Arbeitsverzeichnis ebenfalls <em>auf dem Server</em>. Das heisst, du musst “zeckenstiche.csv” auf den Server hochladen. Dies kannst du mit dem Button “Upload Files” im Tab “File Browswer” bewerkstelligen.</p></li>
-<li><p>der obige Code funktioniert nur, wenn “zeckenstiche.csv” im aktuellen Arbeitsverzeichnis (<em>Current Working Directory</em>) abgespeichert ist. Wenn du nicht sicher bist, wo dein aktuelles Arbeitsverzeichnis liegt, kannst du das Modul <code class="docutils literal notranslate"><span class="pre">os</span></code> laden und dies mit der Funktion <code class="docutils literal notranslate"><span class="pre">os.getcwd()</span></code> (get <strong>c</strong>urrent<strong>w</strong>orking<strong>d</strong>irectory) herausfinden.</p></li>
+<li><p>Wenn du auf dem JupyterHub Server arbeitest dann ist dein Arbeitsverzeichnis ebenfalls <em>auf dem Server</em>. Das heisst, du musst “zeckenstiche.csv” auf den Server hochladen. Dies kannst du mit dem Button “Upload Files” im Tab “File Browser” bewerkstelligen.</p></li>
+<li><p>der obige Code funktioniert nur, wenn “zeckenstiche.csv” im aktuellen Arbeitsverzeichnis (<em>Current Working Directory</em>) abgespeichert ist. Wenn du nicht sicher bist, wo dein aktuelles Arbeitsverzeichnis liegt, kannst du dies mit der Funktion <code class="docutils literal notranslate"><span class="pre">os.getcwd()</span></code> (get <strong>c</strong>urrent<strong>w</strong>orking<strong>d</strong>irectory) herausfinden (s.u.).</p></li>
 </ul>
-</div>
-<div class="cell tag_hide-cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
 </pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/home/runner/work/codingingis/codingingis&#39;
-</pre></div>
-</div>
 </div>
 </div>
 </div>
 <div class="section" id="ubung-4-koordinaten-raumlich-darstellen">
 <h2>Übung 4: Koordinaten räumlich darstellen<a class="headerlink" href="#ubung-4-koordinaten-raumlich-darstellen" title="Permalink to this headline">¶</a></h2>
-<p>Die <em>DataFrame</em> <code class="docutils literal notranslate"><span class="pre">zeckenstiche</span></code> beinhaltet x und y Koordinaten für jeden Unfall in den gleichnamigen Spalten. Wir können die Stiche mit einem Scatterplot räumlich visualisieren. Führe dazu folgenden Code aus:</p>
+<p>Die <em>DataFrame</em> <code class="docutils literal notranslate"><span class="pre">zeckenstiche</span></code> beinhaltet x und y Koordinaten für jeden Unfall in den gleichnamigen Spalten. Wir können die Stiche mit einem Scatterplot räumlich visualisieren. Führe dazu folgenden Code aus. Überlege dir, was die zweite Zeile bewirkt und warum dies sinnvoll ist.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">zeckenstiche</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">,</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
@@ -409,44 +403,20 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2681088.05, 2681174.95, 1250644.15, 1250728.85)
 </pre></div>
 </div>
-<img alt="_images/01_06_Tabellarische_Daten_14_1.png" src="_images/01_06_Tabellarische_Daten_14_1.png" />
+<img alt="_images/01_06_Tabellarische_Daten_12_1.png" src="_images/01_06_Tabellarische_Daten_12_1.png" />
 </div>
 </div>
 </div>
 <div class="section" id="ubung-5-einzelne-spalte-selektieren">
 <h2>Übung 5: Einzelne Spalte selektieren<a class="headerlink" href="#ubung-5-einzelne-spalte-selektieren" title="Permalink to this headline">¶</a></h2>
 <p>Um eine einzelne Spalte zu selektieren (z.B. die Spalte “ID”) kann man gleich vorgehen wie bei der Selektion eines Eintrage in einer <em>Dictionary</em>. Probiere es aus.</p>
-<div class="cell tag_hide-cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;ID&quot;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     2550
-1    10437
-2     9174
-3     8773
-4     2764
-5     2513
-6     9185
-7    28521
-8    26745
-9    27391
-Name: ID, dtype: int64
-</pre></div>
-</div>
-</div>
-</div>
 </div>
 <div class="section" id="ubung-6-neue-spalte-erstellen">
 <h2>Übung 6: Neue Spalte erstellen<a class="headerlink" href="#ubung-6-neue-spalte-erstellen" title="Permalink to this headline">¶</a></h2>
-<p>Auch das Erstellen einer neuen Spalte ist identisch mit der Erstellung eines neuen <em>Dictionary</em> Eintrags. Folgende Zeile erstellt eine neue Spalte “Stichtyp” mit dem gleichen Wert in allen Zeilen (“Zecke”). Erstelle ebenfalls eine solche Spalte.</p>
+<p>Auch das Erstellen einer neuen Spalte ist identisch mit der Erstellung eines neuen <em>Dictionary</em> Eintrags. Erstelle eine neue Spalte “Stichtyp” mit dem Wert “Zecke” auf jeder Zeile (s.u.).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;Stichtyp&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Zecke&quot;</span>
-
-<span class="n">zeckenstiche</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeckenstiche</span>
 </pre></div>
 </div>
 </div>

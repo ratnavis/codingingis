@@ -121,8 +121,13 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="02_01a_Virtual_Environments.html">
+   Virtual Environments mit Conda
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="02_01b_Python_Module.html">
-   Input: Python Modules
+   Python Modules
   </a>
  </li>
  <li class="toctree-l1">
@@ -315,7 +320,8 @@
                 
   <div class="section" id="ubung-punkte-einer-dataframe-zufallig-verschieben">
 <h1>Übung Punkte einer <em>DataFrame</em> zufällig verschieben<a class="headerlink" href="#ubung-punkte-einer-dataframe-zufallig-verschieben" title="Permalink to this headline">¶</a></h1>
-<p>Nun wollen wir usere Function <code class="docutils literal notranslate"><span class="pre">offset_coordinate()</span></code> auf alle Zeckenstich-Koordinaten anwenden. Lade hierzu den Zeckenstich-Datensatz ein.</p>
+<p>Nun wollen wir usere Function <code class="docutils literal notranslate"><span class="pre">offset_coordinate()</span></code> auf alle Zeckenstich-Koordinaten anwenden. Bildlich gesprochen: Wir nehmen unsere Zeckenstichdatensatz und schütteln ihn einmal durch.</p>
+<p>Nutze hier die Datei “zeckenstiche.csv” von letzter Woche (du kannst auch sie <a class="reference external" href="https://raw.githubusercontent.com/ratnanil/codingingis/master/zeckenstiche.csv">hier erneut runterladen</a>, Rechtsklick –&gt; Ziel speichern unter).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -325,7 +331,6 @@
     <span class="n">new</span> <span class="o">=</span> <span class="n">old</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">normalvariate</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">distance</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">new</span>
 
-<span class="c1"># mit &quot;head(10)&quot; importiere ich nur die ersten 10 Einträge des CSV. So kann ich den Workflow erstmal an einem kleineren Datensatz testen.</span>
 <span class="n">zeckenstiche</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;zeckenstiche.csv&quot;</span><span class="p">)</span>
 
 
@@ -444,7 +449,7 @@
 <div class="section" id="ubung-4-mehrere-dataframes-visualisieren">
 <h2>Übung 4: Mehrere <em>DataFrames</em> visualisieren<a class="headerlink" href="#ubung-4-mehrere-dataframes-visualisieren" title="Permalink to this headline">¶</a></h2>
 <p>Um zwei <em>DataFrames</em> im gleichen Plot darzustellen, wird folgendermassen vorgegangen. Der erste Datensatz wird mit <code class="docutils literal notranslate"><span class="pre">.plot()</span></code> visualisiert, wobei der Output einer Variabel  (z.B. <code class="docutils literal notranslate"><span class="pre">basemap</span></code>)  zugewiesen wird. Danach wird der zweite Datensatz ebenfalls mit <code class="docutils literal notranslate"><span class="pre">.plot()</span></code> visualisiert, wobei auf den ersten Plot via dem Argument <code class="docutils literal notranslate"><span class="pre">ax</span></code> verwiesen wird.</p>
-<p>Bei den roten Punkten handelt es sich um die Original-Zeckenstichen, bei den blauen um die simulierten (leicht verschobnen) Zeckenstiche.</p>
+<p>Bei den roten Punkten handelt es sich um die Original-Zeckenstichen, bei den blauen um die simulierten (leicht verschoben) Zeckenstiche.</p>
 </div>
 <div class="section" id="ubung-5-genauigkeitsangaben-der-punkte-mitberucksichtigen">
 <h2>Übung 5: Genauigkeitsangaben der Punkte mitberücksichtigen.<a class="headerlink" href="#ubung-5-genauigkeitsangaben-der-punkte-mitberucksichtigen" title="Permalink to this headline">¶</a></h2>
@@ -594,62 +599,62 @@
     <tr>
       <th>0</th>
       <td>2550</td>
-      <td>2.681190e+06</td>
-      <td>1.251702e+06</td>
+      <td>2.680691e+06</td>
+      <td>1.250421e+06</td>
     </tr>
     <tr>
       <th>1</th>
       <td>10437</td>
-      <td>2.681143e+06</td>
-      <td>1.251396e+06</td>
+      <td>2.680800e+06</td>
+      <td>1.250516e+06</td>
     </tr>
     <tr>
       <th>2</th>
       <td>9174</td>
-      <td>2.681179e+06</td>
-      <td>1.251407e+06</td>
+      <td>2.680836e+06</td>
+      <td>1.250527e+06</td>
     </tr>
     <tr>
       <th>3</th>
       <td>8773</td>
-      <td>2.681162e+06</td>
-      <td>1.251407e+06</td>
+      <td>2.680819e+06</td>
+      <td>1.250527e+06</td>
     </tr>
     <tr>
       <th>4</th>
       <td>2764</td>
-      <td>2.681182e+06</td>
-      <td>1.251416e+06</td>
+      <td>2.680839e+06</td>
+      <td>1.250536e+06</td>
     </tr>
     <tr>
       <th>5</th>
       <td>2513</td>
-      <td>2.681222e+06</td>
-      <td>1.251435e+06</td>
+      <td>2.680879e+06</td>
+      <td>1.250555e+06</td>
     </tr>
     <tr>
       <th>6</th>
       <td>9185</td>
-      <td>2.681158e+06</td>
-      <td>1.251436e+06</td>
+      <td>2.680815e+06</td>
+      <td>1.250556e+06</td>
     </tr>
     <tr>
       <th>7</th>
       <td>28521</td>
-      <td>2.681175e+06</td>
-      <td>1.251444e+06</td>
+      <td>2.680832e+06</td>
+      <td>1.250564e+06</td>
     </tr>
     <tr>
       <th>8</th>
       <td>26745</td>
-      <td>2.681168e+06</td>
-      <td>1.251449e+06</td>
+      <td>2.680825e+06</td>
+      <td>1.250569e+06</td>
     </tr>
     <tr>
       <th>9</th>
       <td>27391</td>
-      <td>2.681189e+06</td>
-      <td>1.251449e+06</td>
+      <td>2.680846e+06</td>
+      <td>1.250569e+06</td>
     </tr>
   </tbody>
 </table>

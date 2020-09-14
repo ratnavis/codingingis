@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Index &#8212; Coding in GIS</title>
+    <title>Virtual Environments mit Conda &#8212; Coding in GIS</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -34,8 +34,10 @@
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="shortcut icon" href="_static/favicon.png"/>
-    <link rel="index" title="Index" href="#" />
+    <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Python Modules" href="02_01b_Python_Module.html" />
+    <link rel="prev" title="Einleitung zu diesem Block" href="02_01_Einleitung.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -112,14 +114,14 @@
   Coding in GIS II
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="02_01_Einleitung.html">
    Einleitung zu diesem Block
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="02_01a_Virtual_Environments.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Virtual Environments mit Conda
   </a>
  </li>
@@ -233,6 +235,18 @@
             class="fas fa-download"></i></button>
 
     
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/02_01a_Virtual_Environments.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
 </div>
         <!-- Source interaction buttons -->
 
@@ -244,10 +258,30 @@
 
         <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        <a class="jupyterhub-button" href="https://jupyterhub01.zhaw.ch/hub/user-redirect/git-pull?repo=https://github.com/ratnanil/codingingis&urlpath=lab/tree/codingingis/02_01a_Virtual_Environments.ipynb&branch=master"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
+        
+        
+    </div>
+</div>
+
     </div>
 
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
         <nav id="bd-toc-nav">
             
         </nav>
@@ -258,13 +292,54 @@
         
               <div>
                 
-
-<h1 id="index">Index</h1>
-
-<div class="genindex-jumpbox">
- 
+  <div class="section" id="virtual-environments-mit-conda">
+<h1>Virtual Environments mit Conda<a class="headerlink" href="#virtual-environments-mit-conda" title="Permalink to this headline">¶</a></h1>
+<p>Dafür müsst ihr das Konzept von “Virtual Environments”, welches in der Vorlesung erläutert wurde, (halbwegs) verstanden haben. Sollte dies nicht der Fall sein, meldest du dich am besten beim Dozenten oder schaust dir nochmals die Vorlesungsfolien an.</p>
+<p><strong>Schritt 1: Conda installieren</strong></p>
+<p>Normalerweise wäre nun der erste Schritt, <em>conda</em> herunterzuladen und installieren (ich empfehle <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">miniconda</a>, nicht <a class="reference external" href="https://www.anaconda.com/products/individual">anaconda</a>). Wenn ihr aber ArcGIS Pro installiert habt, ist dieser Schritt nicht nötig.</p>
+<p><strong>Schritt 2: Systemvariable setzen</strong></p>
+<p>Wir wollen das Programm <em>conda</em> von der Kommanozeile aus (cmd) bedienen. Dafür müsssen wir evt. die Systemvariable zuerst noch setzen. Um zu Prüfen ob dies nötig ist, kannst du die Konsole starten (Windowstaste &gt; cmd) und folgende Zeile einfügen</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda --version
+</pre></div>
+</div>
+<p>Wenn ihr eine Versionsnummer könnt ihr zum nächsten Schritt übergehen. Ansonsten müsst ihr die Systemvariable <code class="docutils literal notranslate"><span class="pre">PATH</span></code> zuerst noch setzen. Siehe dazu die Vorlesungsfolie. Überprüfe mit <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">--version</span></code> ob das setzen der Systemvariable erfolgreich war.</p>
+<p><strong>Schritt 3: Virtual Environment erstellen und aktivieren</strong></p>
+<p>Nun kannst du mit <em>conda</em> eine neue Virtual Environment erstellen. Gibt dazu folgenden Befehl in die Konsole ein:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda create --name codingingis
+</pre></div>
+</div>
+<p>Die Frage <code class="docutils literal notranslate"><span class="pre">Proceed</span> <span class="pre">([y]/n)</span></code> kannst du mit <code class="docutils literal notranslate"><span class="pre">y</span></code> bestätigen. Anschlissend kannst du mit dem Befehl <code class="docutils literal notranslate"><span class="pre">activate</span> <span class="pre">codingingis</span></code> die neu erstellte Environment “einschalten”.</p>
+<p><strong>Schritt 4: Module installieren</strong></p>
+<p>Nun kannst du die benötigten Module installieren. Beispielsweise ist Jupyter Labs ebenfalls ein Python Modul, welches sich über <em>conda</em> installieren lässt. Dazu braucht es folgenden Befehl:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install -c conda-forge jupyterlab
+</pre></div>
+</div>
+<p>Ersetze nun <code class="docutils literal notranslate"><span class="pre">jupyterlab</span></code> mit dem namen der anderen Module, die du für den Unterricht noch brauchst. Starte mal mit folgenden <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>, <code class="docutils literal notranslate"><span class="pre">geopandas</span></code>, <code class="docutils literal notranslate"><span class="pre">descartes</span></code>, fehlende Module kannst du später immer noch nach installieren.</p>
+<p>Nun kannst du Jupyter Lab mit folgendem Befehl starten</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter lab
+</pre></div>
+</div>
 </div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
@@ -274,6 +349,8 @@
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="02_01_Einleitung.html" title="previous page">Einleitung zu diesem Block</a>
+    <a class='right-next' id="next-link" href="02_01b_Python_Module.html" title="next page">Python Modules</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

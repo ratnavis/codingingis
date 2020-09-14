@@ -120,8 +120,13 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="02_01a_Virtual_Environments.html">
+   Virtual Environments mit Conda
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="02_01b_Python_Module.html">
-   Input: Python Modules
+   Python Modules
   </a>
  </li>
  <li class="toctree-l1">
@@ -465,10 +470,10 @@ Hinweis: Allenfalls müssen das Koordinatensystem der beiden GeoDataFrames nochm
     <tr>
       <th>0</th>
       <td>2550</td>
-      <td>2.681815e+06</td>
-      <td>1.250879e+06</td>
+      <td>2.681646e+06</td>
+      <td>1.249950e+06</td>
       <td>0</td>
-      <td>POINT (2681815.083 1250878.968)</td>
+      <td>POINT (2681646.093 1249949.520)</td>
       <td>0</td>
       <td>0</td>
       <td>947316.853401</td>
@@ -478,10 +483,10 @@ Hinweis: Allenfalls müssen das Koordinatensystem der beiden GeoDataFrames nochm
     <tr>
       <th>1</th>
       <td>10437</td>
-      <td>2.680724e+06</td>
-      <td>1.253200e+06</td>
+      <td>2.679616e+06</td>
+      <td>1.250905e+06</td>
       <td>0</td>
-      <td>POINT (2680724.291 1253200.274)</td>
+      <td>POINT (2679615.976 1250905.268)</td>
       <td>0</td>
       <td>0</td>
       <td>947316.853401</td>
@@ -491,10 +496,10 @@ Hinweis: Allenfalls müssen das Koordinatensystem der beiden GeoDataFrames nochm
     <tr>
       <th>2</th>
       <td>9174</td>
-      <td>2.681984e+06</td>
-      <td>1.251683e+06</td>
+      <td>2.680460e+06</td>
+      <td>1.251506e+06</td>
       <td>0</td>
-      <td>POINT (2681983.888 1251683.163)</td>
+      <td>POINT (2680459.591 1251505.910)</td>
       <td>0</td>
       <td>0</td>
       <td>947316.853401</td>
@@ -504,10 +509,10 @@ Hinweis: Allenfalls müssen das Koordinatensystem der beiden GeoDataFrames nochm
     <tr>
       <th>3</th>
       <td>8773</td>
-      <td>2.679900e+06</td>
-      <td>1.249051e+06</td>
+      <td>2.680576e+06</td>
+      <td>1.250438e+06</td>
       <td>0</td>
-      <td>POINT (2679900.069 1249050.796)</td>
+      <td>POINT (2680576.211 1250438.321)</td>
       <td>0</td>
       <td>0</td>
       <td>947316.853401</td>
@@ -515,12 +520,12 @@ Hinweis: Allenfalls müssen das Koordinatensystem der beiden GeoDataFrames nochm
       <td>nein</td>
     </tr>
     <tr>
-      <th>5</th>
-      <td>2513</td>
-      <td>2.682830e+06</td>
-      <td>1.250166e+06</td>
+      <th>4</th>
+      <td>2764</td>
+      <td>2.680881e+06</td>
+      <td>1.251003e+06</td>
       <td>0</td>
-      <td>POINT (2682830.305 1250166.327)</td>
+      <td>POINT (2680880.858 1251003.114)</td>
       <td>0</td>
       <td>0</td>
       <td>947316.853401</td>
@@ -581,9 +586,13 @@ Hinweis: Allenfalls müssen das Koordinatensystem der beiden GeoDataFrames nochm
       <td>8</td>
     </tr>
     <tr>
-      <th>1</th>
+      <th rowspan="2" valign="top">1</th>
+      <th>ja</th>
+      <td>1</td>
+    </tr>
+    <tr>
       <th>nein</th>
-      <td>10</td>
+      <td>9</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">2</th>
@@ -597,11 +606,11 @@ Hinweis: Allenfalls müssen das Koordinatensystem der beiden GeoDataFrames nochm
     <tr>
       <th rowspan="2" valign="top">3</th>
       <th>ja</th>
-      <td>3</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>nein</th>
-      <td>7</td>
+      <td>9</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">4</th>
@@ -670,8 +679,8 @@ Hinweis: Allenfalls müssen das Koordinatensystem der beiden GeoDataFrames nochm
     </tr>
     <tr>
       <th>1</th>
-      <td>0</td>
-      <td>10</td>
+      <td>1</td>
+      <td>9</td>
     </tr>
     <tr>
       <th>2</th>
@@ -680,8 +689,8 @@ Hinweis: Allenfalls müssen das Koordinatensystem der beiden GeoDataFrames nochm
     </tr>
     <tr>
       <th>3</th>
-      <td>3</td>
-      <td>7</td>
+      <td>1</td>
+      <td>9</td>
     </tr>
     <tr>
       <th>4</th>
@@ -707,9 +716,9 @@ Hinweis: Allenfalls müssen das Koordinatensystem der beiden GeoDataFrames nochm
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Run_Nr
 0    0.2
-1    0.0
+1    0.1
 2    0.1
-3    0.3
+3    0.1
 4    0.3
 dtype: float64
 </pre></div>
