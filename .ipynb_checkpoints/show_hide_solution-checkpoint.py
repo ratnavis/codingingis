@@ -2,8 +2,9 @@ import nbformat as nbf
 from glob import glob
 import re
 # Collect a list of all notebooks in the content folder
-notebooks = glob("./*.ipynb", recursive=False) # recursive = True to search in subfolders
-
+notebooks_cog1 = glob("./01_*.ipynb", recursive=False) # recursive = True to search in subfolders
+notebooks_cog2 = glob("./02_*.ipynb", recursive=False) # recursive = True to search in subfolders
+notebooks_cog3 = glob("./03_*.ipynb", recursive=False) # recursive = True to search in subfolders
 
 # Search through each notebook and look for the text, add a tag if necessary
 
@@ -24,4 +25,9 @@ def musterloesung(notebooks,tag = "remove-cell"):
 
         nbf.write(ntbk, ipath)
         
-musterloesung(notebooks, "remove-cell")
+musterloesung(notebooks_cog1, "remove-cell")
+musterloesung(notebooks_cog2, "remove-cell")
+musterloesung(notebooks_cog3, "remove-cell")
+
+# To aktivate popups for just Coding in GIS I, run the following code:
+#musterloesung(notebooks_cog1, "hide-cell")
