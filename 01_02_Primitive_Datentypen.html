@@ -26,6 +26,8 @@
     <script src="_static/copybutton.js"></script>
     <script src="_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -315,18 +317,28 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ubung-3-numerische-variabeln-1">
-   Übung 3: Numerische Variabeln 1
+  <a class="reference internal nav-link" href="#ubung-3-zahl-ohne-nachkommastelle">
+   Übung 3: Zahl ohne Nachkommastelle
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ubung-3-numerische-variabeln-2">
-   Übung 3: Numerische Variabeln 2
+  <a class="reference internal nav-link" href="#ubung-4-zahl-mit-nachkommastelle">
+   Übung 4: Zahl mit Nachkommastelle
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ubung-4-boolsche-variabeln">
-   Übung 4: Boolsche Variabeln
+  <a class="reference internal nav-link" href="#ubung-5-boolsche-variabeln">
+   Übung 5: Boolsche Variabeln
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ubung-6-einwohnerdichte">
+   Übung 6: Einwohnerdichte
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ubung-7-bmi">
+   Übung 7:  BMI
   </a>
  </li>
 </ul>
@@ -347,24 +359,34 @@
 <tr class="row-odd"><th class="head"><p>Python</p></th>
 <th class="head"><p>R</p></th>
 <th class="head"><p>Beschreibung</p></th>
+<th class="head"><p>Beispiel</p></th>
+<th class="head"><p>In Python</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Boolean</p></td>
 <td><p>Logical</p></td>
-<td><p>ja / nein</p></td>
+<td><p>Logische Werte ja / nein</p></td>
+<td><p>Antwort auf geschlossene Fragen</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">regen</span> <span class="pre">=</span> <span class="pre">True</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p>String</p></td>
 <td><p>Character</p></td>
 <td><p>Textinformation</p></td>
+<td><p>Bern, Luzern</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">stadt</span> <span class="pre">=</span> <span class="pre">&quot;Bern&quot;</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p>Integer</p></td>
 <td><p>Integer</p></td>
 <td><p>Zahl ohne Nachkommastelle</p></td>
+<td><p>Anzahl Einwohner in einer Stadt</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bern</span> <span class="pre">=</span> <span class="pre">133115</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p>Float</p></td>
 <td><p>Double</p></td>
 <td><p>Zahl mit Nachkommastelle</p></td>
+<td><p>Temperatur</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">temp</span> <span class="pre">=</span> <span class="pre">22.5</span></code></p></td>
 </tr>
 </tbody>
 </table>
@@ -388,6 +410,31 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>bool
+</pre></div>
+</div>
+</div>
+</div>
+<p>Um zu prüfen, ob ein bestimmter Wert <code class="docutils literal notranslate"><span class="pre">True</span></code> oder <code class="docutils literal notranslate"><span class="pre">False</span></code> ist verwendet man <code class="docutils literal notranslate"><span class="pre">is</span> <span class="pre">True</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">regen</span> <span class="ow">is</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sonne</span> <span class="ow">is</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
 </pre></div>
 </div>
 </div>
@@ -482,19 +529,27 @@
 </div>
 <div class="section" id="ubung-2-string-verbinden">
 <h2>Übung 2: String verbinden<a class="headerlink" href="#ubung-2-string-verbinden" title="Permalink to this headline">¶</a></h2>
-<p>“Klebe” die beiden Variabeln zusammen.</p>
+<p>“Klebe” die beiden Variabeln mit einem Leerschlag dazwischen zusammen.</p>
 </div>
-<div class="section" id="ubung-3-numerische-variabeln-1">
-<h2>Übung 3: Numerische Variabeln 1<a class="headerlink" href="#ubung-3-numerische-variabeln-1" title="Permalink to this headline">¶</a></h2>
-<p>Erstelle eine Variabel <code class="docutils literal notranslate"><span class="pre">groesse</span></code> mit deiner Körpergrösse in Zentimeter. Was ist das für ein Datentyp?</p>
+<div class="section" id="ubung-3-zahl-ohne-nachkommastelle">
+<h2>Übung 3: Zahl ohne Nachkommastelle<a class="headerlink" href="#ubung-3-zahl-ohne-nachkommastelle" title="Permalink to this headline">¶</a></h2>
+<p>Erstelle eine Variabel <code class="docutils literal notranslate"><span class="pre">groesse_cm</span></code> mit deiner Körpergrösse in Zentimeter. Was ist das für ein Datentyp?</p>
 </div>
-<div class="section" id="ubung-3-numerische-variabeln-2">
-<h2>Übung 3: Numerische Variabeln 2<a class="headerlink" href="#ubung-3-numerische-variabeln-2" title="Permalink to this headline">¶</a></h2>
-<p>Ermittle deine Grösse in Meter auf der Basis von <code class="docutils literal notranslate"><span class="pre">groesse</span></code>. Was ist das für ein Datentyp?</p>
+<div class="section" id="ubung-4-zahl-mit-nachkommastelle">
+<h2>Übung 4: Zahl mit Nachkommastelle<a class="headerlink" href="#ubung-4-zahl-mit-nachkommastelle" title="Permalink to this headline">¶</a></h2>
+<p>Ermittle deine Grösse in Fuss auf der Basis von <code class="docutils literal notranslate"><span class="pre">groesse_cm</span></code> (1 Fuss entspricht 30.48 cm). Was ist das für ein Datentyp?</p>
 </div>
-<div class="section" id="ubung-4-boolsche-variabeln">
-<h2>Übung 4: Boolsche Variabeln<a class="headerlink" href="#ubung-4-boolsche-variabeln" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="ubung-5-boolsche-variabeln">
+<h2>Übung 5: Boolsche Variabeln<a class="headerlink" href="#ubung-5-boolsche-variabeln" title="Permalink to this headline">¶</a></h2>
 <p>Erstelle eine boolsche Variable blond und setzte sie auf <code class="docutils literal notranslate"><span class="pre">True</span></code> wenn diese Eigenschaft auf dich zutrifft und <code class="docutils literal notranslate"><span class="pre">False</span></code> falls nicht.</p>
+</div>
+<div class="section" id="ubung-6-einwohnerdichte">
+<h2>Übung 6: Einwohnerdichte<a class="headerlink" href="#ubung-6-einwohnerdichte" title="Permalink to this headline">¶</a></h2>
+<p>Erstelle eine Variabel <code class="docutils literal notranslate"><span class="pre">einwohner</span></code> mit der Einwohnerzahl der Schweiz (8’603’900, per31. Dezember 2019). Erstelle eine zweite Variabel <code class="docutils literal notranslate"><span class="pre">flaeche</span></code> (vermeide Umlaute in deinen Variabeln!) mit der Flächengrösse der Schweiz (41’285 km<span class="math notranslate nohighlight">\(^2\)</span>). Berechen nun die Einwohnerdichte.</p>
+</div>
+<div class="section" id="ubung-7-bmi">
+<h2>Übung 7:  BMI<a class="headerlink" href="#ubung-7-bmi" title="Permalink to this headline">¶</a></h2>
+<p>Erstelle eine Variabel <code class="docutils literal notranslate"><span class="pre">gewicht_kg</span></code> (kg) und <code class="docutils literal notranslate"><span class="pre">groesse_cm</span></code> (m) und berechne aufgrund von <code class="docutils literal notranslate"><span class="pre">gewicht_kg</span></code> und <code class="docutils literal notranslate"><span class="pre">groesse_m</span></code> ein BodyMassIndex (<span class="math notranslate nohighlight">\(BMI=\frac{m}{l^2}\)</span>, <span class="math notranslate nohighlight">\(m\)</span>: Körpermasse in Kilogramm, <span class="math notranslate nohighlight">\(l\)</span>: Körpergrösse in Meter).</p>
 </div>
 </div>
 

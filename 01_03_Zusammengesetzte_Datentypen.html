@@ -26,6 +26,8 @@
     <script src="_static/copybutton.js"></script>
     <script src="_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -342,7 +344,7 @@
 <tbody>
 <tr class="row-even"><td><p>List</p></td>
 <td><p>Vector</p></td>
-<td><p>Mehrere Werte, Abrufen über Zahlen</p></td>
+<td><p>Mehrere Werte, Abrufen über Position</p></td>
 </tr>
 <tr class="row-odd"><td><p>Dict</p></td>
 <td><p>List</p></td>
@@ -359,7 +361,7 @@
 <p>Eine <code class="docutils literal notranslate"><span class="pre">List</span></code>:</p>
 <ul class="simple">
 <li><p>speichert die Reihenfolge, in der die Werte eingegeben werden</p></li>
-<li><p>kann unterschiedliche Datentypen enthalten</p></li>
+<li><p>kann unterschiedliche (gemischte) Datentypen enthalten (dies ist in R Vector nicht möglich)</p></li>
 <li><p>wird mit eckgigen Klammern (<code class="docutils literal notranslate"><span class="pre">[</span></code> und <code class="docutils literal notranslate"><span class="pre">]</span></code>) erstellt</p></li>
 </ul>
 <div class="cell docutils container">
@@ -438,7 +440,8 @@
 <li><p>speichert die Reihenfolge, in der die Werte eingegeben werden <strong>nicht</strong></p></li>
 <li><p>kann unterschiedliche Datentypen enthalten</p></li>
 <li><p>wird mit geschweiften Klammern (<code class="docutils literal notranslate"><span class="pre">{</span></code> und <code class="docutils literal notranslate"><span class="pre">}</span></code>) erstellt</p></li>
-<li><p>speichert für jeden Wert (“Value”) einen Schlüssel (“Key”), mit dem er abgerufen werden kann: <code class="docutils literal notranslate"><span class="pre">dict_name</span> <span class="pre">=</span> <span class="pre">{&quot;Key&quot;</span> <span class="pre">:</span> <span class="pre">&quot;Value}</span></code></p></li>
+<li><p>speichert für jeden Wert (“Value”) einen Schlüssel (“Key”), mit dem er abgerufen werden kann:</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dict_name</span> <span class="pre">=</span> <span class="pre">{&quot;Key&quot;</span> <span class="pre">:</span> <span class="pre">&quot;Value}</span></code></p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -461,7 +464,19 @@
 </div>
 </div>
 </div>
-<p>Auch hier sind verschiedene Datentypen möglich:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Der Koch empfiehlt: &quot;</span><span class="o">+</span><span class="n">menue</span><span class="p">[</span><span class="s2">&quot;Vorspeise&quot;</span><span class="p">]</span> <span class="o">+</span><span class="s2">&quot; zur Vorspeise, &quot;</span><span class="o">+</span><span class="n">menue</span><span class="p">[</span><span class="s2">&quot;Hauptspeise&quot;</span><span class="p">]</span> <span class="o">+</span><span class="s2">&quot; als Hauptgang und &quot;</span><span class="o">+</span> <span class="n">menue</span><span class="p">[</span><span class="s2">&quot;Dessert&quot;</span><span class="p">]</span> <span class="o">+</span><span class="s2">&quot; zum Dessert.&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Der Koch empfiehlt: Suppe zur Vorspeise, Gratin als Hauptgang und Eis zum Dessert.&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Auch hier sind gemischte Datentypen möglich:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">menue</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Vorspeise&quot;</span><span class="p">:</span> <span class="s2">&quot;Suppe&quot;</span><span class="p">,</span>

@@ -26,6 +26,8 @@
     <script src="_static/copybutton.js"></script>
     <script src="_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -295,13 +297,22 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ubung-3-key-erganzen">
-   Übung 3: Key ergänzen
+  <a class="reference internal nav-link" href="#ubung-3-dictionary-nutzen">
+   Übung 3:
+   <em>
+    Dictionary
+   </em>
+   nutzen
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ubung-4-mehrere-values-pro-key">
-   Übung 4: Mehrere
+  <a class="reference internal nav-link" href="#ubung-4-key-erganzen">
+   Übung 4: Key ergänzen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ubung-5-mehrere-values-pro-key">
+   Übung 5: Mehrere
    <em>
     Values
    </em>
@@ -312,8 +323,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ubung-5-dictionary-mit-list">
-   Übung 5: Dictionary mit List
+  <a class="reference internal nav-link" href="#ubung-6-dictionary-mit-list">
+   Übung 6: Dictionary mit List
   </a>
  </li>
 </ul>
@@ -394,8 +405,12 @@ Unter dem Eintrag “trump” findet man im Langenscheidt Wörterbuch (1977) die
 </div>
 </div>
 </div>
-<div class="section" id="ubung-3-key-erganzen">
-<h2>Übung 3: Key ergänzen<a class="headerlink" href="#ubung-3-key-erganzen" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="ubung-3-dictionary-nutzen">
+<h2>Übung 3: <em>Dictionary</em> nutzen<a class="headerlink" href="#ubung-3-dictionary-nutzen" title="Permalink to this headline">¶</a></h2>
+<p>Nutze <code class="docutils literal notranslate"><span class="pre">me</span></code> um folgenden Satz herszustellen: <code class="docutils literal notranslate"><span class="pre">Mein</span> <span class="pre">name</span> <span class="pre">ist</span> <span class="pre">Nachname,</span> <span class="pre">Vorname</span> <span class="pre">Nachname</span></code></p>
+</div>
+<div class="section" id="ubung-4-key-erganzen">
+<h2>Übung 4: Key ergänzen<a class="headerlink" href="#ubung-4-key-erganzen" title="Permalink to this headline">¶</a></h2>
 <p>Um einer <em>Dictionary</em> mit einem weiteren Eintrag zu ergänzen, geht man sehr ähnlich vor wie beim Abrufen von Einträgen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -413,8 +428,8 @@ Unter dem Eintrag “trump” findet man im Langenscheidt Wörterbuch (1977) die
 </div>
 </div>
 </div>
-<div class="section" id="ubung-4-mehrere-values-pro-key">
-<h2>Übung 4: Mehrere <em>Values</em> pro <em>Key</em><a class="headerlink" href="#ubung-4-mehrere-values-pro-key" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="ubung-5-mehrere-values-pro-key">
+<h2>Übung 5: Mehrere <em>Values</em> pro <em>Key</em><a class="headerlink" href="#ubung-5-mehrere-values-pro-key" title="Permalink to this headline">¶</a></h2>
 <p>Ein <em>Key</em> kann auch mehrere Einträge enthalten. An unserem Langenscheidts Beispiel: Das Wort “trump” ist zwar eindeutig, doch “trumpery” hat vier verschiedene Bedeutungen. In so einem Fall können wir einem Eintrag auch eine <em>List</em> von Werten zuweisen. Beachte die Eckigen Klammern und die Kommas, welche die Listeneinträge voneinander trennt.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -448,8 +463,8 @@ Unter dem Eintrag “trump” findet man im Langenscheidt Wörterbuch (1977) die
 </div>
 </div>
 </div>
-<div class="section" id="ubung-5-dictionary-mit-list">
-<h2>Übung 5: Dictionary mit List<a class="headerlink" href="#ubung-5-dictionary-mit-list" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="ubung-6-dictionary-mit-list">
+<h2>Übung 6: Dictionary mit List<a class="headerlink" href="#ubung-6-dictionary-mit-list" title="Permalink to this headline">¶</a></h2>
 <p>Erstelle eine neue Dictionary mit den gleichen Keys wie <code class="docutils literal notranslate"><span class="pre">me</span></code>, aber diesmal mit mehreren Einträgen pro <em>Key</em> (also mehreren Vornamen, Nachnamen usw.). Beachte, dass nun jeder Eintrag eine <em>List</em> sein muss. Weise diese Dictionary der Variabel <code class="docutils literal notranslate"><span class="pre">people</span></code> zu.</p>
 </div>
 </div>
