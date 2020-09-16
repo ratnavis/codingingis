@@ -31,7 +31,7 @@ jobs:
     # Install the python packages (from environment.yml)
     - name: Install python packages
       run: |
-        eval "$(conda shell.bash hook)"
+        source ~/miniconda3/etc/profile.d/conda.sh
         conda env create -f environment.yml
         conda activate codingingis
     
