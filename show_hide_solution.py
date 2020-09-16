@@ -29,5 +29,5 @@ musterloesung(notebooks_cog1, "remove-cell")
 musterloesung(notebooks_cog2, "remove-cell")
 musterloesung(notebooks_cog3, "remove-cell")
 
-# To aktivate popups for just Coding in GIS I, run the following code:
+# To shows "Musterlösungen" just for "Coding in GIS I", run the following code:
 #musterloesung(notebooks_cog1, "hide-cell")
