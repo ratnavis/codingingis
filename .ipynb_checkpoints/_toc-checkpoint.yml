@@ -5,7 +5,8 @@
   - file: 01_01_Einleitung
   - file: 01_02_Primitive_Datentypen
   - file: 01_03_Zusammengesetzte_Datentypen
-  - file: 01_05_Fokus_Dictionaries
+  - file: 01_04_Listen
+  - file: 01_05_Dictionary
   - file: 01_06_Tabellarische_Daten
   
 - part: Coding in GIS II
