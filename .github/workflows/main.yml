@@ -28,10 +28,9 @@ jobs:
       with:
         python-version: 3.7
     - uses: s-weigand/setup-conda@v1
-    # Install the python packages (from environment.yml)
+    # Install the python packages (from requirements.txt)
     - name: Install python packages
       run: |
-        conda init bash
         conda env create -f environment.yml
         conda activate codingingis
     
