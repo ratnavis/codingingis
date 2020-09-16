@@ -31,7 +31,7 @@ jobs:
     # Install the python packages (from environment.yml)
     - name: Install python packages
       run: |
-        source ~/anaconda3/etc/profile.d/conda.sh
+        conda init bash
         conda env create -f environment.yml
         conda activate codingingis
     
