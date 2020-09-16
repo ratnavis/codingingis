@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dictionaries &#8212; Coding in GIS</title>
+    <title>Listen &#8212; Coding in GIS</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -38,7 +38,7 @@
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Tabellarische Daten" href="01_06_Tabellarische_Daten.html" />
+    <link rel="next" title="Dictionaries" href="01_05_Dictionary.html" />
     <link rel="prev" title="Zusammengesetzte Datentypen" href="01_03_Zusammengesetzte_Datentypen.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -102,6 +102,11 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
+   Listen
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_05_Dictionary.html">
    Dictionaries
   </a>
  </li>
@@ -241,7 +246,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/01_05_Fokus_Dictionaries.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/01_04_Listen.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -266,7 +271,7 @@
     <div class="dropdown-buttons">
         
         
-        <a class="jupyterhub-button" href="https://jupyterhub01.zhaw.ch/hub/user-redirect/git-pull?repo=https://github.com/ratnanil/codingingis&urlpath=lab/tree/codingingis/01_05_Fokus_Dictionaries.ipynb&branch=master"><button type="button"
+        <a class="jupyterhub-button" href="https://jupyterhub01.zhaw.ch/hub/user-redirect/git-pull?repo=https://github.com/ratnanil/codingingis&urlpath=lab/tree/codingingis/01_04_Listen.ipynb&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="_static/images/logo_jupyterhub.svg"
@@ -287,44 +292,38 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ubung-1-dictionary-erstellen">
-   Übung 1: Dictionary erstellen
+  <a class="reference internal nav-link" href="#ubung-1-lists">
+   Übung 1: Lists
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ubung-2-elemente-aus-dictionary-ansprechen">
-   Übung 2: Elemente aus Dictionary ansprechen
+  <a class="reference internal nav-link" href="#ubung-2-elemente-aus-liste-ansprechen">
+   Übung 2: Elemente aus Liste ansprechen
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ubung-3-dictionary-nutzen">
-   Übung 3:
-   <em>
-    Dictionary
-   </em>
-   nutzen
+  <a class="reference internal nav-link" href="#ubung-3-liste-erganzen">
+   Übung 3: Liste ergänzen
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ubung-4-key-erganzen">
-   Übung 4: Key ergänzen
+  <a class="reference internal nav-link" href="#ubung-4-summen-berechnen">
+   Übung 4: Summen berechnen
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ubung-5-mehrere-values-pro-key">
-   Übung 5: Mehrere
-   <em>
-    Values
-   </em>
-   pro
-   <em>
-    Key
-   </em>
+  <a class="reference internal nav-link" href="#ubung-5-anzahl-werte-ermitteln">
+   Übung 5: Anzahl Werte ermitteln
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ubung-6-dictionary-mit-list">
-   Übung 6: Dictionary mit List
+  <a class="reference internal nav-link" href="#ubung-6-mittelwert-berechnen">
+   Übung 6: Mittelwert berechnen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ubung-7-minimum-maximumwerte">
+   Übung 7: Minimum-/Maximumwerte
   </a>
  </li>
 </ul>
@@ -337,135 +336,115 @@
         
               <div>
                 
-  <div class="section" id="dictionaries">
-<h1>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this headline">¶</a></h1>
-<p>In den letzten Übungen haben wir die wichtigsten Datentypen kennengelernt. Nun wollen wir ein besonderen Fokus auf den Datentyp <em>Dictionary</em> legen.</p>
-<p>Ähnlich wie eine List, ist eine Dictionary ein Behälter wo mehrere Elemente abgespeichert werden können. Wie bei einem Wörterbuch bekommt jedes Element ein “Schlüsselwort”, mit dem man den Eintrag finden kann.
-Unter dem Eintrag “trump” findet man im Langenscheidt Wörterbuch (1977) die Erklärung “erdichten, schwindeln, sich aus den Fingern saugen”.</p>
-<p><img alt="" src="_images/trump.jpg" /></p>
-<p>In Python würde man diese <em>Dictionary</em> folgendermassen erstellen:</p>
+  <div class="section" id="listen">
+<h1>Listen<a class="headerlink" href="#listen" title="Permalink to this headline">¶</a></h1>
+<p>Wohl das einfachste Gefäss um mehrere Werte zu speichern sind Python-Listen, sogenannte <em>Lists</em>. Diese <em>Lists</em> werden mit eckigen Klammern erstellt und die Reihenfolge, in denen die Werte angegeben werden, wird gespeichert. Das erlaubt es uns, bestimmte Werte aufgrund ihrer Position abzurufen.</p>
+<p>Eine <em>List</em> wird folgendermasen erstellt:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">langenscheidt</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;trump&quot;</span><span class="p">:</span><span class="s2">&quot;erdichten- schwindeln- sich aus den Fingern saugen&quot;</span><span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hexerei</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Schlüssel (von nun an mit <em>Key</em> bezeichnet) des Eintrages lautet “trump” und der dazugehörige Wert (<em>Value</em>) “erdichten- schwindeln- aus den Fingern saugen”. Beachte die geschweiften Klammern (<code class="docutils literal notranslate"><span class="pre">{</span></code> und <code class="docutils literal notranslate"><span class="pre">}</span></code>) bei der Erstellung einer Dictionary.</p>
-<p>Eine <em>Dictionary</em> besteht aber meistens nicht aus einem, sondern aus mehreren Einträgen: Diese werden Kommagetrennt aufgeführt.</p>
+<p>Der erste Wert wird in Python mit <code class="docutils literal notranslate"><span class="pre">0</span></code> (!!!) aufgerufen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">langenscheidt</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;trump&quot;</span><span class="p">:</span><span class="s2">&quot;erdichten- schwindeln- sich aus den Fingern saugen&quot;</span><span class="p">,</span> <span class="s2">&quot;trumpery&quot;</span><span class="p">:</span><span class="s2">&quot;Plunder- Ramsch- Schund&quot;</span><span class="p">}</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Der Clou der <em>Dictionary</em> ist, dass man nun einen Eintrag mittels dem <em>Key</em> aufrufen kann. Wenn wir also nun wissen wollen was “trump” heisst, ermitteln wir dies mit der nachstehenden Codezeile:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">langenscheidt</span><span class="p">[</span><span class="s2">&quot;trump&quot;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hexerei</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;erdichten- schwindeln- sich aus den Fingern saugen&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="ubung-1-dictionary-erstellen">
-<h2>Übung 1: Dictionary erstellen<a class="headerlink" href="#ubung-1-dictionary-erstellen" title="Permalink to this headline">¶</a></h2>
-<p>Erstelle eine <em>Dictionary</em> mit folgenden Einträgen: Vorname und Nachname von (d)einer Person. Weise diese Dictionary der Variable <code class="docutils literal notranslate"><span class="pre">me</span></code> zu.</p>
-</div>
-<div class="section" id="ubung-2-elemente-aus-dictionary-ansprechen">
-<h2>Übung 2: Elemente aus Dictionary ansprechen<a class="headerlink" href="#ubung-2-elemente-aus-dictionary-ansprechen" title="Permalink to this headline">¶</a></h2>
-<p>Rufe verschiedene Elemente aus der Dictionary via dem <em>Key</em> ab.</p>
-<div class="cell tag_hide-cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">me</span><span class="p">[</span><span class="s2">&quot;vorname&quot;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Guido&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">me</span><span class="p">[</span><span class="s2">&quot;nachname&quot;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">hexerei</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;van Rossum&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>list
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="ubung-3-dictionary-nutzen">
-<h2>Übung 3: <em>Dictionary</em> nutzen<a class="headerlink" href="#ubung-3-dictionary-nutzen" title="Permalink to this headline">¶</a></h2>
-<p>Nutze <code class="docutils literal notranslate"><span class="pre">me</span></code> um folgenden Satz herszustellen: <code class="docutils literal notranslate"><span class="pre">Mein</span> <span class="pre">name</span> <span class="pre">ist</span> <span class="pre">Nachname,</span> <span class="pre">Vorname</span> <span class="pre">Nachname</span></code></p>
-</div>
-<div class="section" id="ubung-4-key-erganzen">
-<h2>Übung 4: Key ergänzen<a class="headerlink" href="#ubung-4-key-erganzen" title="Permalink to this headline">¶</a></h2>
-<p>Um einer <em>Dictionary</em> mit einem weiteren Eintrag zu ergänzen, geht man sehr ähnlich vor wie beim Abrufen von Einträgen.</p>
+<p>Im Prinzip sind <em>Lists</em> ähnlich wie <em>Vectors</em> in R, mit dem Unterschied das in Python-Lists unterschiedliche Datentypen abgespichert werden können. Zum Beispiel auch weitere, verschachtelte Lists:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">langenscheidt</span><span class="p">[</span><span class="s2">&quot;trumpet&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;trompete&quot;</span> 
-</pre></div>
-</div>
-</div>
-</div>
-<p>Ergänze gemäss nachstehendem Beispiel die Variable <code class="docutils literal notranslate"><span class="pre">me</span></code> durch den Eintrag <code class="docutils literal notranslate"><span class="pre">groesse</span></code>.</p>
-<div class="cell tag_hide-cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">me</span><span class="p">[</span><span class="s2">&quot;groesse&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">181</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="ubung-5-mehrere-values-pro-key">
-<h2>Übung 5: Mehrere <em>Values</em> pro <em>Key</em><a class="headerlink" href="#ubung-5-mehrere-values-pro-key" title="Permalink to this headline">¶</a></h2>
-<p>Ein <em>Key</em> kann auch mehrere Einträge enthalten. An unserem Langenscheidts Beispiel: Das Wort “trump” ist zwar eindeutig, doch “trumpery” hat vier verschiedene Bedeutungen. In so einem Fall können wir einem Eintrag auch eine <em>List</em> von Werten zuweisen. Beachte die Eckigen Klammern und die Kommas, welche die Listeneinträge voneinander trennt.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">langenscheidt</span><span class="p">[</span><span class="s2">&quot;trumpery&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Plunder- Ramsch- Schund&quot;</span><span class="p">,</span> 
-                             <span class="s2">&quot;Gewäsch- Quatsch&quot;</span><span class="p">,</span> 
-                             <span class="s2">&quot;Schund- Kitsch&quot;</span><span class="p">,</span> 
-                             <span class="s2">&quot;billig- nichtssagend&quot;</span><span class="p">]</span>    
-<span class="n">langenscheidt</span><span class="p">[</span><span class="s2">&quot;trumpery&quot;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Plunder- Ramsch- Schund&#39;,
- &#39;Gewäsch- Quatsch&#39;,
- &#39;Schund- Kitsch&#39;,
- &#39;billig- nichtssagend&#39;]
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chaos</span> <span class="o">=</span> <span class="p">[</span><span class="mi">23</span><span class="p">,</span> <span class="s2">&quot;ja&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]]</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">langenscheidt</span><span class="p">[</span><span class="s2">&quot;trumpery&quot;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Der Inhalt vom ersten Wert ist vom Typ &quot;Int&quot;</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">chaos</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>int
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Der Inhalt vom dritten Wert ist vom Typ &quot;List&quot;</span>
+
+<span class="nb">type</span><span class="p">(</span><span class="n">chaos</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>list
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="ubung-1-lists">
+<h2>Übung 1: Lists<a class="headerlink" href="#ubung-1-lists" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Erstelle eine Variable <code class="docutils literal notranslate"><span class="pre">vornamen</span></code> bestehend aus einer <em>List</em> mit 3 Vornamen</p></li>
+<li><p>Erstelle eine zweite Variable <code class="docutils literal notranslate"><span class="pre">nachnamen</span></code> bestehend aus einer <em>List</em> mit 3 Nachnamen</p></li>
+<li><p>Erstelle eine Variable <code class="docutils literal notranslate"><span class="pre">groessen</span></code> bestehend aus einer <em>List</em> mit 3 Grössenangaben in Zentimeter.</p></li>
+</ol>
+</div>
+<div class="section" id="ubung-2-elemente-aus-liste-ansprechen">
+<h2>Übung 2: Elemente aus Liste ansprechen<a class="headerlink" href="#ubung-2-elemente-aus-liste-ansprechen" title="Permalink to this headline">¶</a></h2>
+<p>Wie erhältst du den ersten Eintrag in der Variable <code class="docutils literal notranslate"><span class="pre">vornamen</span></code>?</p>
+</div>
+<div class="section" id="ubung-3-liste-erganzen">
+<h2>Übung 3: Liste ergänzen<a class="headerlink" href="#ubung-3-liste-erganzen" title="Permalink to this headline">¶</a></h2>
+<p>Listen können durch der Method <code class="docutils literal notranslate"><span class="pre">append</span></code> ergänzt werden (s.u.). Ergänze in die Listen <code class="docutils literal notranslate"><span class="pre">vornamen</span></code>, <code class="docutils literal notranslate"><span class="pre">nachnamen</span></code> und <code class="docutils literal notranslate"><span class="pre">groessen</span></code> durch je einen Eintrag.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vornamen</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Malte&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="section" id="ubung-6-dictionary-mit-list">
-<h2>Übung 6: Dictionary mit List<a class="headerlink" href="#ubung-6-dictionary-mit-list" title="Permalink to this headline">¶</a></h2>
-<p>Erstelle eine neue Dictionary mit den gleichen Keys wie <code class="docutils literal notranslate"><span class="pre">me</span></code>, aber diesmal mit mehreren Einträgen pro <em>Key</em> (also mehreren Vornamen, Nachnamen usw.). Beachte, dass nun jeder Eintrag eine <em>List</em> sein muss. Weise diese Dictionary der Variabel <code class="docutils literal notranslate"><span class="pre">people</span></code> zu.</p>
+<div class="section" id="ubung-4-summen-berechnen">
+<h2>Übung 4: Summen berechnen<a class="headerlink" href="#ubung-4-summen-berechnen" title="Permalink to this headline">¶</a></h2>
+<p>Ermittle die Summe aller Werte in <code class="docutils literal notranslate"><span class="pre">groesse</span></code>. Tip: Nutze dazu <code class="docutils literal notranslate"><span class="pre">sum()</span></code></p>
+</div>
+<div class="section" id="ubung-5-anzahl-werte-ermitteln">
+<h2>Übung 5: Anzahl Werte ermitteln<a class="headerlink" href="#ubung-5-anzahl-werte-ermitteln" title="Permalink to this headline">¶</a></h2>
+<p>Ermittle die Anzahl Werte in <code class="docutils literal notranslate"><span class="pre">groesse</span></code> . Tip: Nutze dazu <code class="docutils literal notranslate"><span class="pre">len()</span></code></p>
+</div>
+<div class="section" id="ubung-6-mittelwert-berechnen">
+<h2>Übung 6: Mittelwert berechnen<a class="headerlink" href="#ubung-6-mittelwert-berechnen" title="Permalink to this headline">¶</a></h2>
+<p>Berechne die durchschnittliche Grösse aller personen in <code class="docutils literal notranslate"><span class="pre">groesse</span></code>. Tip: Nutze dazu <code class="docutils literal notranslate"><span class="pre">len()</span></code> und <code class="docutils literal notranslate"><span class="pre">sum()</span></code>.</p>
+</div>
+<div class="section" id="ubung-7-minimum-maximumwerte">
+<h2>Übung 7: Minimum-/Maximumwerte<a class="headerlink" href="#ubung-7-minimum-maximumwerte" title="Permalink to this headline">¶</a></h2>
+<p>Ermittle nun noch die Minimum- und Maximumwerte aus <code class="docutils literal notranslate"><span class="pre">people</span></code>.</p>
 </div>
 </div>
 
@@ -498,7 +477,7 @@ Unter dem Eintrag “trump” findet man im Langenscheidt Wörterbuch (1977) die
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="01_03_Zusammengesetzte_Datentypen.html" title="previous page">Zusammengesetzte Datentypen</a>
-    <a class='right-next' id="next-link" href="01_06_Tabellarische_Daten.html" title="next page">Tabellarische Daten</a>
+    <a class='right-next' id="next-link" href="01_05_Dictionary.html" title="next page">Dictionaries</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Übung: For Loops (Teil II) &#8212; Coding in GIS</title>
+    <title>Dictionaries &#8212; Coding in GIS</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -38,8 +38,8 @@
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Übung: Zeckenstich Simulation mit Loop" href="03_04_Zeckenstich_Simulation.html" />
-    <link rel="prev" title="Übung: For Loops (Teil I)" href="03_02_For_Loops.html" />
+    <link rel="next" title="Tabellarische Daten" href="01_06_Tabellarische_Daten.html" />
+    <link rel="prev" title="Listen" href="01_04_Listen.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -84,7 +84,7 @@
   Coding in GIS I
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="01_01_Einleitung.html">
    Einleitung zu diesem Block
@@ -105,8 +105,8 @@
    Listen
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="01_05_Dictionary.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Dictionaries
   </a>
  </li>
@@ -173,7 +173,7 @@
   Coding in GIS III
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="03_01_Einleitung.html">
    Einleitung zu diesem Block
@@ -184,8 +184,8 @@
    Übung: For Loops (Teil I)
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_03_For_Loops.html">
    Übung: For Loops (Teil II)
   </a>
  </li>
@@ -246,7 +246,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/03_03_For_Loops.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/01_05_Dictionary.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -271,7 +271,7 @@
     <div class="dropdown-buttons">
         
         
-        <a class="jupyterhub-button" href="https://jupyterhub01.zhaw.ch/hub/user-redirect/git-pull?repo=https://github.com/ratnanil/codingingis&urlpath=lab/tree/codingingis/03_03_For_Loops.ipynb&branch=master"><button type="button"
+        <a class="jupyterhub-button" href="https://jupyterhub01.zhaw.ch/hub/user-redirect/git-pull?repo=https://github.com/ratnanil/codingingis&urlpath=lab/tree/codingingis/01_05_Dictionary.ipynb&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="_static/images/logo_jupyterhub.svg"
@@ -292,8 +292,47 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ubung-output-aus-for-loop-speichern">
-   Übung: Output aus For-Loop speichern
+  <a class="reference internal nav-link" href="#ubung-1-dictionary-erstellen">
+   Übung 1: Dictionary erstellen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ubung-2-elemente-aus-dictionary-ansprechen">
+   Übung 2: Elemente aus Dictionary ansprechen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ubung-3-dictionary-nutzen">
+   Übung 3:
+   <em>
+    Dictionary
+   </em>
+   nutzen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ubung-4-key-erganzen">
+   Übung 4: Key ergänzen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ubung-5-dictionary-mit-list">
+   Übung 5: Dictionary mit List
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ubung-6-eintrage-abrufen">
+   Übung 6: Einträge abrufen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ubung-7-eintrage-abrufen">
+   Übung 7: Einträge abrufen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ubung-8-mittelwert-berechnen">
+   Übung 8: Mittelwert berechnen
   </a>
  </li>
 </ul>
@@ -306,81 +345,120 @@
         
               <div>
                 
-  <div class="section" id="ubung-for-loops-teil-ii">
-<h1>Übung: For Loops (Teil II)<a class="headerlink" href="#ubung-for-loops-teil-ii" title="Permalink to this headline">¶</a></h1>
-<p>Bis jetzt haben wir lediglich Sachen in die Konsole herausgeben lassen, doch wie schon bei Functions ist der Zweck einer For-Loop meist, dass nach Durchführung etwas davon zurückbleibt. <code class="docutils literal notranslate"><span class="pre">return()</span></code> gibt es wie bereits erwähnt bei <em>For-Loops</em> nicht. Nehmen wir folgendes Beispiel:</p>
+  <div class="section" id="dictionaries">
+<h1>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this headline">¶</a></h1>
+<p>In den letzten Übungen haben wir einen Fokus auf Listen gelegt. Nun wollen wir ein besonderen Fokus auf den Datentyp <em>Dictionary</em> legen.</p>
+<p>Ähnlich wie eine List, ist eine Dictionary ein Behälter wo mehrere Elemente abgespeichert werden können. Wie bei einem Wörterbuch bekommt jedes Element ein “Schlüsselwort”, mit dem man den Eintrag finden kann.
+Unter dem Eintrag “trump” findet man im Langenscheidt Wörterbuch (1977) die Erklärung “erdichten, schwindeln, sich aus den Fingern saugen”.</p>
+<p><img alt="" src="_images/trump.jpg" /></p>
+<p>In Python würde man diese <em>Dictionary</em> folgendermassen erstellen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">schlagwort</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;bitch&quot;</span><span class="p">,</span><span class="s2">&quot;lover&quot;</span><span class="p">,</span><span class="s2">&quot;child&quot;</span><span class="p">,</span><span class="s2">&quot;mother&quot;</span><span class="p">,</span><span class="s2">&quot;sinner&quot;</span><span class="p">,</span><span class="s2">&quot;saint&quot;</span><span class="p">]:</span>
-    <span class="n">liedzeile</span> <span class="o">=</span> <span class="s2">&quot;I&#39;m a &quot;</span><span class="o">+</span> <span class="n">schlagwort</span> 
-    <span class="nb">print</span><span class="p">(</span><span class="n">liedzeile</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">langenscheidt</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;trump&quot;</span><span class="p">:</span><span class="s2">&quot;erdichten- schwindeln- sich aus den Fingern saugen&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Schlüssel (von nun an mit <em>Key</em> bezeichnet) des Eintrages lautet “trump” und der dazugehörige Wert (<em>Value</em>) “erdichten- schwindeln- aus den Fingern saugen”. Beachte die geschweiften Klammern (<code class="docutils literal notranslate"><span class="pre">{</span></code> und <code class="docutils literal notranslate"><span class="pre">}</span></code>) bei der Erstellung einer Dictionary.</p>
+<p>Eine <em>Dictionary</em> besteht aber meistens nicht aus einem, sondern aus mehreren Einträgen: Diese werden Kommagetrennt aufgeführt.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">langenscheidt</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;trump&quot;</span><span class="p">:</span><span class="s2">&quot;erdichten- schwindeln- sich aus den Fingern saugen&quot;</span><span class="p">,</span> <span class="s2">&quot;trumpery&quot;</span><span class="p">:</span><span class="s2">&quot;Plunder- Ramsch- Schund&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Der Clou der <em>Dictionary</em> ist, dass man nun einen Eintrag mittels dem <em>Key</em> aufrufen kann. Wenn wir also nun wissen wollen was “trump” heisst, ermitteln wir dies mit der nachstehenden Codezeile:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">langenscheidt</span><span class="p">[</span><span class="s2">&quot;trump&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>I&#39;m a bitch
-I&#39;m a lover
-I&#39;m a child
-I&#39;m a mother
-I&#39;m a sinner
-I&#39;m a saint
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;erdichten- schwindeln- sich aus den Fingern saugen&#39;
 </pre></div>
 </div>
 </div>
 </div>
-<p>Der Output von dieser For-Loop sind zwar sechs Liederzeilen, wenn wir die Variabel <code class="docutils literal notranslate"><span class="pre">liedzeile</span></code> anschauen ist dort nur das Resultat aus der letzten Durchführung gespeichert. Das gleiche gilt auch für die variabel <code class="docutils literal notranslate"><span class="pre">schlagwort</span></code>.</p>
+<p>Um einer <em>Dictionary</em> mit einem weiteren Eintrag zu ergänzen, geht man sehr ähnlich vor wie beim Abrufen von Einträgen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">liedzeile</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">langenscheidt</span><span class="p">[</span><span class="s2">&quot;trumpet&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;trompete&quot;</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ein <em>Key</em> kann auch mehrere Einträge enthalten. An unserem Langenscheidts Beispiel: Das Wort “trump” ist zwar eindeutig, doch “trumpery” hat vier verschiedene Bedeutungen. In so einem Fall können wir einem Eintrag auch eine <em>List</em> von Werten zuweisen. Beachte die Eckigen Klammern und die Kommas, welche die Listeneinträge voneinander trennt.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">langenscheidt</span><span class="p">[</span><span class="s2">&quot;trumpery&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Plunder- Ramsch- Schund&quot;</span><span class="p">,</span> 
+                             <span class="s2">&quot;Gewäsch- Quatsch&quot;</span><span class="p">,</span> 
+                             <span class="s2">&quot;Schund- Kitsch&quot;</span><span class="p">,</span> 
+                             <span class="s2">&quot;billig- nichtssagend&quot;</span><span class="p">]</span>    
+<span class="n">langenscheidt</span><span class="p">[</span><span class="s2">&quot;trumpery&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;I&#39;m a saint&quot;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Plunder- Ramsch- Schund&#39;,
+ &#39;Gewäsch- Quatsch&#39;,
+ &#39;Schund- Kitsch&#39;,
+ &#39;billig- nichtssagend&#39;]
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">schlagwort</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">langenscheidt</span><span class="p">[</span><span class="s2">&quot;trumpery&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;saint&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
 </pre></div>
 </div>
 </div>
 </div>
-<p>Das verrät uns etwas über die Funktionsweise des <em>For-Loops</em>: Bei jedem Durchgang werden die Variablen immer wieder überschrieben. Wenn wir also den Output des ganzen For-Loops abspeichern wollen, müssen wir dies etwas vorbereiten.
-Dafür erstellen wir unmittelbar for dem For-Loop einen leeren Behälter, zum Beispiel eine leere Liste (<code class="docutils literal notranslate"><span class="pre">strophe</span> <span class="pre">=</span> <span class="pre">[]</span></code>). Nun können wir innerhalb des <em>Loops</em> <code class="docutils literal notranslate"><span class="pre">append()</span></code> nutzen, um den Output von einem Durchgang dieser Liste hinzu zu fügen.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">strophe</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="k">for</span> <span class="n">schlagwort</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;bitch&quot;</span><span class="p">,</span><span class="s2">&quot;lover&quot;</span><span class="p">,</span><span class="s2">&quot;child&quot;</span><span class="p">,</span><span class="s2">&quot;mother&quot;</span><span class="p">,</span><span class="s2">&quot;sinner&quot;</span><span class="p">,</span><span class="s2">&quot;saint&quot;</span><span class="p">]:</span>
-    <span class="n">liedzeile</span> <span class="o">=</span> <span class="s2">&quot;I&#39;m a &quot;</span><span class="o">+</span> <span class="n">schlagwort</span> 
-    <span class="n">strophe</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">liedzeile</span><span class="p">)</span>
-    
-<span class="n">strophe</span>
-</pre></div>
+<div class="section" id="ubung-1-dictionary-erstellen">
+<h2>Übung 1: Dictionary erstellen<a class="headerlink" href="#ubung-1-dictionary-erstellen" title="Permalink to this headline">¶</a></h2>
+<p>Erstelle eine <em>Dictionary</em> mit folgenden Einträgen: Vorname und Nachname von (d)einer Person. Weise diese Dictionary der Variable <code class="docutils literal notranslate"><span class="pre">me</span></code> zu.</p>
 </div>
+<div class="section" id="ubung-2-elemente-aus-dictionary-ansprechen">
+<h2>Übung 2: Elemente aus Dictionary ansprechen<a class="headerlink" href="#ubung-2-elemente-aus-dictionary-ansprechen" title="Permalink to this headline">¶</a></h2>
+<p>Rufe verschiedene Elemente aus der Dictionary via dem <em>Key</em> ab.</p>
 </div>
+<div class="section" id="ubung-3-dictionary-nutzen">
+<h2>Übung 3: <em>Dictionary</em> nutzen<a class="headerlink" href="#ubung-3-dictionary-nutzen" title="Permalink to this headline">¶</a></h2>
+<p>Nutze <code class="docutils literal notranslate"><span class="pre">me</span></code> um nachstehenden Satz (mit deinen <em>Values</em>) zu erstellen:</p>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&quot;I&#39;m a bitch&quot;,
- &quot;I&#39;m a lover&quot;,
- &quot;I&#39;m a child&quot;,
- &quot;I&#39;m a mother&quot;,
- &quot;I&#39;m a sinner&quot;,
- &quot;I&#39;m a saint&quot;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Mein name ist van Rossum, Guido van Rossum&#39;
 </pre></div>
 </div>
 </div>
 </div>
-<div class="section" id="ubung-output-aus-for-loop-speichern">
-<h2>Übung: Output aus For-Loop speichern<a class="headerlink" href="#ubung-output-aus-for-loop-speichern" title="Permalink to this headline">¶</a></h2>
-<p>Erstelle einen <em>For-Loop</em>, wo in jeder Iteration einen Output in einer Liste gespeichert wird.</p>
+</div>
+<div class="section" id="ubung-4-key-erganzen">
+<h2>Übung 4: Key ergänzen<a class="headerlink" href="#ubung-4-key-erganzen" title="Permalink to this headline">¶</a></h2>
+<p>Ergänze die Dictionary <code class="docutils literal notranslate"><span class="pre">me</span></code> durch einen Eintrag “groesse” mit (d)einer Grösse.</p>
+</div>
+<div class="section" id="ubung-5-dictionary-mit-list">
+<h2>Übung 5: Dictionary mit List<a class="headerlink" href="#ubung-5-dictionary-mit-list" title="Permalink to this headline">¶</a></h2>
+<p>Erstelle eine neue Dictionary <code class="docutils literal notranslate"><span class="pre">people</span></code> mit den <em>Keys</em> <code class="docutils literal notranslate"><span class="pre">vornamen</span></code>, <code class="docutils literal notranslate"><span class="pre">nachnamen</span></code> und <code class="docutils literal notranslate"><span class="pre">groesse</span></code> und jeweils 3 Einträge pro <em>Key</em>.</p>
+</div>
+<div class="section" id="ubung-6-eintrage-abrufen">
+<h2>Übung 6: Einträge abrufen<a class="headerlink" href="#ubung-6-eintrage-abrufen" title="Permalink to this headline">¶</a></h2>
+<p>Rufe den <strong>ersten</strong> Vornamen deiner <em>Dict</em> auf. Dazu musst du dein Wissen über Listen und Dictionaries kombinieren.</p>
+</div>
+<div class="section" id="ubung-7-eintrage-abrufen">
+<h2>Übung 7: Einträge abrufen<a class="headerlink" href="#ubung-7-eintrage-abrufen" title="Permalink to this headline">¶</a></h2>
+<p>Rufe den <strong>dritten</strong> Nachname deiner <em>Dict</em> auf.</p>
+</div>
+<div class="section" id="ubung-8-mittelwert-berechnen">
+<h2>Übung 8: Mittelwert berechnen<a class="headerlink" href="#ubung-8-mittelwert-berechnen" title="Permalink to this headline">¶</a></h2>
+<p>Berechne den Mittelwert aller grössen in deiner Dict</p>
 </div>
 </div>
 
@@ -412,8 +490,8 @@ Dafür erstellen wir unmittelbar for dem For-Loop einen leeren Behälter, zum Be
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="03_02_For_Loops.html" title="previous page">Übung: For Loops (Teil I)</a>
-    <a class='right-next' id="next-link" href="03_04_Zeckenstich_Simulation.html" title="next page">Übung: Zeckenstich Simulation mit Loop</a>
+    <a class='left-prev' id="prev-link" href="01_04_Listen.html" title="previous page">Listen</a>
+    <a class='right-next' id="next-link" href="01_06_Tabellarische_Daten.html" title="next page">Tabellarische Daten</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
