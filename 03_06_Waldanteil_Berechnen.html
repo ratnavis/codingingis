@@ -27,8 +27,6 @@
     <script src="_static/copybutton.js"></script>
     <script src="_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -39,6 +37,7 @@
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Basic shortcuts for Jupyter lab" href="04_01_Jupyter_Shortcuts.html" />
     <link rel="prev" title="Übung: GIS in Python" href="03_05_GIS_in_Python.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -88,11 +87,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="01_01_Einleitung.html">
    Einleitung zu diesem Block
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="01_02_Primitive_Datentypen.html">
-   Primitive Datentypen
   </a>
  </li>
  <li class="toctree-l1">
@@ -202,6 +196,18 @@
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Übung: Waldanteil berechnen
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Anhang
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_01_Jupyter_Shortcuts.html">
+   Basic shortcuts for Jupyter lab
   </a>
  </li>
 </ul>
@@ -478,10 +484,10 @@ Hinweis: Allenfalls müssen das Koordinatensystem der beiden GeoDataFrames nochm
     <tr>
       <th>0</th>
       <td>2550</td>
-      <td>2.681754e+06</td>
-      <td>1.250208e+06</td>
+      <td>2.680833e+06</td>
+      <td>1.249994e+06</td>
       <td>0</td>
-      <td>POINT (2681753.893 1250208.060)</td>
+      <td>POINT (2680833.437 1249994.145)</td>
       <td>0</td>
       <td>0</td>
       <td>947316.853401</td>
@@ -491,10 +497,10 @@ Hinweis: Allenfalls müssen das Koordinatensystem der beiden GeoDataFrames nochm
     <tr>
       <th>1</th>
       <td>10437</td>
-      <td>2.681528e+06</td>
-      <td>1.249874e+06</td>
+      <td>2.681621e+06</td>
+      <td>1.252042e+06</td>
       <td>0</td>
-      <td>POINT (2681528.030 1249873.712)</td>
+      <td>POINT (2681620.752 1252041.703)</td>
       <td>0</td>
       <td>0</td>
       <td>947316.853401</td>
@@ -504,10 +510,10 @@ Hinweis: Allenfalls müssen das Koordinatensystem der beiden GeoDataFrames nochm
     <tr>
       <th>2</th>
       <td>9174</td>
-      <td>2.681439e+06</td>
-      <td>1.250304e+06</td>
+      <td>2.681700e+06</td>
+      <td>1.251871e+06</td>
       <td>0</td>
-      <td>POINT (2681439.015 1250303.830)</td>
+      <td>POINT (2681699.655 1251871.478)</td>
       <td>0</td>
       <td>0</td>
       <td>947316.853401</td>
@@ -517,10 +523,10 @@ Hinweis: Allenfalls müssen das Koordinatensystem der beiden GeoDataFrames nochm
     <tr>
       <th>3</th>
       <td>8773</td>
-      <td>2.681670e+06</td>
-      <td>1.253044e+06</td>
+      <td>2.682118e+06</td>
+      <td>1.249786e+06</td>
       <td>0</td>
-      <td>POINT (2681670.404 1253043.961)</td>
+      <td>POINT (2682117.736 1249786.371)</td>
       <td>0</td>
       <td>0</td>
       <td>947316.853401</td>
@@ -530,10 +536,10 @@ Hinweis: Allenfalls müssen das Koordinatensystem der beiden GeoDataFrames nochm
     <tr>
       <th>5</th>
       <td>2513</td>
-      <td>2.681584e+06</td>
-      <td>1.249942e+06</td>
+      <td>2.681773e+06</td>
+      <td>1.252016e+06</td>
       <td>0</td>
-      <td>POINT (2681584.286 1249941.945)</td>
+      <td>POINT (2681773.495 1252016.093)</td>
       <td>0</td>
       <td>0</td>
       <td>947316.853401</td>
@@ -596,25 +602,29 @@ Hinweis: Allenfalls müssen das Koordinatensystem der beiden GeoDataFrames nochm
     <tr>
       <th rowspan="2" valign="top">1</th>
       <th>ja</th>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>nein</th>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">2</th>
+      <th>ja</th>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>nein</th>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">3</th>
+      <th>ja</th>
       <td>1</td>
     </tr>
     <tr>
       <th>nein</th>
       <td>9</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <th>nein</th>
-      <td>10</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">3</th>
-      <th>ja</th>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>nein</th>
-      <td>7</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">4</th>
@@ -683,18 +693,18 @@ Hinweis: Allenfalls müssen das Koordinatensystem der beiden GeoDataFrames nochm
     </tr>
     <tr>
       <th>1</th>
-      <td>1</td>
-      <td>9</td>
+      <td>4</td>
+      <td>6</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0</td>
-      <td>10</td>
+      <td>5</td>
+      <td>5</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>3</td>
-      <td>7</td>
+      <td>1</td>
+      <td>9</td>
     </tr>
     <tr>
       <th>4</th>
@@ -720,9 +730,9 @@ Hinweis: Allenfalls müssen das Koordinatensystem der beiden GeoDataFrames nochm
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Run_Nr
 0    0.1
-1    0.1
-2    0.0
-3    0.3
+1    0.4
+2    0.5
+3    0.1
 4    0.1
 dtype: float64
 </pre></div>
@@ -804,6 +814,7 @@ dtype: float64
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="03_05_GIS_in_Python.html" title="previous page">Übung: GIS in Python</a>
+    <a class='right-next' id="next-link" href="04_01_Jupyter_Shortcuts.html" title="next page">Basic shortcuts for Jupyter lab</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

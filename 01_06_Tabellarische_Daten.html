@@ -27,8 +27,6 @@
     <script src="_static/copybutton.js"></script>
     <script src="_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -89,11 +87,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="01_01_Einleitung.html">
    Einleitung zu diesem Block
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="01_02_Primitive_Datentypen.html">
-   Primitive Datentypen
   </a>
  </li>
  <li class="toctree-l1">
@@ -203,6 +196,18 @@
  <li class="toctree-l1">
   <a class="reference internal" href="03_06_Waldanteil_Berechnen.html">
    Übung: Waldanteil berechnen
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Anhang
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_01_Jupyter_Shortcuts.html">
+   Basic shortcuts for Jupyter lab
   </a>
  </li>
 </ul>
@@ -359,11 +364,11 @@
 </div>
 <div class="section" id="ubung-1-von-einer-dictionary-zu-einer-dataframe">
 <h2>Übung 1: von einer <em>Dictionary</em> zu einer <em>DataFrame</em><a class="headerlink" href="#ubung-1-von-einer-dictionary-zu-einer-dataframe" title="Permalink to this headline">¶</a></h2>
-<p>Wandle die Dictionary <code class="docutils literal notranslate"><span class="pre">people</span></code> in eine DataFrame um. Dazu musst du zuerst <code class="docutils literal notranslate"><span class="pre">pandas</span></code> importieren und danach <code class="docutils literal notranslate"><span class="pre">people</span></code> als Argument der Funktion <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> übergeben (siehe Beispiel oben). Weise den Output der Variable <code class="docutils literal notranslate"><span class="pre">people_df</span></code> zu und schaue es dir im <em>Variable Explorer</em> an.</p>
+<p>Importiere <code class="docutils literal notranslate"><span class="pre">pandas</span></code> und nutze die Funktion <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> um <code class="docutils literal notranslate"><span class="pre">people</span></code> in eine DataFrame umzuwandeln. Weise den Output der Variable <code class="docutils literal notranslate"><span class="pre">people_df</span></code> zu und schaue es dir im <em>Variable Explorer</em> an.</p>
 </div>
 <div class="section" id="ubung-2-dataframe-in-csv-umwandeln">
 <h2>Übung 2: <em>DataFrame</em> in csv umwandeln<a class="headerlink" href="#ubung-2-dataframe-in-csv-umwandeln" title="Permalink to this headline">¶</a></h2>
-<p>In der Praxis kommen Tabellarische Daten meist als «csv» Dateien daher. Wir können aus unserer eben erstellten DataFrame sehr einfach eine csv Datei erstellen. Führe das mit folgendem Code aus:</p>
+<p>In der Praxis kommen Tabellarische Daten meist als “csv” Dateien daher. Wir können aus unserer eben erstellten DataFrame sehr einfach eine csv Datei erstellen. Führe das mit folgendem Code aus und suche anschliessend die erstellte csv-Datei.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">people_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;people.csv&quot;</span><span class="p">)</span>
@@ -385,8 +390,11 @@
 <div class="tip admonition">
 <p class="admonition-title">Achtung!</p>
 <ul class="simple">
-<li><p>Wenn du auf dem JupyterHub Server arbeitest dann ist dein Arbeitsverzeichnis ebenfalls <em>auf dem Server</em>. Das heisst, du musst “zeckenstiche.csv” auf den Server hochladen. Dies kannst du mit dem Button “Upload Files” im Tab “File Browser” bewerkstelligen.</p></li>
-<li><p>der obige Code funktioniert nur, wenn “zeckenstiche.csv” im aktuellen Arbeitsverzeichnis (<em>Current Working Directory</em>) abgespeichert ist. Wenn du nicht sicher bist, wo dein aktuelles Arbeitsverzeichnis liegt, kannst du dies mit der Funktion <code class="docutils literal notranslate"><span class="pre">os.getcwd()</span></code> (get <strong>c</strong>urrent<strong>w</strong>orking<strong>d</strong>irectory) herausfinden (s.u.).</p></li>
+<li><p>Wenn du auf dem JupyterHub Server arbeitest dann ist dein Arbeitsverzeichnis ebenfalls <em>auf dem Server</em>. Das heisst, du musst “zeckenstiche.csv” auf den Server hochladen. Dies kannst du mit dem Button “Upload Files” im Tab “File Browser” bewerkstelligen (s.u.).</p></li>
+</ul>
+<img alt="_images/upload.jpg" id="label" src="_images/upload.jpg" />
+<ul class="simple">
+<li><p>Der Code (<code class="docutils literal notranslate"><span class="pre">pd.read_csv(&quot;zeckenstiche.csv&quot;)</span></code>) funktioniert nur, wenn “zeckenstiche.csv” im aktuellen Arbeitsverzeichnis (<em>Current Working Directory</em>) abgespeichert ist. Wenn du nicht sicher bist, wo dein aktuelles Arbeitsverzeichnis liegt, kannst du dies mit der Funktion <code class="docutils literal notranslate"><span class="pre">os.getcwd()</span></code> (<strong>get</strong> <strong>c</strong>urrent <strong>w</strong>orking <strong>d</strong>irectory) herausfinden (s.u.).</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
@@ -401,7 +409,7 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">zeckenstiche</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">,</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
 
-<span class="n">fig</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;scaled&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;equal&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

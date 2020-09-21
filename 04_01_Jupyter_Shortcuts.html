@@ -27,8 +27,6 @@
     <script src="_static/copybutton.js"></script>
     <script src="_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -39,6 +37,7 @@
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Übung: Waldanteil berechnen" href="03_06_Waldanteil_Berechnen.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -87,11 +86,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="01_01_Einleitung.html">
    Einleitung zu diesem Block
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="01_02_Primitive_Datentypen.html">
-   Primitive Datentypen
   </a>
  </li>
  <li class="toctree-l1">
@@ -204,6 +198,18 @@
   </a>
  </li>
 </ul>
+<p class="caption">
+ <span class="caption-text">
+  Anhang
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Basic shortcuts for Jupyter lab
+  </a>
+ </li>
+</ul>
 
 </nav>
 
@@ -245,7 +251,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/jupyter_shortcuts.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/04_01_Jupyter_Shortcuts.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -270,7 +276,7 @@
     <div class="dropdown-buttons">
         
         
-        <a class="jupyterhub-button" href="https://jupyterhub01.zhaw.ch/hub/user-redirect/git-pull?repo=https://github.com/ratnanil/codingingis&urlpath=lab/tree/codingingis/jupyter_shortcuts.ipynb&branch=master"><button type="button"
+        <a class="jupyterhub-button" href="https://jupyterhub01.zhaw.ch/hub/user-redirect/git-pull?repo=https://github.com/ratnanil/codingingis&urlpath=lab/tree/codingingis/04_01_Jupyter_Shortcuts.ipynb&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="_static/images/logo_jupyterhub.svg"
@@ -301,19 +307,19 @@
   <div class="section" id="basic-shortcuts-for-jupyter-lab">
 <h1>Basic shortcuts for Jupyter lab<a class="headerlink" href="#basic-shortcuts-for-jupyter-lab" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><p><strong>Alt + Enter</strong> –&gt; Run current cell</p></li>
-<li><p><strong>ESC</strong> –&gt; takes users into command mode view while ENTER takes users into cell mode view.</p></li>
-<li><p><strong>A</strong> –&gt; inserts a cell above the currently selected cell. Before using this, make sure that you are in command mode (by pressing ESC).</p></li>
-<li><p><strong>B</strong> –&gt; inserts a cell below the currently selected cell. Before using this make sure that you are in command mode (by pressing ESC).</p></li>
-<li><p><strong>D + D</strong> –&gt; Pressing D two times in a quick succession in command mode deletes the currently selected cell.</p></li>
-<li><p><strong>M</strong> –&gt; to change current cell to a markdown cell,</p></li>
-<li><p><strong>Y</strong> –&gt; to change it to a code cell and  R to change it to a raw cell.</p></li>
-<li><p><strong>CTRL + B</strong> –&gt; Jupyter lab has two columns design. One column is for launcher or code blocks and another column is for file view etc. To increase workspace while writing code, we can close it.  CTRL + B is the shortcut for toggling the file view column in the Jupyter lab.</p></li>
-<li><p><strong>SHIFT + MIt</strong> –&gt; merges multiple selected cells into one cell.</p></li>
-<li><p><strong>CTRL + SHIFT +</strong> – –&gt; It splits the current cell into two cells from where your cursor is.</p></li>
-<li><p><strong>SHIFT+J or SHIFT + DOWN</strong> –&gt; It selects the next cell in a downward direction.  It will help in making multiple selections of cells.</p></li>
-<li><p><strong>SHIFT + K or SHIFT + UP</strong> –&gt; It selects the next cell in an upwards direction. It will help in making multiple selections of cells.</p></li>
-<li><p><strong>CTRL + /</strong> –&gt; It helps you in either commenting or uncommenting any line in the Jupyter lab. For this to work, you don’t even need to select the whole line. It will comment or uncomment line where your cursor is. If you want to do it for more that one line then you will need to first select all the line and then use this shortcut.</p></li>
+<li><p><strong>Alt + Enter</strong>: Run current cell</p></li>
+<li><p><strong>ESC</strong>: takes users into command mode view while ENTER takes users into cell mode view.</p></li>
+<li><p><strong>A</strong>: inserts a cell above the currently selected cell. Before using this, make sure that you are in command mode (by pressing ESC).</p></li>
+<li><p><strong>B</strong>: inserts a cell below the currently selected cell. Before using this make sure that you are in command mode (by pressing ESC).</p></li>
+<li><p><strong>D + D</strong>: Pressing D two times in a quick succession in command mode deletes the currently selected cell.</p></li>
+<li><p><strong>M</strong>: to change current cell to a markdown cell,</p></li>
+<li><p><strong>Y</strong>: to change it to a code cell and  R to change it to a raw cell.</p></li>
+<li><p><strong>CTRL + B</strong>: Jupyter lab has two columns design. One column is for launcher or code blocks and another column is for file view etc. To increase workspace while writing code, we can close it.  CTRL + B is the shortcut for toggling the file view column in the Jupyter lab.</p></li>
+<li><p><strong>SHIFT + MIt</strong>: merges multiple selected cells into one cell.</p></li>
+<li><p><strong>CTRL + SHIFT +</strong> –: It splits the current cell into two cells from where your cursor is.</p></li>
+<li><p><strong>SHIFT+J or SHIFT + DOWN</strong>: It selects the next cell in a downward direction.  It will help in making multiple selections of cells.</p></li>
+<li><p><strong>SHIFT + K or SHIFT + UP</strong>: It selects the next cell in an upwards direction. It will help in making multiple selections of cells.</p></li>
+<li><p><strong>CTRL + /</strong>: It helps you in either commenting or uncommenting any line in the Jupyter lab. For this to work, you don’t even need to select the whole line. It will comment or uncomment line where your cursor is. If you want to do it for more that one line then you will need to first select all the line and then use this shortcut.</p></li>
 </ul>
 </div>
 
@@ -345,6 +351,7 @@
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="03_06_Waldanteil_Berechnen.html" title="previous page">Übung: Waldanteil berechnen</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
