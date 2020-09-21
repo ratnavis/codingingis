@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Listen &#8212; Coding in GIS</title>
+    <title>Listen (Aufgabe 2) &#8212; Coding in GIS</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -39,7 +39,7 @@
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Dictionaries" href="01_05_Dictionary.html" />
+    <link rel="next" title="Dictionaries (Aufgabe 3)" href="01_05_Dictionary.html" />
     <link rel="prev" title="Zusammengesetzte Datentypen" href="01_03_Zusammengesetzte_Datentypen.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -93,7 +93,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_02_Primitive_Datentypen.html">
-   Primitive Datentypen
+   Primitive Datentypen (Aufgabe 1)
   </a>
  </li>
  <li class="toctree-l1">
@@ -103,17 +103,17 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Listen
+   Listen (Aufgabe 2)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_05_Dictionary.html">
-   Dictionaries
+   Dictionaries (Aufgabe 3)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_06_Tabellarische_Daten.html">
-   Tabellarische Daten
+   Tabellarische Daten (Aufgabe 4)
   </a>
  </li>
 </ul>
@@ -305,39 +305,51 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ubung-1-lists">
-   Übung 1: Lists
+  <a class="reference internal nav-link" href="#theorie">
+   Theorie
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ubung-2-elemente-aus-liste-ansprechen">
-   Übung 2: Elemente aus Liste ansprechen
+  <a class="reference internal nav-link" href="#ubungen">
+   Übungen
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ubung-3-liste-erganzen">
-   Übung 3: Liste ergänzen
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ubung-4-summen-berechnen">
-   Übung 4: Summen berechnen
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ubung-5-anzahl-werte-ermitteln">
-   Übung 5: Anzahl Werte ermitteln
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ubung-6-mittelwert-berechnen">
-   Übung 6: Mittelwert berechnen
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ubung-7-minimum-maximumwerte">
-   Übung 7: Minimum-/Maximumwerte
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ubung-2-1-lists">
+     Übung 2.1: Lists
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ubung-2-2-elemente-aus-liste-ansprechen">
+     Übung 2.2: Elemente aus Liste ansprechen
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ubung-2-3-liste-erganzen">
+     Übung 2.3: Liste ergänzen
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ubung-2-4-summen-berechnen">
+     Übung 2.4: Summen berechnen
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ubung-2-5-anzahl-werte-ermitteln">
+     Übung 2.5: Anzahl Werte ermitteln
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ubung-2-6-mittelwert-berechnen">
+     Übung 2.6: Mittelwert berechnen
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ubung-2-7-minimum-maximumwerte">
+     Übung 2.7: Minimum-/Maximumwerte
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -349,8 +361,10 @@
         
               <div>
                 
-  <div class="section" id="listen">
-<h1>Listen<a class="headerlink" href="#listen" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="listen-aufgabe-2">
+<h1>Listen (Aufgabe 2)<a class="headerlink" href="#listen-aufgabe-2" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="theorie">
+<h2>Theorie<a class="headerlink" href="#theorie" title="Permalink to this headline">¶</a></h2>
 <p>Wohl das einfachste Gefäss, um mehrere Werte zu speichern sind Python-Listen, sogenannte <em>Lists</em>. Diese <em>Lists</em> werden mit eckigen Klammern erstellt. Die Reihenfolge, in denen die Werte angegeben werden, wird gespeichert. Das erlaubt es uns, bestimmte Werte aufgrund ihrer Position abzurufen.</p>
 <p>Eine <em>List</em> wird folgendermassen erstellt:</p>
 <div class="cell docutils container">
@@ -420,20 +434,23 @@
 </div>
 </div>
 </div>
-<div class="section" id="ubung-1-lists">
-<h2>Übung 1: Lists<a class="headerlink" href="#ubung-1-lists" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="ubungen">
+<h2>Übungen<a class="headerlink" href="#ubungen" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="ubung-2-1-lists">
+<h3>Übung 2.1: Lists<a class="headerlink" href="#ubung-2-1-lists" title="Permalink to this headline">¶</a></h3>
 <ol class="simple">
 <li><p>Erstelle eine Variable <code class="docutils literal notranslate"><span class="pre">vornamen</span></code> bestehend aus einer <em>List</em> mit 3 Vornamen</p></li>
 <li><p>Erstelle eine zweite Variable <code class="docutils literal notranslate"><span class="pre">nachnamen</span></code> bestehend aus einer <em>List</em> mit 3 Nachnamen</p></li>
 <li><p>Erstelle eine Variable <code class="docutils literal notranslate"><span class="pre">groessen</span></code> bestehend aus einer <em>List</em> mit 3 Grössenangaben in Zentimeter.</p></li>
 </ol>
 </div>
-<div class="section" id="ubung-2-elemente-aus-liste-ansprechen">
-<h2>Übung 2: Elemente aus Liste ansprechen<a class="headerlink" href="#ubung-2-elemente-aus-liste-ansprechen" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="ubung-2-2-elemente-aus-liste-ansprechen">
+<h3>Übung 2.2: Elemente aus Liste ansprechen<a class="headerlink" href="#ubung-2-2-elemente-aus-liste-ansprechen" title="Permalink to this headline">¶</a></h3>
 <p>Wie erhältst du den ersten Eintrag in der Variable <code class="docutils literal notranslate"><span class="pre">vornamen</span></code>?</p>
 </div>
-<div class="section" id="ubung-3-liste-erganzen">
-<h2>Übung 3: Liste ergänzen<a class="headerlink" href="#ubung-3-liste-erganzen" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="ubung-2-3-liste-erganzen">
+<h3>Übung 2.3: Liste ergänzen<a class="headerlink" href="#ubung-2-3-liste-erganzen" title="Permalink to this headline">¶</a></h3>
 <p>Listen können durch die Methode <code class="docutils literal notranslate"><span class="pre">append</span></code> ergänzt werden (s.u.). Ergänze die Listen <code class="docutils literal notranslate"><span class="pre">vornamen</span></code>, <code class="docutils literal notranslate"><span class="pre">nachnamen</span></code> und <code class="docutils literal notranslate"><span class="pre">groessen</span></code> durch je einen Eintrag.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -443,21 +460,22 @@
 </div>
 </div>
 </div>
-<div class="section" id="ubung-4-summen-berechnen">
-<h2>Übung 4: Summen berechnen<a class="headerlink" href="#ubung-4-summen-berechnen" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="ubung-2-4-summen-berechnen">
+<h3>Übung 2.4: Summen berechnen<a class="headerlink" href="#ubung-2-4-summen-berechnen" title="Permalink to this headline">¶</a></h3>
 <p>Ermittle die Summe aller Werte in <code class="docutils literal notranslate"><span class="pre">groesse</span></code>. Tip: Nutze dazu <code class="docutils literal notranslate"><span class="pre">sum()</span></code></p>
 </div>
-<div class="section" id="ubung-5-anzahl-werte-ermitteln">
-<h2>Übung 5: Anzahl Werte ermitteln<a class="headerlink" href="#ubung-5-anzahl-werte-ermitteln" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="ubung-2-5-anzahl-werte-ermitteln">
+<h3>Übung 2.5: Anzahl Werte ermitteln<a class="headerlink" href="#ubung-2-5-anzahl-werte-ermitteln" title="Permalink to this headline">¶</a></h3>
 <p>Ermittle die Anzahl Werte in <code class="docutils literal notranslate"><span class="pre">groesse</span></code> . Tip: Nutze dazu <code class="docutils literal notranslate"><span class="pre">len()</span></code></p>
 </div>
-<div class="section" id="ubung-6-mittelwert-berechnen">
-<h2>Übung 6: Mittelwert berechnen<a class="headerlink" href="#ubung-6-mittelwert-berechnen" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="ubung-2-6-mittelwert-berechnen">
+<h3>Übung 2.6: Mittelwert berechnen<a class="headerlink" href="#ubung-2-6-mittelwert-berechnen" title="Permalink to this headline">¶</a></h3>
 <p>Berechne die durchschnittliche Grösse aller Personen in <code class="docutils literal notranslate"><span class="pre">groesse</span></code>. Tip: Nutze dazu <code class="docutils literal notranslate"><span class="pre">len()</span></code> und <code class="docutils literal notranslate"><span class="pre">sum()</span></code>.</p>
 </div>
-<div class="section" id="ubung-7-minimum-maximumwerte">
-<h2>Übung 7: Minimum-/Maximumwerte<a class="headerlink" href="#ubung-7-minimum-maximumwerte" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="ubung-2-7-minimum-maximumwerte">
+<h3>Übung 2.7: Minimum-/Maximumwerte<a class="headerlink" href="#ubung-2-7-minimum-maximumwerte" title="Permalink to this headline">¶</a></h3>
 <p>Ermittle nun noch die Minimum- und Maximumwerte aus <code class="docutils literal notranslate"><span class="pre">grossen</span></code> (finde die dazugehörige Funktion selber heraus).</p>
+</div>
 </div>
 </div>
 
@@ -490,7 +508,7 @@
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="01_03_Zusammengesetzte_Datentypen.html" title="previous page">Zusammengesetzte Datentypen</a>
-    <a class='right-next' id="next-link" href="01_05_Dictionary.html" title="next page">Dictionaries</a>
+    <a class='right-next' id="next-link" href="01_05_Dictionary.html" title="next page">Dictionaries (Aufgabe 3)</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
