@@ -1,4 +1,5 @@
 - file: index
+  numbered: false
 
 - part: Coding in GIS I
   chapters:
