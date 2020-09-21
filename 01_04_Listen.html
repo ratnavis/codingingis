@@ -15,7 +15,8 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-dropdown.css" />
+    <link rel="stylesheet" type="text/css" href="_static/spanels-index--0afa1ebdab0bb23b98b56d34c23d9f57.css" />
+    <link rel="stylesheet" type="text/css" href="_static/spanels-variables--ffc7f74dcb1b9eecba2dbcbc22818714.css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
@@ -338,8 +339,8 @@
                 
   <div class="section" id="listen">
 <h1>Listen<a class="headerlink" href="#listen" title="Permalink to this headline">¶</a></h1>
-<p>Wohl das einfachste Gefäss um mehrere Werte zu speichern sind Python-Listen, sogenannte <em>Lists</em>. Diese <em>Lists</em> werden mit eckigen Klammern erstellt und die Reihenfolge, in denen die Werte angegeben werden, wird gespeichert. Das erlaubt es uns, bestimmte Werte aufgrund ihrer Position abzurufen.</p>
-<p>Eine <em>List</em> wird folgendermasen erstellt:</p>
+<p>Wohl das einfachste Gefäss, um mehrere Werte zu speichern sind Python-Listen, sogenannte <em>Lists</em>. Diese <em>Lists</em> werden mit eckigen Klammern erstellt. Die Reihenfolge, in denen die Werte angegeben werden, wird gespeichert. Das erlaubt es uns, bestimmte Werte aufgrund ihrer Position abzurufen.</p>
+<p>Eine <em>List</em> wird folgendermassen erstellt:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hexerei</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
@@ -372,7 +373,7 @@
 </div>
 </div>
 </div>
-<p>Im Prinzip sind <em>Lists</em> ähnlich wie <em>Vectors</em> in R, mit dem Unterschied das in Python-Lists unterschiedliche Datentypen abgespichert werden können. Zum Beispiel auch weitere, verschachtelte Lists:</p>
+<p>Im Prinzip sind <em>Lists</em> ähnlich wie <em>Vectors</em> in R, mit dem Unterschied das in Python-Lists unterschiedliche Datentypen abgespeichert werden können. Zum Beispiel auch weitere, verschachtelte Lists:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chaos</span> <span class="o">=</span> <span class="p">[</span><span class="mi">23</span><span class="p">,</span> <span class="s2">&quot;ja&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]]</span>
@@ -421,7 +422,7 @@
 </div>
 <div class="section" id="ubung-3-liste-erganzen">
 <h2>Übung 3: Liste ergänzen<a class="headerlink" href="#ubung-3-liste-erganzen" title="Permalink to this headline">¶</a></h2>
-<p>Listen können durch der Method <code class="docutils literal notranslate"><span class="pre">append</span></code> ergänzt werden (s.u.). Ergänze in die Listen <code class="docutils literal notranslate"><span class="pre">vornamen</span></code>, <code class="docutils literal notranslate"><span class="pre">nachnamen</span></code> und <code class="docutils literal notranslate"><span class="pre">groessen</span></code> durch je einen Eintrag.</p>
+<p>Listen können durch die Methode <code class="docutils literal notranslate"><span class="pre">append</span></code> ergänzt werden (s.u.). Ergänze die Listen <code class="docutils literal notranslate"><span class="pre">vornamen</span></code>, <code class="docutils literal notranslate"><span class="pre">nachnamen</span></code> und <code class="docutils literal notranslate"><span class="pre">groessen</span></code> durch je einen Eintrag.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vornamen</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Malte&quot;</span><span class="p">)</span>
@@ -440,11 +441,11 @@
 </div>
 <div class="section" id="ubung-6-mittelwert-berechnen">
 <h2>Übung 6: Mittelwert berechnen<a class="headerlink" href="#ubung-6-mittelwert-berechnen" title="Permalink to this headline">¶</a></h2>
-<p>Berechne die durchschnittliche Grösse aller personen in <code class="docutils literal notranslate"><span class="pre">groesse</span></code>. Tip: Nutze dazu <code class="docutils literal notranslate"><span class="pre">len()</span></code> und <code class="docutils literal notranslate"><span class="pre">sum()</span></code>.</p>
+<p>Berechne die durchschnittliche Grösse aller Personen in <code class="docutils literal notranslate"><span class="pre">groesse</span></code>. Tip: Nutze dazu <code class="docutils literal notranslate"><span class="pre">len()</span></code> und <code class="docutils literal notranslate"><span class="pre">sum()</span></code>.</p>
 </div>
 <div class="section" id="ubung-7-minimum-maximumwerte">
 <h2>Übung 7: Minimum-/Maximumwerte<a class="headerlink" href="#ubung-7-minimum-maximumwerte" title="Permalink to this headline">¶</a></h2>
-<p>Ermittle nun noch die Minimum- und Maximumwerte aus <code class="docutils literal notranslate"><span class="pre">people</span></code>.</p>
+<p>Ermittle nun noch die Minimum- und Maximumwerte aus <code class="docutils literal notranslate"><span class="pre">groessen</span></code>.</p>
 </div>
 </div>
 
