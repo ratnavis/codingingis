@@ -27,3 +27,8 @@
   - file: 03_04_Zeckenstich_Simulation
   - file: 03_05_GIS_in_Python
   - file: 03_06_Waldanteil_Berechnen
+  
+  
+- part: Anhang
+  chapters:
+  - file: 04_01_Jupyter_Shortcuts
