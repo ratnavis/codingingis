@@ -15,8 +15,8 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/spanels-index--0afa1ebdab0bb23b98b56d34c23d9f57.css" />
-    <link rel="stylesheet" type="text/css" href="_static/spanels-variables--ffc7f74dcb1b9eecba2dbcbc22818714.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
@@ -39,7 +39,7 @@
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Virtual Environments mit Conda" href="02_01a_Virtual_Environments.html" />
+    <link rel="next" title="Virtual Environments / Conda (Aufgabe 5)" href="02_01a_Virtual_Environments.html" />
     <link rel="prev" title="Tabellarische Daten (Aufgabe 4)" href="01_06_Tabellarische_Daten.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -98,7 +98,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_03_Zusammengesetzte_Datentypen.html">
-   Zusammengesetzte Datentypen
+   Komplexe Datentypen
   </a>
  </li>
  <li class="toctree-l1">
@@ -130,42 +130,40 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02_01a_Virtual_Environments.html">
-   Virtual Environments mit Conda
+   Virtual Environments / Conda (Aufgabe 5)
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02_01b_Python_Module.html">
+  <a class="reference internal" href="02_02_Python_Module.html">
    Python Modules
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02_02_Functions_I.html">
+  <a class="reference internal" href="02_03_Functions_I.html">
    <em>
     Function
    </em>
-   Basics
+   Basics (Aufgabe 6)
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02_03_Functions_II.html">
+  <a class="reference internal" href="02_04_Functions_II.html">
    <em>
     Function
    </em>
-   Advanced
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="02_04_Einzelpunkt_Verschieben.html">
-   Einen Einzelpunkt zufällig verschieben
+   Advanced (Aufgabe 7)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02_05_Punkte_einer_DataFrame_verschieben.html">
-   Übung Punkte einer
    <em>
-    DataFrame
+    Function
    </em>
-   zufällig verschieben
+   in
+   <em>
+    DataFrames
+   </em>
+   (Aufgabe 8)
   </a>
  </li>
 </ul>
@@ -314,8 +312,8 @@
                 
   <div class="section" id="einleitung-zu-diesem-block">
 <h1>Einleitung zu diesem Block<a class="headerlink" href="#einleitung-zu-diesem-block" title="Permalink to this headline">¶</a></h1>
-<p>Letzte Woche habt ihr Jupyter Labs kennen gelernt und erste Kontakte mit Python gehabt. Um den Einsteig möglichst einfach zu halten habt ihr bisher auf dem ZHAW Jupyter-Lab Server (JupyterHub) gearbeitet. Diese Woche wollen wir versuchen, dass ihr lokal auf euren eigenen Rechnern arbeitet. So lernt ein Programm kennen, welches sich ausschliesslich aus der Commandozeile bedienen lässt. Ihr lernt zudem, wie man durch das setzen der Systemvariabel ein solches Programm in der Kommandozeile verfügbar macht.</p>
-<p>Wenn dieser Schritt erfolgt ist lernt ihr Python Module besser kennen und wie sich deren Handhabung von R unterscheidet. Später schauen wir uns Funktionen genauer an: Was sie brauchen, wie man sie erstellt und vor allem wie man sie nutzt.</p>
+<p>Letzte Woche habt ihr Jupyter Labs kennen gelernt und erste Kontakte mit Python gehabt. Um den Einsteig möglichst einfach zu halten hattet ihr bisher auf dem ZHAW Jupyter-Lab Server (JupyterHub) gearbeitet.</p>
+<p>Diese Woche wollen wir versuchen, dass ihr <em>lokal</em> auf euren eigenen Rechnern arbeitet. Es ist extrem hilfreich, eine eigene, lokale installation von Python zu haben die man gut verwalten kann. Es ist aber auch nicht ganz trivial, und einige von euch müsst allenfalls bei der Server-basierten Lösung bleiben.</p>
 <div class="attention admonition">
 <p class="admonition-title">Übungsziele</p>
 <ul class="simple">
@@ -329,141 +327,6 @@
 <li><p><em>Functions</em> kennenlernen und beherrschen</p></li>
 <li><p><em>Function</em> auf eine ganze Spalte einer DataFrame anwenden können.</p></li>
 </ul>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
-<span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;unterrichtsplan.csv&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Von</th>
-      <th>Bis</th>
-      <th>Dauer</th>
-      <th>Beschreibung</th>
-      <th>Titel</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>13:00</td>
-      <td>13:30</td>
-      <td>30</td>
-      <td>Einführung in Coding in GIS I - III</td>
-      <td>Vorlesung</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>13:30</td>
-      <td>13:45</td>
-      <td>15</td>
-      <td>Einführung in die Übungen</td>
-      <td>Vorlesung</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>13:45</td>
-      <td>13:50</td>
-      <td>5</td>
-      <td>Pause</td>
-      <td>Pause</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>13:50</td>
-      <td>14:00</td>
-      <td>10</td>
-      <td>Einführung in die Übungen (Demo)</td>
-      <td>Primitive Datentypen</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>14:00</td>
-      <td>14:35</td>
-      <td>35</td>
-      <td>Übung 1 - 7 individuell lösen (5 Minuten pro Ü...</td>
-      <td>Primitive Datentypen</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>14:35</td>
-      <td>14:50</td>
-      <td>15</td>
-      <td>Pause</td>
-      <td>Pause</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>14:50</td>
-      <td>15:00</td>
-      <td>10</td>
-      <td>Unklarheiten bereinigen und Einführung Zusamme...</td>
-      <td>Zusammengesetzte Datentypen</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>15:00</td>
-      <td>15:05</td>
-      <td>5</td>
-      <td>Lesen</td>
-      <td>Zusammengesetzte Datentypen</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>15:05</td>
-      <td>15:35</td>
-      <td>30</td>
-      <td>Übung 1 - 7 individuell lösen (4 - 5 Min pro Ü...</td>
-      <td>Listen</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>15:35</td>
-      <td>15:50</td>
-      <td>15</td>
-      <td>Pause</td>
-      <td>Pause</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>15:50</td>
-      <td>15:55</td>
-      <td>5</td>
-      <td>Unklarheiten bereinigen und Einfühung Dictiona...</td>
-      <td>Dictionary</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>15:55</td>
-      <td>16:35</td>
-      <td>40</td>
-      <td>Übungen 1-8 lösen (5 Minuten pro Übung)</td>
-      <td>Dictionary</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 </div>
 
@@ -496,7 +359,7 @@
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="01_06_Tabellarische_Daten.html" title="previous page">Tabellarische Daten (Aufgabe 4)</a>
-    <a class='right-next' id="next-link" href="02_01a_Virtual_Environments.html" title="next page">Virtual Environments mit Conda</a>
+    <a class='right-next' id="next-link" href="02_01a_Virtual_Environments.html" title="next page">Virtual Environments / Conda (Aufgabe 5)</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

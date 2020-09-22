@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Übung Punkte einer DataFrame zufällig verschieben &#8212; Coding in GIS</title>
+    <title>Function in DataFrames (Aufgabe 8) &#8212; Coding in GIS</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -15,8 +15,8 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/spanels-index--0afa1ebdab0bb23b98b56d34c23d9f57.css" />
-    <link rel="stylesheet" type="text/css" href="_static/spanels-variables--ffc7f74dcb1b9eecba2dbcbc22818714.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
@@ -40,7 +40,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Einleitung zu diesem Block" href="03_01_Einleitung.html" />
-    <link rel="prev" title="Einen Einzelpunkt zufällig verschieben" href="02_04_Einzelpunkt_Verschieben.html" />
+    <link rel="prev" title="Function Advanced (Aufgabe 7)" href="02_04_Functions_II.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -98,7 +98,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_03_Zusammengesetzte_Datentypen.html">
-   Zusammengesetzte Datentypen
+   Komplexe Datentypen
   </a>
  </li>
  <li class="toctree-l1">
@@ -130,42 +130,40 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02_01a_Virtual_Environments.html">
-   Virtual Environments mit Conda
+   Virtual Environments / Conda (Aufgabe 5)
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02_01b_Python_Module.html">
+  <a class="reference internal" href="02_02_Python_Module.html">
    Python Modules
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02_02_Functions_I.html">
+  <a class="reference internal" href="02_03_Functions_I.html">
    <em>
     Function
    </em>
-   Basics
+   Basics (Aufgabe 6)
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02_03_Functions_II.html">
+  <a class="reference internal" href="02_04_Functions_II.html">
    <em>
     Function
    </em>
-   Advanced
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="02_04_Einzelpunkt_Verschieben.html">
-   Einen Einzelpunkt zufällig verschieben
+   Advanced (Aufgabe 7)
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Übung Punkte einer
    <em>
-    DataFrame
+    Function
    </em>
-   zufällig verschieben
+   in
+   <em>
+    DataFrames
+   </em>
+   (Aufgabe 8)
   </a>
  </li>
 </ul>
@@ -305,28 +303,40 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ubung-1-alle-zeckenstiche-zufallig-verschieben">
-   Übung 1: Alle Zeckenstiche zufällig verschieben
+  <a class="reference internal nav-link" href="#theorie">
+   Theorie
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ubung-2-neue-geodataframe-mit-simulierten-punkten-erstellen">
-   Übung 2: Neue GeoDataFrame mit simulierten Punkten erstellen
+  <a class="reference internal nav-link" href="#ubungen">
+   Übungen
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ubung-4-mehrere-dataframes-visualisieren">
-   Übung 4: Mehrere
-   <em>
-    DataFrames
-   </em>
-   visualisieren
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ubung-5-genauigkeitsangaben-der-punkte-mitberucksichtigen">
-   Übung 5: Genauigkeitsangaben der Punkte mitberücksichtigen.
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ubung-8-1-alle-zeckenstiche-zufallig-verschieben">
+     Übung 8.1: Alle Zeckenstiche zufällig verschieben
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ubung-8-2-neue-geodataframe-mit-simulierten-punkten-erstellen">
+     Übung 8.2: Neue GeoDataFrame mit simulierten Punkten erstellen
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ubung-8-4-mehrere-dataframes-visualisieren">
+     Übung 8.4: Mehrere
+     <em>
+      DataFrames
+     </em>
+     visualisieren
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ubung-8-5-genauigkeitsangaben-der-punkte-mitberucksichtigen">
+     Übung 8.5: Genauigkeitsangaben der Punkte mitberücksichtigen.
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -338,8 +348,10 @@
         
               <div>
                 
-  <div class="section" id="ubung-punkte-einer-dataframe-zufallig-verschieben">
-<h1>Übung Punkte einer <em>DataFrame</em> zufällig verschieben<a class="headerlink" href="#ubung-punkte-einer-dataframe-zufallig-verschieben" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="function-in-dataframes-aufgabe-8">
+<h1><em>Function</em> in <em>DataFrames</em> (Aufgabe 8)<a class="headerlink" href="#function-in-dataframes-aufgabe-8" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="theorie">
+<h2>Theorie<a class="headerlink" href="#theorie" title="Permalink to this headline">¶</a></h2>
 <p>Nun wollen wir usere Function <code class="docutils literal notranslate"><span class="pre">offset_coordinate()</span></code> auf alle Zeckenstich-Koordinaten anwenden. Bildlich gesprochen: Wir nehmen unsere Zeckenstichdatensatz und schütteln ihn einmal durch.</p>
 <p>Nutze hier die Datei “zeckenstiche.csv” von letzter Woche (du kannst auch sie <a class="reference external" href="https://raw.githubusercontent.com/ratnanil/codingingis/master/zeckenstiche.csv">hier erneut runterladen</a>, Rechtsklick –&gt; Ziel speichern unter).</p>
 <div class="cell docutils container">
@@ -458,21 +470,24 @@
 </table>
 </div></div></div>
 </div>
-<div class="section" id="ubung-1-alle-zeckenstiche-zufallig-verschieben">
-<h2>Übung 1: Alle Zeckenstiche zufällig verschieben<a class="headerlink" href="#ubung-1-alle-zeckenstiche-zufallig-verschieben" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="ubungen">
+<h2>Übungen<a class="headerlink" href="#ubungen" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="ubung-8-1-alle-zeckenstiche-zufallig-verschieben">
+<h3>Übung 8.1: Alle Zeckenstiche zufällig verschieben<a class="headerlink" href="#ubung-8-1-alle-zeckenstiche-zufallig-verschieben" title="Permalink to this headline">¶</a></h3>
 <p>Nun können wir die <em>Function</em> <code class="docutils literal notranslate"><span class="pre">offset_coordinate()</span></code> auf die gesamte Spalten <code class="docutils literal notranslate"><span class="pre">x</span></code> und <code class="docutils literal notranslate"><span class="pre">y</span></code> der <em>DataFrame</em> zeckenstiche anwenden. Nutze eckige Klammern um die entsprechende Spalte zu wählen.</p>
 </div>
-<div class="section" id="ubung-2-neue-geodataframe-mit-simulierten-punkten-erstellen">
-<h2>Übung 2: Neue GeoDataFrame mit simulierten Punkten erstellen<a class="headerlink" href="#ubung-2-neue-geodataframe-mit-simulierten-punkten-erstellen" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="ubung-8-2-neue-geodataframe-mit-simulierten-punkten-erstellen">
+<h3>Übung 8.2: Neue GeoDataFrame mit simulierten Punkten erstellen<a class="headerlink" href="#ubung-8-2-neue-geodataframe-mit-simulierten-punkten-erstellen" title="Permalink to this headline">¶</a></h3>
 <p>Um die neuen, verschobenen Koordianten abzuspeichern erstellen wir zuerst eine neue, leere DataFrame (z.B. <code class="docutils literal notranslate"><span class="pre">zeckenstiche_sim</span></code>) und fügen den Output als neue Spalten dieser <em>DataFrame</em> hinzu. Auch die “ID” könnt ihr als neue Spalte hinzufügen, so behalten wir den Bezug zum ursprünglichen Datensatz.</p>
 </div>
-<div class="section" id="ubung-4-mehrere-dataframes-visualisieren">
-<h2>Übung 4: Mehrere <em>DataFrames</em> visualisieren<a class="headerlink" href="#ubung-4-mehrere-dataframes-visualisieren" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="ubung-8-4-mehrere-dataframes-visualisieren">
+<h3>Übung 8.4: Mehrere <em>DataFrames</em> visualisieren<a class="headerlink" href="#ubung-8-4-mehrere-dataframes-visualisieren" title="Permalink to this headline">¶</a></h3>
 <p>Um zwei <em>DataFrames</em> im gleichen Plot darzustellen, wird folgendermassen vorgegangen. Der erste Datensatz wird mit <code class="docutils literal notranslate"><span class="pre">.plot()</span></code> visualisiert, wobei der Output einer Variabel  (z.B. <code class="docutils literal notranslate"><span class="pre">basemap</span></code>)  zugewiesen wird. Danach wird der zweite Datensatz ebenfalls mit <code class="docutils literal notranslate"><span class="pre">.plot()</span></code> visualisiert, wobei auf den ersten Plot via dem Argument <code class="docutils literal notranslate"><span class="pre">ax</span></code> verwiesen wird.</p>
 <p>Bei den roten Punkten handelt es sich um die Original-Zeckenstichen, bei den blauen um die simulierten (leicht verschoben) Zeckenstiche.</p>
 </div>
-<div class="section" id="ubung-5-genauigkeitsangaben-der-punkte-mitberucksichtigen">
-<h2>Übung 5: Genauigkeitsangaben der Punkte mitberücksichtigen.<a class="headerlink" href="#ubung-5-genauigkeitsangaben-der-punkte-mitberucksichtigen" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="ubung-8-5-genauigkeitsangaben-der-punkte-mitberucksichtigen">
+<h3>Übung 8.5: Genauigkeitsangaben der Punkte mitberücksichtigen.<a class="headerlink" href="#ubung-8-5-genauigkeitsangaben-der-punkte-mitberucksichtigen" title="Permalink to this headline">¶</a></h3>
 <p>Bisher haben wir alle Punkte um die gleiche Distanz verschoben. Wenn wir unsere <em>DataFrame</em> “zeckensiche” genau anschauen, steht uns eine Genauigkeitsangabe pro Punkt zur Verfügung: Die Spalte “accuracy”.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -619,66 +634,67 @@
     <tr>
       <th>0</th>
       <td>2550</td>
-      <td>2.680083e+06</td>
-      <td>1.250892e+06</td>
+      <td>2.681476e+06</td>
+      <td>1.251064e+06</td>
     </tr>
     <tr>
       <th>1</th>
       <td>10437</td>
-      <td>2.680382e+06</td>
-      <td>1.250840e+06</td>
+      <td>2.681340e+06</td>
+      <td>1.250958e+06</td>
     </tr>
     <tr>
       <th>2</th>
       <td>9174</td>
-      <td>2.680418e+06</td>
-      <td>1.250851e+06</td>
+      <td>2.681376e+06</td>
+      <td>1.250969e+06</td>
     </tr>
     <tr>
       <th>3</th>
       <td>8773</td>
-      <td>2.680401e+06</td>
-      <td>1.250851e+06</td>
+      <td>2.681359e+06</td>
+      <td>1.250969e+06</td>
     </tr>
     <tr>
       <th>4</th>
       <td>2764</td>
-      <td>2.680421e+06</td>
-      <td>1.250860e+06</td>
+      <td>2.681379e+06</td>
+      <td>1.250978e+06</td>
     </tr>
     <tr>
       <th>5</th>
       <td>2513</td>
-      <td>2.680461e+06</td>
-      <td>1.250879e+06</td>
+      <td>2.681419e+06</td>
+      <td>1.250997e+06</td>
     </tr>
     <tr>
       <th>6</th>
       <td>9185</td>
-      <td>2.680397e+06</td>
-      <td>1.250880e+06</td>
+      <td>2.681355e+06</td>
+      <td>1.250998e+06</td>
     </tr>
     <tr>
       <th>7</th>
       <td>28521</td>
-      <td>2.680414e+06</td>
-      <td>1.250888e+06</td>
+      <td>2.681372e+06</td>
+      <td>1.251006e+06</td>
     </tr>
     <tr>
       <th>8</th>
       <td>26745</td>
-      <td>2.680407e+06</td>
-      <td>1.250893e+06</td>
+      <td>2.681365e+06</td>
+      <td>1.251011e+06</td>
     </tr>
     <tr>
       <th>9</th>
       <td>27391</td>
-      <td>2.680428e+06</td>
-      <td>1.250893e+06</td>
+      <td>2.681386e+06</td>
+      <td>1.251011e+06</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
+</div>
 </div>
 </div>
 </div>
@@ -711,7 +727,7 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="02_04_Einzelpunkt_Verschieben.html" title="previous page">Einen Einzelpunkt zufällig verschieben</a>
+    <a class='left-prev' id="prev-link" href="02_04_Functions_II.html" title="previous page"><em>Function</em> Advanced (Aufgabe 7)</a>
     <a class='right-next' id="next-link" href="03_01_Einleitung.html" title="next page">Einleitung zu diesem Block</a>
 
     </div>

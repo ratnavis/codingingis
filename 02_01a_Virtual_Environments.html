@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Virtual Environments mit Conda &#8212; Coding in GIS</title>
+    <title>Virtual Environments / Conda (Aufgabe 5) &#8212; Coding in GIS</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -15,8 +15,8 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/spanels-index--0afa1ebdab0bb23b98b56d34c23d9f57.css" />
-    <link rel="stylesheet" type="text/css" href="_static/spanels-variables--ffc7f74dcb1b9eecba2dbcbc22818714.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
@@ -39,7 +39,7 @@
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Python Modules" href="02_01b_Python_Module.html" />
+    <link rel="next" title="Python Modules" href="02_02_Python_Module.html" />
     <link rel="prev" title="Einleitung zu diesem Block" href="02_01_Einleitung.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -98,7 +98,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_03_Zusammengesetzte_Datentypen.html">
-   Zusammengesetzte Datentypen
+   Komplexe Datentypen
   </a>
  </li>
  <li class="toctree-l1">
@@ -130,42 +130,40 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Virtual Environments mit Conda
+   Virtual Environments / Conda (Aufgabe 5)
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02_01b_Python_Module.html">
+  <a class="reference internal" href="02_02_Python_Module.html">
    Python Modules
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02_02_Functions_I.html">
+  <a class="reference internal" href="02_03_Functions_I.html">
    <em>
     Function
    </em>
-   Basics
+   Basics (Aufgabe 6)
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02_03_Functions_II.html">
+  <a class="reference internal" href="02_04_Functions_II.html">
    <em>
     Function
    </em>
-   Advanced
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="02_04_Einzelpunkt_Verschieben.html">
-   Einen Einzelpunkt zufällig verschieben
+   Advanced (Aufgabe 7)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02_05_Punkte_einer_DataFrame_verschieben.html">
-   Übung Punkte einer
    <em>
-    DataFrame
+    Function
    </em>
-   zufällig verschieben
+   in
+   <em>
+    DataFrames
+   </em>
+   (Aufgabe 8)
   </a>
  </li>
 </ul>
@@ -312,17 +310,18 @@
         
               <div>
                 
-  <div class="section" id="virtual-environments-mit-conda">
-<h1>Virtual Environments mit Conda<a class="headerlink" href="#virtual-environments-mit-conda" title="Permalink to this headline">¶</a></h1>
-<p>Dafür müsst ihr das Konzept von “Virtual Environments”, welches in der Vorlesung erläutert wurde, (halbwegs) verstanden haben. Sollte dies nicht der Fall sein, meldest du dich am besten beim Dozenten oder schaust dir nochmals die Vorlesungsfolien an.</p>
+  <div class="section" id="virtual-environments-conda-aufgabe-5">
+<h1>Virtual Environments / Conda (Aufgabe 5)<a class="headerlink" href="#virtual-environments-conda-aufgabe-5" title="Permalink to this headline">¶</a></h1>
+<p>Um <em>conda</em> zu verstehen und nutzen zu können, müsst ihr das Konzept von “Virtual Environments” (siehe Vorlesung) einigermassen verstanden haben. Sollte dies nicht der Fall sein, meldest du dich am besten beim Dozenten oder schaust dir nochmals die Vorlesungsfolien an.</p>
+<p>Diese nächsten Schritte zur Nutzung von <em>conda</em> wurden bereits in der Vorlesung beschrieben. Sie sind aber an dieser stelle nochmal erläutert und mit ein paar zusätzlichen Angaben (z.B. Links) erweitert.</p>
 <p><strong>Schritt 1: Conda installieren</strong></p>
-<p>Normalerweise wäre nun der erste Schritt, <em>conda</em> herunterzuladen und installieren (ich empfehle <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">miniconda</a>, nicht <a class="reference external" href="https://www.anaconda.com/products/individual">anaconda</a>). Wenn ihr aber ArcGIS Pro installiert habt, ist dieser Schritt nicht nötig.</p>
+<p>Normalerweise ist der erste Schritt, <em>conda</em> herunterzuladen und installieren (ich empfehle dazu <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">miniconda</a>, nicht <a class="reference external" href="https://www.anaconda.com/products/individual">anaconda</a>). Wenn ihr aber ArcGIS Pro installiert habt, ist dieser Schritt nicht nötig (da <em>conda</em> mit ArcGIS mitinstalliert wird).</p>
 <p><strong>Schritt 2: Systemvariable setzen</strong></p>
-<p>Wir wollen das Programm <em>conda</em> von der Kommanozeile aus (cmd) bedienen. Dafür müsssen wir evt. die Systemvariable zuerst noch setzen. Um zu Prüfen ob dies nötig ist, kannst du die Konsole starten (Windowstaste &gt; cmd) und folgende Zeile einfügen</p>
+<p><em>Conda</em> ist eine Software, die sich nur von der Kommandozeile (Windows: <em>cmd</em>) aus bedienen lässt. Dafür muss <em>cmd</em> aber wissen, WO conda installiert ist. Um zu Prüfen, ob dies der fall ist kannst du die Konsole starten (Windowstaste &gt; cmd) und folgende Zeile einfügen</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda --version
 </pre></div>
 </div>
-<p>Wenn ihr eine Versionsnummer könnt ihr zum nächsten Schritt übergehen. Ansonsten müsst ihr die Systemvariable <code class="docutils literal notranslate"><span class="pre">PATH</span></code> zuerst noch setzen. Siehe dazu die Vorlesungsfolie. Überprüfe mit <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">--version</span></code> ob das setzen der Systemvariable erfolgreich war.</p>
+<p>Wenn du eine Versionsnummer siehst kannst du zum nächsten Schritt übergehen. Ansonsten mussst du die Systemvariable <code class="docutils literal notranslate"><span class="pre">PATH</span></code> zuerst noch mit dem Pfad zur <em>conda</em> installation ergänzen. Siehe dazu die Vorlesungsfolie. Überprüfe mit <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">--version</span></code> ob das setzen der Systemvariable erfolgreich war.</p>
 <p><strong>Schritt 3: Virtual Environment erstellen und aktivieren</strong></p>
 <p>Nun kannst du mit <em>conda</em> eine neue Virtual Environment erstellen. Gibt dazu folgenden Befehl in die Konsole ein:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda create --name codingingis
@@ -370,7 +369,7 @@
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="02_01_Einleitung.html" title="previous page">Einleitung zu diesem Block</a>
-    <a class='right-next' id="next-link" href="02_01b_Python_Module.html" title="next page">Python Modules</a>
+    <a class='right-next' id="next-link" href="02_02_Python_Module.html" title="next page">Python Modules</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
