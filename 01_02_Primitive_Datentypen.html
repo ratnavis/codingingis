@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Primitive Datentypen (Aufgabe 1) &#8212; Coding in GIS</title>
+    <title>Aufgabe 1: Primitive Datentypen &#8212; Coding in GIS</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -76,7 +76,7 @@
   <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="index.html">
-   Willkommen bei Coding in GIS !
+   Willkommen bei Coding in GIS
   </a>
  </li>
 </ul>
@@ -93,7 +93,7 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Primitive Datentypen (Aufgabe 1)
+   Aufgabe 1: Primitive Datentypen
   </a>
  </li>
  <li class="toctree-l1">
@@ -103,17 +103,17 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_04_Listen.html">
-   Listen (Aufgabe 2)
+   Aufgabe 2: Listen
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_05_Dictionary.html">
-   Dictionaries (Aufgabe 3)
+   Aufgabe 3: Dictionaries
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_06_Tabellarische_Daten.html">
-   Tabellarische Daten (Aufgabe 4)
+   Aufgabe 4: Tabellarische Daten
   </a>
  </li>
 </ul>
@@ -130,7 +130,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02_01a_Virtual_Environments.html">
-   Virtual Environments / Conda (Aufgabe 5)
+   Aufgabe 5: Virtual Environments / Conda
   </a>
  </li>
  <li class="toctree-l1">
@@ -140,22 +140,25 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02_03_Functions_I.html">
+   Aufgabe 6:
    <em>
     Function
    </em>
-   Basics (Aufgabe 6)
+   Basics
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02_04_Functions_II.html">
+   Aufgabe 7:
    <em>
     Function
    </em>
-   Advanced (Aufgabe 7)
+   Advanced
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02_05_Punkte_einer_DataFrame_verschieben.html">
+   Aufgabe 8:
    <em>
     Function
    </em>
@@ -163,7 +166,6 @@
    <em>
     DataFrames
    </em>
-   (Aufgabe 8)
   </a>
  </li>
 </ul>
@@ -381,8 +383,8 @@
         
               <div>
                 
-  <div class="section" id="primitive-datentypen-aufgabe-1">
-<h1>Primitive Datentypen (Aufgabe 1)<a class="headerlink" href="#primitive-datentypen-aufgabe-1" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="aufgabe-1-primitive-datentypen">
+<h1>Aufgabe 1: Primitive Datentypen<a class="headerlink" href="#aufgabe-1-primitive-datentypen" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="theorie">
 <h2>Theorie<a class="headerlink" href="#theorie" title="Permalink to this headline">¶</a></h2>
 <p>Bei primitiven Datentypen handelt es sich um die kleinste Einheit der Programmiersprache, sie werden deshalb auch “atomare Datentypen” genannt. Alle komplexeren Datentypen (Tabellarische Daten, Bilder, Geodaten) basieren auf diesen einfachen Strukturen. Die für uns wichtigsten Datentypen lauten: <em>Boolean</em>, <em>String</em>, <em>Integer</em> und <em>Float</em>. Das sind ähnliche Datentypen wie ihr bereits aus R kennt:</p>
@@ -428,13 +430,8 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">regen</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1"># &quot;es regnet&quot;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sonne</span> <span class="o">=</span> <span class="kc">False</span> <span class="c1"># &quot;die Sonne scheint nicht&quot;</span>
+
+<span class="n">sonne</span> <span class="o">=</span> <span class="kc">False</span> <span class="c1"># &quot;die Sonne scheint nicht&quot;</span>
 
 <span class="nb">type</span><span class="p">(</span><span class="n">sonne</span><span class="p">)</span>
 </pre></div>
@@ -449,7 +446,8 @@
 <p>Um zu prüfen, ob ein bestimmter Wert <code class="docutils literal notranslate"><span class="pre">True</span></code> oder <code class="docutils literal notranslate"><span class="pre">False</span></code> ist verwendet man <code class="docutils literal notranslate"><span class="pre">is</span> <span class="pre">True</span></code>. Will man also fragen ob es regnet, wir dies folgendermassen fomuliert:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">regen</span> <span class="ow">is</span> <span class="kc">True</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># regnet es?</span>
+<span class="n">regen</span> <span class="ow">is</span> <span class="kc">True</span>
 </pre></div>
 </div>
 </div>
@@ -462,7 +460,8 @@
 <p>Ob die Sonne scheint, lautet folgendermassen (natürlich müssen dazu die Variabel <code class="docutils literal notranslate"><span class="pre">sonne</span></code> bereits existieren):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sonne</span> <span class="ow">is</span> <span class="kc">True</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># scheint die Sonne?</span>
+<span class="n">sonne</span> <span class="ow">is</span> <span class="kc">True</span>
 </pre></div>
 </div>
 </div>
@@ -480,13 +479,8 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stadt</span> <span class="o">=</span> <span class="s2">&quot;Bern&quot;</span>
 <span class="n">land</span> <span class="o">=</span> <span class="s2">&quot;Schweiz&quot;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">stadt</span><span class="p">)</span>
+
+<span class="nb">type</span><span class="p">(</span><span class="n">stadt</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -516,13 +510,8 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bern_einwohner</span> <span class="o">=</span> <span class="mi">133115</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">bern_einwohner</span><span class="p">)</span>
+
+<span class="nb">type</span><span class="p">(</span><span class="n">bern_einwohner</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -539,13 +528,8 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bern_flaeche</span> <span class="o">=</span> <span class="mf">51.62</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">bern_flaeche</span><span class="p">)</span>
+
+<span class="nb">type</span><span class="p">(</span><span class="n">bern_flaeche</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

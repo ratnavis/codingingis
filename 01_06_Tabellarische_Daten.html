@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tabellarische Daten (Aufgabe 4) &#8212; Coding in GIS</title>
+    <title>Aufgabe 4: Tabellarische Daten &#8212; Coding in GIS</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -40,7 +40,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Einleitung zu diesem Block" href="02_01_Einleitung.html" />
-    <link rel="prev" title="Dictionaries (Aufgabe 3)" href="01_05_Dictionary.html" />
+    <link rel="prev" title="Aufgabe 3: Dictionaries" href="01_05_Dictionary.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -76,7 +76,7 @@
   <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="index.html">
-   Willkommen bei Coding in GIS !
+   Willkommen bei Coding in GIS
   </a>
  </li>
 </ul>
@@ -93,7 +93,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_02_Primitive_Datentypen.html">
-   Primitive Datentypen (Aufgabe 1)
+   Aufgabe 1: Primitive Datentypen
   </a>
  </li>
  <li class="toctree-l1">
@@ -103,17 +103,17 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_04_Listen.html">
-   Listen (Aufgabe 2)
+   Aufgabe 2: Listen
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_05_Dictionary.html">
-   Dictionaries (Aufgabe 3)
+   Aufgabe 3: Dictionaries
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Tabellarische Daten (Aufgabe 4)
+   Aufgabe 4: Tabellarische Daten
   </a>
  </li>
 </ul>
@@ -130,7 +130,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02_01a_Virtual_Environments.html">
-   Virtual Environments / Conda (Aufgabe 5)
+   Aufgabe 5: Virtual Environments / Conda
   </a>
  </li>
  <li class="toctree-l1">
@@ -140,22 +140,25 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02_03_Functions_I.html">
+   Aufgabe 6:
    <em>
     Function
    </em>
-   Basics (Aufgabe 6)
+   Basics
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02_04_Functions_II.html">
+   Aufgabe 7:
    <em>
     Function
    </em>
-   Advanced (Aufgabe 7)
+   Advanced
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02_05_Punkte_einer_DataFrame_verschieben.html">
+   Aufgabe 8:
    <em>
     Function
    </em>
@@ -163,7 +166,6 @@
    <em>
     DataFrames
    </em>
-   (Aufgabe 8)
   </a>
  </li>
 </ul>
@@ -369,8 +371,8 @@
         
               <div>
                 
-  <div class="section" id="tabellarische-daten-aufgabe-4">
-<h1>Tabellarische Daten (Aufgabe 4)<a class="headerlink" href="#tabellarische-daten-aufgabe-4" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="aufgabe-4-tabellarische-daten">
+<h1>Aufgabe 4: Tabellarische Daten<a class="headerlink" href="#aufgabe-4-tabellarische-daten" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="theorie">
 <h2>Theorie<a class="headerlink" href="#theorie" title="Permalink to this headline">¶</a></h2>
 <p>Schauen wir uns nochmals die <em>Dictionary</em> <code class="docutils literal notranslate"><span class="pre">people</span></code> aus der letzten Übung an. Diese ist ein Spezialfall einer Dictionary: Jeder Eintrag besteht aus einer Liste von gleich vielen Werten. Wie bereits erwähnt, kann es in einem solchen Fall sinnvoll sein, die Dictionary als Tabelle darzustellen.</p>
@@ -381,12 +383,69 @@
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> <span class="c1"># Was diese Zeile beudeutet lernen wir später</span>
+
+<span class="n">people_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">people</span><span class="p">)</span>
+
+<span class="n">people_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>vornamen</th>
+      <th>nachnamen</th>
+      <th>groessen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Christopher</td>
+      <td>Annen</td>
+      <td>174</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Henning</td>
+      <td>May</td>
+      <td>182</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Severin</td>
+      <td>Kantereit</td>
+      <td>162</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
 </div>
 <div class="section" id="ubungen">
 <h2>Übungen<a class="headerlink" href="#ubungen" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="ubung-4-1-von-einer-dictionary-zu-einer-dataframe">
 <h3>Übung 4.1: von einer <em>Dictionary</em> zu einer <em>DataFrame</em><a class="headerlink" href="#ubung-4-1-von-einer-dictionary-zu-einer-dataframe" title="Permalink to this headline">¶</a></h3>
-<p>Importiere <code class="docutils literal notranslate"><span class="pre">pandas</span></code> und nutze die Funktion <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> um <code class="docutils literal notranslate"><span class="pre">people</span></code> in eine DataFrame umzuwandeln. Weise den Output der Variable <code class="docutils literal notranslate"><span class="pre">people_df</span></code> zu und schaue es dir im <em>Variable Explorer</em> an.</p>
+<p>Importiere <code class="docutils literal notranslate"><span class="pre">pandas</span></code> und nutze die Funktion <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> um <code class="docutils literal notranslate"><span class="pre">people</span></code> in eine DataFrame umzuwandeln (siehe dazu das beispiel oben). Weise den Output der Variable <code class="docutils literal notranslate"><span class="pre">people_df</span></code> zu und schaue es dir im <em>Variable Explorer</em> an.</p>
 </div>
 <div class="section" id="ubung-4-2-dataframe-in-csv-umwandeln">
 <h3>Übung 4.2: <em>DataFrame</em> in csv umwandeln<a class="headerlink" href="#ubung-4-2-dataframe-in-csv-umwandeln" title="Permalink to this headline">¶</a></h3>
@@ -439,7 +498,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2681088.05, 2681174.95, 1250644.15, 1250728.85)
 </pre></div>
 </div>
-<img alt="_images/01_06_Tabellarische_Daten_12_1.png" src="_images/01_06_Tabellarische_Daten_12_1.png" />
+<img alt="_images/01_06_Tabellarische_Daten_13_1.png" src="_images/01_06_Tabellarische_Daten_13_1.png" />
 </div>
 </div>
 </div>
@@ -599,7 +658,7 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="01_05_Dictionary.html" title="previous page">Dictionaries (Aufgabe 3)</a>
+    <a class='left-prev' id="prev-link" href="01_05_Dictionary.html" title="previous page">Aufgabe 3: Dictionaries</a>
     <a class='right-next' id="next-link" href="02_01_Einleitung.html" title="next page">Einleitung zu diesem Block</a>
 
     </div>
