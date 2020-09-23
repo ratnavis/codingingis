@@ -447,20 +447,22 @@ Wenn eine neue <em>Function</em> erstellt wird, kommen die Optionalen Parameter 
 </div>
 <div class="section" id="globale-und-lokale-variabeln">
 <h3>Globale und Lokale Variabeln<a class="headerlink" href="#globale-und-lokale-variabeln" title="Permalink to this headline">¶</a></h3>
-<p>Innerhalb einer <em>Function</em> können nur die Variabeln verwendet werden, die der <em>Function</em> als Argumente übergeben werden (oder innerhalb der <em>Funktion</em> erstellt werden). Diese nennt man “lokale” Variabeln, sie sind lokal in der <em>Function</em> vorhanden. Im Gegensatz dazu stehen “globale” Variabeln, diese sind Teil der aktuellen Session. Folgende Vorgehensweise erzeugt also eine Fehlermeldung:</p>
+<p>Innerhalb einer <em>Function</em> können nur die Variabeln verwendet werden, die der <em>Function</em> als Argumente übergeben (oder innerhalb der <em>Funktion</em> erstellt) werden. Diese nennt man “lokale” Variabeln, sie sind lokal in der <em>Function</em> vorhanden. Im Gegensatz dazu stehen “globale” Variabeln, diese sind Teil der aktuellen Session.</p>
+<p>Versuchen wir das mit einem Beispiel zu verdeutlichen. Angenommen wir definieren gobal die Variabeln <code class="docutils literal notranslate"><span class="pre">nachname</span></code> und <code class="docutils literal notranslate"><span class="pre">anrede</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Wir definieren globale Variabeln</span>
 <span class="n">nachname</span> <span class="o">=</span> <span class="s2">&quot;van Rossum&quot;</span>
 <span class="n">anrede</span> <span class="o">=</span> <span class="s2">&quot;Herr&quot;</span>
-
-<span class="k">def</span> <span class="nf">gruezi</span><span class="p">(</span><span class="n">anrede</span> <span class="o">=</span> <span class="s2">&quot;Herr oder Frau&quot;</span><span class="p">,</span> <span class="n">nachname</span><span class="p">):</span>
-    <span class="c1"># nun versuchen wir in der Function auf diese</span>
-    <span class="c1"># globalen Variabeln zu zu greifen</span>
-    <span class="k">return</span><span class="p">(</span><span class="s2">&quot;Guten Tag, &quot;</span><span class="o">+</span><span class="n">anrede</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="o">+</span><span class="n">nachname</span><span class="p">)</span>
-
-<span class="n">gruezi</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Dies erzeugt jedoch eine Fehlermeldung:</p>
+<p>Nun erstellen wir eine Function, welche diese Variabeln nutzen soll:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gruezi</span><span class="p">(</span><span class="n">anrede</span> <span class="o">=</span> <span class="s2">&quot;Herr oder Frau&quot;</span><span class="p">,</span> <span class="n">nachname</span><span class="p">):</span>
+    <span class="k">return</span><span class="p">(</span><span class="s2">&quot;Guten Tag, &quot;</span><span class="o">+</span><span class="n">anrede</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="o">+</span><span class="n">nachname</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Wenn wir jetzt aber die Function ausführen wollen, entsteht eine Fehlermeldung.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">gruezi</span><span class="p">()</span>
+</pre></div>
+</div>
 <div class="admonition error">
 <p class="admonition-title">Error</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">---------------------------------------------------------------------------</span>
@@ -482,7 +484,7 @@ Wenn eine neue <em>Function</em> erstellt wird, kommen die Optionalen Parameter 
     <span class="k">return</span><span class="p">(</span><span class="s2">&quot;Guten Tag, &quot;</span><span class="o">+</span><span class="n">anrede</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="o">+</span><span class="n">nachname</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Mit <code class="docutils literal notranslate"><span class="pre">lambda</span></code> kann die <em>Function</em> folgendermassen geschrieben werden:</p>
+<p>Mit <code class="docutils literal notranslate"><span class="pre">lambda</span></code> kann die <em>Function</em> verküzrt geschrieben werden, was in verschiedenen Situation nützlich sein kann. Vor allem ist es gut, diese Notation zu kennen, da man ab und zu drüber stolpert.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gruezi</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">nachname</span><span class="p">,</span> <span class="n">anrede</span><span class="p">:</span> <span class="s2">&quot;Guten Tag, &quot;</span><span class="o">+</span><span class="n">anrede</span> <span class="o">+</span><span class="s2">&quot; &quot;</span><span class="o">+</span> <span class="n">nachname</span>
@@ -533,7 +535,7 @@ rechts: Gedenktafel an die Alte Sternwarte Bern. Quelle: aiub.unibe.ch</span><a 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2599931.8841660167 1199973.6098618694
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2599945.5170354503 1199905.9056325185
 </pre></div>
 </div>
 </div>
