@@ -25,16 +25,9 @@ def musterloesung(notebooks,tag = "remove-cell"):
 
         nbf.write(ntbk, ipath)
         
-#musterloesung(notebooks_cog1, "remove-cell")
+musterloesung(notebooks_cog1[0:5], "hide-cell")
 #musterloesung(notebooks_cog2, "remove-cell")
 #musterloesung(notebooks_cog3, "remove-cell")
 
-# To shows "Musterlösungen" just for "Primitive_Datentypen", run the following code:
-musterloesung(['./01_02_Primitive_Datentypen.ipynb'], "hide-cell")
-
-# ect
-
-# musterloesung(['./01_03_Zusammengesetzte_Datentypen.ipynb'], "hide-cell")
-# musterloesung(['./01_04_Listen.ipynb'], "hide-cell")
 
 
