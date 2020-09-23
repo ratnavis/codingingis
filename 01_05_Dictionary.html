@@ -454,14 +454,51 @@ Unter dem Eintrag “trump” findet man im Langenscheidt Wörterbuch (1977) die
 <div class="section" id="ubung-3-1-dictionary-erstellen">
 <h3>Übung 3.1: Dictionary erstellen<a class="headerlink" href="#ubung-3-1-dictionary-erstellen" title="Permalink to this headline">¶</a></h3>
 <p>Erstelle eine <em>Dictionary</em> mit folgenden Einträgen: Vorname und Nachname von (d)einer Person. Weise diese Dictionary der Variable <code class="docutils literal notranslate"><span class="pre">me</span></code> zu.</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Musterlösung</span>
+
+<span class="n">me</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;vorname&quot;</span><span class="p">:</span> <span class="s2">&quot;Guido&quot;</span><span class="p">,</span> <span class="s2">&quot;nachname&quot;</span><span class="p">:</span> <span class="s2">&quot;van Rossum&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="ubung-3-2-elemente-aus-dictionary-ansprechen">
 <h3>Übung 3.2: Elemente aus Dictionary ansprechen<a class="headerlink" href="#ubung-3-2-elemente-aus-dictionary-ansprechen" title="Permalink to this headline">¶</a></h3>
 <p>Rufe verschiedene Elemente aus der Dictionary via dem <em>Key</em> ab.</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Musterlösung</span>
+
+<span class="n">me</span><span class="p">[</span><span class="s2">&quot;nachname&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;van Rossum&#39;
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="ubung-3-3-dictionary-nutzen">
 <h3>Übung 3.3: <em>Dictionary</em> nutzen<a class="headerlink" href="#ubung-3-3-dictionary-nutzen" title="Permalink to this headline">¶</a></h3>
 <p>Nutze <code class="docutils literal notranslate"><span class="pre">me</span></code> um nachstehenden Satz (mit <strong>deinen</strong> <em>Values</em>) zu erstellen:</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Musterlösung</span>
+
+<span class="s2">&quot;Mein name ist &quot;</span><span class="o">+</span><span class="n">me</span><span class="p">[</span><span class="s2">&quot;nachname&quot;</span><span class="p">]</span> <span class="o">+</span><span class="s2">&quot;, &quot;</span><span class="o">+</span> <span class="n">me</span><span class="p">[</span><span class="s2">&quot;vorname&quot;</span><span class="p">]</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="o">+</span><span class="n">me</span><span class="p">[</span><span class="s2">&quot;nachname&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Mein name ist van Rossum, Guido van Rossum&#39;
+</pre></div>
+</div>
+</div>
+</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Mein name ist van Rossum, Guido van Rossum&#39;</span>
 </pre></div>
 </div>
@@ -469,22 +506,82 @@ Unter dem Eintrag “trump” findet man im Langenscheidt Wörterbuch (1977) die
 <div class="section" id="ubung-3-4-key-erganzen">
 <h3>Übung 3.4: Key ergänzen<a class="headerlink" href="#ubung-3-4-key-erganzen" title="Permalink to this headline">¶</a></h3>
 <p>Ergänze die Dictionary <code class="docutils literal notranslate"><span class="pre">me</span></code> durch einen Eintrag “groesse” mit (d)einer Grösse.</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Musterlösung</span>
+
+<span class="n">me</span><span class="p">[</span><span class="s2">&quot;groesse&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">181</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="ubung-3-5-dictionary-mit-list">
 <h3>Übung 3.5: Dictionary mit List<a class="headerlink" href="#ubung-3-5-dictionary-mit-list" title="Permalink to this headline">¶</a></h3>
 <p>Erstelle eine neue Dictionary <code class="docutils literal notranslate"><span class="pre">people</span></code> mit den <em>Keys</em> “vornamen”, “nachnamen” und “groesse” und jeweils 3 Einträgen pro <em>Key</em>.</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Musterlösung</span>
+
+<span class="n">people</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;vornamen&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Christopher&quot;</span><span class="p">,</span> <span class="s2">&quot;Henning&quot;</span><span class="p">,</span> <span class="s2">&quot;Severin&quot;</span><span class="p">],</span> <span class="s2">&quot;nachnamen&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Annen&quot;</span><span class="p">,</span><span class="s2">&quot;May&quot;</span><span class="p">,</span> <span class="s2">&quot;Kantereit&quot;</span><span class="p">],</span> <span class="s2">&quot;groessen&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">174</span><span class="p">,</span> <span class="mi">182</span><span class="p">,</span> <span class="mi">162</span><span class="p">]}</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="ubung-3-6-eintrage-abrufen">
 <h3>Übung 3.6: Einträge abrufen<a class="headerlink" href="#ubung-3-6-eintrage-abrufen" title="Permalink to this headline">¶</a></h3>
 <p>Rufe den <strong>ersten</strong> Vornamen deiner <em>Dict</em> auf. Dazu musst du dein Wissen über Listen und Dictionaries kombinieren.</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Musterlösung</span>
+
+<span class="n">people</span><span class="p">[</span><span class="s2">&quot;vornamen&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Christopher&#39;
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="ubung-3-7-eintrage-abrufen">
 <h3>Übung 3.7: Einträge abrufen<a class="headerlink" href="#ubung-3-7-eintrage-abrufen" title="Permalink to this headline">¶</a></h3>
 <p>Rufe den <strong>dritten</strong> Nachname deiner <em>Dict</em> auf.</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Musterlösung</span>
+
+<span class="n">people</span><span class="p">[</span><span class="s2">&quot;nachnamen&quot;</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Kantereit&#39;
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="ubung-3-8-mittelwert-berechnen">
 <h3>Übung 3.8: Mittelwert berechnen<a class="headerlink" href="#ubung-3-8-mittelwert-berechnen" title="Permalink to this headline">¶</a></h3>
 <p>Berechne den Mittelwert aller grössen in deiner Dict</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Musterlösung</span>
+
+<span class="nb">sum</span><span class="p">(</span><span class="n">people</span><span class="p">[</span><span class="s2">&quot;groessen&quot;</span><span class="p">])</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">people</span><span class="p">[</span><span class="s2">&quot;groessen&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>172.66666666666666
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
