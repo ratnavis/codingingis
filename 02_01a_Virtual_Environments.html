@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aufgabe 5: Virtual Environments / Conda &#8212; Coding in GIS</title>
+    <title>Conda cheet sheet &#8212; Coding in GIS</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -130,7 +130,7 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Aufgabe 5: Virtual Environments / Conda
+   Conda cheet sheet
   </a>
  </li>
  <li class="toctree-l1">
@@ -140,7 +140,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02_03_Functions_I.html">
-   Aufgabe 6:
+   Aufgabe 5:
    <em>
     Function
    </em>
@@ -149,7 +149,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02_04_Functions_II.html">
-   Aufgabe 7:
+   Aufgabe 6:
    <em>
     Function
    </em>
@@ -158,7 +158,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02_05_Punkte_einer_DataFrame_verschieben.html">
-   Aufgabe 8:
+   Aufgabe 7:
    <em>
     Function
    </em>
@@ -312,34 +312,104 @@
         
               <div>
                 
-  <div class="section" id="aufgabe-5-virtual-environments-conda">
-<h1>Aufgabe 5: Virtual Environments / Conda<a class="headerlink" href="#aufgabe-5-virtual-environments-conda" title="Permalink to this headline">¶</a></h1>
-<p>Um <em>conda</em> zu verstehen und nutzen zu können, müsst ihr das Konzept von “Virtual Environments” (siehe Vorlesung) einigermassen verstanden haben. Sollte dies nicht der Fall sein, meldest du dich am besten beim Dozenten oder schaust dir nochmals die Vorlesungsfolien an.</p>
-<p>Diese nächsten Schritte zur Nutzung von <em>conda</em> wurden bereits in der Vorlesung beschrieben. Sie sind aber an dieser stelle nochmal erläutert und mit ein paar zusätzlichen Angaben (z.B. Links) erweitert.</p>
-<p><strong>Schritt 1: Conda installieren</strong></p>
-<p>Normalerweise ist der erste Schritt, <em>conda</em> herunterzuladen und installieren (ich empfehle dazu <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">miniconda</a>, nicht <a class="reference external" href="https://www.anaconda.com/products/individual">anaconda</a>). Wenn ihr aber ArcGIS Pro installiert habt, ist dieser Schritt nicht nötig (da <em>conda</em> mit ArcGIS mitinstalliert wird).</p>
-<p><strong>Schritt 2: Systemvariable setzen</strong></p>
-<p><em>Conda</em> ist eine Software, die sich nur von der Kommandozeile (Windows: <em>cmd</em>) aus bedienen lässt. Dafür muss <em>cmd</em> aber wissen, WO conda installiert ist. Um zu Prüfen, ob dies der fall ist kannst du die Konsole starten (Windowstaste &gt; cmd) und folgende Zeile einfügen</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda --version
-</pre></div>
-</div>
-<p>Wenn du eine Versionsnummer siehst kannst du zum nächsten Schritt übergehen. Ansonsten mussst du die Systemvariable <code class="docutils literal notranslate"><span class="pre">PATH</span></code> zuerst noch mit dem Pfad zur <em>conda</em> installation ergänzen. Siehe dazu die Vorlesungsfolie. Überprüfe mit <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">--version</span></code> ob das setzen der Systemvariable erfolgreich war.</p>
-<p><strong>Schritt 3: Virtual Environment erstellen und aktivieren</strong></p>
-<p>Nun kannst du mit <em>conda</em> eine neue Virtual Environment erstellen. Gibt dazu folgenden Befehl in die Konsole ein:</p>
+  <div class="section" id="conda-cheet-sheet">
+<span id="id1"></span><h1>Conda cheet sheet<a class="headerlink" href="#conda-cheet-sheet" title="Permalink to this headline">¶</a></h1>
+<p>In der folgenden Tabelle werden die Einzelschritte in der Verwendung von Conda näher beschrieben. Wichtig ist vor allem, wann dieser Schritt nötig ist und wie er ausgeführt wird. Um die Tabelle kompakt zu halten werden gewisse Details als Fussnote verlinkt.</p>
+<table class="table">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Schritt</p></th>
+<th class="head"><p>Wann ist dies nötig?</p></th>
+<th class="head"><p>Details</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>1. Conda installieren</strong></p></td>
+<td><p>einmalig (nicht nötig, wenn ArcGIS Pro installiert ist)</p></td>
+<td><p><a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a> (empfohlen) oder <a class="reference external" href="https://www.anaconda.com/products/individual">anaconda</a> herunterladen und installieren</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>2. Systemvariable setzen</strong></p></td>
+<td><p>einmalig und nur, wenn <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">--version</span></code> in der Konsole eine Fehlermeldung verursacht</p></td>
+<td><p>Pfad zur <em>conda</em>-installation <a class="footnote-reference brackets" href="#condapath" id="id2">1</a> in die Umgebungsvariable “Path” einfügen <a class="footnote-reference brackets" href="#umgebungsvariable" id="id3">2</a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>3. <em>Virtual environment</em> erstellen</strong></p></td>
+<td><p>einmal pro Projekt nötig (wobei eine environment auch wiederverwendet werden kann)</p></td>
+<td><p>in der Konsole:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda create --name codingingis
 </pre></div>
 </div>
-<p>Die Frage <code class="docutils literal notranslate"><span class="pre">Proceed</span> <span class="pre">([y]/n)</span></code> kannst du mit <code class="docutils literal notranslate"><span class="pre">y</span></code> bestätigen. Anschlissend kannst du mit dem Befehl <code class="docutils literal notranslate"><span class="pre">activate</span> <span class="pre">codingingis</span></code> die neu erstellte Environment “einschalten”.</p>
-<p><strong>Schritt 4: Module installieren</strong></p>
-<p>Nun kannst du die benötigten Module installieren. Beispielsweise ist Jupyter Labs ebenfalls ein Python Modul, welches sich über <em>conda</em> installieren lässt. Dazu braucht es folgenden Befehl:</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p><strong>4. <em>Virutal environment</em> aktivieren</strong></p></td>
+<td><p>jedes mal nöig wenn ein <strong>Erweiterung installiert</strong> oder <strong>jupyter lab gestartet</strong> werden soll</p></td>
+<td><p>in der Konsole <a class="footnote-reference brackets" href="#linux" id="id4">3</a>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>activate codingingis
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p><strong>5. Jupyter lab installieren</strong></p></td>
+<td><p>jedes mal, wenn eine neue <em>environment</em> erstellt wurde</p></td>
+<td><p>in der Konsole <a class="footnote-reference brackets" href="#activate" id="id5">4</a>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install -c conda-forge jupyterlab
 </pre></div>
 </div>
-<p>Ersetze nun <code class="docutils literal notranslate"><span class="pre">jupyterlab</span></code> mit dem namen der anderen Module, die du für den Unterricht noch brauchst. Starte mal mit folgenden <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>, <code class="docutils literal notranslate"><span class="pre">geopandas</span></code>, <code class="docutils literal notranslate"><span class="pre">descartes</span></code>, fehlende Module kannst du später immer noch nach installieren.</p>
-<p>Nun kannst du Jupyter Lab mit folgendem Befehl starten</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p><strong>6. Jupyter lab starten</strong></p></td>
+<td><p>jedes mal nötig, wenn neue Module installiert werden sollen</p></td>
+<td><p>in der Konsole <a class="footnote-reference brackets" href="#activate" id="id6">4</a><a class="footnote-reference brackets" href="#blockiert" id="id7">5</a>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter lab
 </pre></div>
 </div>
+</td>
+</tr>
+<tr class="row-even"><td><p><strong>7. weitere Module <a class="footnote-reference brackets" href="#weiteremodule" id="id8">6</a> installieren</strong></p></td>
+<td><p>jedes mal nötig, wenn ein Modul in einer Environment fehlt<a class="footnote-reference brackets" href="#modulfehlt" id="id9">7</a></p></td>
+<td><p>in der Konsole <a class="footnote-reference brackets" href="#activate" id="id10">4</a><a class="footnote-reference brackets" href="#jupyterlabbeenden" id="id11">8</a>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install -c conda-forge pandas
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="condapath"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
+<dd><p>Wenn <em>conda</em> von ArcGIS Pro verwendet wird, befindet sich die <em>conda</em> installation vermutlich hier: <em>C:\Program Files\ArcGIS\Pro\bin\Python\Scripts</em>. Prüfen, ob dieser Folder existiert und dort <code class="docutils literal notranslate"><span class="pre">conda.exe</span></code> vorhanden ist.</p>
+</dd>
+<dt class="label" id="umgebungsvariable"><span class="brackets"><a class="fn-backref" href="#id3">2</a></span></dt>
+<dd><p>Windowstaste &gt; Umgebungsvariable für dieses Konto bearbeiten &gt; Zeile “Path” auswählen (doppelklick) &gt; Neu &gt; Pfad zur conda installation hinzufügen &gt; mit OK bestätigen &gt; cmd neu starten &gt; <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">--version</span></code> nochmals eingeben.</p>
+</dd>
+<dt class="label" id="linux"><span class="brackets"><a class="fn-backref" href="#id4">3</a></span></dt>
+<dd><p>Unter Linux: <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">codingingis</span></code></p>
+</dd>
+<dt class="label" id="activate"><span class="brackets">4</span><span class="fn-backref">(<a href="#id5">1</a>,<a href="#id6">2</a>,<a href="#id10">3</a>)</span></dt>
+<dd><p>Falls die richtige environment noch nicht aktiviert ist, muss dies zuerst noch erfolgen (z.B <code class="docutils literal notranslate"><span class="pre">activate</span> <span class="pre">codingingis</span></code>). Zudem müssen allfällige Rückfragen mit ja (<code class="docutils literal notranslate"><span class="pre">y</span></code>) bestätigt werden.</p>
+</dd>
+<dt class="label" id="blockiert"><span class="brackets"><a class="fn-backref" href="#id7">5</a></span></dt>
+<dd><p>Während dem Jupyter Lab läuft, ist die Konsole blockiert</p>
+</dd>
+<dt class="label" id="weiteremodule"><span class="brackets"><a class="fn-backref" href="#id8">6</a></span></dt>
+<dd><p>In Coding in GIS I - III brauchen wir die Module <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>, <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> und <code class="docutils literal notranslate"><span class="pre">descartes</span></code></p>
+</dd>
+<dt class="label" id="modulfehlt"><span class="brackets"><a class="fn-backref" href="#id9">7</a></span></dt>
+<dd><p>Dies macht sich bemerkbar duch die Fehlermeldung <code class="docutils literal notranslate"><span class="pre">ModuleNotFoundError:</span> <span class="pre">No</span> <span class="pre">module</span> <span class="pre">named</span> <span class="pre">'pandas'</span></code></p>
+</dd>
+<dt class="label" id="jupyterlabbeenden"><span class="brackets"><a class="fn-backref" href="#id11">8</a></span></dt>
+<dd><p>Falls Jupyter Labs läuft und dadurch die Konsole blockiert ist, gibt es folgende Möglichkeiten:</p>
+<ol class="simple">
+<li><p>Jupyter Labs beenden (CTRL + C) &gt; Modul installieren &gt; Jupyter Lab nochmal starten</p></li>
+<li><p>einen neue Konsole starten &gt; <em>environment</em> aktivieren &gt; Modul installieren</p></li>
+<li><p>den Terminal innerhalb von Jupyter Labs verwenden (File &gt; New &gt; Terminal) und dort die <em>environment</em> aktivieren und Modul installieren</p></li>
+</ol>
+</dd>
+</dl>
 </div>
 
     <script type="text/x-thebe-config">

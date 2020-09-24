@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aufgabe 6: Function Basics &#8212; Coding in GIS</title>
+    <title>Aufgabe 5: Function Basics &#8212; Coding in GIS</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -39,7 +39,7 @@
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Aufgabe 7: Function Advanced" href="02_04_Functions_II.html" />
+    <link rel="next" title="Aufgabe 6: Function Advanced" href="02_04_Functions_II.html" />
     <link rel="prev" title="Python Modules" href="02_02_Python_Module.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -130,7 +130,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02_01a_Virtual_Environments.html">
-   Aufgabe 5: Virtual Environments / Conda
+   Conda cheet sheet
   </a>
  </li>
  <li class="toctree-l1">
@@ -140,7 +140,7 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Aufgabe 6:
+   Aufgabe 5:
    <em>
     Function
    </em>
@@ -149,7 +149,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02_04_Functions_II.html">
-   Aufgabe 7:
+   Aufgabe 6:
    <em>
     Function
    </em>
@@ -158,7 +158,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02_05_Punkte_einer_DataFrame_verschieben.html">
-   Aufgabe 8:
+   Aufgabe 7:
    <em>
     Function
    </em>
@@ -315,8 +315,8 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ubung-6-1-erste-function-erstellen">
-     Übung 6.1: Erste
+    <a class="reference internal nav-link" href="#ubung-5-1-erste-function-erstellen">
+     Übung 5.1: Erste
      <em>
       Function
      </em>
@@ -324,8 +324,8 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ubung-6-2-function-erweitern">
-     Übung 6.2:
+    <a class="reference internal nav-link" href="#ubung-6-1-function-erweitern">
+     Übung 6.1:
      <em>
       Function
      </em>
@@ -333,8 +333,13 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ubung-6-3-default-werte-festlegen">
-     Übung 6.3: Default-Werte festlegen
+    <a class="reference internal nav-link" href="#ubung-5-3-quadratzahl">
+     Übung 5.3: Quadratzahl
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ubung-5-4-mittelwert">
+     Übung 5.4 Mittelwert
     </a>
    </li>
   </ul>
@@ -349,11 +354,12 @@
         
               <div>
                 
-  <div class="section" id="aufgabe-6-function-basics">
-<h1>Aufgabe 6: <em>Function</em> Basics<a class="headerlink" href="#aufgabe-6-function-basics" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="aufgabe-5-function-basics">
+<h1>Aufgabe 5: <em>Function</em> Basics<a class="headerlink" href="#aufgabe-5-function-basics" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="theorie">
 <h2>Theorie<a class="headerlink" href="#theorie" title="Permalink to this headline">¶</a></h2>
-<p>Ein Grundprinzip von Programmieren ist “DRY” (<em>Don’t repeat yourself</em>). Wenn unser script sehr viele gleiche oder sehr ähnliche Codezeilen enthält ist das ein Zeichen dafür, dass man besser eine <em>Function</em> schreiben sollte. Das hat viele Vorteile: Unter anderem muss man Fehler nur an einer Stelle beheben. Deshalb: Um mit Python gut zurecht zu kommen ist das schreiben von eigenen <em>Functions</em> unerlässlich. Sie sind auch nicht weiter schwierig: Eine <em>Function</em> wird mit <code class="docutils literal notranslate"><span class="pre">def</span></code> eingeleitet, braucht einen Namen, einen Input und einen Output.</p>
+<p>Ein Grundprinzip von Programmieren ist “DRY” (<em>Don’t repeat yourself</em>). Wenn unser script sehr viele gleiche oder sehr ähnliche Codezeilen enthält ist das ein Zeichen dafür, dass man besser eine <em>Function</em> schreiben sollte. Das hat viele Vorteile: Unter anderem wird der Code wird lesbarer, einfacher zu warten und kürzer.</p>
+<p>Um mit Python gut zurecht zu kommen ist das schreiben von eigenen <em>Functions</em> unerlässlich. Sie sind auch nicht weiter schwierig: Eine <em>Function</em> wird mit <code class="docutils literal notranslate"><span class="pre">def</span></code> eingeleitet, braucht einen Namen, einen Input und einen Output.</p>
 <p>Wenn wir zum Beispiel eine Function erstellen wollen die uns grüsst, so geht dies folgendermassen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -393,7 +399,7 @@
 </div>
 </div>
 </div>
-<p>Nun können wir der Function einen Parameter übergeben. In folgendem Beispiel ist <code class="docutils literal notranslate"><span class="pre">vorname</span></code> ein Parameter, “Guido” ist sein Argument.</p>
+<p>Nun können wir der Function ein Argument übergeben. In folgendem Beispiel ist <code class="docutils literal notranslate"><span class="pre">vorname</span></code> ein Parameter, “Guido” ist sein Argument.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sag_hallo</span><span class="p">(</span><span class="s2">&quot;Guido&quot;</span><span class="p">)</span>
@@ -423,28 +429,29 @@
 <div class="section" id="ubungen">
 <h3>Übungen<a class="headerlink" href="#ubungen" title="Permalink to this headline">¶</a></h3>
 </div>
-<div class="section" id="ubung-6-1-erste-function-erstellen">
-<h3>Übung 6.1: Erste <em>Function</em> erstellen<a class="headerlink" href="#ubung-6-1-erste-function-erstellen" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="ubung-5-1-erste-function-erstellen">
+<h3>Übung 5.1: Erste <em>Function</em> erstellen<a class="headerlink" href="#ubung-5-1-erste-function-erstellen" title="Permalink to this headline">¶</a></h3>
 <p>Erstelle eine Function, die <code class="docutils literal notranslate"><span class="pre">gruezi</span></code> heisst, einen Nachnamen als Input annimmt und per Sie grüsst. Das Resultat soll in etwa folgendermassen aussehen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gruezi</span><span class="p">(</span><span class="s2">&quot;Guido&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gruezi</span><span class="p">(</span><span class="s2">&quot;van Rossum&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Guten Tag, Guido&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Guten Tag, van Rossum&#39;
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="section" id="ubung-6-2-function-erweitern">
-<h3>Übung 6.2: <em>Function</em> erweitern<a class="headerlink" href="#ubung-6-2-function-erweitern" title="Permalink to this headline">¶</a></h3>
-<p>Erweitere die <em>Function</em> <code class="docutils literal notranslate"><span class="pre">gruezi</span></code> indem eine du einen weiteren Parameter namens <code class="docutils literal notranslate"><span class="pre">anrede</span></code> implementierst. Das Resultat soll in etwa folgendermassen aussehen:</p>
+<div class="section" id="ubung-6-1-function-erweitern">
+<h3>Übung 6.1: <em>Function</em> erweitern<a class="headerlink" href="#ubung-6-1-function-erweitern" title="Permalink to this headline">¶</a></h3>
+<p>Erstelle eine neue Funktion <code class="docutils literal notranslate"><span class="pre">gruezi2</span></code> welche im Vergleich zu <code class="docutils literal notranslate"><span class="pre">gruezi</span></code> einen weiteren Parameter namens <code class="docutils literal notranslate"><span class="pre">anrede</span></code> annimmt. Weitere Parameter werden mittels Komma getrennt (<code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">funktionsname(parameter1,</span> <span class="pre">parameter2)</span></code>).</p>
+<p>Das Resultat soll in etwa folgendermassen aussehen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gruezi</span><span class="p">(</span><span class="s2">&quot;van Rossum&quot;</span><span class="p">,</span><span class="s2">&quot;Herr&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gruezi2</span><span class="p">(</span><span class="s2">&quot;van Rossum&quot;</span><span class="p">,</span><span class="s2">&quot;Herr&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -455,17 +462,41 @@
 </div>
 </div>
 </div>
-<div class="section" id="ubung-6-3-default-werte-festlegen">
-<h3>Übung 6.3: Default-Werte festlegen<a class="headerlink" href="#ubung-6-3-default-werte-festlegen" title="Permalink to this headline">¶</a></h3>
-<p>Man kann für die Parameter folgendermassen einen Standardwert festlegen: Beim Definieren der Function wird dem Parameter schon innerhalb der Klammer ein Argument zugewiesen (z.B. <code class="docutils literal notranslate"><span class="pre">anrede</span> <span class="pre">=</span> <span class="pre">&quot;Herr</span> <span class="pre">oder</span> <span class="pre">Frau&quot;</span></code>). Wenn anrede bei der Verwendung von <code class="docutils literal notranslate"><span class="pre">gruezi</span></code> nicht definiert wird, entspricht die Anrede nun «Herr oder Frau». Setzte einen Standardwert in der Anrede und teste die <em>Function</em>. Das Resultat soll in etwa folgendermassen aussehen:</p>
+<div class="section" id="ubung-5-3-quadratzahl">
+<h3>Übung 5.3: Quadratzahl<a class="headerlink" href="#ubung-5-3-quadratzahl" title="Permalink to this headline">¶</a></h3>
+<p>Erstelle eine Funktion <code class="docutils literal notranslate"><span class="pre">square()</span></code>, welche den Input quadriert (mit sich selbst multipliziert).</p>
+<div class="dropdown admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Nutze <code class="docutils literal notranslate"><span class="pre">*</span></code> um zwei Zahlen zu multiplizieren.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gruezi</span><span class="p">(</span><span class="s2">&quot;van Rossum&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">square</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Guten Tag, Herr oder Frau van Rossum&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ubung-5-4-mittelwert">
+<h3>Übung 5.4 Mittelwert<a class="headerlink" href="#ubung-5-4-mittelwert" title="Permalink to this headline">¶</a></h3>
+<p>Erstelle eine Funktion <code class="docutils literal notranslate"><span class="pre">mean()</span></code>, welche den Mittelwert aus einer Liste (<code class="docutils literal notranslate"><span class="pre">List</span></code>) von Zahlen berechnet.</p>
+<div class="dropdown admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Nutze dazu <code class="docutils literal notranslate"><span class="pre">sum()</span></code> und <code class="docutils literal notranslate"><span class="pre">len()</span></code>.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mean</span><span class="p">([</span><span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span><span class="mi">550</span><span class="p">,</span><span class="mi">1000</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>425.0
 </pre></div>
 </div>
 </div>
@@ -503,7 +534,7 @@
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="02_02_Python_Module.html" title="previous page">Python Modules</a>
-    <a class='right-next' id="next-link" href="02_04_Functions_II.html" title="next page">Aufgabe 7: <em>Function</em> Advanced</a>
+    <a class='right-next' id="next-link" href="02_04_Functions_II.html" title="next page">Aufgabe 6: <em>Function</em> Advanced</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

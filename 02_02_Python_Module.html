@@ -39,8 +39,8 @@
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Aufgabe 6: Function Basics" href="02_03_Functions_I.html" />
-    <link rel="prev" title="Aufgabe 5: Virtual Environments / Conda" href="02_01a_Virtual_Environments.html" />
+    <link rel="next" title="Aufgabe 5: Function Basics" href="02_03_Functions_I.html" />
+    <link rel="prev" title="Conda cheet sheet" href="02_01a_Virtual_Environments.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -130,7 +130,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02_01a_Virtual_Environments.html">
-   Aufgabe 5: Virtual Environments / Conda
+   Conda cheet sheet
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -140,7 +140,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02_03_Functions_I.html">
-   Aufgabe 6:
+   Aufgabe 5:
    <em>
     Function
    </em>
@@ -149,7 +149,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02_04_Functions_II.html">
-   Aufgabe 7:
+   Aufgabe 6:
    <em>
     Function
    </em>
@@ -158,7 +158,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02_05_Punkte_einer_DataFrame_verschieben.html">
-   Aufgabe 8:
+   Aufgabe 7:
    <em>
     Function
    </em>
@@ -305,42 +305,56 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#erweiterung-installieren">
-   Erweiterung installieren
+  <a class="reference internal nav-link" href="#vergleich-r-vs-python">
+   Vergleich R vs. Python
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#erweiterung-installieren">
+     Erweiterung installieren
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#erweiterung-laden">
+     Erweiterung laden
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#erweiterung-verwenden">
+     Erweiterung verwenden
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#erweiterung-laden">
-   Erweiterung laden
+  <a class="reference internal nav-link" href="#python-eigenheiten">
+   Python Eigenheiten
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#erweiterung-verwenden">
-   Erweiterung verwenden
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#modul-mit-alias-importieren">
-   Modul mit Alias importieren
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#einzelne-function-importieren">
-   Einzelne
-   <em>
-    Function
-   </em>
-   importieren
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#alle-functions-importieren">
-   Alle
-   <em>
-    Functions
-   </em>
-   importieren
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modul-mit-alias-importieren">
+     Modul mit Alias importieren
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#einzelne-function-importieren">
+     Einzelne
+     <em>
+      Function
+     </em>
+     importieren
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#alle-functions-importieren">
+     Alle
+     <em>
+      Functions
+     </em>
+     importieren
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -354,16 +368,20 @@
                 
   <div class="section" id="python-modules">
 <h1>Python Modules<a class="headerlink" href="#python-modules" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="vergleich-r-vs-python">
+<h2>Vergleich R vs. Python<a class="headerlink" href="#vergleich-r-vs-python" title="Permalink to this headline">¶</a></h2>
+<p>Der Umgang mit Modulen ist in Python in vielerlei Hinsicht ähnlich wie in R. An dieser stelle möchten wir die Unterschiede in einem Direktvergleich beleuchten. Dafür verwenden wir ein fiktives Modul <code class="docutils literal notranslate"><span class="pre">maler</span></code> für Python wie auch für R.</p>
 <div class="section" id="erweiterung-installieren">
-<h2>Erweiterung installieren<a class="headerlink" href="#erweiterung-installieren" title="Permalink to this headline">¶</a></h2>
-<p>In R ist die Installation einer <em>Library</em> selbst ein R-Befehl und wird innerhalb von R ausgeführt. In Python ist dies leider etwas komplizierter, es braucht für die Installation einer Python library eine Zusatzsoftware (<code class="docutils literal notranslate"><span class="pre">conda</span></code>).</p>
+<h3>Erweiterung installieren<a class="headerlink" href="#erweiterung-installieren" title="Permalink to this headline">¶</a></h3>
+<p>In R ist die Installation einer <em>Library</em> selbst ein R-Befehl und wird innerhalb von R ausgeführt. Wenn wir keine Quelle angeben, woher die Library heruntergeladen werden soll, wird eine Default-Quelle verwendet, die im System hinterlegt ist (z.B. “https://cloud.r-project.org”).</p>
+<p>In Python ist dies leider etwas komplizierter, es braucht für die Installation einer Python <em>Library</em> eine Zusatzsoftware wie zum Beispiel <code class="docutils literal notranslate"><span class="pre">conda</span></code> (siehe dazu das Kapitel <a class="reference internal" href="02_01a_Virtual_Environments.html#conda-cheet-sheet"><span class="std std-ref">Conda cheet sheet</span></a>). Es gibt auch noch andere Wege, wie zum Beispiel <code class="docutils literal notranslate"><span class="pre">pip</span></code>, aber diese lassen wir der Einfachheit an dieser Stelle weg.</p>
 <div class="sphinx-bs container pb-4 docutils">
 <div class="row docutils">
 <div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
 <div class="card w-100 shadow docutils">
 <div class="card-body docutils">
-<p class="card-text">in R:</p>
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;malerin&quot;</span><span class="p">)</span>
+<p class="card-text">in R*:</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;maler&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -372,8 +390,8 @@
 <div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
 <div class="card w-100 shadow docutils">
 <div class="card-body docutils">
-<p class="card-text">In Python*:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install -c conda-foge malerin 
+<p class="card-text">In Python**:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install -c conda-foge maler 
 </pre></div>
 </div>
 </div>
@@ -381,11 +399,9 @@
 </div>
 </div>
 </div>
-<p>* in Python gibt es noch andere Wege, Erweiterungen zu installieren (z.B. mit <code class="docutils literal notranslate"><span class="pre">pip</span></code>). Wir lassen sie der Einfachheit an dieser Stelle aber weg.</p>
-<p>In diesem Beispiel heisst die Erweiterung <code class="docutils literal notranslate"><span class="pre">malerin</span></code>. Das <em>Reposoritory</em> geben wir in R meistens nicht an, weil in RStudio bereits eine Default-Adresse hinterlegt ist.</p>
 </div>
 <div class="section" id="erweiterung-laden">
-<h2>Erweiterung laden<a class="headerlink" href="#erweiterung-laden" title="Permalink to this headline">¶</a></h2>
+<h3>Erweiterung laden<a class="headerlink" href="#erweiterung-laden" title="Permalink to this headline">¶</a></h3>
 <p>Um eine Erweiterung nutzen zu können, müssen wir diese sowohl in R wie auch in Python in die aktuelle Session importieren. In R und Python sehen die Befehle folgendermassen aus:</p>
 <div class="sphinx-bs container pb-4 docutils">
 <div class="row docutils">
@@ -393,7 +409,7 @@
 <div class="card w-100 shadow docutils">
 <div class="card-body docutils">
 <p class="card-text">in R:</p>
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">malerin</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">maler</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -403,7 +419,7 @@
 <div class="card w-100 shadow docutils">
 <div class="card-body docutils">
 <p class="card-text">in Python:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">malerin</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">maler</span>
 </pre></div>
 </div>
 </div>
@@ -413,8 +429,9 @@
 </div>
 </div>
 <div class="section" id="erweiterung-verwenden">
-<h2>Erweiterung verwenden<a class="headerlink" href="#erweiterung-verwenden" title="Permalink to this headline">¶</a></h2>
-<p>Um eine geladene <em>Function</em> in R zu verwenden, kann ich diese <em>Function</em> “einfach so” aufrufen. In Python hingegen muss ich die Erweiterung, in der die <em>Function</em> enthalten ist, der <em>Function</em> mit einem Punkt voranstellen. Das sieht also folgendermassen aus:</p>
+<h3>Erweiterung verwenden<a class="headerlink" href="#erweiterung-verwenden" title="Permalink to this headline">¶</a></h3>
+<p>Um eine Funktion aus einer <em>Library</em> in R zu verwenden, kann ich diese <em>Function</em> direkt aufrufen. In Python hingegen muss ich entsprechende Erweiterung der <em>Function</em> mit einem Punkt voranstellen.</p>
+<p>Das ist zwar umständlicher, dafür aber weniger Fehleranfällig. Angenommen, zwei leicht unterschiedliche Funktionen heissen beide <code class="docutils literal notranslate"><span class="pre">wand_bemalen()</span></code>. Die eine stammt aus der Erweiterung <code class="docutils literal notranslate"><span class="pre">maler</span></code>, die andere aus der Erweiterung <code class="docutils literal notranslate"><span class="pre">maurer</span></code>. Wenn die Funktion in R aufgerufen wird ist nicht klar, aus welcher Library die Funktion verwendet werden soll. In Python ist im nachstehenden Beispiel unmissverständlich, dass <code class="docutils literal notranslate"><span class="pre">wand_bemalen()</span></code> aus dem Modul <code class="docutils literal notranslate"><span class="pre">maler</span></code> gemeint ist.</p>
 <div class="sphinx-bs container pb-4 docutils">
 <div class="row docutils">
 <div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
@@ -431,7 +448,7 @@
 <div class="card w-100 shadow docutils">
 <div class="card-body docutils">
 <p class="card-text">in Python:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">malerin</span><span class="o">.</span><span class="n">wand_bemalen</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">maler</span><span class="o">.</span><span class="n">wand_bemalen</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -439,31 +456,34 @@
 </div>
 </div>
 </div>
-<p>Das ist zwar umständlicher, aber dafür weniger Fehleranfällig. Angenommen, eine andere Erweiterung (z.b. <code class="docutils literal notranslate"><span class="pre">maurer</span></code>) hat ebenfalls eine <em>Function</em> <code class="docutils literal notranslate"><span class="pre">wand_bemalen()</span></code>. Dann ist in R nicht klar, welche Erweiterung gemeint ist, was zu Missverständnissen führen kann. In Python ist im obigen Beispiel unmissverständlich, dass ich <code class="docutils literal notranslate"><span class="pre">wand_bemalen()</span></code> aus dem Modul <code class="docutils literal notranslate"><span class="pre">malerin</span></code> meine.</p>
 </div>
+</div>
+<div class="section" id="python-eigenheiten">
+<h2>Python Eigenheiten<a class="headerlink" href="#python-eigenheiten" title="Permalink to this headline">¶</a></h2>
+<p>In Python gibt es in Bezug auf die Verwendung von Modulen ein paar Eigenheiten, die wir aus der R Welt nicht kennen. Es ist wichtig diese Eigenheiten zu kennen, denn man trifft sie immer wieder an.</p>
 <div class="section" id="modul-mit-alias-importieren">
-<h2>Modul mit Alias importieren<a class="headerlink" href="#modul-mit-alias-importieren" title="Permalink to this headline">¶</a></h2>
-<p>Da es umständlich sein kann, jedesmal <code class="docutils literal notranslate"><span class="pre">malerin.wand_bemalen()</span></code> voll auszuschreiben, können wir beim Importieren dem Modul auch einen “Alias” vergeben. Dies kann beispielsweise folgendermassen aussehen:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">malerin</span> <span class="k">as</span> <span class="nn">mm</span>
-<span class="n">mm</span><span class="o">.</span><span class="n">wand_bemalen</span><span class="p">()</span>
+<h3>Modul mit Alias importieren<a class="headerlink" href="#modul-mit-alias-importieren" title="Permalink to this headline">¶</a></h3>
+<p>Da es umständlich sein kann, jedesmal <code class="docutils literal notranslate"><span class="pre">maler.wand_bemalen()</span></code> voll auszuschreiben, können wir dem Modul beim Import auch einen “Alias” vergeben. Für gewisse populäre Module haben sich solche Aliasse eingebürgert und es ist einfacher, wenn man diese auch verwendet. Dies kann folgendermassen aussehen:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">maler</span> <span class="k">as</span> <span class="nn">m</span>
+<span class="n">m</span><span class="o">.</span><span class="n">wand_bemalen</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Dies ist deshalb wichtig, weil sich für viele Module haben sich bestimmte Aliasse eingebürgert haben. Ihr macht sich das Leben leichter, wenn ihr euch an diese Konventionen (welche ihr noch kennenlernen werdet) hält.</p>
 </div>
 <div class="section" id="einzelne-function-importieren">
-<h2>Einzelne <em>Function</em> importieren<a class="headerlink" href="#einzelne-function-importieren" title="Permalink to this headline">¶</a></h2>
-<p>Es gibt noch die Variante, eine explizite <em>Function</em> aus einem Modul zu laden. Wenn man dies macht, kann man die Funktion ohne vorangestelltes Modul nutzen (genau wie in R). Dies sieht folgendermassen aus:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">malerin</span> <span class="kn">import</span> <span class="n">wand_bemalen</span>
+<h3>Einzelne <em>Function</em> importieren<a class="headerlink" href="#einzelne-function-importieren" title="Permalink to this headline">¶</a></h3>
+<p>Es gibt noch die Variante, explizit eine spezifische <em>Function</em> aus einem Modul zu laden. Wenn man dies macht, kann man die Funktion ohne vorangestelltes Modul nutzen (genau wie in R). Dies sieht folgendermassen aus:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">maler</span> <span class="kn">import</span> <span class="n">wand_bemalen</span>
 <span class="n">wand_bemalen</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="alle-functions-importieren">
-<h2>Alle <em>Functions</em> importieren<a class="headerlink" href="#alle-functions-importieren" title="Permalink to this headline">¶</a></h2>
-<p>Zusätzlich ist es möglich, <strong>alle</strong> <em>Functions</em> aus einem Modul so zu importieren, dass der Modulname nicht mehr erwähnt werden muss. Diese Notation wird nicht empfohlen und ist hier nur erwähnt, falls ihr diese Schreibweise mal antrifft.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">malerin</span> <span class="kn">import</span> <span class="o">*</span>
+<h3>Alle <em>Functions</em> importieren<a class="headerlink" href="#alle-functions-importieren" title="Permalink to this headline">¶</a></h3>
+<p>Zusätzlich ist es möglich, <strong>alle</strong> <em>Functions</em> aus einem Modul so zu importieren, dass der Modulname nicht mehr erwähnt werden muss. Diese Notation wird nicht empfohlen, aber es ist wichtig sie zu kennen.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">maler</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="n">wand_bemalen</span><span class="p">()</span>
 </pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -496,8 +516,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="02_01a_Virtual_Environments.html" title="previous page">Aufgabe 5: Virtual Environments / Conda</a>
-    <a class='right-next' id="next-link" href="02_03_Functions_I.html" title="next page">Aufgabe 6: <em>Function</em> Basics</a>
+    <a class='left-prev' id="prev-link" href="02_01a_Virtual_Environments.html" title="previous page">Conda cheet sheet</a>
+    <a class='right-next' id="next-link" href="02_03_Functions_I.html" title="next page">Aufgabe 5: <em>Function</em> Basics</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
