@@ -11,6 +11,7 @@ notebooks_cog3 = glob("./03_*.ipynb", recursive=False) # recursive = True to sea
 def musterloesung(notebooks,tag = "remove-cell"):
     # for loops works through each ipynb-file
     for ipath in notebooks:
+        print(tag + "for all cells in "+ipath)
         ntbk = nbf.read(ipath, nbf.NO_CONVERT)
         # for loop works through each cell of a given file
         for cell in ntbk.cells:
@@ -24,7 +25,9 @@ def musterloesung(notebooks,tag = "remove-cell"):
                     cell['metadata']['tags'] = cell_tags
 
         nbf.write(ntbk, ipath)
-        
+
+notebooks_cog1.sort()
+musterloesung(notebooks_cog1, "remove-cell")
 musterloesung(notebooks_cog1[0:5], "hide-cell")
 #musterloesung(notebooks_cog2, "remove-cell")
 #musterloesung(notebooks_cog3, "remove-cell")

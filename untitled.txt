@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+jupyter-book>=0.7.0b
+pygeos>=0.7.1
+=======
 ## Dict
 
 Eine `Dict`: 
@@ -49,3 +53,4 @@ menue_df = pd.DataFrame(menue2)
 menue_df
 
 type(menue_df)
+>>>>>>> 8608d32dc8f84282a4b5607a1649fc4fb1739ddc
