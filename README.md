@@ -1,3 +1,5 @@
+A trivial line, making it my repo. ratnavis 2020-09-25
+
 For others, and for future me, here some notes on how I created this (jupyter-) book
 
 - 90 % can be found in the jupyter-book documentation on [jupyterbook.org](https://jupyterbook.org)
