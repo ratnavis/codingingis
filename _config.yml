@@ -15,4 +15,8 @@ launch_buttons:
   jupyterhub_url            : https://jupyterhub01.zhaw.ch  # The URL of the JupyterHub (e.g., https://datahub.berkeley.edu)
   thebe                     : false  # Add a thebe button to pages (requires the repository to run on Binder)
   colab_url                 : false # The URL of Google Colab (e.g., https://colab.research.google.com)
+
+sphinx:
+  config:
+    language                : de
   
