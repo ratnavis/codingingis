@@ -3,7 +3,7 @@
 
 - part: Coding in GIS I
   chapters:
-  - file: 01_01_Einleitung
+  - file: 01_01_Coding_in_GIS_1
   - file: 01_02_Primitive_Datentypen
   - file: 01_03_Zusammengesetzte_Datentypen
   - file: 01_04_Listen
@@ -12,17 +12,17 @@
   
 - part: Coding in GIS II
   chapters:
-  - file: 02_01_Einleitung
-  - file: 02_01a_Virtual_Environments
-  - file: 02_02_Python_Module
-  - file: 02_03_Functions_I
-  - file: 02_04_Functions_II
-  - file: 02_04b_Zufallspunkte
-  - file: 02_05_Punkte_einer_DataFrame_verschieben
+  - file: 02_01_Coding_in_GIS_2
+  - file: 02_02_Conda_Cheetsheet
+  - file: 02_03_Python_Module
+  - file: 02_04_Functions_I
+  - file: 02_05_Functions_II
+  - file: 02_06_Zufallspunkte
+  - file: 02_07_Funktionen_in_DataFrames
 
 - part: Coding in GIS III
   chapters:
-  - file: 03_01_Einleitung
+  - file: 03_01_Coding_in_GIS_3
   - file: 03_02_For_Loops
   - file: 03_03_For_Loops
   - file: 03_04_Zeckenstich_Simulation
