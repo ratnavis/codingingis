@@ -28,9 +28,9 @@ def musterloesung(notebooks,tag = "remove-cell"):
 
 notebooks_cog1.sort()
 musterloesung(notebooks_cog1, "remove-cell")
-musterloesung(notebooks_cog1[0:5], "hide-cell")
-#musterloesung(notebooks_cog2, "remove-cell")
-#musterloesung(notebooks_cog3, "remove-cell")
+musterloesung(notebooks_cog1, "hide-cell")
+musterloesung(notebooks_cog2, "remove-cell")
+musterloesung(notebooks_cog3, "remove-cell")
 
 
 
